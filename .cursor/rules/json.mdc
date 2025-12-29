@@ -1,0 +1,160 @@
+---
+alwaysApply: true
+---
+# Flutter ↔ H5 Communication Rules
+
+## 🚨 CRITICAL
+- Communication protocol is STRICT and IMMUTABLE
+- NEVER invent, rename, remove, or guess any field
+- If information is missing, ASK instead of assuming
+
+---
+
+## 1️⃣ Global Message Envelope (REQUIRED)
+
+All messages MUST use the following JSON structure:
+
+### window.userJson：当前用户对象json
+
+```Dart
+{
+    userId: 'u1', //用户ID（String）
+    email: 'test@gmail.com', //用户邮箱（String）
+    password: '', //用户密码（String）
+    avator: '', //用户头像（String）
+    name: 'laiyla1', //用户名称（String）
+    about: '这个人很棒', //用户简介（String）
+    coins: 0, //用户金币数（int）
+    follow: [], //用户关注IDList（List<String>）
+    fans: [], //用户粉丝IDList（List<String>）
+    blockList: [], //用户黑名单IDList（List<String>）
+    picPostLikeIds: [], //用户喜欢图片帖子IDList（List<String>）
+    videoPostLikeIds: [] //用户喜欢视频帖子IDList（List<String>）
+ }
+```
+
+### window.dynamicJson：帖子对象List json
+
+```Dart
+[
+    {
+        dynamicId: '1', // 帖子ID（String）
+        userId: 'u2', // 发布人ID（String）
+        dynamicType: 0, //帖子类型（0--图片帖子，1--视频帖子）（int）
+        dynamicDesc:
+          'xxxxx', //帖子描述
+        dynamicTitleType: 0, // 图片帖子类型下标（int）
+        dynamicPic: ['', ''], //图片地址List（List<String>）
+        dynamicVideo: '', //视频地址（String）
+        dynamicLikeCount: 2, //点赞数量（int）
+        dynamicCommentCount: 0 //评论数（int）
+    }
+]
+```
+
+### window.userListJson：用户对象List json
+
+```Dart
+[
+    {
+        userId: 'u22', //用户ID（String）
+        email: 'test@gmail.com', //用户邮箱（String）
+        password: '', //用户密码（String）
+        avator: '', //用户头像（String）
+        name: 'laiyla1', //用户名称（String）
+        about: 'xxxxx', //用户简介（String）
+        coins: 0, //用户金币数（int）
+        follow: [], //用户关注IDList（List<String>）
+        fans: [], //用户粉丝IDList（List<String>）
+        blockList: [], //用户黑名单IDList（List<String>）
+        picPostLikeIds: [], //用户喜欢图片帖子IDList（List<String>）
+        videoPostLikeIds: [] //用户喜欢视频帖子IDList（List<String>）
+     }
+ ]
+```
+
+### window.commentJson：评论对象List json
+
+```Dart
+[
+    {
+        dynamicId: '1', //评论ID（String）
+        commentId: 'c3', //发布评论相关的帖子ID（String）
+        userId: 'u2', //发布评论用户ID（String）
+        content: 'xxxxxxx' //评论文案（String）
+    }
+]
+```
+
+### window.chatListJson：聊天室对象List json
+
+```Dart
+[
+      {
+        chatId: 'c1', //聊天室ID（String）
+        chatUserIds: ['u1', 'u2'], //聊天室用户IDList（List<String>）
+        lastSendContent: 'hello', //最后发送消息文案（String）
+        lastSendTime: '2025-05-01 12:00:00', //最后发送消息时间（String）
+        unreadMsgCount: 1, //未读消息数量（int）
+        lastSendUserId: 'u22' //最后发送消息人ID（String）
+      }
+]
+```
+
+### window.messageListJson：聊天消息对象List json
+
+```Dart
+[
+      {
+        msgId: 'm1', //消息ID（String）
+        chatId: 'c1', //聊天室ID（String）
+        userId: 'u99', //发送消息用户ID（String）
+        sendContent: 'hello', //发送消息文案（String）
+        sendPicUrl: '', //发送图片地址（String）
+        sendTime: '2025-09-01 10:00:00' //发送时间（String）
+      }
+]
+```
+
+### window.coinListJson：金币对象List json
+
+```Dart
+[
+      {
+        key: 'xxxxxxxx', //金币ID key（String）
+        cions: 400, //金币数量（int）
+        meney: 1.99 //金币金额（double）
+      }
+]
+```
+
+### window.reportListJson：举报内容对象List json
+
+```Dart
+[
+      {
+        reportContext: 'xx1' //选项内容文案（String）
+      }
+]
+```
+
+### window.publishImageListJson：发布帖子选项对象List json
+
+```Dart
+[
+    { 
+        name: 'Hobbies', //帖子选项文案（String）
+        value: 0 //下标（int）
+    }
+]
+```
+
+### window.chatBotDesc：Ai模块对象 json
+
+```Dart
+{
+  title: 'title', //ai标题文案（String）
+  content: 'content', //ai内容文案（String）
+  points: 100 //ai付费金额（int）
+}
+```

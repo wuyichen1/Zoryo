@@ -6,8 +6,8 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:in_app_purchase_storekit/in_app_purchase_storekit.dart';
 import 'package:in_app_purchase_storekit/store_kit_wrappers.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/features/diamond/custom_loading.dart';
-import 'package:zoryo/providers/app_state.dart';
+import 'package:zoryo/zzokdet_fangfa/custom_loading.dart';
+import 'package:zoryo/zzokdet_fangfa/app_state.dart';
 
 late int omoyokhashiPawokimashaIdx;
 late String currentPaykey;
@@ -64,7 +64,7 @@ Future<bool> thotharapisRahephylothFanffa(
 ) async {
   // 创建新的Completer来跟踪支付结果
   _paymentCompleter = Completer<bool>();
-  
+
   if (kewonahkumaTanakohival.isEmpty) {
     await skikawakamHulahkamiwaInit();
     await tutanemkhorKhaemwernim();
@@ -98,7 +98,7 @@ Future<bool> thotharapisRahephylothFanffa(
     purchaseParam: tothirametHorusiluneKhemosetheparam,
     autoConsume: tsinokikawaXalakwanata,
   );
-  
+
   // 等待支付结果
   return await _paymentCompleter!.future;
 }
@@ -239,14 +239,4 @@ class HorusatythosTefnutramet implements SKPaymentQueueDelegateWrapper {
 Future<void> witahmahalaPavakihalaUpd() async {
   final app = Provider.of<AppState>(tahkashmaraMokhamitkaCtx, listen: false);
   await app.handleRecharge(currentPaykey);
-  // final walletBloc = tahkashmaraMokhamitkaCtx.read<WalletBloc>();
-  // final packages = walletBloc.state.packages;
-  // // if (omoyokhashiPawokimashaIdx < 0 ||
-  // //     omoyokhashiPawokimashaIdx >= packages.length) {
-  // //   GlobalSnackbar.showError('Purchase package not found');
-  // //   return;
-  // // }
-
-  // final diamonds = packages[omoyokhashiPawokimashaIdx].diamonds;
-  // walletBloc.add(WalletPurchase(diamonds));
 }

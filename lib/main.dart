@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/features/diamond/payfunc.dart';
+import 'package:zoryo/zzokdet_fangfa/payfunc.dart';
 
 import 'core/router/app_router.dart';
 import 'core/storage/local_storage.dart';
 import 'core/theme/app_theme.dart';
-import 'providers/app_state.dart';
+import 'zzokdet_fangfa/app_state.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,16 +39,13 @@ class _ZoryoAppState extends State<ZoryoApp> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    // Create router only once to preserve route state during hot reload
     _router ??= AppRouter(context.read<AppState>());
   }
 
   @override
   Widget build(BuildContext context) {
-    // Use cached router to avoid recreating GoRouter on every rebuild
     final router = _router?.router;
     if (router == null) {
-      // Fallback during initial build
       return const SizedBox.shrink();
     }
     return MaterialApp.router(

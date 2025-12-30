@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/account/account_screen.dart';
-import '../../features/account/edit_profile_screen.dart';
+import '../../features/account_screen.dart';
 import '../../features/auth/auth_form_screen.dart';
 import '../../features/auth/auth_select_screen.dart';
-import '../../features/chat/chat_list_screen.dart';
-import '../../features/chat/chat_room_screen.dart';
-import '../../features/diamond/diamond_screen.dart';
-import '../../features/discover/discover_screen.dart';
-import '../../features/home/home_screen.dart';
-import '../../features/report/blacklist_screen.dart';
-import '../../features/report/report_screen.dart';
-import '../../features/upload/upload_screen.dart';
-import '../../features/ai/ai_screen.dart';
-import '../../features/webview/webview_screen.dart';
-import '../../providers/app_state.dart';
-import '../../widgets/app_scaffold.dart';
+import '../../features/chat_list_screen.dart';
+import '../../features/discover_screen.dart';
+import '../../features/home_screen.dart';
+import '../../features/webview_screen.dart';
+import '../../zzokdet_fangfa/app_state.dart';
+import '../../features/widgets/app_scaffold.dart';
 import 'h5_routes.dart';
 
 class AppRouter {
@@ -92,16 +85,6 @@ class AppRouter {
                 path: '/chat',
                 name: 'chat',
                 builder: (context, state) => const ChatListScreen(),
-                routes: [
-                  GoRoute(
-                    path: 'room/:id',
-                    name: 'chat-room',
-                    builder: (context, state) {
-                      final id = state.pathParameters['id']!;
-                      return ChatRoomScreen(threadId: id);
-                    },
-                  ),
-                ],
               ),
             ],
           ),
@@ -118,41 +101,6 @@ class AppRouter {
             ],
           ),
         ],
-      ),
-      GoRoute(
-        path: '/upload',
-        name: 'upload',
-        builder: (context, state) => const UploadScreen(),
-      ),
-      GoRoute(
-        path: '/diamonds',
-        name: 'diamonds',
-        builder: (context, state) => const DiamondScreen(),
-      ),
-      GoRoute(
-        path: '/blacklist',
-        name: 'blacklist',
-        builder: (context, state) => const BlacklistScreen(),
-      ),
-      GoRoute(
-        path: '/report',
-        name: 'report',
-        builder: (context, state) => const ReportScreen(),
-      ),
-      // GoRoute(
-      //   path: '/settings',
-      //   name: 'settings',
-      //   builder: (context, state) => const SettingsScreen(),
-      // ),
-      GoRoute(
-        path: '/profile/edit',
-        name: 'edit-profile',
-        builder: (context, state) => const EditProfileScreen(),
-      ),
-      GoRoute(
-        path: '/ai',
-        name: 'ai',
-        builder: (context, state) => const AiScreen(),
       ),
       // H5 WebView routes
       GoRoute(
@@ -341,7 +289,7 @@ class AppRouter {
       if (!appState.initialized) return null;
 
       final path = state.uri.path;
-      
+
       // H5路由完全独立，不受AppState数据更新的影响
       // 如果检测到H5路由，清除可能保存的H5路由位置，防止路由重新评估时恢复H5页面
       if (path.startsWith('/h5/')) {
@@ -379,8 +327,8 @@ class AppRouter {
       // Save current route location only when no redirect is needed
       // 确保H5路由不会被保存（双重检查，防止意外保存）
       final currentPath = state.uri.toString();
-      if (currentPath.isNotEmpty && 
-          currentPath != '/' && 
+      if (currentPath.isNotEmpty &&
+          currentPath != '/' &&
           !currentPath.startsWith('/h5/')) {
         appState.saveRouteLocation(currentPath);
       }

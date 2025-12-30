@@ -4,9 +4,9 @@ import 'package:provider/provider.dart';
 import 'package:zoryo/models/post.dart';
 import 'package:zoryo/models/user.dart';
 
-import '../../models/publish_option.dart';
-import '../../providers/app_state.dart';
-import '../../widgets/image_helper.dart';
+import '../models/publish_option.dart';
+import '../zzokdet_fangfa/app_state.dart';
+import '../zzokdet_fangfa/image_helper.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key, this.userId});

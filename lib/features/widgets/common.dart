@@ -1,82 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../models/post.dart';
-import '../models/user.dart';
-import '../providers/app_state.dart';
-import 'image_helper.dart';
-
-class UserHeader extends StatelessWidget {
-  const UserHeader({super.key, required this.user, this.trailing});
-
-  final User user;
-  final Widget? trailing;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        CircleAvatar(
-          radius: 26,
-          backgroundImage: smartImageProvider(user.avator),
-        ),
-        const SizedBox(width: 12),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                user.name,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              Text(
-                user.about,
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
-        ),
-        if (trailing != null) trailing!,
-      ],
-    );
-  }
-}
-
-class StatRow extends StatelessWidget {
-  const StatRow({
-    super.key,
-    required this.label,
-    required this.value,
-    this.onTap,
-  });
-  final String label;
-  final String value;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(value,
-              style:
-                  const TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
-          const SizedBox(height: 4),
-          Text(label, style: const TextStyle(color: Colors.white70)),
-        ],
-      ),
-    );
-  }
-}
+import '../../models/post.dart';
+import '../../models/user.dart';
+import '../../zzokdet_fangfa/app_state.dart';
+import '../../zzokdet_fangfa/image_helper.dart';
 
 class PostCard extends StatelessWidget {
   const PostCard(

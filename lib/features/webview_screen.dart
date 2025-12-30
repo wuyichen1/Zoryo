@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/features/diamond/payfunc.dart';
+import 'package:zoryo/zzokdet_fangfa/payfunc.dart';
 
-import '../../models/diamond_pack.dart';
-import '../../providers/app_state.dart';
+import '../models/diamond_pack.dart';
+import '../zzokdet_fangfa/app_state.dart';
 
 class WebViewScreen extends StatefulWidget {
   const WebViewScreen({

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import '../../providers/app_state.dart';
-import '../../widgets/gradient_button.dart';
+import '../../zzokdet_fangfa/app_state.dart';
+import '../widgets/gradient_button.dart';
 
 class EulaDialog extends StatelessWidget {
   const EulaDialog({super.key});

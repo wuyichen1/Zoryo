@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import '../../providers/app_state.dart';
-import '../../widgets/image_helper.dart';
+import '../zzokdet_fangfa/app_state.dart';
+import '../zzokdet_fangfa/image_helper.dart';
 
 class DiscoverScreen extends StatelessWidget {
   const DiscoverScreen({super.key});

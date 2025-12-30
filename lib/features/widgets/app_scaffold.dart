@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-import '../core/theme/app_theme.dart';
-import '../providers/app_state.dart';
-import 'image_helper.dart';
+import '../../core/theme/app_theme.dart';
+import '../../zzokdet_fangfa/app_state.dart';
+import '../../zzokdet_fangfa/image_helper.dart';
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold({super.key, required this.shell});

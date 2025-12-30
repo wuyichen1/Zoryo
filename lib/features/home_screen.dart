@@ -3,10 +3,10 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import '../../models/post.dart';
-import '../../providers/app_state.dart';
-import '../../widgets/common.dart';
-import '../../widgets/image_helper.dart';
+import '../models/post.dart';
+import '../zzokdet_fangfa/app_state.dart';
+import 'widgets/common.dart';
+import '../zzokdet_fangfa/image_helper.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

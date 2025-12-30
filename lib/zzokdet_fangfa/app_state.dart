@@ -189,8 +189,8 @@ class AppState extends ChangeNotifier {
   List<ChatRoom> _filterBlockedChatRooms(List<ChatRoom> chatRoomList) {
     return chatRoomList.where((room) {
       // 检查聊天室中是否有被屏蔽的用户（排除当前用户自己）
-      return !room.chatUserIds.any((userId) =>
-          userId != currentUser.userId && _isUserBlocked(userId));
+      return !room.chatUserIds.any(
+          (userId) => userId != currentUser.userId && _isUserBlocked(userId));
     }).toList();
   }
 
@@ -218,23 +218,11 @@ class AppState extends ChangeNotifier {
     if (userId == currentUser.userId) {
       return posts.where((p) => p.userId == userId).toList();
     }
-    return _filterBlockedPosts(
-        posts.where((p) => p.userId == userId).toList());
-  }
-
-  List<Comment> postComments(String postId) {
-    final filtered = comments.where((c) => c.commentId == postId).toList();
-    return _filterBlockedComments(filtered);
-  }
-
-  List<ChatMessage> chatMessages(String chatId) {
-    final filtered = messages.where((m) => m.chatId == chatId).toList();
-    return _filterBlockedMessages(filtered);
+    return _filterBlockedPosts(posts.where((p) => p.userId == userId).toList());
   }
 
   // 获取过滤后的聊天室列表（排除包含blockList中用户的聊天室）
-  List<ChatRoom> get filteredChatRooms =>
-      _filterBlockedChatRooms(chatRooms);
+  List<ChatRoom> get filteredChatRooms => _filterBlockedChatRooms(chatRooms);
 
   ChatRoom? getChatRoomByPeerId(String peerId) {
     // 如果对方在blockList中，不应该创建或返回聊天室
@@ -257,192 +245,12 @@ class AppState extends ChangeNotifier {
     );
   }
 
-  void addToBlacklist(String userId) {
-    if (blacklist.any((b) => b.userId == userId)) return;
-    blacklist.add(BlacklistItem(userId: userId));
-    // Also update current user's blockList
-    final idx = users.indexWhere((u) => u.userId == currentUser.userId);
-    if (idx != -1) {
-      final updated = currentUser.copyWith(
-        blockList: [...currentUser.blockList, userId],
-      );
-      users[idx] = updated;
-      currentUser = updated;
-    }
-    _persist();
-    notifyListeners();
-  }
-
-  void removeFromBlacklist(String userId) {
-    blacklist.removeWhere((b) => b.userId == userId);
-    // Also update current user's blockList
-    final idx = users.indexWhere((u) => u.userId == currentUser.userId);
-    if (idx != -1) {
-      final updated = currentUser.copyWith(
-        blockList: currentUser.blockList.where((id) => id != userId).toList(),
-      );
-      users[idx] = updated;
-      currentUser = updated;
-    }
-    _persist();
-    notifyListeners();
-  }
-
-  void updateProfile({required String name, required String about}) {
-    final idx = users.indexWhere((u) => u.userId == currentUser.userId);
-    if (idx == -1) return;
-    final updated = currentUser.copyWith(name: name, about: about);
-    users[idx] = updated;
-    currentUser = updated;
-    _persist();
-    notifyListeners();
-  }
-
-  void addPost({
-    required String description,
-    required int titleType,
-    required bool isVideo,
-    required List<String> pics,
-    required String video,
-  }) {
-    final id = 'p${Random().nextInt(99999)}';
-    final post = Post(
-      dynamicId: id,
-      userId: currentUser.userId,
-      dynamicType: isVideo ? 1 : 0,
-      dynamicDesc: description,
-      dynamicTitleType: titleType,
-      dynamicPic: pics,
-      dynamicVideo: video,
-      dynamicLikeCount: 0,
-      dynamicCommentCount: 0,
-    );
-    posts.insert(0, post);
-    _persist();
-    notifyListeners();
-  }
-
-  void addComment(String postId, String content) {
-    final id = 'c${Random().nextInt(99999)}';
-    final comment = Comment(
-      dynamicId: id,
-      commentId: postId,
-      userId: currentUser.userId,
-      content: content,
-    );
-    comments.add(comment);
-
-    // Update post comment count
-    final postIdx = posts.indexWhere((p) => p.dynamicId == postId);
-    if (postIdx != -1) {
-      final post = posts[postIdx];
-      posts[postIdx] = Post(
-        dynamicId: post.dynamicId,
-        userId: post.userId,
-        dynamicType: post.dynamicType,
-        dynamicDesc: post.dynamicDesc,
-        dynamicTitleType: post.dynamicTitleType,
-        dynamicPic: post.dynamicPic,
-        dynamicVideo: post.dynamicVideo,
-        dynamicLikeCount: post.dynamicLikeCount,
-        dynamicCommentCount: post.dynamicCommentCount + 1,
-      );
-    }
-    _persist();
-    notifyListeners();
-  }
-
-  void sendMessage(String chatId, String content, {String? picUrl}) {
-    final id = 'm${Random().nextInt(99999)}';
-    final now = DateTime.now();
-    final timeStr =
-        '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')} ${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}:${now.second.toString().padLeft(2, '0')}';
-
-    final message = ChatMessage(
-      msgId: id,
-      chatId: chatId,
-      userId: currentUser.userId,
-      sendContent: content,
-      sendPicUrl: picUrl ?? '',
-      sendTime: timeStr,
-    );
-    messages.add(message);
-
-    // Update chat room
-    final roomIdx = chatRooms.indexWhere((r) => r.chatId == chatId);
-    if (roomIdx != -1) {
-      final room = chatRooms[roomIdx];
-      chatRooms[roomIdx] = ChatRoom(
-        chatId: room.chatId,
-        chatUserIds: room.chatUserIds,
-        lastSendContent: content,
-        lastSendTime: timeStr,
-        unreadMsgCount: room.unreadMsgCount,
-        lastSendUserId: currentUser.userId,
-      );
-    }
-    _persist();
-    notifyListeners();
-  }
-
   void purchasePack(DiamondPack pack) {
     final idx = users.indexWhere((u) => u.userId == currentUser.userId);
     if (idx == -1) return;
     final updated = currentUser.copyWith(coins: currentUser.coins + pack.cions);
     users[idx] = updated;
     currentUser = updated;
-    _persist();
-    notifyListeners();
-  }
-
-  void spendDiamond(int amount) {
-    final idx = users.indexWhere((u) => u.userId == currentUser.userId);
-    if (idx == -1) return;
-    final updated = currentUser.copyWith(
-      coins: (currentUser.coins - amount).clamp(0, 999999),
-    );
-    users[idx] = updated;
-    currentUser = updated;
-    _persist();
-    notifyListeners();
-  }
-
-  void togglePostLike(String postId, bool isVideo) {
-    final likedIds =
-        isVideo ? currentUser.videoPostLikeIds : currentUser.picPostLikeIds;
-    final isLiked = likedIds.contains(postId);
-
-    final idx = users.indexWhere((u) => u.userId == currentUser.userId);
-    if (idx == -1) return;
-
-    final newLikedIds = isLiked
-        ? likedIds.where((id) => id != postId).toList()
-        : [...likedIds, postId];
-
-    final updated = isVideo
-        ? currentUser.copyWith(videoPostLikeIds: newLikedIds)
-        : currentUser.copyWith(picPostLikeIds: newLikedIds);
-
-    users[idx] = updated;
-    currentUser = updated;
-
-    // Update post like count
-    final postIdx = posts.indexWhere((p) => p.dynamicId == postId);
-    if (postIdx != -1) {
-      final p = posts[postIdx];
-      posts[postIdx] = Post(
-        dynamicId: p.dynamicId,
-        userId: p.userId,
-        dynamicType: p.dynamicType,
-        dynamicDesc: p.dynamicDesc,
-        dynamicTitleType: p.dynamicTitleType,
-        dynamicPic: p.dynamicPic,
-        dynamicVideo: p.dynamicVideo,
-        dynamicLikeCount:
-            isLiked ? p.dynamicLikeCount - 1 : p.dynamicLikeCount + 1,
-        dynamicCommentCount: p.dynamicCommentCount,
-      );
-    }
     _persist();
     notifyListeners();
   }
@@ -692,7 +500,9 @@ class AppState extends ChangeNotifier {
     // Find the diamond pack by key (paymentId)
     final pack = diamondPacks.firstWhere(
       (p) => p.key == paymentId,
-      orElse: () => diamondPacks.isNotEmpty ? diamondPacks.first : DiamondPack(key: '', cions: 0, meney: 0),
+      orElse: () => diamondPacks.isNotEmpty
+          ? diamondPacks.first
+          : DiamondPack(key: '', cions: 0, meney: 0),
     );
 
     if (pack.key.isNotEmpty) {

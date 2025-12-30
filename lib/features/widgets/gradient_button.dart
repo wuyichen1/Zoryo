@@ -21,8 +21,6 @@ class GradientButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final gradient =
-        Theme.of(context).extension<GradientTheme>()!.primaryGradient;
     final child = Container(
       width: width,
       height: height,

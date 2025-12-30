@@ -36,22 +36,6 @@ class AccountScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Color(0xFF0E080F),
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0,
-      //   actions: [
-      //     IconButton(
-      //       onPressed: () {
-      //         if (isSelf) {
-      //           context.push('/h5/setup-page');
-      //         } else {
-      //           context.push('/h5/top-report');
-      //         }
-      //       },
-      //       icon: Icon(isSelf ? Icons.settings : Icons.more_horiz),
-      //     ),
-      //   ],
-      // ),
       body: Stack(
         children: [
           Stack(

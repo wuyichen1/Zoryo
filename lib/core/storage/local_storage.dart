@@ -35,8 +35,7 @@ class LocalStorageService {
 
   Future<void> _seedFromAsset() async {
     String data = await rootBundle.loadString(assetPath);
-    
-    // 如果使用加密的 asset，先解密
+
     if (useEncryptedAsset) {
       try {
         data = data.decrypt();
@@ -45,21 +44,17 @@ class LocalStorageService {
         rethrow;
       }
     }
-    
+
     await _file!.writeAsString(data, flush: true);
   }
 
   Future<Map<String, dynamic>> load() async {
     if (_file == null) await ensureInitialized();
     String raw = await _file!.readAsString();
-    
-    // 尝试解密（如果文件是加密的）
-    // 通过检查是否为有效的 JSON 格式来判断是否需要解密
+
     try {
-      // 先尝试直接解析 JSON
       return jsonDecode(raw) as Map<String, dynamic>;
     } catch (e) {
-      // 如果不是有效的 JSON，尝试解密
       try {
         raw = raw.decrypt();
         return jsonDecode(raw) as Map<String, dynamic>;
@@ -76,7 +71,6 @@ class LocalStorageService {
     await _file!.writeAsString(raw, flush: true);
   }
 
-  // EULA agreement status
   Future<bool> getEulaAgreed() async {
     await ensureInitialized();
     return _prefs!.getBool('eula_agreed') ?? false;
@@ -90,7 +84,6 @@ class LocalStorageService {
     }
   }
 
-  // Login status
   Future<bool> getIsLoggedIn() async {
     if (_prefs == null) await ensureInitialized();
     return _prefs!.getBool('is_logged_in') ?? false;
@@ -101,7 +94,6 @@ class LocalStorageService {
     await _prefs!.setBool('is_logged_in', loggedIn);
   }
 
-  // Quick login user ID
   Future<String?> getQuickLoginUserId() async {
     if (_prefs == null) await ensureInitialized();
     return _prefs!.getString('quick_login_user_id');
@@ -116,7 +108,6 @@ class LocalStorageService {
     }
   }
 
-  // Current logged in user ID
   Future<String?> getCurrentLoggedInUserId() async {
     if (_prefs == null) await ensureInitialized();
     return _prefs!.getString('current_logged_in_user_id');
@@ -131,7 +122,6 @@ class LocalStorageService {
     }
   }
 
-  // Current route location
   Future<String?> getCurrentRouteLocation() async {
     if (_prefs == null) await ensureInitialized();
     return _prefs!.getString('current_route_location');
@@ -146,4 +136,3 @@ class LocalStorageService {
     }
   }
 }
-

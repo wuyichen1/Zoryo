@@ -465,7 +465,7 @@ class AppState extends ChangeNotifier {
       posts.removeWhere((p) => p.nlPxQBFl8qKNMmCt == userIdToDelete);
 
       // Remove user's comments
-      comments.removeWhere((c) => c.userId == userIdToDelete);
+      comments.removeWhere((c) => c.YjHeuERpQWrW2rzh == userIdToDelete);
 
       // Remove chat rooms containing this user
       chatRooms.removeWhere((c) => c.chatUserIds.contains(userIdToDelete));

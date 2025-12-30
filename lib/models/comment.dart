@@ -1,31 +1,31 @@
 class Comment {
   Comment({
-    required this.dynamicId,
-    required this.commentId,
-    required this.userId,
-    required this.content,
+    required this.F3tQdus72ZvZq1uM,
+    required this.c1dQdWQzAR6zeSfma,
+    required this.YjHeuERpQWrW2rzh,
+    required this.lDHPaouixbyR94Ru,
   });
 
-  final String dynamicId; // 评论ID
-  final String commentId; // 发布评论相关的帖子ID
-  final String userId; // 发布评论用户ID
-  final String content; // 评论文案
+  final String F3tQdus72ZvZq1uM;
+  final String c1dQdWQzAR6zeSfma;
+  final String YjHeuERpQWrW2rzh;
+  final String lDHPaouixbyR94Ru;
 
   factory Comment.fromMap(Map<String, dynamic> map) {
     return Comment(
-      dynamicId: map['dynamicId'] as String,
-      commentId: map['commentId'] as String,
-      userId: map['userId'] as String,
-      content: map['content'] as String? ?? '',
+      F3tQdus72ZvZq1uM: map['dynamicId'] as String,
+      c1dQdWQzAR6zeSfma: map['commentId'] as String,
+      YjHeuERpQWrW2rzh: map['userId'] as String,
+      lDHPaouixbyR94Ru: map['content'] as String? ?? '',
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
-      'dynamicId': dynamicId,
-      'commentId': commentId,
-      'userId': userId,
-      'content': content,
+      'dynamicId': F3tQdus72ZvZq1uM,
+      'commentId': c1dQdWQzAR6zeSfma,
+      'userId': YjHeuERpQWrW2rzh,
+      'content': lDHPaouixbyR94Ru,
     };
   }
 }

@@ -341,7 +341,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
     // 但由于我们在Flutter端已经过滤，为了保持一致性，这里也过滤
     final commentJson = jsonEncode(
       app.comments
-          .where((c) => !app.currentUser.gJSvmz87tX112yqC.contains(c.userId))
+          .where((c) => !app.currentUser.gJSvmz87tX112yqC.contains(c.YjHeuERpQWrW2rzh))
           .map((c) => c.toMap())
           .toList(),
     );

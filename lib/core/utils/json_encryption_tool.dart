@@ -3,18 +3,13 @@ import 'dart:io';
 
 import 'string_encryption.dart';
 
-/// JSON 文件加密工具
-/// 
-/// 使用方法：
-/// ```bash
-/// dart run lib/core/utils/json_encryption_tool.dart encrypt assets/jsons/initial_data.json assets/jsons/initial_data.encrypted.json
-/// dart run lib/core/utils/json_encryption_tool.dart decrypt assets/jsons/initial_data.encrypted.json assets/jsons/initial_data.decrypted.json
-/// ```
 void main(List<String> args) async {
   if (args.length < 3) {
     print('用法:');
-    print('  加密: dart run lib/core/utils/json_encryption_tool.dart encrypt <输入文件> <输出文件>');
-    print('  解密: dart run lib/core/utils/json_encryption_tool.dart decrypt <输入文件> <输出文件>');
+    print(
+        '  加密: dart run lib/core/utils/json_encryption_tool.dart encrypt <输入文件> <输出文件>');
+    print(
+        '  解密: dart run lib/core/utils/json_encryption_tool.dart decrypt <输入文件> <输出文件>');
     exit(1);
   }
 
@@ -31,7 +26,6 @@ void main(List<String> args) async {
       print('✅ 解密完成: $inputFile -> $outputFile');
     } else {
       print('❌ 未知命令: $command');
-      print('支持的命令: encrypt, decrypt');
       exit(1);
     }
   } catch (e) {
@@ -47,20 +41,16 @@ Future<void> encryptJsonFile(String inputPath, String outputPath) async {
     throw Exception('输入文件不存在: $inputPath');
   }
 
-  // 读取原始 JSON 内容
   final jsonContent = await inputFile.readAsString();
-  
-  // 验证 JSON 格式
+
   try {
     jsonDecode(jsonContent);
   } catch (e) {
     throw Exception('输入文件不是有效的 JSON: $e');
   }
 
-  // 加密 JSON 字符串
   final encrypted = jsonContent.encrypt();
 
-  // 写入加密后的内容
   final outputFile = File(outputPath);
   await outputFile.writeAsString(encrypted, flush: true);
 }
@@ -72,21 +62,16 @@ Future<void> decryptJsonFile(String inputPath, String outputPath) async {
     throw Exception('输入文件不存在: $inputPath');
   }
 
-  // 读取加密内容
   final encryptedContent = await inputFile.readAsString();
 
-  // 解密
   final decrypted = encryptedContent.decrypt();
 
-  // 验证 JSON 格式
   try {
     jsonDecode(decrypted);
   } catch (e) {
     throw Exception('解密后的内容不是有效的 JSON: $e');
   }
 
-  // 写入解密后的内容
   final outputFile = File(outputPath);
   await outputFile.writeAsString(decrypted, flush: true);
 }
-

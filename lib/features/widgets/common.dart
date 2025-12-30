@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../models/post.dart';
-import '../../models/user.dart';
+import '../../models/tdpFegrWPc3sjlaQ_post.dart';
+import '../../models/u2749HToRfgbLVPrM_user.dart';
 import '../../zzokdet_fangfa/app_state.dart';
 import '../../zzokdet_fangfa/image_helper.dart';
 
@@ -10,8 +10,8 @@ class PostCard extends StatelessWidget {
   const PostCard(
       {super.key, required this.post, required this.author, this.onTap});
 
-  final Post post;
-  final User author;
+  final TdpFegrWPc3sjlaQPost post;
+  final U2749HToRfgbLVPrMUser author;
   final VoidCallback? onTap;
 
   @override
@@ -121,7 +121,7 @@ class PostCard extends StatelessWidget {
     final imageCount = images.length;
 
     // 如果是视频，显示视频封面
-    if (post.isVideo) {
+    if (post.amKEbF9mgIneMVni) {
       return ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: AspectRatio(
@@ -130,7 +130,7 @@ class PostCard extends StatelessWidget {
             fit: StackFit.expand,
             children: [
               SmartImage(
-                url: post.imageUrl,
+                url: post.kitYNCH7Xp32Jfbn,
                 fit: BoxFit.cover,
               ),
               const Center(

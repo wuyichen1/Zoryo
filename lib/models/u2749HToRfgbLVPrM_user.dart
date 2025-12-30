@@ -1,5 +1,5 @@
-class User {
-  User({
+class U2749HToRfgbLVPrMUser {
+  U2749HToRfgbLVPrMUser({
     required this.fkloYnZiRmbRtJ00, //userId
     required this.UH6Wfi7WIQ8UtXwg, //email
     required this.fyVNw5c7FRNN1Eui, //password
@@ -27,9 +27,9 @@ class User {
   final List<String> KYDuo9abCwLnI6Hs;
   final List<String> IibbF2RfvAxYkcQo;
 
-  factory User.fromMap(Map<String, dynamic> map) {
+  factory U2749HToRfgbLVPrMUser.fromMap(Map<String, dynamic> map) {
     // 支持原始字段名和混淆字段名（向后兼容）
-    return User(
+    return U2749HToRfgbLVPrMUser(
       fkloYnZiRmbRtJ00: map['userId'] as String? ?? '',
       UH6Wfi7WIQ8UtXwg: map['email'] as String? ?? '',
       fyVNw5c7FRNN1Eui: map['password'] as String? ?? '',
@@ -73,7 +73,7 @@ class User {
     };
   }
 
-  User copyWith({
+  U2749HToRfgbLVPrMUser copyWith({
     String? fkloYnZiRmbRtJ00,
     String? UH6Wfi7WIQ8UtXwg,
     String? fyVNw5c7FRNN1Eui,
@@ -87,7 +87,7 @@ class User {
     List<String>? KYDuo9abCwLnI6Hs,
     List<String>? IibbF2RfvAxYkcQo,
   }) {
-    return User(
+    return U2749HToRfgbLVPrMUser(
       fkloYnZiRmbRtJ00: fkloYnZiRmbRtJ00 ?? this.fkloYnZiRmbRtJ00,
       UH6Wfi7WIQ8UtXwg: UH6Wfi7WIQ8UtXwg ?? this.UH6Wfi7WIQ8UtXwg,
       fyVNw5c7FRNN1Eui: fyVNw5c7FRNN1Eui ?? this.fyVNw5c7FRNN1Eui,
@@ -103,6 +103,6 @@ class User {
     );
   }
 
-  int get fansCount => s9aX89KJIs05vih3O.length; //fansCount
-  int get followsCount => f9FuGnEvLPZO4IWMA.length;
+  int get f6YraHIhR7V90HhtY => s9aX89KJIs05vih3O.length; //fansCount
+  int get fXA564UJNy9pbJeS => f9FuGnEvLPZO4IWMA.length; //followsCount
 }

@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/zzokdet_fangfa/payfunc.dart';
 
-import '../models/diamond_pack.dart';
+import '../models/bJpjHVrAqvtNbCtL_diapack.dart';
 import '../zzokdet_fangfa/app_state.dart';
 
 class WebViewScreen extends StatefulWidget {
@@ -216,13 +216,13 @@ class _WebViewScreenState extends State<WebViewScreen> {
                       final paymentId = args[0] as String;
                       // 查找对应的金币包
                       final pack = app.diamondPacks.firstWhere(
-                        (p) => p.key == paymentId,
+                        (p) => p.k4g89xQIHDro7dyFy == paymentId,
                         orElse: () => app.diamondPacks.isNotEmpty
                             ? app.diamondPacks.first
-                            : DiamondPack(key: '', cions: 0, meney: 0),
+                            : BJpjHVrAqvtNbCtLDiapack(k4g89xQIHDro7dyFy: '', LylHtfRBcO1D0w0M: 0, oY2gDyZaF80kazMx: 0),
                       );
 
-                      if (pack.key.isNotEmpty) {
+                      if (pack.k4g89xQIHDro7dyFy.isNotEmpty) {
                         // 执行支付，等待支付结果
                         final paymentSuccess =
                             await thotharapisRahephylothFanffa(
@@ -232,7 +232,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
                         if (paymentSuccess) {
                           await controller.evaluateJavascript(
                             source:
-                                'window.onRechargeSuccess && window.onRechargeSuccess(${pack.cions})',
+                                'window.onRechargeSuccess && window.onRechargeSuccess(${pack.LylHtfRBcO1D0w0M})',
                           );
                         }
                       }

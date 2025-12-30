@@ -3,8 +3,8 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/models/post.dart';
-import 'package:zoryo/models/user.dart';
+import 'package:zoryo/models/tdpFegrWPc3sjlaQ_post.dart';
+import 'package:zoryo/models/u2749HToRfgbLVPrM_user.dart';
 
 import '../zzokdet_fangfa/app_state.dart';
 import '../zzokdet_fangfa/image_helper.dart';
@@ -153,8 +153,8 @@ class _ReleaseYourWorkCard extends StatelessWidget {
 
 class _DiscoverCard extends StatelessWidget {
   const _DiscoverCard({required this.post, required this.user});
-  final Post post;
-  final User user;
+  final TdpFegrWPc3sjlaQPost post;
+  final U2749HToRfgbLVPrMUser user;
 
   @override
   Widget build(BuildContext context) {
@@ -187,7 +187,7 @@ class _DiscoverCard extends StatelessWidget {
                       fit: StackFit.expand,
                       children: [
                         SmartImage(
-                          url: post.imageUrl,
+                          url: post.kitYNCH7Xp32Jfbn,
                           fit: BoxFit.cover,
                         ),
                         const Center(

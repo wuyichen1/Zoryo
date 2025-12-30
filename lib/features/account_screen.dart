@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/models/post.dart';
-import 'package:zoryo/models/user.dart';
+import 'package:zoryo/models/tdpFegrWPc3sjlaQ_post.dart';
+import 'package:zoryo/models/u2749HToRfgbLVPrM_user.dart';
 
-import '../models/publish_option.dart';
+import '../models/p8JqmePjljoN7whd3_puboption.dart';
 import '../zzokdet_fangfa/app_state.dart';
 import '../zzokdet_fangfa/image_helper.dart';
 
@@ -14,12 +14,12 @@ class AccountScreen extends StatelessWidget {
 
   /// 根据dynamicTitleType获取标签名称
   String _getCategoryName(
-      int dynamicTitleType, List<PublishOption> publishOptions) {
+      int dynamicTitleType, List<P8JqmePjljoN7whd3PublishOption> publishOptions) {
     try {
       final option = publishOptions.firstWhere(
-        (opt) => opt.value == dynamicTitleType,
+        (opt) => opt.AVlrJJlyQVJKJinw == dynamicTitleType,
       );
-      return option.name;
+      return option.dLZro0xH62HF5exT;
     } catch (e) {
       return 'Theme';
     }
@@ -172,7 +172,7 @@ class AccountScreen extends StatelessWidget {
                               children: [
                                 SizedBox(height: 8),
                                 Text(
-                                  '${target.fansCount}',
+                                  '${target.f6YraHIhR7V90HhtY}',
                                   style: const TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w700,
@@ -181,7 +181,7 @@ class AccountScreen extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
-                                  target.fansCount > 1 ? 'Fans' : 'Fan',
+                                  target.f6YraHIhR7V90HhtY > 1 ? 'Fans' : 'Fan',
                                   style: const TextStyle(
                                     fontSize: 14,
                                     color: Colors.white70,
@@ -205,7 +205,7 @@ class AccountScreen extends StatelessWidget {
                               children: [
                                 SizedBox(height: 8),
                                 Text(
-                                  '${target.followsCount}',
+                                  '${target.fXA564UJNy9pbJeS}',
                                   style: const TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w700,
@@ -280,7 +280,7 @@ class AccountScreen extends StatelessWidget {
                               app.getChatRoomByPeerId(target.fkloYnZiRmbRtJ00);
                           if (chatRoom != null) {
                             context
-                                .push('/h5/private-chat?id=${chatRoom.chatId}');
+                                .push('/h5/private-chat?id=${chatRoom.c5sk5SraIUZ47JRVo}');
                           }
                         },
                         child: const Text('Chat'),
@@ -374,8 +374,8 @@ class VideoCard extends StatelessWidget {
     this.onTap,
   });
 
-  final Post post;
-  final User author;
+  final TdpFegrWPc3sjlaQPost post;
+  final U2749HToRfgbLVPrMUser author;
   final String categoryName; // 标签名称，如 "Theme"
   final VoidCallback? onTap;
 

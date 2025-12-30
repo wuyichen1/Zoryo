@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import '../models/post.dart';
+import '../models/tdpFegrWPc3sjlaQ_post.dart';
 import '../zzokdet_fangfa/app_state.dart';
 import 'widgets/common.dart';
 import '../zzokdet_fangfa/image_helper.dart';
@@ -370,7 +370,7 @@ class _CustomTabBarState extends State<_CustomTabBar> {
 
 class _PostsList extends StatelessWidget {
   const _PostsList({required this.posts, required this.app});
-  final List<Post> posts;
+  final List<TdpFegrWPc3sjlaQPost> posts;
   final AppState app;
 
   @override

@@ -1,5 +1,5 @@
-class Comment {
-  Comment({
+class MLWrwTEsH7mWmgZPCommt {
+  MLWrwTEsH7mWmgZPCommt({
     required this.F3tQdus72ZvZq1uM,
     required this.c1dQdWQzAR6zeSfma,
     required this.YjHeuERpQWrW2rzh,
@@ -11,8 +11,8 @@ class Comment {
   final String YjHeuERpQWrW2rzh;
   final String lDHPaouixbyR94Ru;
 
-  factory Comment.fromMap(Map<String, dynamic> map) {
-    return Comment(
+  factory MLWrwTEsH7mWmgZPCommt.fromMap(Map<String, dynamic> map) {
+    return MLWrwTEsH7mWmgZPCommt(
       F3tQdus72ZvZq1uM: map['dynamicId'] as String,
       c1dQdWQzAR6zeSfma: map['commentId'] as String,
       YjHeuERpQWrW2rzh: map['userId'] as String,

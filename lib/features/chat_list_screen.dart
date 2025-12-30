@@ -14,7 +14,7 @@ class ChatListScreen extends StatelessWidget {
     final app = context.watch<AppState>();
     // 筛选出包含当前登录用户的聊天室，并排除包含blockList中用户的聊天室
     final filteredRooms = app.filteredChatRooms
-        .where((room) => room.chatUserIds.contains(app.currentUser.fkloYnZiRmbRtJ00))
+        .where((room) => room.R1DrlWpgkNODxc7I.contains(app.currentUser.fkloYnZiRmbRtJ00))
         .toList();
     return Scaffold(
       // appBar: AppBar(title: const Text('Chat')),
@@ -93,10 +93,10 @@ class ChatListScreen extends StatelessWidget {
                   padding: EdgeInsets.only(top: 16, bottom: 130),
                   itemBuilder: (context, index) {
                     final room = filteredRooms[index];
-                    final peerId = room.chatUserIds.firstWhere(
+                    final peerId = room.R1DrlWpgkNODxc7I.firstWhere(
                       (id) => id != app.currentUser.fkloYnZiRmbRtJ00,
-                      orElse: () => room.chatUserIds.isNotEmpty
-                          ? room.chatUserIds.first
+                      orElse: () => room.R1DrlWpgkNODxc7I.isNotEmpty
+                          ? room.R1DrlWpgkNODxc7I.first
                           : '',
                     );
                     final peer = app.userById(peerId);
@@ -148,19 +148,19 @@ class ChatListScreen extends StatelessWidget {
                         ),
                       ),
                       subtitle: Text(
-                        room.lastSendContent,
+                        room.l46a7ZEmfVdDDNMKJ,
                         style: GoogleFonts.montserrat(
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
                           fontSize: 15,
                         ),
                       ),
-                      trailing: room.unreadMsgCount > 0
+                      trailing: room.uQsMIZjDCeFbmLAP > 0
                           ? CircleAvatar(
                               radius: 11,
                               backgroundColor: Color(0xFFFF5757),
                               child: Text(
-                                '${room.unreadMsgCount}',
+                                '${room.uQsMIZjDCeFbmLAP}',
                                 style: const TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
@@ -170,7 +170,7 @@ class ChatListScreen extends StatelessWidget {
                             )
                           : null,
                       onTap: () =>
-                          context.push('/h5/private-chat?id=${room.chatId}'),
+                          context.push('/h5/private-chat?id=${room.c5sk5SraIUZ47JRVo}'),
                     );
                   },
                   separatorBuilder: (_, __) => const Divider(

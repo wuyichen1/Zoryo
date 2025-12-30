@@ -1,5 +1,5 @@
-class Post {
-  Post({
+class TdpFegrWPc3sjlaQPost {
+  TdpFegrWPc3sjlaQPost({
     required this.qCzdv3cLqVGfralN,
     required this.nlPxQBFl8qKNMmCt,
     required this.ocN7sEFUY2qW0Zgr,
@@ -21,8 +21,8 @@ class Post {
   final int jShz1CDkEjVxqPS0;
   final int c87SZoIBDjypXU2KF;
 
-  factory Post.fromMap(Map<String, dynamic> map) {
-    return Post(
+  factory TdpFegrWPc3sjlaQPost.fromMap(Map<String, dynamic> map) {
+    return TdpFegrWPc3sjlaQPost(
       qCzdv3cLqVGfralN: map['dynamicId'] as String,
       nlPxQBFl8qKNMmCt: map['userId'] as String,
       ocN7sEFUY2qW0Zgr: (map['dynamicType'] ?? 0) as int,
@@ -51,18 +51,18 @@ class Post {
     };
   }
 
-  bool get isVideo => ocN7sEFUY2qW0Zgr == 1;
-  String get imageUrl =>
-      DFaJPr04YQi08GFg.isNotEmpty ? DFaJPr04YQi08GFg.first : '';
-  String get category {
-    const categories = [
+  bool get amKEbF9mgIneMVni => ocN7sEFUY2qW0Zgr == 1; //isVideo
+  String get kitYNCH7Xp32Jfbn =>
+      DFaJPr04YQi08GFg.isNotEmpty ? DFaJPr04YQi08GFg.first : ''; //imageUrl
+  String get INWCOb6Ba2b5lyo5 {
+    const sjTgIKiDu74K9VGM = [
       'Daily Glow',
       'Office Polished',
       'Travel Vibe',
       'Party Shine'
     ];
-    return Q5NZavasJD1R1f99 < categories.length
-        ? categories[Q5NZavasJD1R1f99]
+    return Q5NZavasJD1R1f99 < sjTgIKiDu74K9VGM.length
+        ? sjTgIKiDu74K9VGM[Q5NZavasJD1R1f99]
         : 'ALL';
-  }
+  } //category
 }

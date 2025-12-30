@@ -116,22 +116,48 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
           ],
         ),
         const SizedBox(height: 20),
-        TextField(
-          controller: pwdCtrl,
-          obscureText: true,
-          decoration: InputDecoration(
-            hintText: 'Enter password',
-            // labelText: widget.mode == 'forgot' ? 'New password' : 'Password',
-          ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Password',
+              style: GoogleFonts.montserrat(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(height: 12),
+            TextField(
+              controller: pwdCtrl,
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: 'Enter password',
+                // labelText: widget.mode == 'forgot' ? 'New password' : 'Password',
+              ),
+            ),
+          ],
         ),
         if (widget.mode != 'login') ...[
           const SizedBox(height: 20),
-          TextField(
-            obscureText: true,
-            decoration: const InputDecoration(
-              hintText: 'Repeat password',
-              // labelText: 'Password',
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Repeat password',
+                style: GoogleFonts.montserrat(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(height: 12),
+              TextField(
+                obscureText: true,
+                decoration: const InputDecoration(
+                  hintText: 'Repeat password',
+                  // labelText: 'Password',
+                ),
+              ),
+            ],
           ),
         ],
         const SizedBox(height: 20),

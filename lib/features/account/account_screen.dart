@@ -6,7 +6,6 @@ import 'package:zoryo/models/user.dart';
 
 import '../../models/publish_option.dart';
 import '../../providers/app_state.dart';
-import '../../widgets/common.dart';
 import '../../widgets/image_helper.dart';
 
 class AccountScreen extends StatelessWidget {

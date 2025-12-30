@@ -159,7 +159,7 @@ class _DiscoverCard extends StatelessWidget {
     final currentUser = app.currentUser;
 
     // 判断是否已点赞：视频帖子检查 videoPostLikeIds
-    final isLiked = currentUser.videoPostLikeIds.contains(post.dynamicId);
+    final isLiked = currentUser.IibbF2RfvAxYkcQo.contains(post.dynamicId);
 
     return GestureDetector(
       onTap: () {
@@ -213,7 +213,7 @@ class _DiscoverCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: CircleAvatar(
-                        backgroundImage: smartImageProvider(user.avator),
+                        backgroundImage: smartImageProvider(user.RmXHAp70ovHNBN4U),
                         radius: 14,
                       ),
                     ),
@@ -221,7 +221,7 @@ class _DiscoverCard extends StatelessWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      user.name,
+                      user.AWWxvC6FbYICMs9P,
                       style: const TextStyle(
                         fontWeight: FontWeight.w700,
                         color: Colors.black,

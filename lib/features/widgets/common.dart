@@ -21,8 +21,8 @@ class PostCard extends StatelessWidget {
 
     // 判断是否已点赞：图片帖子检查 picPostLikeIds，视频帖子检查 videoPostLikeIds
     final isLiked = post.dynamicType == 0
-        ? currentUser.picPostLikeIds.contains(post.dynamicId)
-        : currentUser.videoPostLikeIds.contains(post.dynamicId);
+        ? currentUser.KYDuo9abCwLnI6Hs.contains(post.dynamicId)
+        : currentUser.IibbF2RfvAxYkcQo.contains(post.dynamicId);
 
     return InkWell(
       onTap: onTap,
@@ -58,7 +58,7 @@ class PostCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: CircleAvatar(
-                        backgroundImage: smartImageProvider(author.avator),
+                        backgroundImage: smartImageProvider(author.RmXHAp70ovHNBN4U),
                         radius: 18,
                       ),
                     ),
@@ -78,7 +78,7 @@ class PostCard extends StatelessWidget {
                     },
                     blendMode: BlendMode.srcIn,
                     child: Text(
-                      author.name,
+                      author.AWWxvC6FbYICMs9P,
                       style: const TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 18,

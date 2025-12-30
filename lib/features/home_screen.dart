@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 child: CircleAvatar(
                                   radius: 28,
                                   backgroundImage:
-                                      smartImageProvider(user.avator),
+                                      smartImageProvider(user.RmXHAp70ovHNBN4U),
                                 ),
                               ),
                             ),
@@ -108,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen>
                                 ),
                                 SizedBox(height: 4),
                                 Text(
-                                  user.name,
+                                  user.AWWxvC6FbYICMs9P,
                                   style: GoogleFonts.montserrat(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w600,

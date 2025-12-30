@@ -14,7 +14,7 @@ class ChatListScreen extends StatelessWidget {
     final app = context.watch<AppState>();
     // 筛选出包含当前登录用户的聊天室，并排除包含blockList中用户的聊天室
     final filteredRooms = app.filteredChatRooms
-        .where((room) => room.chatUserIds.contains(app.currentUser.userId))
+        .where((room) => room.chatUserIds.contains(app.currentUser.fkloYnZiRmbRtJ00))
         .toList();
     return Scaffold(
       // appBar: AppBar(title: const Text('Chat')),
@@ -56,7 +56,7 @@ class ChatListScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(4.0),
                         child: CircleAvatar(
                           backgroundImage:
-                              smartImageProvider(app.currentUser.avator),
+                              smartImageProvider(app.currentUser.RmXHAp70ovHNBN4U),
                           radius: 24,
                         ),
                       ),
@@ -94,7 +94,7 @@ class ChatListScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final room = filteredRooms[index];
                     final peerId = room.chatUserIds.firstWhere(
-                      (id) => id != app.currentUser.userId,
+                      (id) => id != app.currentUser.fkloYnZiRmbRtJ00,
                       orElse: () => room.chatUserIds.isNotEmpty
                           ? room.chatUserIds.first
                           : '',
@@ -119,7 +119,7 @@ class ChatListScreen extends StatelessWidget {
                           padding: const EdgeInsets.all(1.5),
                           child: CircleAvatar(
                             backgroundImage: smartImageProvider(
-                              peer.avator,
+                              peer.RmXHAp70ovHNBN4U,
                             ),
                             radius: 26,
                           ),
@@ -139,7 +139,7 @@ class ChatListScreen extends StatelessWidget {
                         },
                         blendMode: BlendMode.srcIn,
                         child: Text(
-                          peer.name,
+                          peer.AWWxvC6FbYICMs9P,
                           style: GoogleFonts.montserrat(
                             fontWeight: FontWeight.w700,
                             color: Colors.white,

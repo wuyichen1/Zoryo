@@ -53,7 +53,7 @@ class AppState extends ChangeNotifier {
       final loggedInUserId = await storage.getCurrentLoggedInUserId();
       if (loggedInUserId != null) {
         final foundUser = users.firstWhere(
-          (u) => u.userId == loggedInUserId,
+          (u) => u.fkloYnZiRmbRtJ00 == loggedInUserId,
           orElse: () => _createDefaultUser(),
         );
         currentUser = foundUser;
@@ -127,24 +127,24 @@ class AppState extends ChangeNotifier {
 
   User _createDefaultUser() {
     return User(
-      userId: 'u1',
-      email: '',
-      password: '',
-      avator: '',
-      name: 'User',
-      about: '',
-      coins: 0,
-      follow: [],
-      fans: [],
-      blockList: [],
-      picPostLikeIds: [],
-      videoPostLikeIds: [],
+      fkloYnZiRmbRtJ00: 'u1',
+      UH6Wfi7WIQ8UtXwg: '',
+      fyVNw5c7FRNN1Eui: '',
+      RmXHAp70ovHNBN4U: '',
+      AWWxvC6FbYICMs9P: 'User',
+      Sfy5ovPIlV0PS5C2: '',
+      IlyH5k6lZ7fVAHfQ: 0,
+      f9FuGnEvLPZO4IWMA: [],
+      s9aX89KJIs05vih3O: [],
+      gJSvmz87tX112yqC: [],
+      KYDuo9abCwLnI6Hs: [],
+      IibbF2RfvAxYkcQo: [],
     );
   }
 
   Future<void> _persist() async {
     final data = {
-      'currentUserId': currentUser.userId,
+      'currentUserId': currentUser.fkloYnZiRmbRtJ00,
       'userJson': currentUser.toMap(),
       'userListJson': users.map((e) => e.toMap()).toList(),
       'dynamicJson': posts.map((e) => e.toMap()).toList(),
@@ -161,13 +161,13 @@ class AppState extends ChangeNotifier {
   }
 
   User userById(String id) => users.firstWhere(
-        (u) => u.userId == id,
+        (u) => u.fkloYnZiRmbRtJ00 == id,
         orElse: () => currentUser,
       );
 
   // 检查用户是否在blockList中
   bool _isUserBlocked(String userId) {
-    return currentUser.blockList.contains(userId);
+    return currentUser.gJSvmz87tX112yqC.contains(userId);
   }
 
   // 过滤帖子列表，排除blockList中用户的帖子
@@ -175,22 +175,12 @@ class AppState extends ChangeNotifier {
     return postList.where((p) => !_isUserBlocked(p.userId)).toList();
   }
 
-  // 过滤评论列表，排除blockList中用户的评论
-  List<Comment> _filterBlockedComments(List<Comment> commentList) {
-    return commentList.where((c) => !_isUserBlocked(c.userId)).toList();
-  }
-
-  // 过滤消息列表，排除blockList中用户的消息
-  List<ChatMessage> _filterBlockedMessages(List<ChatMessage> messageList) {
-    return messageList.where((m) => !_isUserBlocked(m.userId)).toList();
-  }
-
   // 过滤聊天室列表，排除包含blockList中用户的聊天室
   List<ChatRoom> _filterBlockedChatRooms(List<ChatRoom> chatRoomList) {
     return chatRoomList.where((room) {
       // 检查聊天室中是否有被屏蔽的用户（排除当前用户自己）
-      return !room.chatUserIds.any(
-          (userId) => userId != currentUser.userId && _isUserBlocked(userId));
+      return !room.chatUserIds.any((userId) =>
+          userId != currentUser.fkloYnZiRmbRtJ00 && _isUserBlocked(userId));
     }).toList();
   }
 
@@ -215,7 +205,7 @@ class AppState extends ChangeNotifier {
 
   List<Post> userPosts(String userId) {
     // 如果查看的是自己的账户，不过滤；否则过滤掉blockList中的用户
-    if (userId == currentUser.userId) {
+    if (userId == currentUser.fkloYnZiRmbRtJ00) {
       return posts.where((p) => p.userId == userId).toList();
     }
     return _filterBlockedPosts(posts.where((p) => p.userId == userId).toList());
@@ -231,11 +221,11 @@ class AppState extends ChangeNotifier {
     }
     return chatRooms.firstWhere(
       (c) =>
-          c.chatUserIds.contains(currentUser.userId) &&
+          c.chatUserIds.contains(currentUser.fkloYnZiRmbRtJ00) &&
           c.chatUserIds.contains(peerId),
       orElse: () => ChatRoom(
         chatId: 'c${Random().nextInt(99999)}',
-        chatUserIds: [currentUser.userId, peerId],
+        chatUserIds: [currentUser.fkloYnZiRmbRtJ00, peerId],
         lastSendContent: '',
         lastSendTime:
             DateTime.now().toString().substring(0, 19).replaceAll('T', ' '),
@@ -246,9 +236,11 @@ class AppState extends ChangeNotifier {
   }
 
   void purchasePack(DiamondPack pack) {
-    final idx = users.indexWhere((u) => u.userId == currentUser.userId);
+    final idx = users
+        .indexWhere((u) => u.fkloYnZiRmbRtJ00 == currentUser.fkloYnZiRmbRtJ00);
     if (idx == -1) return;
-    final updated = currentUser.copyWith(coins: currentUser.coins + pack.cions);
+    final updated = currentUser.copyWith(
+        IlyH5k6lZ7fVAHfQ: currentUser.IlyH5k6lZ7fVAHfQ + pack.cions);
     users[idx] = updated;
     currentUser = updated;
     _persist();
@@ -266,48 +258,49 @@ class AppState extends ChangeNotifier {
   Future<void> loginWithEmail(String email, String password) async {
     // Find user by email and password
     final user = users.firstWhere(
-      (u) => u.email == email && u.password == password,
+      (u) => u.UH6Wfi7WIQ8UtXwg == email && u.fyVNw5c7FRNN1Eui == password,
       orElse: () => _createDefaultUser(),
     );
 
-    if (user.userId != 'u1' ||
-        users.any((u) => u.email == email && u.password == password)) {
+    if (user.fkloYnZiRmbRtJ00 != 'u1' ||
+        users.any((u) =>
+            u.UH6Wfi7WIQ8UtXwg == email && u.fyVNw5c7FRNN1Eui == password)) {
       currentUser = user;
       isLoggedIn = true;
       await storage.setIsLoggedIn(true);
-      await storage.setCurrentLoggedInUserId(user.userId);
+      await storage.setCurrentLoggedInUserId(user.fkloYnZiRmbRtJ00);
       notifyListeners();
     }
   }
 
   Future<void> signupWithEmail(String email, String password) async {
     // Check if email already exists
-    if (users.any((u) => u.email == email)) {
+    if (users.any((u) => u.UH6Wfi7WIQ8UtXwg == email)) {
       return; // Email already exists
     }
 
     // Create new user
     final newUserId = 'u_${DateTime.now().millisecondsSinceEpoch}';
     final newUser = User(
-      userId: newUserId,
-      email: email,
-      password: password,
-      avator: 'assets/images/zoryo_logo.png',
-      name: email.split('@').first,
-      about: '',
-      coins: 0,
-      follow: [],
-      fans: [],
-      blockList: [],
-      picPostLikeIds: [],
-      videoPostLikeIds: [],
+      fkloYnZiRmbRtJ00: newUserId,
+      UH6Wfi7WIQ8UtXwg: email,
+      fyVNw5c7FRNN1Eui: password,
+      RmXHAp70ovHNBN4U: 'assets/images/zoryo_logo.png',
+      AWWxvC6FbYICMs9P: email.split('@').first,
+      Sfy5ovPIlV0PS5C2: '',
+      IlyH5k6lZ7fVAHfQ: 0,
+      f9FuGnEvLPZO4IWMA: [],
+      s9aX89KJIs05vih3O: [],
+      gJSvmz87tX112yqC: [],
+      KYDuo9abCwLnI6Hs: [],
+      IibbF2RfvAxYkcQo: [],
     );
 
     users.add(newUser);
     currentUser = newUser;
     isLoggedIn = true;
     await storage.setIsLoggedIn(true);
-    await storage.setCurrentLoggedInUserId(newUser.userId);
+    await storage.setCurrentLoggedInUserId(newUser.fkloYnZiRmbRtJ00);
     await _persist();
     notifyListeners();
   }
@@ -318,16 +311,16 @@ class AppState extends ChangeNotifier {
     if (quickLoginUserId != null) {
       // Check if quick login user still exists
       final user = users.firstWhere(
-        (u) => u.userId == quickLoginUserId,
+        (u) => u.fkloYnZiRmbRtJ00 == quickLoginUserId,
         orElse: () => _createDefaultUser(),
       );
 
-      if (user.userId == quickLoginUserId) {
+      if (user.fkloYnZiRmbRtJ00 == quickLoginUserId) {
         // User exists, login
         currentUser = user;
         isLoggedIn = true;
         await storage.setIsLoggedIn(true);
-        await storage.setCurrentLoggedInUserId(user.userId);
+        await storage.setCurrentLoggedInUserId(user.fkloYnZiRmbRtJ00);
         notifyListeners();
         return;
       } else {
@@ -339,33 +332,33 @@ class AppState extends ChangeNotifier {
     // First time quick login or user was deleted, create new user
     final newUserId = 'u_quick_${Random().nextInt(999999)}';
     final newUser = User(
-      userId: newUserId,
-      email: 'quick_$newUserId@quick.com',
-      password: '',
-      avator: 'assets/images/zoryo_logo.png',
-      name: 'User ${newUserId.substring(newUserId.length - 4)}',
-      about: 'Quick login user',
-      coins: 0,
-      follow: [],
-      fans: [],
-      blockList: [],
-      picPostLikeIds: [],
-      videoPostLikeIds: [],
+      fkloYnZiRmbRtJ00: newUserId,
+      UH6Wfi7WIQ8UtXwg: 'quick_$newUserId@quick.com',
+      fyVNw5c7FRNN1Eui: '',
+      RmXHAp70ovHNBN4U: 'assets/images/zoryo_logo.png',
+      AWWxvC6FbYICMs9P: 'User ${newUserId.substring(newUserId.length - 4)}',
+      Sfy5ovPIlV0PS5C2: 'Quick login user',
+      IlyH5k6lZ7fVAHfQ: 0,
+      f9FuGnEvLPZO4IWMA: [],
+      s9aX89KJIs05vih3O: [],
+      gJSvmz87tX112yqC: [],
+      KYDuo9abCwLnI6Hs: [],
+      IibbF2RfvAxYkcQo: [],
     );
 
     users.add(newUser);
     currentUser = newUser;
     isLoggedIn = true;
     await storage.setIsLoggedIn(true);
-    await storage.setCurrentLoggedInUserId(newUser.userId);
-    await storage.setQuickLoginUserId(newUser.userId);
+    await storage.setCurrentLoggedInUserId(newUser.fkloYnZiRmbRtJ00);
+    await storage.setQuickLoginUserId(newUser.fkloYnZiRmbRtJ00);
     await _persist();
     notifyListeners();
   }
 
   Future<void> logout() async {
     final wasQuickLogin =
-        await storage.getQuickLoginUserId() == currentUser.userId;
+        await storage.getQuickLoginUserId() == currentUser.fkloYnZiRmbRtJ00;
 
     isLoggedIn = false;
     await storage.setIsLoggedIn(false);
@@ -399,7 +392,7 @@ class AppState extends ChangeNotifier {
         final loggedInUserId = await storage.getCurrentLoggedInUserId();
         if (loggedInUserId != null) {
           final foundUser = users.firstWhere(
-            (u) => u.userId == loggedInUserId,
+            (u) => u.fkloYnZiRmbRtJ00 == loggedInUserId,
             orElse: () => _createDefaultUser(),
           );
           currentUser = foundUser;
@@ -463,10 +456,10 @@ class AppState extends ChangeNotifier {
 
   Future<void> deleteAccount() async {
     try {
-      final userIdToDelete = currentUser.userId;
+      final userIdToDelete = currentUser.fkloYnZiRmbRtJ00;
 
       // Remove user from users list
-      users.removeWhere((u) => u.userId == userIdToDelete);
+      users.removeWhere((u) => u.fkloYnZiRmbRtJ00 == userIdToDelete);
 
       // Remove user's posts
       posts.removeWhere((p) => p.userId == userIdToDelete);

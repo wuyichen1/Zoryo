@@ -29,10 +29,12 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final app = context.watch<AppState>();
     final target = userId == null ? app.currentUser : app.userById(userId!);
-    final isSelf = target.userId == app.currentUser.userId;
+    final isSelf = target.fkloYnZiRmbRtJ00 == app.currentUser.fkloYnZiRmbRtJ00;
     // 只显示视频帖子
-    final videoPosts =
-        app.userPosts(target.userId).where((p) => p.dynamicType == 1).toList();
+    final videoPosts = app
+        .userPosts(target.fkloYnZiRmbRtJ00)
+        .where((p) => p.dynamicType == 1)
+        .toList();
 
     return Scaffold(
       backgroundColor: Color(0xFF0E080F),
@@ -45,7 +47,7 @@ class AccountScreen extends StatelessWidget {
                 height: 300,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: smartImageProvider(target.avator),
+                    image: smartImageProvider(target.RmXHAp70ovHNBN4U),
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.4),
@@ -88,7 +90,7 @@ class AccountScreen extends StatelessWidget {
                       ),
                       child: CircleAvatar(
                         radius: 40,
-                        backgroundImage: smartImageProvider(target.avator),
+                        backgroundImage: smartImageProvider(target.RmXHAp70ovHNBN4U),
                       ),
                     ),
                     // 添加按钮（只在是自己的账户时显示）
@@ -113,7 +115,7 @@ class AccountScreen extends StatelessWidget {
                 const SizedBox(height: 12),
                 // 用户名
                 Text(
-                  target.name,
+                  target.AWWxvC6FbYICMs9P,
                   style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w700,
@@ -164,8 +166,8 @@ class AccountScreen extends StatelessWidget {
                             margin: const EdgeInsets.symmetric(horizontal: 16),
                           ),
                           GestureDetector(
-                            onTap: () =>
-                                context.push('/h5/fans?id=${target.userId}'),
+                            onTap: () => context
+                                .push('/h5/fans?id=${target.fkloYnZiRmbRtJ00}'),
                             child: Column(
                               children: [
                                 SizedBox(height: 8),
@@ -197,8 +199,8 @@ class AccountScreen extends StatelessWidget {
                             margin: const EdgeInsets.symmetric(horizontal: 16),
                           ),
                           GestureDetector(
-                            onTap: () =>
-                                context.push('/h5/follow?id=${target.userId}'),
+                            onTap: () => context.push(
+                                '/h5/follow?id=${target.fkloYnZiRmbRtJ00}'),
                             child: Column(
                               children: [
                                 SizedBox(height: 8),
@@ -235,8 +237,8 @@ class AccountScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            target.about.isNotEmpty
-                                ? target.about
+                            target.Sfy5ovPIlV0PS5C2.isNotEmpty
+                                ? target.Sfy5ovPIlV0PS5C2
                                 : 'Life is a journey, embrace it.',
                             style: const TextStyle(
                               fontSize: 15,
@@ -255,7 +257,7 @@ class AccountScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
-                              'Balance: ${app.currentUser.coins}',
+                              'Balance: ${app.currentUser.IlyH5k6lZ7fVAHfQ}',
                               style: const TextStyle(
                                 fontSize: 20,
                                 color: Colors.white,
@@ -275,7 +277,7 @@ class AccountScreen extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           final chatRoom =
-                              app.getChatRoomByPeerId(target.userId);
+                              app.getChatRoomByPeerId(target.fkloYnZiRmbRtJ00);
                           if (chatRoom != null) {
                             context
                                 .push('/h5/private-chat?id=${chatRoom.chatId}');
@@ -383,7 +385,7 @@ class VideoCard extends StatelessWidget {
     final currentUser = app.currentUser;
 
     // 判断是否已点赞
-    final isLiked = currentUser.videoPostLikeIds.contains(post.dynamicId);
+    final isLiked = currentUser.IibbF2RfvAxYkcQo.contains(post.dynamicId);
 
     return GestureDetector(
       onTap: onTap,
@@ -403,12 +405,12 @@ class VideoCard extends StatelessWidget {
                   // 作者头像
                   CircleAvatar(
                     radius: 18,
-                    backgroundImage: smartImageProvider(author.avator),
+                    backgroundImage: smartImageProvider(author.RmXHAp70ovHNBN4U),
                   ),
                   const SizedBox(width: 8),
                   // 作者名字
                   Text(
-                    author.name,
+                    author.AWWxvC6FbYICMs9P,
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,

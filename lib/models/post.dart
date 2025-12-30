@@ -13,11 +13,11 @@ class Post {
 
   final String dynamicId;
   final String userId;
-  final int dynamicType; // 0--图片帖子，1--视频帖子
+  final int dynamicType; 
   final String dynamicDesc;
-  final int dynamicTitleType; // 图片帖子类型下标
-  final List<String> dynamicPic; // 图片地址List
-  final String dynamicVideo; // 视频地址
+  final int dynamicTitleType;
+  final List<String> dynamicPic;
+  final String dynamicVideo; 
   final int dynamicLikeCount;
   final int dynamicCommentCount;
 
@@ -49,26 +49,15 @@ class Post {
     };
   }
 
-  // Helper getters for backward compatibility
   String get id => dynamicId;
   bool get isVideo => dynamicType == 1;
   String get description => dynamicDesc;
   int get likes => dynamicLikeCount;
   int get comments => dynamicCommentCount;
-  
-  // Image field - for image posts (dynamicType == 0)
   String get imageUrl => dynamicPic.isNotEmpty ? dynamicPic.first : '';
   List<String> get imageUrls => dynamicPic;
-  
-  // Video field - for video posts (dynamicType == 1)
   String get videoUrl => dynamicVideo;
-  
-  // // Deprecated: Use imageUrl or videoUrl instead based on dynamicType
-  // @Deprecated('Use imageUrl for image posts or videoUrl for video posts')
-  // String get mediaUrl => isVideo ? dynamicVideo : (dynamicPic.isNotEmpty ? dynamicPic.first : '');
-  
   String get category {
-    // Map dynamicTitleType to category names
     const categories = ['Daily Glow', 'Office Polished', 'Travel Vibe', 'Party Shine'];
     return dynamicTitleType < categories.length ? categories[dynamicTitleType] : 'ALL';
   }

@@ -19,44 +19,31 @@ class AppScaffold extends StatelessWidget {
     final gradient =
         Theme.of(context).extension<GradientTheme>()!.primaryGradient;
     final safeAreaBottom = MediaQuery.of(context).padding.bottom;
-
-    // Only show bottom navigation bar on main pages: /home, /discover, /chat, /account
-    // Exclude sub-routes like /chat/room/:id and all H5 pages (/h5/*)
-    // When H5 pages are pushed using context.push, they overlay the main page
-    // We need to check if the current visible route is an H5 page
-
-    // Get the current route from GoRouter - check the topmost match
     final router = GoRouter.of(context);
     final routerState = router.routerDelegate.currentConfiguration;
     final matches = routerState.matches;
 
-    // Get the topmost route (the one that's actually visible)
     String currentPath = routerState.uri.path;
     if (matches.isNotEmpty) {
       final topMatch = matches.last;
       currentPath = topMatch.matchedLocation;
     }
 
-    // Check ModalRoute for pushed routes (when using context.push)
     final modalRoute = ModalRoute.of(context);
     if (modalRoute != null && modalRoute.settings.name != null) {
       final routeName = modalRoute.settings.name!;
-      // If the route name contains 'h5-' or starts with '/h5/', it's an H5 page
       if (routeName.contains('h5-') || routeName.startsWith('/h5/')) {
         return Scaffold(body: shell);
       }
     }
 
-    // Check if the current path is an H5 page or sub-route
     final isH5Page = currentPath.startsWith('/h5/');
     final isSubRoute = currentPath.startsWith('/chat/room');
 
-    // If there's an H5 page, don't show bottom navigation
     if (isH5Page) {
       return Scaffold(body: shell);
     }
 
-    // Only show on exact main pages (not H5, not sub-routes, and exact match)
     final isMainPage = !isH5Page &&
         !isSubRoute &&
         (currentPath == '/home' ||
@@ -67,9 +54,7 @@ class AppScaffold extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Main content with bottom padding to avoid overlap
           shell,
-          // Floating navigation bar - only show on main pages
           if (isMainPage)
             Positioned(
               left: 20,
@@ -79,11 +64,6 @@ class AppScaffold extends StatelessWidget {
                 currentIndex: shell.currentIndex,
                 onTap: _onTap,
                 onUploadTap: () => context.push('/h5/send-dynamic'),
-                // gradient: LinearGradient(
-                //   colors: [Color(0xFFFF8133), Color(0xFF1C7BFF)],
-                //   begin: Alignment.centerLeft,
-                //   end: Alignment.centerRight,
-                // ),
                 gradient: gradient,
                 safeAreaBottom: safeAreaBottom,
               ),
@@ -114,7 +94,6 @@ class _FloatingNavBar extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          // padding: EdgeInsets.only(bottom: safeAreaBottom),
           margin: EdgeInsets.only(top: 18),
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -123,7 +102,6 @@ class _FloatingNavBar extends StatelessWidget {
                 const Color.fromARGB(255, 24, 24, 24),
                 const Color.fromARGB(255, 17, 70, 144),
               ],
-              // stops: [0.0, 0.3, 0.6, 1.0],
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
             ),
@@ -137,7 +115,6 @@ class _FloatingNavBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(88),
           ),
           child: Container(
-            // height: 60,
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -173,7 +150,6 @@ class _FloatingNavBar extends StatelessWidget {
             ),
           ),
         ),
-        // Upload button in center
         Center(
           child: GestureDetector(
             onTap: onUploadTap,
@@ -254,7 +230,7 @@ class _AccountNavItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final currentUser = context.watch<AppState>().currentUser;
-    
+
     return GestureDetector(
       onTap: onTap,
       behavior: HitTestBehavior.opaque,
@@ -267,13 +243,15 @@ class _AccountNavItem extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: isSelected ? Color(0xFFFF8133) : Colors.white.withOpacity(0.7),
+                  color: isSelected
+                      ? Color(0xFFFF8133)
+                      : Colors.white.withOpacity(0.7),
                   width: isSelected ? 1 : 1,
                 ),
               ),
               child: CircleAvatar(
                 radius: 11,
-                backgroundImage: smartImageProvider(currentUser.avator),
+                backgroundImage: smartImageProvider(currentUser.RmXHAp70ovHNBN4U),
               ),
             ),
             const SizedBox(height: 4),

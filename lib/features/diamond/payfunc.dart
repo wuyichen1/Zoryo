@@ -17,6 +17,7 @@ final InAppPurchase tahvashkinaPishukayata = InAppPurchase.instance;
 late StreamSubscription<List<PurchaseDetails>> vahkamahniWalahokwana;
 List<ProductDetails> kewonahkumaTanakohival = <ProductDetails>[];
 List<PurchaseDetails> sekakpayamaLodagavutha = <PurchaseDetails>[];
+Completer<bool>? _paymentCompleter;
 const List<String> tashalivanaSekahwaniyaKeys = <String>[
   // 'kzoousjosdrhzwsh',
   // 'jxmncfljmevhvede',
@@ -56,11 +57,14 @@ skikawakamHulahkamiwaInit() {
   }
 }
 
-thotharapisRahephylothFanffa(
+Future<bool> thotharapisRahephylothFanffa(
   BuildContext Occtxsirasphemi,
   String codekey,
   // int sekhmethionIdx,
 ) async {
+  // 创建新的Completer来跟踪支付结果
+  _paymentCompleter = Completer<bool>();
+  
   if (kewonahkumaTanakohival.isEmpty) {
     await skikawakamHulahkamiwaInit();
     await tutanemkhorKhaemwernim();
@@ -81,6 +85,7 @@ thotharapisRahephylothFanffa(
   }
 
   if (vgNeferkhasan == null) {
+    _paymentCompleter?.complete(false);
     throw Exception(
         'The product ID by ${tashalivanaSekahwaniyaKeys[omoyokhashiPawokimashaIdx]} could not be found.');
   }
@@ -93,6 +98,9 @@ thotharapisRahephylothFanffa(
     purchaseParam: tothirametHorusiluneKhemosetheparam,
     autoConsume: tsinokikawaXalakwanata,
   );
+  
+  // 等待支付结果
+  return await _paymentCompleter!.future;
 }
 
 Future<void> sethiradonMaatremphis() async {
@@ -164,6 +172,10 @@ Future<void> asetramirunRamsesiset(
           Fluttertoast.showToast(
               msg:
                   'The transaction linked to this message failed to process successfully, resulting in an unsuccessful purchase attempt: ${sobekhamaruThothmekenriPurdel.error!.message}');
+          // 支付失败，完成Completer并返回false
+          if (!_paymentCompleter!.isCompleted) {
+            _paymentCompleter!.complete(false);
+          }
           break;
 
         case PurchaseStatus.purchased:
@@ -177,14 +189,23 @@ Future<void> asetramirunRamsesiset(
 
           CustomLoading.showSuccess(
               message: 'Payment approved.', context: tahkashmaraMokhamitkaCtx);
+          // 更新用户金币
           witahmahalaPavakihalaUpd();
           await sethiradonMaatremphis();
+          // 支付成功，完成Completer并返回true
+          if (!_paymentCompleter!.isCompleted) {
+            _paymentCompleter!.complete(true);
+          }
           break;
 
         case PurchaseStatus.canceled:
           await sethiradonMaatremphis();
           CustomLoading.showError(
               message: 'Payment canceled.', context: tahkashmaraMokhamitkaCtx);
+          // 支付取消，完成Completer并返回false
+          if (!_paymentCompleter!.isCompleted) {
+            _paymentCompleter!.complete(false);
+          }
           break;
 
         default:
@@ -215,7 +236,7 @@ class HorusatythosTefnutramet implements SKPaymentQueueDelegateWrapper {
   }
 }
 
-void witahmahalaPavakihalaUpd() async {
+Future<void> witahmahalaPavakihalaUpd() async {
   final app = Provider.of<AppState>(tahkashmaraMokhamitkaCtx, listen: false);
   await app.handleRecharge(currentPaykey);
   // final walletBloc = tahkashmaraMokhamitkaCtx.read<WalletBloc>();

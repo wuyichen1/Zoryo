@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/account/account_screen.dart';
 import '../../features/account/edit_profile_screen.dart';
-import '../../features/account/settings_screen.dart';
 import '../../features/auth/auth_form_screen.dart';
 import '../../features/auth/auth_select_screen.dart';
 import '../../features/chat/chat_list_screen.dart';
@@ -27,9 +27,11 @@ class AppRouter {
     // Use saved route location if available and valid, otherwise use default
     final saved = appState.savedRouteLocation;
     if (saved != null && saved.isNotEmpty && saved != '/') {
-      // Validate that the saved route is not an auth route if user is logged in
-      // This prevents redirecting to auth pages when user is already logged in
-      // Only check if initialized to avoid issues during startup
+      // H5路由不应该被保存，也不应该作为初始路由
+      // 如果保存的路由是H5路由，使用默认路由
+      if (saved.startsWith('/h5/')) {
+        return '/auth/select';
+      }
       if (appState.initialized) {
         if (appState.isLoggedIn && saved.startsWith('/auth')) {
           return '/home';
@@ -159,7 +161,12 @@ class AppRouter {
         builder: (context, state) {
           final url = state.uri.queryParameters['url'] ?? '';
           final title = state.uri.queryParameters['title'];
-          return WebViewScreen(url: url, title: title);
+          // 使用完整的URI作为key，确保路由重新评估时能够复用相同的widget实例
+          return WebViewScreen(
+            key: ValueKey(state.uri.toString()),
+            url: url,
+            title: title,
+          );
         },
       ),
       // H5 page routes
@@ -169,6 +176,7 @@ class AppRouter {
         builder: (context, state) {
           final id = state.uri.queryParameters['id'] ?? '';
           return WebViewScreen(
+            key: ValueKey(state.uri.toString()),
             url: H5Routes.articleDetail(id),
             title: 'Article Detail',
           );
@@ -180,6 +188,7 @@ class AppRouter {
         builder: (context, state) {
           final id = state.uri.queryParameters['id'] ?? '';
           return WebViewScreen(
+            key: ValueKey(state.uri.toString()),
             url: H5Routes.shortVideo(id),
             title: 'Video',
           );
@@ -191,6 +200,7 @@ class AppRouter {
         builder: (context, state) {
           final id = state.uri.queryParameters['id'] ?? '';
           return WebViewScreen(
+            key: ValueKey(state.uri.toString()),
             url: H5Routes.privateChat(id),
             title: 'Chat',
           );
@@ -200,6 +210,7 @@ class AppRouter {
         path: '/h5/send-dynamic',
         name: 'h5-send-dynamic',
         builder: (context, state) => WebViewScreen(
+          key: ValueKey(state.uri.toString()),
           url: H5Routes.sendDynamic(),
           title: 'Post',
         ),
@@ -208,6 +219,7 @@ class AppRouter {
         path: '/h5/publish-video',
         name: 'h5-publish-video',
         builder: (context, state) => WebViewScreen(
+          key: ValueKey(state.uri.toString()),
           url: H5Routes.publishVideo(),
           title: 'Upload Video',
         ),
@@ -216,6 +228,7 @@ class AppRouter {
         path: '/h5/chat-view',
         name: 'h5-chat-view',
         builder: (context, state) => WebViewScreen(
+          key: ValueKey(state.uri.toString()),
           url: H5Routes.chatView(),
           title: 'Zoryo AI',
         ),
@@ -226,6 +239,7 @@ class AppRouter {
         builder: (context, state) {
           final id = state.uri.queryParameters['id'] ?? '';
           return WebViewScreen(
+            key: ValueKey(state.uri.toString()),
             url: H5Routes.otherHome(id),
             title: 'Profile',
           );
@@ -235,6 +249,7 @@ class AppRouter {
         path: '/h5/top-report',
         name: 'h5-top-report',
         builder: (context, state) => WebViewScreen(
+          key: ValueKey(state.uri.toString()),
           url: H5Routes.topReport(),
           title: 'Report',
         ),
@@ -243,6 +258,7 @@ class AppRouter {
         path: '/h5/setup-page',
         name: 'h5-setup-page',
         builder: (context, state) => WebViewScreen(
+          key: ValueKey(state.uri.toString()),
           url: H5Routes.setupPage(),
           title: 'Settings',
         ),
@@ -253,6 +269,7 @@ class AppRouter {
         builder: (context, state) {
           final id = state.uri.queryParameters['id'] ?? '';
           return WebViewScreen(
+            key: ValueKey(state.uri.toString()),
             url: H5Routes.follow(id),
             title: 'Follow',
           );
@@ -264,6 +281,7 @@ class AppRouter {
         builder: (context, state) {
           final id = state.uri.queryParameters['id'] ?? '';
           return WebViewScreen(
+            key: ValueKey(state.uri.toString()),
             url: H5Routes.fans(id),
             title: 'Fans',
           );
@@ -275,6 +293,7 @@ class AppRouter {
         builder: (context, state) {
           final id = state.uri.queryParameters['id'] ?? '';
           return WebViewScreen(
+            key: ValueKey(state.uri.toString()),
             url: H5Routes.blackList(id),
             title: 'Blacklist',
           );
@@ -284,6 +303,7 @@ class AppRouter {
         path: '/h5/edit-info',
         name: 'h5-edit-info',
         builder: (context, state) => WebViewScreen(
+          key: ValueKey(state.uri.toString()),
           url: H5Routes.editInfo(),
           title: 'Edit Profile',
         ),
@@ -292,6 +312,7 @@ class AppRouter {
         path: '/h5/gold-coin',
         name: 'h5-gold-coin',
         builder: (context, state) => WebViewScreen(
+          key: ValueKey(state.uri.toString()),
           url: H5Routes.goldCoin(),
           title: 'My Diamonds',
         ),
@@ -300,6 +321,7 @@ class AppRouter {
         path: '/h5/privacy-agreement',
         name: 'h5-privacy-agreement',
         builder: (context, state) => WebViewScreen(
+          key: ValueKey(state.uri.toString()),
           url: H5Routes.privacyAgreement(),
           title: 'Privacy Policy',
         ),
@@ -308,6 +330,7 @@ class AppRouter {
         path: '/h5/user-agreement',
         name: 'h5-user-agreement',
         builder: (context, state) => WebViewScreen(
+          key: ValueKey(state.uri.toString()),
           url: H5Routes.userAgreement(),
           title: 'User Agreement',
         ),
@@ -316,39 +339,53 @@ class AppRouter {
     redirect: (context, state) {
       // Don't redirect during initialization to avoid route jumping
       if (!appState.initialized) return null;
-      
+
       final path = state.uri.path;
-      final isAuthPath = path.startsWith('/auth');
       
+      // H5路由完全独立，不受AppState数据更新的影响
+      // 如果检测到H5路由，清除可能保存的H5路由位置，防止路由重新评估时恢复H5页面
+      if (path.startsWith('/h5/')) {
+        // 清除可能保存的H5路由位置（异步操作，不阻塞）
+        final saved = appState.savedRouteLocation;
+        if (saved != null && saved.startsWith('/h5/')) {
+          appState.saveRouteLocation('');
+        }
+        return null;
+      }
+
+      final isAuthPath = path.startsWith('/auth');
+
       // Handle root path
       if (path == '/') {
         if (!appState.eulaAgreed) return '/auth/select';
         if (appState.isLoggedIn) return '/home';
         return '/auth/select';
       }
-      
+
       // Check EULA
       if (!appState.eulaAgreed && !isAuthPath) {
         return '/auth/select';
       }
-      
+
       // Check login status
       if (!appState.isLoggedIn && !isAuthPath) {
         return '/auth/select';
       }
-      
+
       if (appState.isLoggedIn && isAuthPath) {
         return '/home';
       }
-      
+
       // Save current route location only when no redirect is needed
+      // 确保H5路由不会被保存（双重检查，防止意外保存）
       final currentPath = state.uri.toString();
-      if (currentPath.isNotEmpty && currentPath != '/') {
+      if (currentPath.isNotEmpty && 
+          currentPath != '/' && 
+          !currentPath.startsWith('/h5/')) {
         appState.saveRouteLocation(currentPath);
       }
-      
+
       return null;
     },
   );
 }
-

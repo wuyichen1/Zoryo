@@ -49,8 +49,8 @@ class GradientButton extends StatelessWidget {
           label,
           style: textStyle ??
               GoogleFonts.montserrat(
-                fontWeight: FontWeight.w700,
-                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
                 color: Colors.white,
               ),
         ),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 import '../core/theme/app_theme.dart';
+import '../providers/app_state.dart';
+import 'image_helper.dart';
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold({super.key, required this.shell});
@@ -140,26 +143,28 @@ class _FloatingNavBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _NavItem(
-                  icon: Icons.home_filled,
+                  icon: 'assets/images/homeACGgxq7fEfqZnJYE.png',
+                  iconSelected: 'assets/images/ACGgxq7fEfqZnJYE.png',
                   label: 'Home',
                   isSelected: currentIndex == 0,
                   onTap: () => onTap(0),
                 ),
                 _NavItem(
-                  icon: Icons.explore,
+                  icon: 'assets/images/starpA4fb0awN1RGCDJH.png',
+                  iconSelected: 'assets/images/pA4fb0awN1RGCDJH.png',
                   label: 'Discover',
                   isSelected: currentIndex == 1,
                   onTap: () => onTap(1),
                 ),
                 SizedBox(width: 30),
                 _NavItem(
-                  icon: Icons.chat_bubble,
+                  icon: 'assets/images/ding1dkl4u5zV7x0kFjE.png',
+                  iconSelected: 'assets/images/1dkl4u5zV7x0kFjE.png',
                   label: 'Chat',
                   isSelected: currentIndex == 2,
                   onTap: () => onTap(2),
                 ),
-                _NavItem(
-                  icon: Icons.person,
+                _AccountNavItem(
                   label: 'Account',
                   isSelected: currentIndex == 3,
                   onTap: () => onTap(3),
@@ -191,12 +196,14 @@ class _FloatingNavBar extends StatelessWidget {
 class _NavItem extends StatelessWidget {
   const _NavItem({
     required this.icon,
+    required this.iconSelected,
     required this.label,
     required this.isSelected,
     required this.onTap,
   });
 
-  final IconData icon;
+  final String icon;
+  final String iconSelected;
   final String label;
   final bool isSelected;
   final VoidCallback onTap;
@@ -211,10 +218,63 @@ class _NavItem extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              icon,
-              color: isSelected ? Colors.white : Colors.white.withOpacity(0.7),
-              size: 24,
+            Image.asset(
+              isSelected ? iconSelected : icon,
+              width: 33,
+              height: 33,
+            ),
+            const SizedBox(height: 4),
+            Text(
+              label,
+              style: TextStyle(
+                color:
+                    isSelected ? Colors.white : Colors.white.withOpacity(0.7),
+                fontSize: 12,
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _AccountNavItem extends StatelessWidget {
+  const _AccountNavItem({
+    required this.label,
+    required this.isSelected,
+    required this.onTap,
+  });
+
+  final String label;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final currentUser = context.watch<AppState>().currentUser;
+    
+    return GestureDetector(
+      onTap: onTap,
+      behavior: HitTestBehavior.opaque,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: isSelected ? Color(0xFFFF8133) : Colors.white.withOpacity(0.7),
+                  width: isSelected ? 1 : 1,
+                ),
+              ),
+              child: CircleAvatar(
+                radius: 11,
+                backgroundImage: smartImageProvider(currentUser.avator),
+              ),
             ),
             const SizedBox(height: 4),
             Text(

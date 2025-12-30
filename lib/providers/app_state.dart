@@ -165,8 +165,38 @@ class AppState extends ChangeNotifier {
         orElse: () => currentUser,
       );
 
+  // 检查用户是否在blockList中
+  bool _isUserBlocked(String userId) {
+    return currentUser.blockList.contains(userId);
+  }
+
+  // 过滤帖子列表，排除blockList中用户的帖子
+  List<Post> _filterBlockedPosts(List<Post> postList) {
+    return postList.where((p) => !_isUserBlocked(p.userId)).toList();
+  }
+
+  // 过滤评论列表，排除blockList中用户的评论
+  List<Comment> _filterBlockedComments(List<Comment> commentList) {
+    return commentList.where((c) => !_isUserBlocked(c.userId)).toList();
+  }
+
+  // 过滤消息列表，排除blockList中用户的消息
+  List<ChatMessage> _filterBlockedMessages(List<ChatMessage> messageList) {
+    return messageList.where((m) => !_isUserBlocked(m.userId)).toList();
+  }
+
+  // 过滤聊天室列表，排除包含blockList中用户的聊天室
+  List<ChatRoom> _filterBlockedChatRooms(List<ChatRoom> chatRoomList) {
+    return chatRoomList.where((room) {
+      // 检查聊天室中是否有被屏蔽的用户（排除当前用户自己）
+      return !room.chatUserIds.any((userId) =>
+          userId != currentUser.userId && _isUserBlocked(userId));
+    }).toList();
+  }
+
   List<Post> postsByCategory(String category, {bool? imageOnly}) {
-    var filtered = posts;
+    // 首先过滤掉blockList中用户的帖子
+    var filtered = _filterBlockedPosts(posts);
 
     // Filter by type: imageOnly = true for images (dynamicType == 0), false for videos (dynamicType == 1)
     if (imageOnly != null) {
@@ -180,16 +210,37 @@ class AppState extends ChangeNotifier {
     return filtered.where((p) => p.category == category).toList();
   }
 
-  List<Post> userPosts(String userId) =>
-      posts.where((p) => p.userId == userId).toList();
+  // 获取过滤后的所有帖子（排除blockList中用户的帖子）
+  List<Post> get filteredPosts => _filterBlockedPosts(posts);
 
-  List<Comment> postComments(String postId) =>
-      comments.where((c) => c.commentId == postId).toList();
+  List<Post> userPosts(String userId) {
+    // 如果查看的是自己的账户，不过滤；否则过滤掉blockList中的用户
+    if (userId == currentUser.userId) {
+      return posts.where((p) => p.userId == userId).toList();
+    }
+    return _filterBlockedPosts(
+        posts.where((p) => p.userId == userId).toList());
+  }
 
-  List<ChatMessage> chatMessages(String chatId) =>
-      messages.where((m) => m.chatId == chatId).toList();
+  List<Comment> postComments(String postId) {
+    final filtered = comments.where((c) => c.commentId == postId).toList();
+    return _filterBlockedComments(filtered);
+  }
+
+  List<ChatMessage> chatMessages(String chatId) {
+    final filtered = messages.where((m) => m.chatId == chatId).toList();
+    return _filterBlockedMessages(filtered);
+  }
+
+  // 获取过滤后的聊天室列表（排除包含blockList中用户的聊天室）
+  List<ChatRoom> get filteredChatRooms =>
+      _filterBlockedChatRooms(chatRooms);
 
   ChatRoom? getChatRoomByPeerId(String peerId) {
+    // 如果对方在blockList中，不应该创建或返回聊天室
+    if (_isUserBlocked(peerId)) {
+      return null;
+    }
     return chatRooms.firstWhere(
       (c) =>
           c.chatUserIds.contains(currentUser.userId) &&

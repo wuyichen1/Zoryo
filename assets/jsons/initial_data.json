@@ -7,7 +7,7 @@
     "avator": "assets/images/9vTQmShMo404vaqU1.jpg",
     "name": "Henry",
     "about": "Life is a journey, embrace it.",
-    "coins": 990,
+    "coins": 0,
     "follow": ["u2", "u3"],
     "fans": ["u2", "u3", "u4"],
     "blockList": [],
@@ -22,7 +22,7 @@
       "avator": "assets/images/9vTQmShMo404vaqU1.jpg",
       "name": "Henry",
       "about": "Light up your daily life with details",
-      "coins": 990,
+      "coins": 0,
       "follow": ["u2", "u3"],
       "fans": ["u2", "u3", "u4"],
       "blockList": [],
@@ -36,7 +36,7 @@
       "avator": "assets/images/9vTQmShMo404vaqU2.jpg",
       "name": "Lewis",
       "about": "My accessories have stories",
-      "coins": 100,
+      "coins": 0,
       "follow": ["u1"],
       "fans": ["u1", "u3"],
       "blockList": [],
@@ -50,7 +50,7 @@
       "avator": "assets/images/9vTQmShMo404vaqU3.jpg",
       "name": "Carlos",
       "about": "Clothing requires a bit of ingenuity",
-      "coins": 50,
+      "coins": 0,
       "follow": ["u1", "u2"],
       "fans": ["u1"],
       "blockList": [],
@@ -64,7 +64,7 @@
       "avator": "assets/images/9vTQmShMo404vaqU4.jpg",
       "name": "Shirley",
       "about": "Pearls of old times, chains of new trends",
-      "coins": 50,
+      "coins": 0,
       "follow": ["u1", "u2"],
       "fans": ["u1"],
       "blockList": [],
@@ -78,7 +78,7 @@
       "avator": "assets/images/9vTQmShMo404vaqU5.jpg",
       "name": "Diana",
       "about": "Accessories convey today's mood",
-      "coins": 50,
+      "coins": 0,
       "follow": ["u1", "u2"],
       "fans": ["u1"],
       "blockList": [],
@@ -92,7 +92,7 @@
       "avator": "assets/images/9vTQmShMo404vaqU6.jpg",
       "name": "Jeanne",
       "about": "Accessories are an extension of one's attitude towards dressing",
-      "coins": 50,
+      "coins": 0,
       "follow": ["u1", "u2"],
       "fans": ["u1"],
       "blockList": [],
@@ -103,69 +103,69 @@
   "dynamicJson": [
     {
       "dynamicId": "p1",
-      "userId": "u1",
+      "userId": "u2",
       "dynamicType": 1,
       "dynamicDesc": "Easiest way to style rings! ",
       "dynamicTitleType": 0,
       "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So1.png"],
       "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf1.mp4",
       "dynamicLikeCount": 1200,
-      "dynamicCommentCount": 1200
+      "dynamicCommentCount": 1
     },
     {
       "dynamicId": "p2",
-      "userId": "u2",
+      "userId": "u3",
       "dynamicType": 1,
       "dynamicDesc": "The Importance of Accessories",
       "dynamicTitleType": 3,
       "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So2.png"],
       "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf2.mp4",
-      "dynamicLikeCount": 1200,
-      "dynamicCommentCount": 1200
+      "dynamicLikeCount": 139,
+      "dynamicCommentCount": 1
     },
     {
       "dynamicId": "p3",
-      "userId": "u3",
+      "userId": "u4",
       "dynamicType": 1,
       "dynamicDesc": "Accessories make clothing no longer monotonous",
       "dynamicTitleType": 2,
       "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So3.png"],
       "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf3.mp4",
       "dynamicLikeCount": 820,
-      "dynamicCommentCount": 420
+      "dynamicCommentCount": 1
     },
     {
       "dynamicId": "p4",
-      "userId": "u1",
+      "userId": "u5",
       "dynamicType": 1,
       "dynamicDesc": "jewelry layering",
       "dynamicTitleType": 1,
       "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So4.png"],
       "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf4.mp4",
       "dynamicLikeCount": 650,
-      "dynamicCommentCount": 210
+      "dynamicCommentCount": 1
     },
     {
       "dynamicId": "p5",
-      "userId": "u2",
+      "userId": "u6",
       "dynamicType": 1,
       "dynamicDesc": "The art of layering jewelry",
       "dynamicTitleType": 0,
       "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So5.png"],
       "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf5.mp4",
-      "dynamicLikeCount": 1320,
-      "dynamicCommentCount": 980
+      "dynamicLikeCount": 225,
+      "dynamicCommentCount": 1
     },
     {
       "dynamicId": "p6",
-      "userId": "u3",
+      "userId": "u1",
       "dynamicType": 1,
       "dynamicDesc": "I haven’t worn necklaces in a while!  I honestly forgot how much I love them!",
       "dynamicTitleType": 3,
       "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So6.png"],
       "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf6.mp4",
       "dynamicLikeCount": 400,
-      "dynamicCommentCount": 120
+      "dynamicCommentCount": 1
     },
     {
       "dynamicId": "p7",
@@ -176,7 +176,7 @@
       "dynamicPic": ["assets/images/K7kxctK0RgCEUQzX11.jpg","assets/images/K7kxctK0RgCEUQzX12.jpg","assets/images/K7kxctK0RgCEUQzX13.jpg","assets/images/K7kxctK0RgCEUQzX14.jpg"],
       "dynamicVideo": "",
       "dynamicLikeCount": 1320,
-      "dynamicCommentCount": 980
+      "dynamicCommentCount": 1
     },
     {
       "dynamicId": "p8",
@@ -186,8 +186,8 @@
       "dynamicTitleType": 1,
       "dynamicPic": ["assets/images/K7kxctK0RgCEUQzX21.jpg","assets/images/K7kxctK0RgCEUQzX22.jpg"],
       "dynamicVideo": "",
-      "dynamicLikeCount": 1320,
-      "dynamicCommentCount": 980
+      "dynamicLikeCount": 1309,
+      "dynamicCommentCount": 0
     },
     {
       "dynamicId": "p9",
@@ -197,8 +197,8 @@
       "dynamicTitleType": 2,
       "dynamicPic": ["assets/images/K7kxctK0RgCEUQzX31.jpg","assets/images/K7kxctK0RgCEUQzX32.jpg","assets/images/K7kxctK0RgCEUQzX33.jpg"],
       "dynamicVideo": "",
-      "dynamicLikeCount": 1320,
-      "dynamicCommentCount": 980
+      "dynamicLikeCount": 993,
+      "dynamicCommentCount": 0
     },
     {
       "dynamicId": "p10",
@@ -208,8 +208,8 @@
       "dynamicTitleType": 3,
       "dynamicPic": ["assets/images/K7kxctK0RgCEUQzX41.jpg","assets/images/K7kxctK0RgCEUQzX42.jpg","assets/images/K7kxctK0RgCEUQzX43.jpg","assets/images/K7kxctK0RgCEUQzX44.jpg"],
       "dynamicVideo": "",
-      "dynamicLikeCount": 1320,
-      "dynamicCommentCount": 980
+      "dynamicLikeCount": 26,
+      "dynamicCommentCount": 1
     },
     {
       "dynamicId": "p11",
@@ -219,8 +219,8 @@
       "dynamicTitleType": 0,
       "dynamicPic": ["assets/images/K7kxctK0RgCEUQzX51.jpg","assets/images/K7kxctK0RgCEUQzX52.jpg"],
       "dynamicVideo": "",
-      "dynamicLikeCount": 1320,
-      "dynamicCommentCount": 980
+      "dynamicLikeCount": 883,
+      "dynamicCommentCount": 0
     }
   ],
   "commentJson": [

@@ -117,18 +117,11 @@ class AccountScreen extends StatelessWidget {
                           onTap: () {
                             context.push('/h5/edit-info');
                           },
-                          child: Container(
+                          child: Image.asset(
+                            'assets/images/NpRm3VLh4uF56aw1.png',
                             width: 24,
                             height: 24,
-                            decoration: const BoxDecoration(
-                              color: Colors.black,
-                              shape: BoxShape.circle,
-                            ),
-                            child: const Icon(
-                              Icons.add,
-                              color: Colors.white,
-                              size: 20,
-                            ),
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
@@ -331,11 +324,13 @@ class AccountScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: videoPosts.isEmpty
-                      ? const Padding(
+                      ? Padding(
                           padding: EdgeInsets.all(32.0),
-                          child: Text(
-                            'No works yet',
-                            style: TextStyle(color: Colors.white70),
+                          child: Image.asset(
+                            'assets/images/Ub0NxSu42HA1fLtP.png',
+                            width: 200,
+                            height: 200,
+                            fit: BoxFit.cover,
                           ),
                         )
                       : ListView.builder(
@@ -494,6 +489,10 @@ class VideoCard extends StatelessWidget {
                       padding: EdgeInsets.only(right: 12, top: 8, bottom: 8),
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.5),
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(16),
+                          bottomRight: Radius.circular(16),
+                        ),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,

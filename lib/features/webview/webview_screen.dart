@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/features/diamond/payfunc.dart';
 
@@ -26,142 +27,76 @@ class WebViewScreen extends StatefulWidget {
 class _WebViewScreenState extends State<WebViewScreen> {
   InAppWebViewController? webViewController;
   bool isLoading = true;
-  double progress = 0;
-  AppState? _previousAppState;
-  bool _isUpdatingFromH5 = false; // 标记是否正在处理H5回调更新
+  UnmodifiableListView<UserScript>? _initialUserScripts;
+  URLRequest? _initialUrlRequest;
+  InAppWebViewSettings? _initialSettings;
 
   @override
   void initState() {
     super.initState();
-  }
+    // 在initState中初始化不依赖context的配置，确保只创建一次
+    _initialUrlRequest = URLRequest(url: WebUri(widget.url));
 
-  // 检查数据是否发生变化
-  bool _hasDataChanged(AppState oldState, AppState newState) {
-    // 检查登录状态变化
-    if (oldState.isLoggedIn != newState.isLoggedIn) {
-      return true;
-    }
-
-    // 检查当前用户关键数据是否变化
-    final oldUser = oldState.currentUser;
-    final newUser = newState.currentUser;
-    if (oldUser.userId != newUser.userId ||
-        oldUser.coins != newUser.coins ||
-        oldUser.name != newUser.name ||
-        oldUser.email != newUser.email ||
-        oldUser.avator != newUser.avator ||
-        oldUser.about != newUser.about ||
-        oldUser.follow.length != newUser.follow.length ||
-        oldUser.fans.length != newUser.fans.length ||
-        oldUser.blockList.length != newUser.blockList.length ||
-        oldUser.picPostLikeIds.length != newUser.picPostLikeIds.length ||
-        oldUser.videoPostLikeIds.length != newUser.videoPostLikeIds.length) {
-      return true;
-    }
-
-    // 检查列表长度变化（快速检测）
-    if (oldState.users.length != newState.users.length ||
-        oldState.posts.length != newState.posts.length ||
-        oldState.comments.length != newState.comments.length ||
-        oldState.chatRooms.length != newState.chatRooms.length ||
-        oldState.messages.length != newState.messages.length) {
-      return true;
-    }
-
-    // 如果列表长度相同，检查是否有新增或修改（通过比较关键字段）
-    // 这里只做简单检查，避免性能问题
-    if (oldState.posts.isNotEmpty && newState.posts.isNotEmpty) {
-      final oldFirstPost = oldState.posts.first;
-      final newFirstPost = newState.posts.first;
-      if (oldFirstPost.dynamicId != newFirstPost.dynamicId ||
-          oldFirstPost.dynamicLikeCount != newFirstPost.dynamicLikeCount ||
-          oldFirstPost.dynamicCommentCount !=
-              newFirstPost.dynamicCommentCount) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-
-  // 同步数据到H5
-  Future<void> _syncDataToH5(AppState app) async {
-    if (webViewController == null || isLoading) return;
-
-    try {
-      await _injectDataToWebView(webViewController!, app);
-      debugPrint('Data synced to H5 from Flutter');
-    } catch (e) {
-      debugPrint('Error syncing data to H5: $e');
-    }
+    _initialSettings = InAppWebViewSettings(
+      javaScriptEnabled: true,
+      domStorageEnabled: true,
+      useHybridComposition: true,
+      javaScriptCanOpenWindowsAutomatically: true,
+      iframeAllowFullscreen: true,
+      useShouldOverrideUrlLoading: true,
+      allowsInlineMediaPlayback: true,
+      transparentBackground: true,
+      cacheEnabled: true,
+      iframeAllow: "camera; microphone",
+      mediaPlaybackRequiresUserGesture: false,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    final app = context.watch<AppState>();
+    // 只在初始化时需要app数据，避免数据更新时触发rebuild导致H5刷新
+    final app = Provider.of<AppState>(context, listen: false);
 
-    // 检测AppState数据变化，自动同步到H5
-    if (_previousAppState != null &&
-        webViewController != null &&
-        !_isUpdatingFromH5 &&
-        !isLoading) {
-      // 检查数据是否真的发生了变化
-      if (_hasDataChanged(_previousAppState!, app)) {
-        // 延迟注入，避免在build过程中执行
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          if (mounted) {
-            _syncDataToH5(app);
-          }
-        });
-      }
-    }
-    _previousAppState = app;
-
+    // 只在首次build时初始化脚本（需要app数据），避免rebuild时重新创建导致页面重新加载
+    _initialUserScripts ??= UnmodifiableListView([
+      UserScript(
+        source: _buildInjectionScript(app),
+        injectionTime: UserScriptInjectionTime.AT_DOCUMENT_START,
+      ),
+    ]);
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(widget.title ?? ''),
-      //   leading: IconButton(
-      //     icon: const Icon(Icons.arrow_back_ios_new),
-      //     onPressed: () => Navigator.of(context).pop(),
-      //   ),
-      // ),
       body: Stack(
         children: [
           InAppWebView(
-            initialUrlRequest: URLRequest(
-              url: WebUri(widget.url),
-            ),
-            initialUserScripts: UnmodifiableListView([
-              UserScript(
-                source: _buildInjectionScript(app),
-                injectionTime: UserScriptInjectionTime.AT_DOCUMENT_START,
-              ),
-            ]),
-            initialSettings: InAppWebViewSettings(
-              javaScriptEnabled: true,
-              domStorageEnabled: true,
-              useHybridComposition: true,
-              javaScriptCanOpenWindowsAutomatically: true,
-              iframeAllowFullscreen: true,
-              useShouldOverrideUrlLoading: true,
-              allowsInlineMediaPlayback: true,
-              transparentBackground: true,
-              cacheEnabled: true,
-              iframeAllow: "camera; microphone",
-              mediaPlaybackRequiresUserGesture: false,
-            ),
+            // 不设置key，依赖缓存的initial*属性和WebViewScreen的key来保证稳定性
+            // 如果设置key，需要与路由中的WebViewScreen key保持一致，但这会导致key管理复杂
+            // 通过缓存initial*属性，确保每次build时使用的都是相同的对象引用
+            initialUrlRequest: _initialUrlRequest!, // 使用缓存的URLRequest，确保对象引用不变
+            initialUserScripts: _initialUserScripts!, // 使用缓存的脚本，确保对象引用不变
+            initialSettings: _initialSettings!, // 使用缓存的设置，确保对象引用不变
             onConsoleMessage: (controller, consoleMessage) {
               debugPrint('WebView Console: ${consoleMessage.message}');
             },
             onWebViewCreated: (controller) {
               webViewController = controller;
-              _injectDataToWebView(controller, app);
+              // 不在onWebViewCreated中注入，等待onLoadStop时注入，确保页面已加载完成
 
               // close - 关闭H5网页
               webViewController!.addJavaScriptHandler(
                 handlerName: 'close',
                 callback: (args) {
-                  Navigator.of(context).pop();
+                  // 在关闭H5页面之前，清除可能保存的H5路由位置，防止路由重新评估时恢复H5页面
+                  final currentPath = GoRouter.of(context)
+                      .routerDelegate
+                      .currentConfiguration
+                      .uri
+                      .toString();
+                  if (currentPath.startsWith('/h5/')) {
+                    app.saveRouteLocation('');
+                  }
+                  if (mounted) {
+                    Navigator.of(context).pop();
+                  }
                   return null;
                 },
               );
@@ -181,17 +116,13 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 callback: (args) async {
                   try {
                     if (args.isNotEmpty && args[0] is List) {
-                      _isUpdatingFromH5 = true;
+                      // H5会自动关闭页面，这里延迟一下数据更新，确保H5页面关闭完成后再触发路由重新评估
+                      // 这样可以避免路由重新评估时H5路由仍在栈中导致重新打开的问题
+                      await Future.delayed(const Duration(milliseconds: 300));
+                      // 在页面关闭后再更新数据，触发路由重新评估时H5路由已经不在栈中了
                       await app.updateUsers(args[0] as List<dynamic>);
-                      // 重新注入数据到WebView，确保H5获取最新数据
-                      await _injectDataToWebView(controller, app);
-                      _isUpdatingFromH5 = false;
-                      // if (context.mounted) {
-                      //   Navigator.of(context).pop();
-                      // }
                     }
                   } catch (e) {
-                    _isUpdatingFromH5 = false;
                     debugPrint('Error in updateUser handler: $e');
                   }
                   return null;
@@ -202,19 +133,16 @@ class _WebViewScreenState extends State<WebViewScreen> {
               webViewController!.addJavaScriptHandler(
                 handlerName: 'updatePost',
                 callback: (args) async {
+                  print('updatePost: $args');
                   try {
                     if (args.isNotEmpty && args[0] is List) {
-                      _isUpdatingFromH5 = true;
+                      // H5会自动关闭页面，这里延迟一下数据更新，确保H5页面关闭完成后再触发路由重新评估
+                      // 这样可以避免路由重新评估时H5路由仍在栈中导致重新打开的问题
+                      await Future.delayed(const Duration(milliseconds: 300));
+                      // 在页面关闭后再更新数据，触发路由重新评估时H5路由已经不在栈中了
                       await app.updatePosts(args[0] as List<dynamic>);
-                      // 重新注入数据到WebView，确保H5获取最新数据
-                      await _injectDataToWebView(controller, app);
-                      _isUpdatingFromH5 = false;
-                      if (context.mounted) {
-                        Navigator.of(context).pop();
-                      }
                     }
                   } catch (e) {
-                    _isUpdatingFromH5 = false;
                     debugPrint('Error in updatePost handler: $e');
                   }
                   return null;
@@ -227,14 +155,9 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 callback: (args) async {
                   try {
                     if (args.isNotEmpty && args[0] is List) {
-                      _isUpdatingFromH5 = true;
                       await app.updateComments(args[0] as List<dynamic>);
-                      // 重新注入数据到WebView，确保H5获取最新数据
-                      await _injectDataToWebView(controller, app);
-                      _isUpdatingFromH5 = false;
                     }
                   } catch (e) {
-                    _isUpdatingFromH5 = false;
                     debugPrint('Error in updateComment handler: $e');
                   }
                   return null;
@@ -247,14 +170,9 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 callback: (args) async {
                   try {
                     if (args.isNotEmpty && args[0] is List) {
-                      _isUpdatingFromH5 = true;
                       await app.updateChatRooms(args[0] as List<dynamic>);
-                      // 重新注入数据到WebView，确保H5获取最新数据
-                      await _injectDataToWebView(controller, app);
-                      _isUpdatingFromH5 = false;
                     }
                   } catch (e) {
-                    _isUpdatingFromH5 = false;
                     debugPrint('Error in uploadChat handler: $e');
                   }
                   return null;
@@ -267,14 +185,9 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 callback: (args) async {
                   try {
                     if (args.isNotEmpty && args[0] is List) {
-                      _isUpdatingFromH5 = true;
                       await app.updateMessages(args[0] as List<dynamic>);
-                      // 重新注入数据到WebView，确保H5获取最新数据
-                      await _injectDataToWebView(controller, app);
-                      _isUpdatingFromH5 = false;
                     }
                   } catch (e) {
-                    _isUpdatingFromH5 = false;
                     debugPrint('Error in uploadMessage handler: $e');
                   }
                   return null;
@@ -286,13 +199,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 handlerName: 'deleteaccount',
                 callback: (args) async {
                   try {
-                    _isUpdatingFromH5 = true;
                     await app.deleteAccount();
-                    // 重新注入数据到WebView，确保H5获取最新数据
-                    await _injectDataToWebView(controller, app);
-                    _isUpdatingFromH5 = false;
                   } catch (e) {
-                    _isUpdatingFromH5 = false;
                     debugPrint('Error in deleteaccount handler: $e');
                   }
                   return null;
@@ -315,24 +223,21 @@ class _WebViewScreenState extends State<WebViewScreen> {
                       );
 
                       if (pack.key.isNotEmpty) {
-                        _isUpdatingFromH5 = true;
-                        // 执行支付
-                        // await app.handleRecharge(paymentId);
-                        thotharapisRahephylothFanffa(context, paymentId);
+                        // 执行支付，等待支付结果
+                        final paymentSuccess =
+                            await thotharapisRahephylothFanffa(
+                                context, paymentId);
 
-                        // 调用H5的onRechargeSuccess回调，传入购买的金币数量（不是用户金币总数）
-                        await controller.evaluateJavascript(
-                          source:
-                              'window.onRechargeSuccess && window.onRechargeSuccess(${pack.cions})',
-                        );
-
-                        // 重新注入数据到WebView，确保H5获取最新数据
-                        await _injectDataToWebView(controller, app);
-                        _isUpdatingFromH5 = false;
+                        // 只有支付成功后才调用H5的onRechargeSuccess回调，传入购买的金币数量（不是用户金币总数）
+                        if (paymentSuccess) {
+                          await controller.evaluateJavascript(
+                            source:
+                                'window.onRechargeSuccess && window.onRechargeSuccess(${pack.cions})',
+                          );
+                        }
                       }
                     }
                   } catch (e) {
-                    _isUpdatingFromH5 = false;
                     debugPrint('Error in Recharge handler: $e');
                   }
                   return null;
@@ -342,21 +247,16 @@ class _WebViewScreenState extends State<WebViewScreen> {
             onLoadStart: (controller, url) {
               setState(() {
                 isLoading = true;
-                progress = 0;
               });
             },
             onLoadStop: (controller, url) async {
-              // Re-inject data when page loads (in case of navigation)
-              await _injectDataToWebView(controller, app);
+              // 只在首次加载完成时注入数据，避免H5更新数据后再次注入导致刷新
+              // if (!_hasInitialized) {
+              //   await _injectDataToWebView(controller, app);
+              //   _hasInitialized = true;
+              // }
               setState(() {
                 isLoading = false;
-                // 初始化previousAppState，避免首次加载时触发同步
-                _previousAppState = app;
-              });
-            },
-            onProgressChanged: (controller, progress) {
-              setState(() {
-                this.progress = progress / 100;
               });
             },
             onReceivedError: (controller, request, error) {
@@ -369,43 +269,17 @@ class _WebViewScreenState extends State<WebViewScreen> {
               return NavigationActionPolicy.ALLOW;
             },
           ),
-          if (isLoading && progress < 1.0)
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: LinearProgressIndicator(
-                value: progress,
-                backgroundColor: Colors.grey[800],
-                valueColor:
-                    const AlwaysStoppedAnimation<Color>(Color(0xFFD47A2F)),
+          // 显示loading指示器
+          if (isLoading)
+            Container(
+              color: Colors.transparent,
+              child: const Center(
+                child: CircularProgressIndicator(),
               ),
             ),
         ],
       ),
     );
-  }
-
-  Future<void> _injectDataToWebView(
-    InAppWebViewController controller,
-    AppState app,
-  ) async {
-    // Wait a bit for the page to be ready (only if page is loading)
-    if (isLoading) {
-      await Future.delayed(const Duration(milliseconds: 500));
-    } else {
-      // For data sync, use shorter delay
-      await Future.delayed(const Duration(milliseconds: 100));
-    }
-
-    // Inject all required data according to Flutter ↔ H5 Communication Rules
-    final injectionScript = _buildInjectionScript(app);
-
-    try {
-      await controller.evaluateJavascript(source: injectionScript);
-    } catch (e) {
-      debugPrint('Error injecting data to WebView: $e');
-    }
   }
 
   // 将本地资源路径转换为网络URL
@@ -446,9 +320,9 @@ class _WebViewScreenState extends State<WebViewScreen> {
       }).toList(),
     );
 
-    // 转换帖子数据 - 处理图片和视频
+    // 转换帖子数据 - 处理图片和视频（使用过滤后的帖子列表，排除blockList中用户的帖子）
     final dynamicJson = jsonEncode(
-      app.posts.map((p) {
+      app.filteredPosts.map((p) {
         final postMap = p.toMap();
         // 转换图片列表
         final picList = (postMap['dynamicPic'] as List<dynamic>)
@@ -462,14 +336,19 @@ class _WebViewScreenState extends State<WebViewScreen> {
       }).toList(),
     );
 
-    // Build commentJson (评论数据不需要转换资源路径)
+    // Build commentJson (评论数据不需要转换资源路径，但需要过滤blockList中用户的评论)
+    // 注意：这里传递所有评论，H5页面应该根据blockList过滤
+    // 但由于我们在Flutter端已经过滤，为了保持一致性，这里也过滤
     final commentJson = jsonEncode(
-      app.comments.map((c) => c.toMap()).toList(),
+      app.comments
+          .where((c) => !app.currentUser.blockList.contains(c.userId))
+          .map((c) => c.toMap())
+          .toList(),
     );
 
-    // Build chatListJson (聊天室数据不需要转换资源路径)
+    // Build chatListJson (聊天室数据不需要转换资源路径，但需要过滤包含blockList用户的聊天室)
     final chatListJson = jsonEncode(
-      app.chatRooms.map((c) => c.toMap()).toList(),
+      app.filteredChatRooms.map((c) => c.toMap()).toList(),
     );
 
     // 转换消息数据 - 处理图片

@@ -170,7 +170,10 @@ class _HomeScreenState extends State<HomeScreen>
                   children: [
                     // 选中项标题
                     Padding(
-                      padding: const EdgeInsets.only(top: 50, left: 20),
+                      padding: EdgeInsets.only(
+                          top:
+                              MediaQuery.sizeOf(context).height > 800 ? 80 : 50,
+                          left: 20),
                       child: Text(
                         tabs[controller.index],
                         style: GoogleFonts.montserrat(
@@ -180,53 +183,58 @@ class _HomeScreenState extends State<HomeScreen>
                         ),
                       ),
                     ),
-                    Stack(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 20),
-                          width: 160,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(30),
-                              bottomLeft: Radius.circular(30),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: MediaQuery.sizeOf(context).height > 800 ? 25 : 0,
+                      ),
+                      child: Stack(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top: 20),
+                            width: 160,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(30),
+                                bottomLeft: Radius.circular(30),
+                              ),
+                              gradient: LinearGradient(
+                                colors: [
+                                  Color.fromARGB(255, 187, 215, 255),
+                                  Color(0xFF1C7BFF),
+                                ],
+                              ),
                             ),
-                            gradient: LinearGradient(
-                              colors: [
-                                Color.fromARGB(255, 187, 215, 255),
-                                Color(0xFF1C7BFF),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(
+                                  'Go unlock',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                    fontStyle: FontStyle.italic,
+                                    letterSpacing: -0.4,
+                                  ),
+                                ),
+                                SizedBox(width: 6),
+                                Image.asset(
+                                  'assets/images/JjKkUBqOxtZJlzSa.png',
+                                  width: 28,
+                                  height: 28,
+                                ),
+                                SizedBox(width: 8),
                               ],
                             ),
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                'Go unlock',
-                                style: TextStyle(
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                  fontStyle: FontStyle.italic,
-                                  letterSpacing: -0.4,
-                                ),
-                              ),
-                              SizedBox(width: 6),
-                              Image.asset(
-                                'assets/images/JjKkUBqOxtZJlzSa.png',
-                                width: 28,
-                                height: 28,
-                              ),
-                              SizedBox(width: 8),
-                            ],
+                          Image.asset(
+                            'assets/images/y0jTlAELxMOQxaiP.png',
+                            width: 50,
+                            height: 50,
                           ),
-                        ),
-                        Image.asset(
-                          'assets/images/y0jTlAELxMOQxaiP.png',
-                          width: 50,
-                          height: 50,
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ],
                 ),

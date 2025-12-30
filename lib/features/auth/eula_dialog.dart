@@ -13,7 +13,7 @@ class EulaDialog extends StatelessWidget {
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.7,
+        height: MediaQuery.of(context).size.height * 0.65,
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
           image: DecorationImage(

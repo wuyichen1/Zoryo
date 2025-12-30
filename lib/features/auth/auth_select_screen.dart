@@ -105,28 +105,6 @@ class _AuthSelectScreenState extends State<AuthSelectScreen> {
                 child: Column(
                   children: [
                     buildLogo(),
-                    // Container(
-                    //   width: 90,
-                    //   height: 90,
-                    //   decoration: BoxDecoration(
-                    //     border: Border.all(
-                    //       color: Colors.white38,
-                    //       width: 3,
-                    //     ),
-                    //     color: Colors.white60,
-                    //     borderRadius: BorderRadius.circular(26),
-                    //   ),
-                    //   child: Padding(
-                    //     padding: const EdgeInsets.all(2.0),
-                    //     child: ClipRRect(
-                    //       borderRadius: BorderRadiusGeometry.circular(22),
-                    //       child: Image.asset(
-                    //         'assets/images/zoryo_logo.png',
-                    //         width: 100,
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
                     const SizedBox(height: 16),
                     const Text(
                       'Zoryo',
@@ -139,73 +117,127 @@ class _AuthSelectScreenState extends State<AuthSelectScreen> {
                 ),
               ),
               const SizedBox(height: 60),
-              GradientButton(
-                label: "I'm new",
-                onPressed: () async {
-                  if (!isAgreed) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text(
-                            'Please agree with the User Agreement and Privacy Policy'),
-                      ),
-                    );
-                    return;
-                  }
-                  final app = context.read<AppState>();
-                  await app.quickLogin();
-                  if (context.mounted) {
-                    context.go('/home');
-                  }
-                },
-              ),
-              const SizedBox(height: 12),
-              GradientButton(
-                label: 'Email Login',
-                onPressed: () {
-                  if (!isAgreed) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text(
-                            'Please agree with the User Agreement and Privacy Policy'),
-                      ),
-                    );
-                    return;
-                  }
-                  context.push('/auth/form?mode=login');
-                },
-              ),
-              const SizedBox(height: 26),
-              Flexible(
-                child: Row(
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Checkbox(
-                      shape: const CircleBorder(),
-                      value: isAgreed,
-                      onChanged: (value) {
-                        setState(() {
-                          isAgreed = value ?? false;
-                        });
+                    GradientButton(
+                      label: "I'm new",
+                      onPressed: () async {
+                        if (!isAgreed) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                  'Please agree with the User Agreement and Privacy Policy'),
+                            ),
+                          );
+                          return;
+                        }
+                        final app = context.read<AppState>();
+                        await app.quickLogin();
+                        if (context.mounted) {
+                          context.go('/home');
+                        }
                       },
-                      fillColor: WidgetStateProperty.resolveWith<Color>(
-                        (Set<WidgetState> states) {
-                          if (states.contains(WidgetState.selected)) {
-                            return Colors.blue;
-                          }
-                          return Colors.white;
-                        },
-                      ),
-                      checkColor: Colors.white, // 对号颜色，与蓝色填充搭配
                     ),
+                    const SizedBox(height: 12),
+                    GradientButton(
+                      label: 'Email Login',
+                      onPressed: () {
+                        if (!isAgreed) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text(
+                                  'Please agree with the User Agreement and Privacy Policy'),
+                            ),
+                          );
+                          return;
+                        }
+                        context.push('/auth/form?mode=login');
+                      },
+                    ),
+                    const SizedBox(height: 26),
                     Flexible(
-                      child: Text(
-                        'Agree with User Agreement and\nPrivacy Policy',
-                        textAlign: TextAlign.center,
+                      child: Row(
+                        children: [
+                          Checkbox(
+                            shape: const CircleBorder(),
+                            value: isAgreed,
+                            onChanged: (value) {
+                              setState(() {
+                                isAgreed = value ?? false;
+                              });
+                            },
+                            fillColor: WidgetStateProperty.resolveWith<Color>(
+                              (Set<WidgetState> states) {
+                                if (states.contains(WidgetState.selected)) {
+                                  return Colors.blue;
+                                }
+                                return Colors.white;
+                              },
+                            ),
+                            checkColor: Colors.white, // 对号颜色，与蓝色填充搭配
+                          ),
+                          Expanded(
+                            child: Wrap(
+                              alignment: WrapAlignment.start,
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              children: [
+                                Text(
+                                  'Agree with ',
+                                  textAlign: TextAlign.center,
+                                  softWrap: true,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    context.push('/h5/user-agreement');
+                                  },
+                                  child: Text(
+                                    'User Agreement',
+                                    style: GoogleFonts.montserrat(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                    softWrap: true,
+                                  ),
+                                ),
+                                Text(
+                                  ' and ',
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.montserrat(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,
+                                  ),
+                                  softWrap: true,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    context.push('/h5/privacy-agreement');
+                                  },
+                                  child: Text(
+                                    'Privacy Policy',
+                                    style: GoogleFonts.montserrat(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                    softWrap: true,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
+                    const SizedBox(height: 40),
                   ],
                 ),
               ),
-              const SizedBox(height: 40),
             ],
           ),
         ),

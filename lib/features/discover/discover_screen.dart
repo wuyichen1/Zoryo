@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import '../../core/theme/app_theme.dart';
 import '../../providers/app_state.dart';
 import '../../widgets/image_helper.dart';
 
@@ -14,8 +13,8 @@ class DiscoverScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final app = context.watch<AppState>();
-    // Only show video posts (dynamicType == 1)
-    final videos = app.posts.where((p) => p.dynamicType == 1).toList();
+    // Only show video posts (dynamicType == 1), filtered posts already exclude blocked users
+    final videos = app.filteredPosts.where((p) => p.dynamicType == 1).toList();
     // Total items: 1 (Release card) + videos.length
     final totalItems = 1 + videos.length;
 

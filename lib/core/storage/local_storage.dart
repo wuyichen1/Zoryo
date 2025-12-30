@@ -6,9 +6,17 @@ import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../utils/string_encryption.dart';
+
 class LocalStorageService {
-  LocalStorageService({this.fileName = 'app_data.json'});
+  LocalStorageService({
+    this.fileName = 'app_data.json',
+    this.assetPath = 'assets/jsons/initial_data.json',
+    this.useEncryptedAsset = false,
+  });
   final String fileName;
+  final String assetPath;
+  final bool useEncryptedAsset;
 
   File? _file;
   SharedPreferences? _prefs;
@@ -26,14 +34,40 @@ class LocalStorageService {
   }
 
   Future<void> _seedFromAsset() async {
-    final data = await rootBundle.loadString('assets/jsons/initial_data.json');
+    String data = await rootBundle.loadString(assetPath);
+    
+    // 如果使用加密的 asset，先解密
+    if (useEncryptedAsset) {
+      try {
+        data = data.decrypt();
+      } catch (e) {
+        debugPrint('解密 asset 失败: $e');
+        rethrow;
+      }
+    }
+    
     await _file!.writeAsString(data, flush: true);
   }
 
   Future<Map<String, dynamic>> load() async {
     if (_file == null) await ensureInitialized();
-    final raw = await _file!.readAsString();
-    return jsonDecode(raw) as Map<String, dynamic>;
+    String raw = await _file!.readAsString();
+    
+    // 尝试解密（如果文件是加密的）
+    // 通过检查是否为有效的 JSON 格式来判断是否需要解密
+    try {
+      // 先尝试直接解析 JSON
+      return jsonDecode(raw) as Map<String, dynamic>;
+    } catch (e) {
+      // 如果不是有效的 JSON，尝试解密
+      try {
+        raw = raw.decrypt();
+        return jsonDecode(raw) as Map<String, dynamic>;
+      } catch (decryptError) {
+        debugPrint('加载数据失败，既不是有效的 JSON，也无法解密: $e');
+        rethrow;
+      }
+    }
   }
 
   Future<void> save(Map<String, dynamic> data) async {

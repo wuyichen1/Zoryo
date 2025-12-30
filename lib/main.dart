@@ -9,7 +9,11 @@ import 'providers/app_state.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final storage = LocalStorageService();
+  // final storage = LocalStorageService();
+  final storage = LocalStorageService(
+    assetPath: 'assets/jsons/initial_data.encrypted.json',
+    useEncryptedAsset: true,
+  );
   await storage.ensureInitialized();
 
   skikawakamHulahkamiwaInit();

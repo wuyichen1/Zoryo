@@ -20,9 +20,9 @@ class PostCard extends StatelessWidget {
     final currentUser = app.currentUser;
 
     // 判断是否已点赞：图片帖子检查 picPostLikeIds，视频帖子检查 videoPostLikeIds
-    final isLiked = post.dynamicType == 0
-        ? currentUser.KYDuo9abCwLnI6Hs.contains(post.dynamicId)
-        : currentUser.IibbF2RfvAxYkcQo.contains(post.dynamicId);
+    final isLiked = post.ocN7sEFUY2qW0Zgr == 0
+        ? currentUser.KYDuo9abCwLnI6Hs.contains(post.qCzdv3cLqVGfralN)
+        : currentUser.IibbF2RfvAxYkcQo.contains(post.qCzdv3cLqVGfralN);
 
     return InkWell(
       onTap: onTap,
@@ -97,9 +97,9 @@ class PostCard extends StatelessWidget {
                       ),
                       const SizedBox(width: 6),
                       Text(
-                        post.dynamicLikeCount > 1000
-                            ? '${(post.dynamicLikeCount / 1000).toStringAsFixed(post.dynamicLikeCount % 1000 == 0 ? 0 : 1)}k'
-                            : '${post.dynamicLikeCount}',
+                        post.jShz1CDkEjVxqPS0 > 1000
+                            ? '${(post.jShz1CDkEjVxqPS0 / 1000).toStringAsFixed(post.jShz1CDkEjVxqPS0 % 1000 == 0 ? 0 : 1)}k'
+                            : '${post.jShz1CDkEjVxqPS0}',
                         style: const TextStyle(
                           fontWeight: FontWeight.w600,
                           color: Color.fromARGB(255, 55, 55, 55),
@@ -117,7 +117,7 @@ class PostCard extends StatelessWidget {
   }
 
   Widget _buildImageLayout() {
-    final images = post.dynamicPic;
+    final images = post.DFaJPr04YQi08GFg;
     final imageCount = images.length;
 
     // 如果是视频，显示视频封面

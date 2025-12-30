@@ -1,65 +1,68 @@
 class Post {
   Post({
-    required this.dynamicId,
-    required this.userId,
-    required this.dynamicType,
-    required this.dynamicDesc,
-    required this.dynamicTitleType,
-    required this.dynamicPic,
-    required this.dynamicVideo,
-    required this.dynamicLikeCount,
-    required this.dynamicCommentCount,
+    required this.qCzdv3cLqVGfralN,
+    required this.nlPxQBFl8qKNMmCt,
+    required this.ocN7sEFUY2qW0Zgr,
+    required this.d5qDS5cKGXAcpvxCZ,
+    required this.Q5NZavasJD1R1f99,
+    required this.DFaJPr04YQi08GFg,
+    required this.v6RwxJdopZDQxY88J,
+    required this.jShz1CDkEjVxqPS0,
+    required this.c87SZoIBDjypXU2KF,
   });
 
-  final String dynamicId;
-  final String userId;
-  final int dynamicType; 
-  final String dynamicDesc;
-  final int dynamicTitleType;
-  final List<String> dynamicPic;
-  final String dynamicVideo; 
-  final int dynamicLikeCount;
-  final int dynamicCommentCount;
+  final String qCzdv3cLqVGfralN;
+  final String nlPxQBFl8qKNMmCt;
+  final int ocN7sEFUY2qW0Zgr;
+  final String d5qDS5cKGXAcpvxCZ;
+  final int Q5NZavasJD1R1f99;
+  final List<String> DFaJPr04YQi08GFg;
+  final String v6RwxJdopZDQxY88J;
+  final int jShz1CDkEjVxqPS0;
+  final int c87SZoIBDjypXU2KF;
 
   factory Post.fromMap(Map<String, dynamic> map) {
     return Post(
-      dynamicId: map['dynamicId'] as String,
-      userId: map['userId'] as String,
-      dynamicType: (map['dynamicType'] ?? 0) as int,
-      dynamicDesc: map['dynamicDesc'] as String? ?? '',
-      dynamicTitleType: (map['dynamicTitleType'] ?? 0) as int,
-      dynamicPic: (map['dynamicPic'] as List<dynamic>? ?? []).map((e) => e.toString()).toList(),
-      dynamicVideo: map['dynamicVideo'] as String? ?? '',
-      dynamicLikeCount: (map['dynamicLikeCount'] ?? 0) as int,
-      dynamicCommentCount: (map['dynamicCommentCount'] ?? 0) as int,
+      qCzdv3cLqVGfralN: map['dynamicId'] as String,
+      nlPxQBFl8qKNMmCt: map['userId'] as String,
+      ocN7sEFUY2qW0Zgr: (map['dynamicType'] ?? 0) as int,
+      d5qDS5cKGXAcpvxCZ: map['dynamicDesc'] as String? ?? '',
+      Q5NZavasJD1R1f99: (map['dynamicTitleType'] ?? 0) as int,
+      DFaJPr04YQi08GFg: (map['dynamicPic'] as List<dynamic>? ?? [])
+          .map((e) => e.toString())
+          .toList(),
+      v6RwxJdopZDQxY88J: map['dynamicVideo'] as String? ?? '',
+      jShz1CDkEjVxqPS0: (map['dynamicLikeCount'] ?? 0) as int,
+      c87SZoIBDjypXU2KF: (map['dynamicCommentCount'] ?? 0) as int,
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
-      'dynamicId': dynamicId,
-      'userId': userId,
-      'dynamicType': dynamicType,
-      'dynamicDesc': dynamicDesc,
-      'dynamicTitleType': dynamicTitleType,
-      'dynamicPic': dynamicPic,
-      'dynamicVideo': dynamicVideo,
-      'dynamicLikeCount': dynamicLikeCount,
-      'dynamicCommentCount': dynamicCommentCount,
+      'dynamicId': qCzdv3cLqVGfralN,
+      'userId': nlPxQBFl8qKNMmCt,
+      'dynamicType': ocN7sEFUY2qW0Zgr,
+      'dynamicDesc': d5qDS5cKGXAcpvxCZ,
+      'dynamicTitleType': Q5NZavasJD1R1f99,
+      'dynamicPic': DFaJPr04YQi08GFg,
+      'dynamicVideo': v6RwxJdopZDQxY88J,
+      'dynamicLikeCount': jShz1CDkEjVxqPS0,
+      'dynamicCommentCount': c87SZoIBDjypXU2KF,
     };
   }
 
-  String get id => dynamicId;
-  bool get isVideo => dynamicType == 1;
-  String get description => dynamicDesc;
-  int get likes => dynamicLikeCount;
-  int get comments => dynamicCommentCount;
-  String get imageUrl => dynamicPic.isNotEmpty ? dynamicPic.first : '';
-  List<String> get imageUrls => dynamicPic;
-  String get videoUrl => dynamicVideo;
+  bool get isVideo => ocN7sEFUY2qW0Zgr == 1;
+  String get imageUrl =>
+      DFaJPr04YQi08GFg.isNotEmpty ? DFaJPr04YQi08GFg.first : '';
   String get category {
-    const categories = ['Daily Glow', 'Office Polished', 'Travel Vibe', 'Party Shine'];
-    return dynamicTitleType < categories.length ? categories[dynamicTitleType] : 'ALL';
+    const categories = [
+      'Daily Glow',
+      'Office Polished',
+      'Travel Vibe',
+      'Party Shine'
+    ];
+    return Q5NZavasJD1R1f99 < categories.length
+        ? categories[Q5NZavasJD1R1f99]
+        : 'ALL';
   }
-  String get title => dynamicDesc; // Use description as title for now
 }

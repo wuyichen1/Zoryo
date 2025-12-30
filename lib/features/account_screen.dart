@@ -33,7 +33,7 @@ class AccountScreen extends StatelessWidget {
     // 只显示视频帖子
     final videoPosts = app
         .userPosts(target.fkloYnZiRmbRtJ00)
-        .where((p) => p.dynamicType == 1)
+        .where((p) => p.ocN7sEFUY2qW0Zgr == 1)
         .toList();
 
     return Scaffold(
@@ -326,7 +326,7 @@ class AccountScreen extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final post = videoPosts[index];
                             final categoryName = _getCategoryName(
-                              post.dynamicTitleType,
+                              post.Q5NZavasJD1R1f99,
                               app.publishOptions,
                             );
                             return VideoCard(
@@ -335,7 +335,7 @@ class AccountScreen extends StatelessWidget {
                               categoryName: categoryName,
                               onTap: () {
                                 context.push(
-                                    '/h5/short-video?id=${post.dynamicId}');
+                                    '/h5/short-video?id=${post.qCzdv3cLqVGfralN}');
                               },
                             );
                           },
@@ -385,7 +385,7 @@ class VideoCard extends StatelessWidget {
     final currentUser = app.currentUser;
 
     // 判断是否已点赞
-    final isLiked = currentUser.IibbF2RfvAxYkcQo.contains(post.dynamicId);
+    final isLiked = currentUser.IibbF2RfvAxYkcQo.contains(post.qCzdv3cLqVGfralN);
 
     return GestureDetector(
       onTap: onTap,
@@ -448,8 +448,8 @@ class VideoCard extends StatelessWidget {
                         fit: StackFit.expand,
                         children: [
                           SmartImage(
-                            url: post.dynamicPic.isNotEmpty
-                                ? post.dynamicPic.first
+                            url: post.DFaJPr04YQi08GFg.isNotEmpty
+                                ? post.DFaJPr04YQi08GFg.first
                                 : '',
                             fit: BoxFit.cover,
                           ),
@@ -491,9 +491,9 @@ class VideoCard extends StatelessWidget {
                           ),
                           const SizedBox(width: 10),
                           Text(
-                            post.dynamicLikeCount > 1000
-                                ? '${(post.dynamicLikeCount / 1000).toStringAsFixed(post.dynamicLikeCount % 1000 == 0 ? 0 : 1)}k'
-                                : '${post.dynamicLikeCount}',
+                            post.jShz1CDkEjVxqPS0 > 1000
+                                ? '${(post.jShz1CDkEjVxqPS0 / 1000).toStringAsFixed(post.jShz1CDkEjVxqPS0 % 1000 == 0 ? 0 : 1)}k'
+                                : '${post.jShz1CDkEjVxqPS0}',
                             style: const TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w600,

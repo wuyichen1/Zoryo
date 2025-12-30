@@ -3,6 +3,8 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:zoryo/models/post.dart';
+import 'package:zoryo/models/user.dart';
 
 import '../zzokdet_fangfa/app_state.dart';
 import '../zzokdet_fangfa/image_helper.dart';
@@ -14,7 +16,8 @@ class DiscoverScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final app = context.watch<AppState>();
     // Only show video posts (dynamicType == 1), filtered posts already exclude blocked users
-    final videos = app.filteredPosts.where((p) => p.dynamicType == 1).toList();
+    final videos =
+        app.filteredPosts.where((p) => p.ocN7sEFUY2qW0Zgr == 1).toList();
     // Total items: 1 (Release card) + videos.length
     final totalItems = 1 + videos.length;
 
@@ -62,7 +65,7 @@ class DiscoverScreen extends StatelessWidget {
                   } else {
                     // Video cards
                     final post = videos[index - 1];
-                    final user = app.userById(post.userId);
+                    final user = app.userById(post.nlPxQBFl8qKNMmCt);
                     return _DiscoverCard(post: post, user: user);
                   }
                 },
@@ -150,8 +153,8 @@ class _ReleaseYourWorkCard extends StatelessWidget {
 
 class _DiscoverCard extends StatelessWidget {
   const _DiscoverCard({required this.post, required this.user});
-  final dynamic post;
-  final dynamic user;
+  final Post post;
+  final User user;
 
   @override
   Widget build(BuildContext context) {
@@ -159,12 +162,13 @@ class _DiscoverCard extends StatelessWidget {
     final currentUser = app.currentUser;
 
     // 判断是否已点赞：视频帖子检查 videoPostLikeIds
-    final isLiked = currentUser.IibbF2RfvAxYkcQo.contains(post.dynamicId);
+    final isLiked =
+        currentUser.IibbF2RfvAxYkcQo.contains(post.qCzdv3cLqVGfralN);
 
     return GestureDetector(
       onTap: () {
         // 视频帖子跳转到视频详情页
-        context.push('/h5/short-video?id=${post.dynamicId}');
+        context.push('/h5/short-video?id=${post.qCzdv3cLqVGfralN}');
       },
       child: Container(
         decoration: BoxDecoration(
@@ -213,7 +217,8 @@ class _DiscoverCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: CircleAvatar(
-                        backgroundImage: smartImageProvider(user.RmXHAp70ovHNBN4U),
+                        backgroundImage:
+                            smartImageProvider(user.RmXHAp70ovHNBN4U),
                         radius: 14,
                       ),
                     ),
@@ -240,9 +245,9 @@ class _DiscoverCard extends StatelessWidget {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        post.dynamicLikeCount > 1000
-                            ? '${(post.dynamicLikeCount / 1000).toStringAsFixed(post.dynamicLikeCount % 1000 == 0 ? 0 : 1)}k'
-                            : '${post.dynamicLikeCount}',
+                        post.jShz1CDkEjVxqPS0 > 1000
+                            ? '${(post.jShz1CDkEjVxqPS0 / 1000).toStringAsFixed(post.jShz1CDkEjVxqPS0 % 1000 == 0 ? 0 : 1)}k'
+                            : '${post.jShz1CDkEjVxqPS0}',
                         style: const TextStyle(
                           color: Colors.black,
                         ),

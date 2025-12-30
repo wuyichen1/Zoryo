@@ -172,7 +172,7 @@ class AppState extends ChangeNotifier {
 
   // 过滤帖子列表，排除blockList中用户的帖子
   List<Post> _filterBlockedPosts(List<Post> postList) {
-    return postList.where((p) => !_isUserBlocked(p.userId)).toList();
+    return postList.where((p) => !_isUserBlocked(p.nlPxQBFl8qKNMmCt)).toList();
   }
 
   // 过滤聊天室列表，排除包含blockList中用户的聊天室
@@ -191,7 +191,7 @@ class AppState extends ChangeNotifier {
     // Filter by type: imageOnly = true for images (dynamicType == 0), false for videos (dynamicType == 1)
     if (imageOnly != null) {
       filtered = filtered
-          .where((p) => imageOnly ? p.dynamicType == 0 : p.dynamicType == 1)
+          .where((p) => imageOnly ? p.ocN7sEFUY2qW0Zgr == 0 : p.ocN7sEFUY2qW0Zgr == 1)
           .toList();
     }
 
@@ -206,9 +206,9 @@ class AppState extends ChangeNotifier {
   List<Post> userPosts(String userId) {
     // 如果查看的是自己的账户，不过滤；否则过滤掉blockList中的用户
     if (userId == currentUser.fkloYnZiRmbRtJ00) {
-      return posts.where((p) => p.userId == userId).toList();
+      return posts.where((p) => p.nlPxQBFl8qKNMmCt == userId).toList();
     }
-    return _filterBlockedPosts(posts.where((p) => p.userId == userId).toList());
+    return _filterBlockedPosts(posts.where((p) => p.nlPxQBFl8qKNMmCt == userId).toList());
   }
 
   // 获取过滤后的聊天室列表（排除包含blockList中用户的聊天室）
@@ -462,7 +462,7 @@ class AppState extends ChangeNotifier {
       users.removeWhere((u) => u.fkloYnZiRmbRtJ00 == userIdToDelete);
 
       // Remove user's posts
-      posts.removeWhere((p) => p.userId == userIdToDelete);
+      posts.removeWhere((p) => p.nlPxQBFl8qKNMmCt == userIdToDelete);
 
       // Remove user's comments
       comments.removeWhere((c) => c.userId == userIdToDelete);

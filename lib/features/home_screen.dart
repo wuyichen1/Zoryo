@@ -380,16 +380,16 @@ class _PostsList extends StatelessWidget {
       itemCount: posts.length,
       itemBuilder: (context, index) {
         final post = posts[index];
-        final author = app.userById(post.userId);
+        final author = app.userById(post.nlPxQBFl8qKNMmCt);
         return PostCard(
           post: post,
           author: author,
           onTap: () {
             // 图片帖子跳转到图片详情页，视频帖子跳转到视频详情页
-            if (post.dynamicType == 0) {
-              context.push('/h5/article-detail?id=${post.dynamicId}');
+            if (post.ocN7sEFUY2qW0Zgr == 0) {
+              context.push('/h5/article-detail?id=${post.qCzdv3cLqVGfralN}');
             } else {
-              context.push('/h5/short-video?id=${post.dynamicId}');
+              context.push('/h5/short-video?id=${post.qCzdv3cLqVGfralN}');
             }
           },
         );

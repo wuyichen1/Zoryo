@@ -6,20 +6,19 @@ import 'package:zoryo/models/u2749HToRfgbLVPrM_user.dart';
 
 import '../models/p8JqmePjljoN7whd3_puboption.dart';
 import '../zzokdet_fangfa/app_state.dart';
-import '../zzokdet_fangfa/image_helper.dart';
+import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
-class AccountScreen extends StatelessWidget {
-  const AccountScreen({super.key, this.userId});
-  final String? userId;
+class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
+  const UyVclDaiEkntsqM6AccountScreen({super.key, this.Gx36y4u0jtoFWw8G});
+  final String? Gx36y4u0jtoFWw8G;
 
-  /// 根据dynamicTitleType获取标签名称
-  String _getCategoryName(
-      int dynamicTitleType, List<P8JqmePjljoN7whd3PublishOption> publishOptions) {
+  String lRG45IrTUKLY2W0x(int iQaE16skPtoq6hDY,
+      List<P8JqmePjljoN7whd3PublishOption> vgk5xTvKYljV9z9v) {
     try {
-      final option = publishOptions.firstWhere(
-        (opt) => opt.AVlrJJlyQVJKJinw == dynamicTitleType,
+      final MYyiD2A120pOCo8a = vgk5xTvKYljV9z9v.firstWhere(
+        (opt) => opt.AVlrJJlyQVJKJinw == iQaE16skPtoq6hDY,
       );
-      return option.dLZro0xH62HF5exT;
+      return MYyiD2A120pOCo8a.dLZro0xH62HF5exT;
     } catch (e) {
       return 'Theme';
     }
@@ -27,14 +26,16 @@ class AccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final app = context.watch<AppState>();
-    final target = userId == null ? app.currentUser : app.userById(userId!);
-    final isSelf = target.fkloYnZiRmbRtJ00 == app.currentUser.fkloYnZiRmbRtJ00;
-    // 只显示视频帖子
-    final videoPosts = app
-        .userPosts(target.fkloYnZiRmbRtJ00)
-        .where((p) => p.ocN7sEFUY2qW0Zgr == 1)
-        .toList();
+    final CHNKDOsza1mQBmav = context.watch<AppState>();
+    final mK8mzJaKsXTrtvBk = Gx36y4u0jtoFWw8G == null
+        ? CHNKDOsza1mQBmav.NLbGEpZKzMfAbV3k
+        : CHNKDOsza1mQBmav.IyC8CUrMp1zDTN8h(Gx36y4u0jtoFWw8G!);
+    final s8Nr1MwxZaX9dmPPZ = mK8mzJaKsXTrtvBk.fkloYnZiRmbRtJ00 ==
+        CHNKDOsza1mQBmav.NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00;
+    final vdZiFVMVMRihJLVO =
+        CHNKDOsza1mQBmav.p23esqfVUGjNMLsVG(mK8mzJaKsXTrtvBk.fkloYnZiRmbRtJ00)
+            .where((p) => p.ocN7sEFUY2qW0Zgr == 1)
+            .toList();
 
     return Scaffold(
       backgroundColor: Color(0xFF0E080F),
@@ -42,12 +43,12 @@ class AccountScreen extends StatelessWidget {
         children: [
           Stack(
             children: [
-              // 背景图片
               Container(
                 height: 300,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: smartImageProvider(target.RmXHAp70ovHNBN4U),
+                    image:
+                        UPClh6pI9Z9yX3xQ(mK8mzJaKsXTrtvBk.RmXHAp70ovHNBN4U),
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.4),
@@ -56,7 +57,6 @@ class AccountScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              // 底部渐变遮罩层
               Container(
                 height: 300,
                 decoration: const BoxDecoration(
@@ -77,7 +77,6 @@ class AccountScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: 50),
-                // 头像区域（带添加按钮）
                 Stack(
                   children: [
                     Container(
@@ -90,11 +89,11 @@ class AccountScreen extends StatelessWidget {
                       ),
                       child: CircleAvatar(
                         radius: 40,
-                        backgroundImage: smartImageProvider(target.RmXHAp70ovHNBN4U),
+                        backgroundImage: UPClh6pI9Z9yX3xQ(
+                            mK8mzJaKsXTrtvBk.RmXHAp70ovHNBN4U),
                       ),
                     ),
-                    // 添加按钮（只在是自己的账户时显示）
-                    if (isSelf)
+                    if (s8Nr1MwxZaX9dmPPZ)
                       Positioned(
                         right: 0,
                         bottom: 0,
@@ -113,9 +112,8 @@ class AccountScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
-                // 用户名
                 Text(
-                  target.AWWxvC6FbYICMs9P,
+                  mK8mzJaKsXTrtvBk.AWWxvC6FbYICMs9P,
                   style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w700,
@@ -123,7 +121,6 @@ class AccountScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                // 统计信息（垂直排列，用竖线分隔）
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Column(
@@ -140,7 +137,7 @@ class AccountScreen extends StatelessWidget {
                             children: [
                               SizedBox(height: 9),
                               Text(
-                                '${videoPosts.length}',
+                                '${vdZiFVMVMRihJLVO.length}',
                                 style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w700,
@@ -157,41 +154,6 @@ class AccountScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-
-                          /// 分割线
-                          Container(
-                            width: 1,
-                            height: 55,
-                            color: Colors.white,
-                            margin: const EdgeInsets.symmetric(horizontal: 16),
-                          ),
-                          GestureDetector(
-                            onTap: () => context
-                                .push('/h5/fans?id=${target.fkloYnZiRmbRtJ00}'),
-                            child: Column(
-                              children: [
-                                SizedBox(height: 8),
-                                Text(
-                                  '${target.f6YraHIhR7V90HhtY}',
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  target.f6YraHIhR7V90HhtY > 1 ? 'Fans' : 'Fan',
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    color: Colors.white70,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-
-                          /// 分割线
                           Container(
                             width: 1,
                             height: 55,
@@ -200,12 +162,45 @@ class AccountScreen extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () => context.push(
-                                '/h5/follow?id=${target.fkloYnZiRmbRtJ00}'),
+                                '/h5/fans?id=${mK8mzJaKsXTrtvBk.fkloYnZiRmbRtJ00}'),
                             child: Column(
                               children: [
                                 SizedBox(height: 8),
                                 Text(
-                                  '${target.fXA564UJNy9pbJeS}',
+                                  '${mK8mzJaKsXTrtvBk.f6YraHIhR7V90HhtY}',
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  mK8mzJaKsXTrtvBk.f6YraHIhR7V90HhtY > 1
+                                      ? 'Fans'
+                                      : 'Fan',
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 1,
+                            height: 55,
+                            color: Colors.white,
+                            margin: const EdgeInsets.symmetric(horizontal: 16),
+                          ),
+                          GestureDetector(
+                            onTap: () => context.push(
+                                '/h5/follow?id=${mK8mzJaKsXTrtvBk.fkloYnZiRmbRtJ00}'),
+                            child: Column(
+                              children: [
+                                SizedBox(height: 8),
+                                Text(
+                                  '${mK8mzJaKsXTrtvBk.fXA564UJNy9pbJeS}',
                                   style: const TextStyle(
                                     fontSize: 18,
                                     fontWeight: FontWeight.w700,
@@ -229,16 +224,15 @@ class AccountScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 24),
-                // 引用文字和Balance按钮
-                if (isSelf)
+                if (s8Nr1MwxZaX9dmPPZ)
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Row(
                       children: [
                         Expanded(
                           child: Text(
-                            target.Sfy5ovPIlV0PS5C2.isNotEmpty
-                                ? target.Sfy5ovPIlV0PS5C2
+                            mK8mzJaKsXTrtvBk.Sfy5ovPIlV0PS5C2.isNotEmpty
+                                ? mK8mzJaKsXTrtvBk.Sfy5ovPIlV0PS5C2
                                 : 'Life is a journey, embrace it.',
                             style: const TextStyle(
                               fontSize: 15,
@@ -257,7 +251,7 @@ class AccountScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
-                              'Balance: ${app.currentUser.IlyH5k6lZ7fVAHfQ}',
+                              'Balance: ${CHNKDOsza1mQBmav.NLbGEpZKzMfAbV3k.IlyH5k6lZ7fVAHfQ}',
                               style: const TextStyle(
                                 fontSize: 20,
                                 color: Colors.white,
@@ -276,11 +270,12 @@ class AccountScreen extends StatelessWidget {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          final chatRoom =
-                              app.getChatRoomByPeerId(target.fkloYnZiRmbRtJ00);
-                          if (chatRoom != null) {
-                            context
-                                .push('/h5/private-chat?id=${chatRoom.c5sk5SraIUZ47JRVo}');
+                          final c0fFUockhBu76lufa =
+                              CHNKDOsza1mQBmav.g91zzufhoBusla1N4(
+                                  mK8mzJaKsXTrtvBk.fkloYnZiRmbRtJ00);
+                          if (c0fFUockhBu76lufa != null) {
+                            context.push(
+                                '/h5/private-chat?id=${c0fFUockhBu76lufa.c5sk5SraIUZ47JRVo}');
                           }
                         },
                         child: const Text('Chat'),
@@ -288,7 +283,6 @@ class AccountScreen extends StatelessWidget {
                     ),
                   ),
                 const SizedBox(height: 32),
-                // Works 标题
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Row(
@@ -305,12 +299,11 @@ class AccountScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                // Works 视频列表
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: videoPosts.isEmpty
+                  child: vdZiFVMVMRihJLVO.isEmpty
                       ? Padding(
-                          padding: EdgeInsets.all(32.0),
+                          padding: EdgeInsets.only(top: 32.0, bottom: 130),
                           child: Image.asset(
                             'assets/images/Ub0NxSu42HA1fLtP.png',
                             width: 200,
@@ -322,20 +315,20 @@ class AccountScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 100, top: 8),
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
-                          itemCount: videoPosts.length,
+                          itemCount: vdZiFVMVMRihJLVO.length,
                           itemBuilder: (context, index) {
-                            final post = videoPosts[index];
-                            final categoryName = _getCategoryName(
-                              post.Q5NZavasJD1R1f99,
-                              app.publishOptions,
+                            final p3SClBtTYf61FL5B = vdZiFVMVMRihJLVO[index];
+                            final eaon3XCUFMd1dPnA = lRG45IrTUKLY2W0x(
+                              p3SClBtTYf61FL5B.Q5NZavasJD1R1f99,
+                              CHNKDOsza1mQBmav.p1BbHOzt95PwWRrUg,
                             );
-                            return VideoCard(
-                              post: post,
-                              author: target,
-                              categoryName: categoryName,
-                              onTap: () {
+                            return V3AS6r2Px2546dkda(
+                              p6vB6CxItETghrzTb: p3SClBtTYf61FL5B,
+                              CIs93t2DJA3Wi2IK: mK8mzJaKsXTrtvBk,
+                              eaon3XCUFMd1dPnA: eaon3XCUFMd1dPnA,
+                              TZ43NPuGtKOxIFBr: () {
                                 context.push(
-                                    '/h5/short-video?id=${post.qCzdv3cLqVGfralN}');
+                                    '/h5/short-video?id=${p3SClBtTYf61FL5B.qCzdv3cLqVGfralN}');
                               },
                             );
                           },
@@ -364,35 +357,34 @@ class AccountScreen extends StatelessWidget {
   }
 }
 
-/// 视频卡片组件，用于个人主页的Works列表
-class VideoCard extends StatelessWidget {
-  const VideoCard({
+class V3AS6r2Px2546dkda extends StatelessWidget {
+  const V3AS6r2Px2546dkda({
     super.key,
-    required this.post,
-    required this.author,
-    required this.categoryName,
-    this.onTap,
+    required this.p6vB6CxItETghrzTb,
+    required this.CIs93t2DJA3Wi2IK,
+    required this.eaon3XCUFMd1dPnA,
+    this.TZ43NPuGtKOxIFBr,
   });
 
-  final TdpFegrWPc3sjlaQPost post;
-  final U2749HToRfgbLVPrMUser author;
-  final String categoryName; // 标签名称，如 "Theme"
-  final VoidCallback? onTap;
+  final TdpFegrWPc3sjlaQPost p6vB6CxItETghrzTb;
+  final U2749HToRfgbLVPrMUser CIs93t2DJA3Wi2IK;
+  final String eaon3XCUFMd1dPnA;
+  final VoidCallback? TZ43NPuGtKOxIFBr;
 
   @override
   Widget build(BuildContext context) {
-    final app = context.watch<AppState>();
-    final currentUser = app.currentUser;
+    final aGVzKphSMYXsk8Ae = context.watch<AppState>();
+    final PQZn4CdRh4Qd7Fha = aGVzKphSMYXsk8Ae.NLbGEpZKzMfAbV3k;
 
-    // 判断是否已点赞
-    final isLiked = currentUser.IibbF2RfvAxYkcQo.contains(post.qCzdv3cLqVGfralN);
+    final Ut6AWW7DNHvp6YTd = PQZn4CdRh4Qd7Fha.IibbF2RfvAxYkcQo.contains(
+        p6vB6CxItETghrzTb.qCzdv3cLqVGfralN);
 
     return GestureDetector(
-      onTap: onTap,
+      onTap: TZ43NPuGtKOxIFBr,
       child: Container(
         margin: const EdgeInsets.only(bottom: 16),
         decoration: BoxDecoration(
-          color: const Color(0xFF011733), // 深蓝色
+          color: const Color(0xFF011733),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Padding(
@@ -402,15 +394,14 @@ class VideoCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  // 作者头像
                   CircleAvatar(
                     radius: 18,
-                    backgroundImage: smartImageProvider(author.RmXHAp70ovHNBN4U),
+                    backgroundImage:
+                        UPClh6pI9Z9yX3xQ(CIs93t2DJA3Wi2IK.RmXHAp70ovHNBN4U),
                   ),
                   const SizedBox(width: 8),
-                  // 作者名字
                   Text(
-                    author.AWWxvC6FbYICMs9P,
+                    CIs93t2DJA3Wi2IK.AWWxvC6FbYICMs9P,
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -418,7 +409,6 @@ class VideoCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  // 标签
                   Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
@@ -427,7 +417,7 @@ class VideoCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(38),
                     ),
                     child: Text(
-                      '# $categoryName',
+                      '# $eaon3XCUFMd1dPnA',
                       style: const TextStyle(
                         fontSize: 13,
                         color: Colors.white,
@@ -437,7 +427,6 @@ class VideoCard extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 12),
-              // 视频缩略图
               Stack(
                 children: [
                   ClipRRect(
@@ -447,13 +436,11 @@ class VideoCard extends StatelessWidget {
                       child: Stack(
                         fit: StackFit.expand,
                         children: [
-                          SmartImage(
-                            url: post.DFaJPr04YQi08GFg.isNotEmpty
-                                ? post.DFaJPr04YQi08GFg.first
+                          SnLjQVJIDwvDQeiSMimg(
+                            dIJEHnEuK8jQOYZ6: p6vB6CxItETghrzTb.DFaJPr04YQi08GFg.isNotEmpty
+                                ? p6vB6CxItETghrzTb.DFaJPr04YQi08GFg.first
                                 : '',
-                            fit: BoxFit.cover,
                           ),
-                          // 播放按钮
                           const Center(
                             child: Icon(
                               Icons.play_arrow_rounded,
@@ -465,7 +452,6 @@ class VideoCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // 点赞数和爱心图标（右下角）
                   Positioned(
                     bottom: 0,
                     right: 0,
@@ -483,7 +469,7 @@ class VideoCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Image.asset(
-                            isLiked
+                            Ut6AWW7DNHvp6YTd
                                 ? 'assets/images/imUilxE1Sy10vMHMpink.png'
                                 : 'assets/images/imUilxE1Sy10vMHMhui.png',
                             width: 35,
@@ -491,9 +477,9 @@ class VideoCard extends StatelessWidget {
                           ),
                           const SizedBox(width: 10),
                           Text(
-                            post.jShz1CDkEjVxqPS0 > 1000
-                                ? '${(post.jShz1CDkEjVxqPS0 / 1000).toStringAsFixed(post.jShz1CDkEjVxqPS0 % 1000 == 0 ? 0 : 1)}k'
-                                : '${post.jShz1CDkEjVxqPS0}',
+                            p6vB6CxItETghrzTb.jShz1CDkEjVxqPS0 > 1000
+                                ? '${(p6vB6CxItETghrzTb.jShz1CDkEjVxqPS0 / 1000).toStringAsFixed(p6vB6CxItETghrzTb.jShz1CDkEjVxqPS0 % 1000 == 0 ? 0 : 1)}k'
+                                : '${p6vB6CxItETghrzTb.jShz1CDkEjVxqPS0}',
                             style: const TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.w600,

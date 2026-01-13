@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 
-import '../core/storage/local_storage.dart';
+import 'ltFQAFrj0VRpIL8R_store.dart';
 import '../models/blaitem_5aqarrQqkyRukG3S.dart';
 import '../models/zGQ5e04h9a1NvSNwChatBotDesc_chatbotdesc.dart';
 import '../models/mLWrwTEsH7mWmgZP_Commt.dart';
@@ -14,124 +14,123 @@ import '../models/vbiefCaW4r24pJKf_repitem.dart';
 import '../models/u2749HToRfgbLVPrM_user.dart';
 
 class AppState extends ChangeNotifier {
-  AppState(this.storage);
-  final LocalStorageService storage;
+  AppState(this.sOjugDTKPqzG6mvBs);
+  final LtFQAFrj0VRpIL8RLocalstore sOjugDTKPqzG6mvBs;
 
-  bool initialized = false;
-  bool eulaAgreed = false;
-  bool isLoggedIn = false;
-  String? savedRouteLocation;
-  late U2749HToRfgbLVPrMUser currentUser;
-  List<U2749HToRfgbLVPrMUser> users = [];
-  List<TdpFegrWPc3sjlaQPost> posts = [];
-  List<RD5sxRcE0eOB932bFliao> chatRooms = [];
-  List<NakOK5d2GdM3yvGWMsg> messages = [];
-  List<MLWrwTEsH7mWmgZPCommt> comments = [];
-  List<B5aqarrQqkyRukG3S> blacklist = [];
-  List<BJpjHVrAqvtNbCtLDiapack> diamondPacks = [];
-  List<VbiefCaW4r24pJKfReportItem> reportOptions = [];
-  List<P8JqmePjljoN7whd3PublishOption> publishOptions = [];
-  ZGQ5e04h9a1NvSNwChatBotDesc? chatBotDesc;
+  bool HMAJABja8J7tdhv8 = false;
+  bool vB2GTgDbdOHDxBUH = false;
+  bool WMQtbwFITYixyRbr = false;
+  String? s6LetX6FiwoOFmXwp;
+  late U2749HToRfgbLVPrMUser NLbGEpZKzMfAbV3k;
+  List<U2749HToRfgbLVPrMUser> EGX7N1GxSRqAoJMH = [];
+  List<TdpFegrWPc3sjlaQPost> Wiv8PMkiG56nrNZf = [];
+  List<RD5sxRcE0eOB932bFliao> XjnQ9Ya3GTHax5Jz = [];
+  List<NakOK5d2GdM3yvGWMsg> tR0XyhJEMWYqEVcI = [];
+  List<MLWrwTEsH7mWmgZPCommt> c8ZkaRw4rlzkixIFq = [];
+  List<B5aqarrQqkyRukG3S> inTG1tmZGkGUPQZs = [];
+  List<BJpjHVrAqvtNbCtLDiapack> d9dEr1cTYR0dnRD6v = [];
+  List<VbiefCaW4r24pJKfReportItem> r8YzzvkFXPY5rzyud = [];
+  List<P8JqmePjljoN7whd3PublishOption> p1BbHOzt95PwWRrUg = [];
+  ZGQ5e04h9a1NvSNwChatBotDesc? c9wiGW5uJ9s1YPtXI;
 
   Future<void> bootstrap() async {
-    final data = await storage.load();
+    final nUBG0I6DJxhYpDpY = await sOjugDTKPqzG6mvBs.UqVpEoQpshO7K8bD();
 
-    // Load EULA and login status
-    eulaAgreed = await storage.getEulaAgreed();
-    isLoggedIn = await storage.getIsLoggedIn();
+    vB2GTgDbdOHDxBUH = await sOjugDTKPqzG6mvBs.g5IPOfWIfpmUVE0pm();
+    WMQtbwFITYixyRbr = await sOjugDTKPqzG6mvBs.HmMtPgLhtyTT4Rmv();
 
-    // Load saved route location
-    savedRouteLocation = await storage.getCurrentRouteLocation();
+    s6LetX6FiwoOFmXwp = await sOjugDTKPqzG6mvBs.ylwWvv9DECIEO8Ca();
 
-    // Load user list
-    users = (data['userListJson'] as List<dynamic>? ?? [])
+    EGX7N1GxSRqAoJMH = (nUBG0I6DJxhYpDpY['userListJson'] as List<dynamic>? ??
+            [])
         .map((e) => U2749HToRfgbLVPrMUser.fromMap(e as Map<String, dynamic>))
         .toList();
 
-    // If logged in, load current user
-    if (isLoggedIn) {
-      final loggedInUserId = await storage.getCurrentLoggedInUserId();
-      if (loggedInUserId != null) {
-        final foundUser = users.firstWhere(
-          (u) => u.fkloYnZiRmbRtJ00 == loggedInUserId,
-          orElse: () => _createDefaultUser(),
+    if (WMQtbwFITYixyRbr) {
+      final YXeG1pTQEB2m93r7 =
+          await sOjugDTKPqzG6mvBs.rXlywAmDp63ehsb5();
+      if (YXeG1pTQEB2m93r7 != null) {
+        final ypSjxlxzIC3wxAti = EGX7N1GxSRqAoJMH.firstWhere(
+          (u) => u.fkloYnZiRmbRtJ00 == YXeG1pTQEB2m93r7,
+          orElse: () => ZUEqPPxydYoBh7Iz(),
         );
-        currentUser = foundUser;
+        NLbGEpZKzMfAbV3k = ypSjxlxzIC3wxAti;
       } else {
-        // Fallback: use userJson or first user
-        if (data['userJson'] != null) {
-          currentUser = U2749HToRfgbLVPrMUser.fromMap(data['userJson'] as Map<String, dynamic>);
+        if (nUBG0I6DJxhYpDpY['userJson'] != null) {
+          NLbGEpZKzMfAbV3k = U2749HToRfgbLVPrMUser.fromMap(
+              nUBG0I6DJxhYpDpY['userJson'] as Map<String, dynamic>);
         } else {
-          currentUser = users.isNotEmpty ? users.first : _createDefaultUser();
+          NLbGEpZKzMfAbV3k = EGX7N1GxSRqAoJMH.isNotEmpty
+              ? EGX7N1GxSRqAoJMH.first
+              : ZUEqPPxydYoBh7Iz();
         }
       }
     } else {
-      // Not logged in, create default user for initialization
-      currentUser = _createDefaultUser();
+      NLbGEpZKzMfAbV3k = ZUEqPPxydYoBh7Iz();
     }
 
-    // Load user list
-    users = (data['userListJson'] as List<dynamic>? ?? [])
+    EGX7N1GxSRqAoJMH = (nUBG0I6DJxhYpDpY['userListJson'] as List<dynamic>? ??
+            [])
         .map((e) => U2749HToRfgbLVPrMUser.fromMap(e as Map<String, dynamic>))
         .toList();
 
-    // Load posts (dynamicJson)
-    posts = (data['dynamicJson'] as List<dynamic>? ?? [])
+    Wiv8PMkiG56nrNZf = (nUBG0I6DJxhYpDpY['dynamicJson'] as List<dynamic>? ?? [])
         .map((e) => TdpFegrWPc3sjlaQPost.fromMap(e as Map<String, dynamic>))
         .toList();
 
-    // Load chat rooms (chatListJson)
-    chatRooms = (data['chatListJson'] as List<dynamic>? ?? [])
+    XjnQ9Ya3GTHax5Jz = (nUBG0I6DJxhYpDpY['chatListJson'] as List<dynamic>? ??
+            [])
         .map((e) => RD5sxRcE0eOB932bFliao.fromMap(e as Map<String, dynamic>))
         .toList();
 
-    // Load messages (messageListJson)
-    messages = (data['messageListJson'] as List<dynamic>? ?? [])
-        .map((e) => NakOK5d2GdM3yvGWMsg.fromMap(e as Map<String, dynamic>))
-        .toList();
+    tR0XyhJEMWYqEVcI =
+        (nUBG0I6DJxhYpDpY['messageListJson'] as List<dynamic>? ?? [])
+            .map((e) => NakOK5d2GdM3yvGWMsg.fromMap(e as Map<String, dynamic>))
+            .toList();
 
-    // Load comments (commentJson)
-    comments = (data['commentJson'] as List<dynamic>? ?? [])
+    c8ZkaRw4rlzkixIFq = (nUBG0I6DJxhYpDpY['commentJson'] as List<dynamic>? ??
+            [])
         .map((e) => MLWrwTEsH7mWmgZPCommt.fromMap(e as Map<String, dynamic>))
         .toList();
 
-    // Load blacklist (blockList)
-    blacklist = (data['blockList'] as List<dynamic>? ?? [])
+    inTG1tmZGkGUPQZs = (nUBG0I6DJxhYpDpY['blockList'] as List<dynamic>? ?? [])
         .map((e) => B5aqarrQqkyRukG3S.fromMap(e as Map<String, dynamic>))
         .toList();
 
-    // Load diamond packs (coinListJson)
-    diamondPacks = (data['coinListJson'] as List<dynamic>? ?? [])
+    d9dEr1cTYR0dnRD6v = (nUBG0I6DJxhYpDpY['coinListJson'] as List<dynamic>? ??
+            [])
         .map((e) => BJpjHVrAqvtNbCtLDiapack.fromMap(e as Map<String, dynamic>))
         .toList();
 
-    // Load report options (reportListJson)
-    reportOptions = (data['reportListJson'] as List<dynamic>? ?? [])
-        .map((e) => VbiefCaW4r24pJKfReportItem.fromMap(e as Map<String, dynamic>))
+    r8YzzvkFXPY5rzyud =
+        (nUBG0I6DJxhYpDpY['reportListJson'] as List<dynamic>? ?? [])
+            .map((e) =>
+                VbiefCaW4r24pJKfReportItem.fromMap(e as Map<String, dynamic>))
+            .toList();
+
+    p1BbHOzt95PwWRrUg = (nUBG0I6DJxhYpDpY['publishImageListJson']
+                as List<dynamic>? ??
+            [])
+        .map((e) =>
+            P8JqmePjljoN7whd3PublishOption.fromMap(e as Map<String, dynamic>))
         .toList();
 
-    // Load publish options (publishImageListJson)
-    publishOptions = (data['publishImageListJson'] as List<dynamic>? ?? [])
-        .map((e) => P8JqmePjljoN7whd3PublishOption.fromMap(e as Map<String, dynamic>))
-        .toList();
-
-    // Load chatbot description (chatBotDesc)
-    if (data['chatBotDesc'] != null) {
-      chatBotDesc =
-          ZGQ5e04h9a1NvSNwChatBotDesc.fromMap(data['chatBotDesc'] as Map<String, dynamic>);
+    if (nUBG0I6DJxhYpDpY['chatBotDesc'] != null) {
+      c9wiGW5uJ9s1YPtXI = ZGQ5e04h9a1NvSNwChatBotDesc.fromMap(
+          nUBG0I6DJxhYpDpY['chatBotDesc'] as Map<String, dynamic>);
     }
 
-    initialized = true;
+    HMAJABja8J7tdhv8 = true;
     notifyListeners();
   }
 
-  U2749HToRfgbLVPrMUser _createDefaultUser() {
+  U2749HToRfgbLVPrMUser ZUEqPPxydYoBh7Iz() {
     return U2749HToRfgbLVPrMUser(
       fkloYnZiRmbRtJ00: 'u1',
       UH6Wfi7WIQ8UtXwg: '',
       fyVNw5c7FRNN1Eui: '',
       RmXHAp70ovHNBN4U: '',
-      AWWxvC6FbYICMs9P: 'U2749HToRfgbLVPrMUser',
+      AWWxvC6FbYICMs9P: 'User',
       Sfy5ovPIlV0PS5C2: '',
       IlyH5k6lZ7fVAHfQ: 0,
       f9FuGnEvLPZO4IWMA: [],
@@ -142,90 +141,91 @@ class AppState extends ChangeNotifier {
     );
   }
 
-  Future<void> _persist() async {
-    final data = {
-      'currentUserId': currentUser.fkloYnZiRmbRtJ00,
-      'userJson': currentUser.toMap(),
-      'userListJson': users.map((e) => e.toMap()).toList(),
-      'dynamicJson': posts.map((e) => e.toMap()).toList(),
-      'chatListJson': chatRooms.map((e) => e.toMap()).toList(),
-      'messageListJson': messages.map((e) => e.toMap()).toList(),
-      'commentJson': comments.map((e) => e.toMap()).toList(),
-      'blockList': blacklist.map((e) => e.toMap()).toList(),
-      'coinListJson': diamondPacks.map((e) => e.toMap()).toList(),
-      'reportListJson': reportOptions.map((e) => e.toMap()).toList(),
-      'publishImageListJson': publishOptions.map((e) => e.toMap()).toList(),
-      if (chatBotDesc != null) 'chatBotDesc': chatBotDesc!.toMap(),
+  Future<void> XPskFHZDnriIqlXv() async {
+    final SxCk00k0luzD3bI1 = {
+      'currentUserId': NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00,
+      'userJson': NLbGEpZKzMfAbV3k.toMap(),
+      'userListJson': EGX7N1GxSRqAoJMH.map((e) => e.toMap()).toList(),
+      'dynamicJson': Wiv8PMkiG56nrNZf.map((e) => e.toMap()).toList(),
+      'chatListJson': XjnQ9Ya3GTHax5Jz.map((e) => e.toMap()).toList(),
+      'messageListJson': tR0XyhJEMWYqEVcI.map((e) => e.toMap()).toList(),
+      'commentJson': c8ZkaRw4rlzkixIFq.map((e) => e.toMap()).toList(),
+      'blockList': inTG1tmZGkGUPQZs.map((e) => e.toMap()).toList(),
+      'coinListJson': d9dEr1cTYR0dnRD6v.map((e) => e.toMap()).toList(),
+      'reportListJson': r8YzzvkFXPY5rzyud.map((e) => e.toMap()).toList(),
+      'publishImageListJson': p1BbHOzt95PwWRrUg.map((e) => e.toMap()).toList(),
+      if (c9wiGW5uJ9s1YPtXI != null) 'chatBotDesc': c9wiGW5uJ9s1YPtXI!.toMap(),
     };
-    await storage.save(data);
+    await sOjugDTKPqzG6mvBs.Wpbh74USLGOj9cvk(SxCk00k0luzD3bI1);
   }
 
-  U2749HToRfgbLVPrMUser userById(String id) => users.firstWhere(
-        (u) => u.fkloYnZiRmbRtJ00 == id,
-        orElse: () => currentUser,
+  U2749HToRfgbLVPrMUser IyC8CUrMp1zDTN8h(String cbeLymwjkFhgnpgJ) =>
+      EGX7N1GxSRqAoJMH.firstWhere(
+        (u) => u.fkloYnZiRmbRtJ00 == cbeLymwjkFhgnpgJ,
+        orElse: () => NLbGEpZKzMfAbV3k,
       );
 
-  // 检查用户是否在blockList中
-  bool _isUserBlocked(String userId) {
-    return currentUser.gJSvmz87tX112yqC.contains(userId);
+  bool I2va46RJYigW7cLa(String EiIPvIczoAnNWqdF) {
+    return NLbGEpZKzMfAbV3k.gJSvmz87tX112yqC.contains(EiIPvIczoAnNWqdF);
   }
 
-  // 过滤帖子列表，排除blockList中用户的帖子
-  List<TdpFegrWPc3sjlaQPost> _filterBlockedPosts(List<TdpFegrWPc3sjlaQPost> postList) {
-    return postList.where((p) => !_isUserBlocked(p.nlPxQBFl8qKNMmCt)).toList();
+  List<TdpFegrWPc3sjlaQPost> f3y3eUvfmbqE4uzIF(
+      List<TdpFegrWPc3sjlaQPost> NH9g7vF6SYd9U7fP) {
+    return NH9g7vF6SYd9U7fP.where((p) => !I2va46RJYigW7cLa(p.nlPxQBFl8qKNMmCt))
+        .toList();
   }
 
-  // 过滤聊天室列表，排除包含blockList中用户的聊天室
-  List<RD5sxRcE0eOB932bFliao> _filterBlockedChatRooms(List<RD5sxRcE0eOB932bFliao> chatRoomList) {
-    return chatRoomList.where((room) {
-      // 检查聊天室中是否有被屏蔽的用户（排除当前用户自己）
-      return !room.R1DrlWpgkNODxc7I.any((userId) =>
-          userId != currentUser.fkloYnZiRmbRtJ00 && _isUserBlocked(userId));
+  List<RD5sxRcE0eOB932bFliao> r5CAO6gwc6JArwmev(
+      List<RD5sxRcE0eOB932bFliao> XCrXUVSclioeCOog) {
+    return XCrXUVSclioeCOog.where((zRYnMwvyPNcl4Pma) {
+      return !zRYnMwvyPNcl4Pma.R1DrlWpgkNODxc7I.any((EiIPvIczoAnNWqdF) =>
+          EiIPvIczoAnNWqdF != NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00 &&
+          I2va46RJYigW7cLa(EiIPvIczoAnNWqdF));
     }).toList();
   }
 
-  List<TdpFegrWPc3sjlaQPost> postsByCategory(String category, {bool? imageOnly}) {
-    // 首先过滤掉blockList中用户的帖子
-    var filtered = _filterBlockedPosts(posts);
+  List<TdpFegrWPc3sjlaQPost> fSSOym06dKmPMy5Y(String q3xOTlyrA33PtYnr,
+      {bool? yozkeCEmzCeGXNNu}) {
+    var OhRd9yIYxXiNc9uk = f3y3eUvfmbqE4uzIF(Wiv8PMkiG56nrNZf);
 
-    // Filter by type: imageOnly = true for images (dynamicType == 0), false for videos (dynamicType == 1)
-    if (imageOnly != null) {
-      filtered = filtered
-          .where((p) => imageOnly ? p.ocN7sEFUY2qW0Zgr == 0 : p.ocN7sEFUY2qW0Zgr == 1)
-          .toList();
+    if (yozkeCEmzCeGXNNu != null) {
+      OhRd9yIYxXiNc9uk = OhRd9yIYxXiNc9uk.where((p) => yozkeCEmzCeGXNNu
+          ? p.ocN7sEFUY2qW0Zgr == 0
+          : p.ocN7sEFUY2qW0Zgr == 1).toList();
     }
 
-    // Filter by category
-    if (category == 'ALL') return filtered;
-    return filtered.where((p) => p.INWCOb6Ba2b5lyo5 == category).toList();
+    if (q3xOTlyrA33PtYnr == 'ALL') return OhRd9yIYxXiNc9uk;
+    return OhRd9yIYxXiNc9uk.where((p) => p.INWCOb6Ba2b5lyo5 == q3xOTlyrA33PtYnr)
+        .toList();
   }
 
-  // 获取过滤后的所有帖子（排除blockList中用户的帖子）
-  List<TdpFegrWPc3sjlaQPost> get filteredPosts => _filterBlockedPosts(posts);
+  List<TdpFegrWPc3sjlaQPost> get glufK0J7UE7AEAHL =>
+      f3y3eUvfmbqE4uzIF(Wiv8PMkiG56nrNZf);
 
-  List<TdpFegrWPc3sjlaQPost> userPosts(String userId) {
-    // 如果查看的是自己的账户，不过滤；否则过滤掉blockList中的用户
-    if (userId == currentUser.fkloYnZiRmbRtJ00) {
-      return posts.where((p) => p.nlPxQBFl8qKNMmCt == userId).toList();
+  List<TdpFegrWPc3sjlaQPost> p23esqfVUGjNMLsVG(String TlIdTnzCHXHNQ1fB) {
+    if (TlIdTnzCHXHNQ1fB == NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00) {
+      return Wiv8PMkiG56nrNZf.where(
+          (p) => p.nlPxQBFl8qKNMmCt == TlIdTnzCHXHNQ1fB).toList();
     }
-    return _filterBlockedPosts(posts.where((p) => p.nlPxQBFl8qKNMmCt == userId).toList());
+    return f3y3eUvfmbqE4uzIF(
+        Wiv8PMkiG56nrNZf.where((p) => p.nlPxQBFl8qKNMmCt == TlIdTnzCHXHNQ1fB)
+            .toList());
   }
 
-  // 获取过滤后的聊天室列表（排除包含blockList中用户的聊天室）
-  List<RD5sxRcE0eOB932bFliao> get filteredChatRooms => _filterBlockedChatRooms(chatRooms);
+  List<RD5sxRcE0eOB932bFliao> get bbZAttxRai3tdwtX =>
+      r5CAO6gwc6JArwmev(XjnQ9Ya3GTHax5Jz);
 
-  RD5sxRcE0eOB932bFliao? getChatRoomByPeerId(String peerId) {
-    // 如果对方在blockList中，不应该创建或返回聊天室
-    if (_isUserBlocked(peerId)) {
+  RD5sxRcE0eOB932bFliao? g91zzufhoBusla1N4(String E5TgLE9rCQKDRZX9) {
+    if (I2va46RJYigW7cLa(E5TgLE9rCQKDRZX9)) {
       return null;
     }
-    return chatRooms.firstWhere(
+    return XjnQ9Ya3GTHax5Jz.firstWhere(
       (c) =>
-          c.R1DrlWpgkNODxc7I.contains(currentUser.fkloYnZiRmbRtJ00) &&
-          c.R1DrlWpgkNODxc7I.contains(peerId),
+          c.R1DrlWpgkNODxc7I.contains(NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00) &&
+          c.R1DrlWpgkNODxc7I.contains(E5TgLE9rCQKDRZX9),
       orElse: () => RD5sxRcE0eOB932bFliao(
         c5sk5SraIUZ47JRVo: 'c${Random().nextInt(99999)}',
-        R1DrlWpgkNODxc7I: [currentUser.fkloYnZiRmbRtJ00, peerId],
+        R1DrlWpgkNODxc7I: [NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00, E5TgLE9rCQKDRZX9],
         l46a7ZEmfVdDDNMKJ: '',
         s1x9rL9Ec2ZKZ7FwP:
             DateTime.now().toString().substring(0, 19).replaceAll('T', ' '),
@@ -235,58 +235,60 @@ class AppState extends ChangeNotifier {
     );
   }
 
-  void purchasePack(BJpjHVrAqvtNbCtLDiapack pack) {
-    final idx = users
-        .indexWhere((u) => u.fkloYnZiRmbRtJ00 == currentUser.fkloYnZiRmbRtJ00);
-    if (idx == -1) return;
-    final updated = currentUser.copyWith(
-        IlyH5k6lZ7fVAHfQ: currentUser.IlyH5k6lZ7fVAHfQ + pack.LylHtfRBcO1D0w0M);
-    users[idx] = updated;
-    currentUser = updated;
-    _persist();
+  void csUFs2aueMukHnHJ(BJpjHVrAqvtNbCtLDiapack dIpTKYC5OxmjpJas) {
+    final TaRzhTjOyOWVIkVo = EGX7N1GxSRqAoJMH.indexWhere(
+        (u) => u.fkloYnZiRmbRtJ00 == NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00);
+    if (TaRzhTjOyOWVIkVo == -1) return;
+    final IkT4jG6xkIYa2fmt = NLbGEpZKzMfAbV3k.copyWith(
+        IlyH5k6lZ7fVAHfQ: NLbGEpZKzMfAbV3k.IlyH5k6lZ7fVAHfQ +
+            dIpTKYC5OxmjpJas.LylHtfRBcO1D0w0M);
+    EGX7N1GxSRqAoJMH[TaRzhTjOyOWVIkVo] = IkT4jG6xkIYa2fmt;
+    NLbGEpZKzMfAbV3k = IkT4jG6xkIYa2fmt;
+    XPskFHZDnriIqlXv();
     notifyListeners();
   }
 
-  // EULA methods
-  Future<void> setEulaAgreed(bool agreed) async {
-    eulaAgreed = agreed;
-    await storage.setEulaAgreed(agreed);
+  Future<void> s4DGwwJAWv14UaQpX(bool oUCs4z6sLYWKVw9H) async {
+    vB2GTgDbdOHDxBUH = oUCs4z6sLYWKVw9H;
+    await sOjugDTKPqzG6mvBs.s4DGwwJAWv14UaQpX(oUCs4z6sLYWKVw9H);
     notifyListeners();
   }
 
-  // Login methods
-  Future<void> loginWithEmail(String email, String password) async {
-    // Find user by email and password
-    final user = users.firstWhere(
-      (u) => u.UH6Wfi7WIQ8UtXwg == email && u.fyVNw5c7FRNN1Eui == password,
-      orElse: () => _createDefaultUser(),
+  Future<void> l3lteByquzLST80Zc(
+      String xu094FVRzZYjaaXA, String ohgvZZZRRGRK4zo1) async {
+    final W1vhnt6ydaKPNytR = EGX7N1GxSRqAoJMH.firstWhere(
+      (u) =>
+          u.UH6Wfi7WIQ8UtXwg == xu094FVRzZYjaaXA &&
+          u.fyVNw5c7FRNN1Eui == ohgvZZZRRGRK4zo1,
+      orElse: () => ZUEqPPxydYoBh7Iz(),
     );
 
-    if (user.fkloYnZiRmbRtJ00 != 'u1' ||
-        users.any((u) =>
-            u.UH6Wfi7WIQ8UtXwg == email && u.fyVNw5c7FRNN1Eui == password)) {
-      currentUser = user;
-      isLoggedIn = true;
-      await storage.setIsLoggedIn(true);
-      await storage.setCurrentLoggedInUserId(user.fkloYnZiRmbRtJ00);
+    if (W1vhnt6ydaKPNytR.fkloYnZiRmbRtJ00 != 'u1' ||
+        EGX7N1GxSRqAoJMH.any((u) =>
+            u.UH6Wfi7WIQ8UtXwg == xu094FVRzZYjaaXA &&
+            u.fyVNw5c7FRNN1Eui == ohgvZZZRRGRK4zo1)) {
+      NLbGEpZKzMfAbV3k = W1vhnt6ydaKPNytR;
+      WMQtbwFITYixyRbr = true;
+      await sOjugDTKPqzG6mvBs.PIJbSGMK2PHYyqXg(true);
+      await sOjugDTKPqzG6mvBs
+          .wgQhCdcOn2ctJh2z(W1vhnt6ydaKPNytR.fkloYnZiRmbRtJ00);
       notifyListeners();
     }
   }
 
-  Future<void> signupWithEmail(String email, String password) async {
-    // Check if email already exists
-    if (users.any((u) => u.UH6Wfi7WIQ8UtXwg == email)) {
-      return; // Email already exists
+  Future<void> lszNrddlteyGVoBP(
+      String xu094FVRzZYjaaXA, String ohgvZZZRRGRK4zo1) async {
+    if (EGX7N1GxSRqAoJMH.any((u) => u.UH6Wfi7WIQ8UtXwg == xu094FVRzZYjaaXA)) {
+      return;
     }
 
-    // Create new user
-    final newUserId = 'u_${DateTime.now().millisecondsSinceEpoch}';
-    final newUser = U2749HToRfgbLVPrMUser(
-      fkloYnZiRmbRtJ00: newUserId,
-      UH6Wfi7WIQ8UtXwg: email,
-      fyVNw5c7FRNN1Eui: password,
+    final VTb0eUWsM4LB8pWb = 'u_${DateTime.now().millisecondsSinceEpoch}';
+    final VrmIKMcMY7psdbDJ = U2749HToRfgbLVPrMUser(
+      fkloYnZiRmbRtJ00: VTb0eUWsM4LB8pWb,
+      UH6Wfi7WIQ8UtXwg: xu094FVRzZYjaaXA,
+      fyVNw5c7FRNN1Eui: ohgvZZZRRGRK4zo1,
       RmXHAp70ovHNBN4U: 'assets/images/zoryo_logo.png',
-      AWWxvC6FbYICMs9P: email.split('@').first,
+      AWWxvC6FbYICMs9P: xu094FVRzZYjaaXA.split('@').first,
       Sfy5ovPIlV0PS5C2: '',
       IlyH5k6lZ7fVAHfQ: 0,
       f9FuGnEvLPZO4IWMA: [],
@@ -296,47 +298,46 @@ class AppState extends ChangeNotifier {
       IibbF2RfvAxYkcQo: [],
     );
 
-    users.add(newUser);
-    currentUser = newUser;
-    isLoggedIn = true;
-    await storage.setIsLoggedIn(true);
-    await storage.setCurrentLoggedInUserId(newUser.fkloYnZiRmbRtJ00);
-    await _persist();
+    EGX7N1GxSRqAoJMH.add(VrmIKMcMY7psdbDJ);
+    NLbGEpZKzMfAbV3k = VrmIKMcMY7psdbDJ;
+    WMQtbwFITYixyRbr = true;
+    await sOjugDTKPqzG6mvBs.PIJbSGMK2PHYyqXg(true);
+    await sOjugDTKPqzG6mvBs
+        .wgQhCdcOn2ctJh2z(VrmIKMcMY7psdbDJ.fkloYnZiRmbRtJ00);
+    await XPskFHZDnriIqlXv();
     notifyListeners();
   }
 
-  Future<void> quickLogin() async {
-    final quickLoginUserId = await storage.getQuickLoginUserId();
+  Future<void> sYBxKNVVyDvzxp7m() async {
+    final DmBnzrztpGHF3Cuo = await sOjugDTKPqzG6mvBs.Mub1D32IrlItuRts();
 
-    if (quickLoginUserId != null) {
-      // Check if quick login user still exists
-      final user = users.firstWhere(
-        (u) => u.fkloYnZiRmbRtJ00 == quickLoginUserId,
-        orElse: () => _createDefaultUser(),
+    if (DmBnzrztpGHF3Cuo != null) {
+      final HIztSN0h52ClnM7n = EGX7N1GxSRqAoJMH.firstWhere(
+        (u) => u.fkloYnZiRmbRtJ00 == DmBnzrztpGHF3Cuo,
+        orElse: () => ZUEqPPxydYoBh7Iz(),
       );
 
-      if (user.fkloYnZiRmbRtJ00 == quickLoginUserId) {
-        // User exists, login
-        currentUser = user;
-        isLoggedIn = true;
-        await storage.setIsLoggedIn(true);
-        await storage.setCurrentLoggedInUserId(user.fkloYnZiRmbRtJ00);
+      if (HIztSN0h52ClnM7n.fkloYnZiRmbRtJ00 == DmBnzrztpGHF3Cuo) {
+        NLbGEpZKzMfAbV3k = HIztSN0h52ClnM7n;
+        WMQtbwFITYixyRbr = true;
+        await sOjugDTKPqzG6mvBs.PIJbSGMK2PHYyqXg(true);
+        await sOjugDTKPqzG6mvBs
+            .wgQhCdcOn2ctJh2z(HIztSN0h52ClnM7n.fkloYnZiRmbRtJ00);
         notifyListeners();
         return;
       } else {
-        // User was deleted, clear quick login user ID
-        await storage.setQuickLoginUserId(null);
+        await sOjugDTKPqzG6mvBs.iH2W7mRYs9BmEuFE(null);
       }
     }
 
-    // First time quick login or user was deleted, create new user
-    final newUserId = 'u_quick_${Random().nextInt(999999)}';
-    final newUser = U2749HToRfgbLVPrMUser(
-      fkloYnZiRmbRtJ00: newUserId,
-      UH6Wfi7WIQ8UtXwg: 'quick_$newUserId@quick.com',
+    final VTb0eUWsM4LB8pWb = 'u_quick_${Random().nextInt(999999)}';
+    final VrmIKMcMY7psdbDJ = U2749HToRfgbLVPrMUser(
+      fkloYnZiRmbRtJ00: VTb0eUWsM4LB8pWb,
+      UH6Wfi7WIQ8UtXwg: 'quick_$VTb0eUWsM4LB8pWb@quick.com',
       fyVNw5c7FRNN1Eui: '',
       RmXHAp70ovHNBN4U: 'assets/images/zoryo_logo.png',
-      AWWxvC6FbYICMs9P: 'U2749HToRfgbLVPrMUser ${newUserId.substring(newUserId.length - 4)}',
+      AWWxvC6FbYICMs9P:
+          'User ${VTb0eUWsM4LB8pWb.substring(VTb0eUWsM4LB8pWb.length - 4)}',
       Sfy5ovPIlV0PS5C2: 'Quick login user',
       IlyH5k6lZ7fVAHfQ: 0,
       f9FuGnEvLPZO4IWMA: [],
@@ -346,160 +347,151 @@ class AppState extends ChangeNotifier {
       IibbF2RfvAxYkcQo: [],
     );
 
-    users.add(newUser);
-    currentUser = newUser;
-    isLoggedIn = true;
-    await storage.setIsLoggedIn(true);
-    await storage.setCurrentLoggedInUserId(newUser.fkloYnZiRmbRtJ00);
-    await storage.setQuickLoginUserId(newUser.fkloYnZiRmbRtJ00);
-    await _persist();
+    EGX7N1GxSRqAoJMH.add(VrmIKMcMY7psdbDJ);
+    NLbGEpZKzMfAbV3k = VrmIKMcMY7psdbDJ;
+    WMQtbwFITYixyRbr = true;
+    await sOjugDTKPqzG6mvBs.PIJbSGMK2PHYyqXg(true);
+    await sOjugDTKPqzG6mvBs
+        .wgQhCdcOn2ctJh2z(VrmIKMcMY7psdbDJ.fkloYnZiRmbRtJ00);
+    await sOjugDTKPqzG6mvBs
+        .iH2W7mRYs9BmEuFE(VrmIKMcMY7psdbDJ.fkloYnZiRmbRtJ00);
+    await XPskFHZDnriIqlXv();
     notifyListeners();
   }
 
-  Future<void> logout() async {
-    final wasQuickLogin =
-        await storage.getQuickLoginUserId() == currentUser.fkloYnZiRmbRtJ00;
+  Future<void> a7cngZic3wGbStpc() async {
+    final H0KEGBqdGsPBB2OG = await sOjugDTKPqzG6mvBs.Mub1D32IrlItuRts() ==
+        NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00;
 
-    isLoggedIn = false;
-    await storage.setIsLoggedIn(false);
-    await storage.setCurrentLoggedInUserId(null);
+    WMQtbwFITYixyRbr = false;
+    await sOjugDTKPqzG6mvBs.PIJbSGMK2PHYyqXg(false);
+    await sOjugDTKPqzG6mvBs.wgQhCdcOn2ctJh2z(null);
 
-    // Only clear quick login user ID if it was a quick login user
-    // Regular email login logout doesn't affect quick login
-    if (wasQuickLogin) {
-      // Don't clear quick login user ID, keep it for next quick login
-    }
+    if (H0KEGBqdGsPBB2OG) {}
 
-    currentUser = _createDefaultUser();
+    NLbGEpZKzMfAbV3k = ZUEqPPxydYoBh7Iz();
     notifyListeners();
   }
 
-  // Route location management
-  Future<void> saveRouteLocation(String location) async {
-    savedRouteLocation = location;
-    await storage.setCurrentRouteLocation(location);
+  Future<void> s8HGVKPpcO4RCTngj(String v9g97saAXcAzM96EL) async {
+    s6LetX6FiwoOFmXwp = v9g97saAXcAzM96EL;
+    await sOjugDTKPqzG6mvBs.DHjT7LeeZDMfk9FK(v9g97saAXcAzM96EL);
   }
 
-  // Update methods for H5 callbacks
-  Future<void> updateUsers(List<dynamic> userListData) async {
+  Future<void> u6nge5FH92FMre2FQ(List<dynamic> wlXYYDZ25iOMkbHM) async {
     try {
-      users = userListData
+      EGX7N1GxSRqAoJMH = wlXYYDZ25iOMkbHM
           .map((e) => U2749HToRfgbLVPrMUser.fromMap(e as Map<String, dynamic>))
           .toList();
 
-      // Re-filter current user information
-      if (isLoggedIn) {
-        final loggedInUserId = await storage.getCurrentLoggedInUserId();
-        if (loggedInUserId != null) {
-          final foundUser = users.firstWhere(
-            (u) => u.fkloYnZiRmbRtJ00 == loggedInUserId,
-            orElse: () => _createDefaultUser(),
+      if (WMQtbwFITYixyRbr) {
+        final YXeG1pTQEB2m93r7 =
+            await sOjugDTKPqzG6mvBs.rXlywAmDp63ehsb5();
+        if (YXeG1pTQEB2m93r7 != null) {
+          final OVsVMLFIdX4Aysk2 = EGX7N1GxSRqAoJMH.firstWhere(
+            (u) => u.fkloYnZiRmbRtJ00 == YXeG1pTQEB2m93r7,
+            orElse: () => ZUEqPPxydYoBh7Iz(),
           );
-          currentUser = foundUser;
+          NLbGEpZKzMfAbV3k = OVsVMLFIdX4Aysk2;
         }
       }
 
-      await _persist();
+      await XPskFHZDnriIqlXv();
       notifyListeners();
     } catch (e) {
-      debugPrint('Error updating users: $e');
+      debugPrint('Error updating EGX7N1GxSRqAoJMH: $e');
     }
   }
 
-  Future<void> updatePosts(List<dynamic> postListData) async {
+  Future<void> E7BmPQ8TmME2zbij(List<dynamic> f1DGsFZlSNYEuZkYD) async {
     try {
-      posts = postListData
+      Wiv8PMkiG56nrNZf = f1DGsFZlSNYEuZkYD
           .map((e) => TdpFegrWPc3sjlaQPost.fromMap(e as Map<String, dynamic>))
           .toList();
-      await _persist();
+      await XPskFHZDnriIqlXv();
       notifyListeners();
     } catch (e) {
       debugPrint('Error updating posts: $e');
     }
   }
 
-  Future<void> updateComments(List<dynamic> commentListData) async {
+  Future<void> hosdxq6R9auF73IT(List<dynamic> ncliBL2RCRC0y1bq) async {
     try {
-      comments = commentListData
+      c8ZkaRw4rlzkixIFq = ncliBL2RCRC0y1bq
           .map((e) => MLWrwTEsH7mWmgZPCommt.fromMap(e as Map<String, dynamic>))
           .toList();
-      await _persist();
+      await XPskFHZDnriIqlXv();
       notifyListeners();
     } catch (e) {
       debugPrint('Error updating comments: $e');
     }
   }
 
-  Future<void> updateChatRooms(List<dynamic> chatListData) async {
+  Future<void> Tuj1rgvoEtWI61Ec(List<dynamic> CyzIonTmXIA2s1GA) async {
     try {
-      chatRooms = chatListData
-          .map((e) => RD5sxRcE0eOB932bFliao.fromMap(e as Map<String, dynamic>))
+      XjnQ9Ya3GTHax5Jz = CyzIonTmXIA2s1GA.map(
+              (e) => RD5sxRcE0eOB932bFliao.fromMap(e as Map<String, dynamic>))
           .toList();
-      await _persist();
+      await XPskFHZDnriIqlXv();
       notifyListeners();
     } catch (e) {
       debugPrint('Error updating chat rooms: $e');
     }
   }
 
-  Future<void> updateMessages(List<dynamic> messageListData) async {
+  Future<void> l83PDcafhhfvj99q(List<dynamic> EEexKHYQhmO9G0Vl) async {
     try {
-      messages = messageListData
-          .map((e) => NakOK5d2GdM3yvGWMsg.fromMap(e as Map<String, dynamic>))
+      tR0XyhJEMWYqEVcI = EEexKHYQhmO9G0Vl.map(
+              (e) => NakOK5d2GdM3yvGWMsg.fromMap(e as Map<String, dynamic>))
           .toList();
-      await _persist();
+      await XPskFHZDnriIqlXv();
       notifyListeners();
     } catch (e) {
       debugPrint('Error updating messages: $e');
     }
   }
 
-  Future<void> deleteAccount() async {
+  Future<void> d3CaC6Cs7ksQW10cM() async {
     try {
-      final userIdToDelete = currentUser.fkloYnZiRmbRtJ00;
+      final oOkaDllDznGRzvCh = NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00;
 
-      // Remove user from users list
-      users.removeWhere((u) => u.fkloYnZiRmbRtJ00 == userIdToDelete);
+      EGX7N1GxSRqAoJMH.removeWhere(
+          (u) => u.fkloYnZiRmbRtJ00 == oOkaDllDznGRzvCh);
+      Wiv8PMkiG56nrNZf.removeWhere(
+          (p) => p.nlPxQBFl8qKNMmCt == oOkaDllDznGRzvCh);
+      c8ZkaRw4rlzkixIFq
+          .removeWhere((c) => c.YjHeuERpQWrW2rzh == oOkaDllDznGRzvCh);
+      XjnQ9Ya3GTHax5Jz.removeWhere(
+          (c) => c.R1DrlWpgkNODxc7I.contains(oOkaDllDznGRzvCh));
+      tR0XyhJEMWYqEVcI
+          .removeWhere((m) => m.Lmv7ZkAQA6R0SUkQ == oOkaDllDznGRzvCh);
 
-      // Remove user's posts
-      posts.removeWhere((p) => p.nlPxQBFl8qKNMmCt == userIdToDelete);
+      WMQtbwFITYixyRbr = false;
+      await sOjugDTKPqzG6mvBs.PIJbSGMK2PHYyqXg(false);
+      await sOjugDTKPqzG6mvBs.wgQhCdcOn2ctJh2z(null);
+      await sOjugDTKPqzG6mvBs.iH2W7mRYs9BmEuFE(null);
 
-      // Remove user's comments
-      comments.removeWhere((c) => c.YjHeuERpQWrW2rzh == userIdToDelete);
+      NLbGEpZKzMfAbV3k = ZUEqPPxydYoBh7Iz();
 
-      // Remove chat rooms containing this user
-      chatRooms.removeWhere((c) => c.R1DrlWpgkNODxc7I.contains(userIdToDelete));
-
-      // Remove messages from this user
-      messages.removeWhere((m) => m.Lmv7ZkAQA6R0SUkQ == userIdToDelete);
-
-      // Logout
-      isLoggedIn = false;
-      await storage.setIsLoggedIn(false);
-      await storage.setCurrentLoggedInUserId(null);
-      await storage.setQuickLoginUserId(null);
-
-      // Set to default user
-      currentUser = _createDefaultUser();
-
-      await _persist();
+      await XPskFHZDnriIqlXv();
       notifyListeners();
     } catch (e) {
       debugPrint('Error deleting account: $e');
     }
   }
 
-  Future<void> handleRecharge(String paymentId) async {
-    // Find the diamond pack by key (paymentId)
-    final pack = diamondPacks.firstWhere(
-      (p) => p.k4g89xQIHDro7dyFy == paymentId,
-      orElse: () => diamondPacks.isNotEmpty
-          ? diamondPacks.first
-          : BJpjHVrAqvtNbCtLDiapack(k4g89xQIHDro7dyFy: '', LylHtfRBcO1D0w0M: 0, oY2gDyZaF80kazMx: 0),
+  // 支付
+  Future<void> gtfsLkHm6MMk6spI(String mxYHrTcZZYBUGn43key) async {
+    final zeKmXrHVh2MHZiJL = d9dEr1cTYR0dnRD6v.firstWhere(
+      (p) => p.k4g89xQIHDro7dyFy == mxYHrTcZZYBUGn43key,
+      orElse: () => d9dEr1cTYR0dnRD6v.isNotEmpty
+          ? d9dEr1cTYR0dnRD6v.first
+          : BJpjHVrAqvtNbCtLDiapack(
+              k4g89xQIHDro7dyFy: '', LylHtfRBcO1D0w0M: 0, oY2gDyZaF80kazMx: 0),
     );
 
-    if (pack.k4g89xQIHDro7dyFy.isNotEmpty) {
-      purchasePack(pack);
+    if (zeKmXrHVh2MHZiJL.k4g89xQIHDro7dyFy.isNotEmpty) {
+      csUFs2aueMukHnHJ(zeKmXrHVh2MHZiJL);
     }
   }
 }

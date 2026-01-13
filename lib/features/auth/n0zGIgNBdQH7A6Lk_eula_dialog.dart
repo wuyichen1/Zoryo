@@ -3,10 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../zzokdet_fangfa/app_state.dart';
-import '../widgets/gradient_button.dart';
+import '../widgets/lmDy7TRPsjReTw4L_grabtn.dart';
 
-class EulaDialog extends StatelessWidget {
-  const EulaDialog({super.key});
+class N0zGIgNBdQH7A6LkEulaDialog extends StatelessWidget {
+  const N0zGIgNBdQH7A6LkEulaDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -75,18 +75,18 @@ class EulaDialog extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10),
-            GradientButton(
-              width: 230,
-              height: 52,
-              label: 'I agree',
-              textStyle: GoogleFonts.montserrat(
+            lmDy7TRPsjReTw4LGrabtn(
+              gvXl8QjSpir7sOAs: 230,
+              gKk83Jcj0BNDVBtV: 52,
+              Q8jxoIEIflW2H4VN: 'I agree',
+              jNmPS8ESz78iE6wY: GoogleFonts.montserrat(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Colors.white,
               ),
-              onPressed: () async {
-                final app = context.read<AppState>();
-                await app.setEulaAgreed(true);
+              o7q0z205CtYy3Q1ID: () async {
+                final agw12S82W0OQmZwi = context.read<AppState>();
+                await agw12S82W0OQmZwi.s4DGwwJAWv14UaQpX(true);
                 if (context.mounted) {
                   Navigator.of(context).pop();
                 }

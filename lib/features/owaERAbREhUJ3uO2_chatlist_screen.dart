@@ -4,20 +4,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../zzokdet_fangfa/app_state.dart';
-import '../zzokdet_fangfa/image_helper.dart';
+import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
-class ChatListScreen extends StatelessWidget {
-  const ChatListScreen({super.key});
+class OwaERAbREhUJ3uO2ChatlistScreen extends StatelessWidget {
+  const OwaERAbREhUJ3uO2ChatlistScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final app = context.watch<AppState>();
-    // 筛选出包含当前登录用户的聊天室，并排除包含blockList中用户的聊天室
-    final filteredRooms = app.filteredChatRooms
-        .where((room) => room.R1DrlWpgkNODxc7I.contains(app.currentUser.fkloYnZiRmbRtJ00))
+    final C2hU7gqXLEXtNDpC = context.watch<AppState>();
+    final Y18puyI8YrEtJkdp = C2hU7gqXLEXtNDpC.bbZAttxRai3tdwtX
+        .where((Vdj7LZmsKKo1FAvS) => Vdj7LZmsKKo1FAvS.R1DrlWpgkNODxc7I.contains(
+            C2hU7gqXLEXtNDpC.NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00))
         .toList();
     return Scaffold(
-      // appBar: AppBar(title: const Text('Chat')),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -44,7 +43,6 @@ class ChatListScreen extends StatelessWidget {
                 child: Row(
                   children: [
                     const SizedBox(width: 20),
-                    // 当前用户头像
                     Container(
                       width: 60,
                       height: 60,
@@ -55,8 +53,8 @@ class ChatListScreen extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(4.0),
                         child: CircleAvatar(
-                          backgroundImage:
-                              smartImageProvider(app.currentUser.RmXHAp70ovHNBN4U),
+                          backgroundImage: UPClh6pI9Z9yX3xQ(
+                              C2hU7gqXLEXtNDpC.NLbGEpZKzMfAbV3k.RmXHAp70ovHNBN4U),
                           radius: 24,
                         ),
                       ),
@@ -73,7 +71,7 @@ class ChatListScreen extends StatelessWidget {
                 ),
               ),
             ),
-            if (filteredRooms.isEmpty)
+            if (Y18puyI8YrEtJkdp.isEmpty)
               Expanded(
                 child: Center(
                   child: Padding(
@@ -91,21 +89,23 @@ class ChatListScreen extends StatelessWidget {
               Expanded(
                 child: ListView.separated(
                   padding: EdgeInsets.only(top: 16, bottom: 130),
-                  itemBuilder: (context, index) {
-                    final room = filteredRooms[index];
-                    final peerId = room.R1DrlWpgkNODxc7I.firstWhere(
-                      (id) => id != app.currentUser.fkloYnZiRmbRtJ00,
-                      orElse: () => room.R1DrlWpgkNODxc7I.isNotEmpty
-                          ? room.R1DrlWpgkNODxc7I.first
+                  itemBuilder: (context, SZF64aruRZajxhdC) {
+                    final fnL8qmVL1NA8sDmB = Y18puyI8YrEtJkdp[SZF64aruRZajxhdC];
+                    final vUdL7aHqb4jVqtsu =
+                        fnL8qmVL1NA8sDmB.R1DrlWpgkNODxc7I.firstWhere(
+                      (id) =>
+                          id != C2hU7gqXLEXtNDpC.NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00,
+                      orElse: () => fnL8qmVL1NA8sDmB.R1DrlWpgkNODxc7I.isNotEmpty
+                          ? fnL8qmVL1NA8sDmB.R1DrlWpgkNODxc7I.first
                           : '',
                     );
-                    final peer = app.userById(peerId);
+                    final YPNRbQCVjolEyTB5 =
+                        C2hU7gqXLEXtNDpC.IyC8CUrMp1zDTN8h(vUdL7aHqb4jVqtsu);
                     return ListTile(
                       titleAlignment: ListTileTitleAlignment.top,
                       leading: Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          // 渐变色背景
                           gradient: LinearGradient(
                             colors: [
                               Color(0xFFFF8133),
@@ -118,8 +118,8 @@ class ChatListScreen extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(1.5),
                           child: CircleAvatar(
-                            backgroundImage: smartImageProvider(
-                              peer.RmXHAp70ovHNBN4U,
+                            backgroundImage: UPClh6pI9Z9yX3xQ(
+                              YPNRbQCVjolEyTB5.RmXHAp70ovHNBN4U,
                             ),
                             radius: 26,
                           ),
@@ -139,7 +139,7 @@ class ChatListScreen extends StatelessWidget {
                         },
                         blendMode: BlendMode.srcIn,
                         child: Text(
-                          peer.AWWxvC6FbYICMs9P,
+                          YPNRbQCVjolEyTB5.AWWxvC6FbYICMs9P,
                           style: GoogleFonts.montserrat(
                             fontWeight: FontWeight.w700,
                             color: Colors.white,
@@ -148,19 +148,19 @@ class ChatListScreen extends StatelessWidget {
                         ),
                       ),
                       subtitle: Text(
-                        room.l46a7ZEmfVdDDNMKJ,
+                        fnL8qmVL1NA8sDmB.l46a7ZEmfVdDDNMKJ,
                         style: GoogleFonts.montserrat(
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
                           fontSize: 15,
                         ),
                       ),
-                      trailing: room.uQsMIZjDCeFbmLAP > 0
+                      trailing: fnL8qmVL1NA8sDmB.uQsMIZjDCeFbmLAP > 0
                           ? CircleAvatar(
                               radius: 11,
                               backgroundColor: Color(0xFFFF5757),
                               child: Text(
-                                '${room.uQsMIZjDCeFbmLAP}',
+                                '${fnL8qmVL1NA8sDmB.uQsMIZjDCeFbmLAP}',
                                 style: const TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w600,
@@ -169,8 +169,8 @@ class ChatListScreen extends StatelessWidget {
                               ),
                             )
                           : null,
-                      onTap: () =>
-                          context.push('/h5/private-chat?id=${room.c5sk5SraIUZ47JRVo}'),
+                      onTap: () => context.push(
+                          '/h5/private-chat?id=${fnL8qmVL1NA8sDmB.c5sk5SraIUZ47JRVo}'),
                     );
                   },
                   separatorBuilder: (_, __) => const Divider(
@@ -179,7 +179,7 @@ class ChatListScreen extends StatelessWidget {
                     indent: 20,
                     endIndent: 20,
                   ),
-                  itemCount: filteredRooms.length,
+                  itemCount: Y18puyI8YrEtJkdp.length,
                 ),
               ),
           ],

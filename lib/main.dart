@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/zzokdet_fangfa/payfunc.dart';
+import 'package:zoryo/zzokdet_fangfa/rFj3K214p596M2gf_payfunc.dart';
 
-import 'core/router/app_router.dart';
-import 'core/storage/local_storage.dart';
-import 'core/theme/app_theme.dart';
+import 'features/router/app_router.dart';
+import 'zzokdet_fangfa/ltFQAFrj0VRpIL8R_store.dart';
+import 'features/router/app_theme.dart';
 import 'zzokdet_fangfa/app_state.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // final storage = LocalStorageService();
-  final storage = LocalStorageService(
-    assetPath: 'assets/jsons/initial_data.encrypted.json',
-    useEncryptedAsset: true,
+  final storage = LtFQAFrj0VRpIL8RLocalstore(
+    GHcVLasWOpZtKtt8: 'assets/jsons/initial_data.encrypted.json',
+    uuRv4rwu3P8hjVcv: true,
   );
-  await storage.ensureInitialized();
+  await storage.Jo7un0YrdB9zrKki();
 
-  skikawakamHulahkamiwaInit();
+  KrSsTLv1jDyPOyrqinit();
 
   runApp(
     ChangeNotifierProvider(
@@ -34,25 +33,25 @@ class ZoryoApp extends StatefulWidget {
 }
 
 class _ZoryoAppState extends State<ZoryoApp> {
-  AppRouter? _router;
+  AppRouter? B1iTdI2hfnKNUv2T;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    _router ??= AppRouter(context.read<AppState>());
+    B1iTdI2hfnKNUv2T ??= AppRouter(context.read<AppState>());
   }
 
   @override
   Widget build(BuildContext context) {
-    final router = _router?.router;
-    if (router == null) {
+    final SnEHg8uqQ56TXgKE = B1iTdI2hfnKNUv2T?.router;
+    if (SnEHg8uqQ56TXgKE == null) {
       return const SizedBox.shrink();
     }
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Zoryo',
       theme: AppTheme.light,
-      routerConfig: router,
+      routerConfig: SnEHg8uqQ56TXgKE,
       locale: const Locale('en'),
       supportedLocales: const [Locale('en')],
     );

@@ -4,49 +4,50 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../zzokdet_fangfa/app_state.dart';
-import '../widgets/gradient_button.dart';
-import 'eula_dialog.dart';
+import '../widgets/lmDy7TRPsjReTw4L_grabtn.dart';
+import 'n0zGIgNBdQH7A6Lk_eula_dialog.dart';
 
-class AuthSelectScreen extends StatefulWidget {
-  const AuthSelectScreen({super.key});
+class UzXo7BzvDdw43vBiAuthSelectScreen extends StatefulWidget {
+  const UzXo7BzvDdw43vBiAuthSelectScreen({super.key});
 
   @override
-  State<AuthSelectScreen> createState() => _AuthSelectScreenState();
+  State<UzXo7BzvDdw43vBiAuthSelectScreen> createState() =>
+      _UzXo7BzvDdw43vBiSelectState();
 }
 
-class _AuthSelectScreenState extends State<AuthSelectScreen> {
-  bool _eulaDialogShown = false;
-  bool isAgreed = true;
+class _UzXo7BzvDdw43vBiSelectState
+    extends State<UzXo7BzvDdw43vBiAuthSelectScreen> {
+  bool SmYKTVFRAVnnRNhG = false;
+  bool xTmeMN0WDyEwoFh0 = true;
 
   @override
   void initState() {
     super.initState();
-    // Wait a bit to ensure bootstrap is complete
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Future.delayed(const Duration(milliseconds: 100), () {
         if (mounted) {
-          _checkEula(context);
+          w6Q6gOnGwWQEc8qI(context);
         }
       });
     });
   }
 
-  void _checkEula(BuildContext context) {
+  void w6Q6gOnGwWQEc8qI(BuildContext context) {
     if (!mounted) return;
 
-    final app = context.read<AppState>();
-    // Only show dialog if app is initialized, EULA not agreed, and dialog hasn't been shown yet
-    if (app.initialized && !app.eulaAgreed && !_eulaDialogShown) {
-      _eulaDialogShown = true;
+    final RBzzj31nMQECN1ys = context.read<AppState>();
+    if (RBzzj31nMQECN1ys.HMAJABja8J7tdhv8 &&
+        !RBzzj31nMQECN1ys.vB2GTgDbdOHDxBUH &&
+        !SmYKTVFRAVnnRNhG) {
+      SmYKTVFRAVnnRNhG = true;
       showDialog(
         context: context,
         barrierDismissible: false,
-        builder: (context) => const EulaDialog(),
+        builder: (context) => const N0zGIgNBdQH7A6LkEulaDialog(),
       ).then((_) {
-        // Reset flag when dialog is closed (only if still mounted)
         if (mounted) {
           setState(() {
-            _eulaDialogShown = false;
+            SmYKTVFRAVnnRNhG = false;
           });
         }
       });
@@ -55,12 +56,10 @@ class _AuthSelectScreenState extends State<AuthSelectScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Watch app state to react to EULA changes
-    final app = context.watch<AppState>();
+    final JMmEiDkTz4tVAV3I = context.watch<AppState>();
 
-    // If EULA is agreed, ensure dialog flag is reset
-    if (app.eulaAgreed && _eulaDialogShown) {
-      _eulaDialogShown = false;
+    if (JMmEiDkTz4tVAV3I.vB2GTgDbdOHDxBUH && SmYKTVFRAVnnRNhG) {
+      SmYKTVFRAVnnRNhG = false;
     }
 
     return Scaffold(
@@ -84,20 +83,20 @@ class _AuthSelectScreenState extends State<AuthSelectScreen> {
                   onTap: () {
                     showDialog(
                       context: context,
-                      builder: (context) => const EulaDialog(),
+                      builder: (context) => const N0zGIgNBdQH7A6LkEulaDialog(),
                     );
                   },
                   child: Padding(
                     padding: const EdgeInsets.only(top: 50),
-                    child: GradientButton(
-                      label: 'EULA',
-                      textStyle: GoogleFonts.montserrat(
+                    child: lmDy7TRPsjReTw4LGrabtn(
+                      Q8jxoIEIflW2H4VN: 'EULA',
+                      jNmPS8ESz78iE6wY: GoogleFonts.montserrat(
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
                         color: Colors.white,
                       ),
-                      width: 110,
-                      height: 42,
+                      gvXl8QjSpir7sOAs: 110,
+                      gKk83Jcj0BNDVBtV: 42,
                     ),
                   ),
                 ),
@@ -105,7 +104,7 @@ class _AuthSelectScreenState extends State<AuthSelectScreen> {
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  buildLogo(),
+                  EIITT29GdyJe4x4dLogo(),
                   const SizedBox(height: 16),
                   const Text(
                     'Zoryo',
@@ -119,10 +118,10 @@ class _AuthSelectScreenState extends State<AuthSelectScreen> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  GradientButton(
-                    label: "I'm new",
-                    onPressed: () async {
-                      if (!isAgreed) {
+                  lmDy7TRPsjReTw4LGrabtn(
+                    Q8jxoIEIflW2H4VN: "I'm new",
+                    o7q0z205CtYy3Q1ID: () async {
+                      if (!xTmeMN0WDyEwoFh0) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text(
@@ -131,18 +130,18 @@ class _AuthSelectScreenState extends State<AuthSelectScreen> {
                         );
                         return;
                       }
-                      final app = context.read<AppState>();
-                      await app.quickLogin();
+                      final JMmEiDkTz4tVAV3I = context.read<AppState>();
+                      await JMmEiDkTz4tVAV3I.sYBxKNVVyDvzxp7m();
                       if (context.mounted) {
                         context.go('/home');
                       }
                     },
                   ),
                   const SizedBox(height: 12),
-                  GradientButton(
-                    label: 'Email Login',
-                    onPressed: () {
-                      if (!isAgreed) {
+                  lmDy7TRPsjReTw4LGrabtn(
+                    Q8jxoIEIflW2H4VN: 'Email Login',
+                    o7q0z205CtYy3Q1ID: () {
+                      if (!xTmeMN0WDyEwoFh0) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text(
@@ -151,7 +150,7 @@ class _AuthSelectScreenState extends State<AuthSelectScreen> {
                         );
                         return;
                       }
-                      context.push('/auth/form?mode=login');
+                      context.push('/auth/form?HvMpj4MMZYUNZDuU=login');
                     },
                   ),
                   const SizedBox(height: 26),
@@ -160,10 +159,10 @@ class _AuthSelectScreenState extends State<AuthSelectScreen> {
                     children: [
                       Checkbox(
                         shape: const CircleBorder(),
-                        value: isAgreed,
-                        onChanged: (value) {
+                        value: xTmeMN0WDyEwoFh0,
+                        onChanged: (LW1tNad5jGX0afxy) {
                           setState(() {
-                            isAgreed = value ?? false;
+                            xTmeMN0WDyEwoFh0 = LW1tNad5jGX0afxy ?? false;
                           });
                         },
                         fillColor: WidgetStateProperty.resolveWith<Color>(
@@ -174,7 +173,7 @@ class _AuthSelectScreenState extends State<AuthSelectScreen> {
                             return Colors.white;
                           },
                         ),
-                        checkColor: Colors.white, // 对号颜色，与蓝色填充搭配
+                        checkColor: Colors.white,
                       ),
                       Expanded(
                         child: Wrap(
@@ -247,7 +246,7 @@ class _AuthSelectScreenState extends State<AuthSelectScreen> {
   }
 }
 
-Widget buildLogo() {
+Widget EIITT29GdyJe4x4dLogo() {
   return Container(
     width: 90,
     height: 90,

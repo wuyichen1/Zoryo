@@ -2,47 +2,43 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/features/auth/auth_select_screen.dart';
+import 'package:zoryo/features/auth/uzXo7BzvDdw43vBi_authselect_screen.dart';
 
-import '../widgets/gradient_button.dart';
+import '../widgets/lmDy7TRPsjReTw4L_grabtn.dart';
 import '../../zzokdet_fangfa/app_state.dart';
 
-class AuthFormScreen extends StatefulWidget {
-  const AuthFormScreen({super.key, required this.mode});
-  final String mode; // login | signup | forgot | eula
+class Rtb0LjrVwalrXIZ3AuthFormScreen extends StatefulWidget {
+  const Rtb0LjrVwalrXIZ3AuthFormScreen(
+      {super.key, required this.HvMpj4MMZYUNZDuU});
+  final String HvMpj4MMZYUNZDuU;
 
   @override
-  State<AuthFormScreen> createState() => _AuthFormScreenState();
+  State<Rtb0LjrVwalrXIZ3AuthFormScreen> createState() =>
+      _Rtb0LjrVwalrXIZ3AuthFormState();
 }
 
-class _AuthFormScreenState extends State<AuthFormScreen> {
-  final emailCtrl = TextEditingController();
-  final pwdCtrl = TextEditingController();
+class _Rtb0LjrVwalrXIZ3AuthFormState
+    extends State<Rtb0LjrVwalrXIZ3AuthFormScreen> {
+  final W5L4ZoGikeRcriWE = TextEditingController();
+  final JOuDhBxZIddNZVgK = TextEditingController();
 
   @override
   void dispose() {
-    emailCtrl.dispose();
-    pwdCtrl.dispose();
+    W5L4ZoGikeRcriWE.dispose();
+    JOuDhBxZIddNZVgK.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final isEula = widget.mode == 'eula';
-    final title = switch (widget.mode) {
+    final Ks1kNLT4Axy1DmSL = widget.HvMpj4MMZYUNZDuU == 'eula';
+    final lHDdeCvnq77OmV2w = switch (widget.HvMpj4MMZYUNZDuU) {
       'signup' => 'Sign up',
       'forgot' => 'Forgot password',
       'eula' => 'EULA',
       _ => 'Login',
     };
     return Scaffold(
-      // appBar: AppBar(
-      //   leading: IconButton(
-      //     onPressed: () => context.pop(),
-      //     icon: const Icon(Icons.arrow_back_ios_new),
-      //   ),
-      //   title: Text(title),
-      // ),
       body: Column(
         children: [
           Padding(
@@ -59,7 +55,7 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
                 ),
                 SizedBox(width: 20),
                 Text(
-                  title,
+                  lHDdeCvnq77OmV2w,
                   style: GoogleFonts.montserrat(
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
@@ -72,8 +68,9 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
             child: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(20),
-                child:
-                    isEula ? _buildEula(context) : _buildForm(context, title),
+                child: Ks1kNLT4Axy1DmSL
+                    ? b39Xt42hgedE3HqCz(context)
+                    : NQ7elx2tlUiWRcpT(context, lHDdeCvnq77OmV2w),
               ),
             ),
           ),
@@ -82,12 +79,11 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
     );
   }
 
-  Widget _buildForm(BuildContext context, String title) {
+  Widget NQ7elx2tlUiWRcpT(BuildContext context, String lHDdeCvnq77OmV2w) {
     return Column(
-      // crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const SizedBox(height: 20),
-        buildLogo(),
+        EIITT29GdyJe4x4dLogo(),
         const SizedBox(height: 12),
         const Text(
           'Zoryo',
@@ -107,10 +103,9 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
             ),
             SizedBox(height: 12),
             TextField(
-              controller: emailCtrl,
+              controller: W5L4ZoGikeRcriWE,
               decoration: const InputDecoration(
                 hintText: 'Enter email address',
-                // labelText: 'Email',
               ),
             ),
           ],
@@ -128,16 +123,15 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
             ),
             SizedBox(height: 12),
             TextField(
-              controller: pwdCtrl,
+              controller: JOuDhBxZIddNZVgK,
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Enter password',
-                // labelText: widget.mode == 'forgot' ? 'New password' : 'Password',
               ),
             ),
           ],
         ),
-        if (widget.mode != 'login') ...[
+        if (widget.HvMpj4MMZYUNZDuU != 'login') ...[
           const SizedBox(height: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -154,18 +148,17 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
                 obscureText: true,
                 decoration: const InputDecoration(
                   hintText: 'Repeat password',
-                  // labelText: 'Password',
                 ),
               ),
             ],
           ),
         ],
         const SizedBox(height: 20),
-        if (widget.mode == 'login')
+        if (widget.HvMpj4MMZYUNZDuU == 'login')
           Align(
             alignment: Alignment.centerLeft,
             child: GestureDetector(
-              onTap: () => context.push('/auth/form?mode=forgot'),
+              onTap: () => context.push('/auth/form?HvMpj4MMZYUNZDuU=forgot'),
               child: Text(
                 'FORGOT?',
                 style: GoogleFonts.montserrat(
@@ -177,7 +170,7 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
             ),
           ),
         const SizedBox(height: 40),
-        if (widget.mode == 'login')
+        if (widget.HvMpj4MMZYUNZDuU == 'login')
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -188,7 +181,8 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
                 ),
               ),
               TextButton(
-                onPressed: () => context.push('/auth/form?mode=signup'),
+                onPressed: () =>
+                    context.push('/auth/form?HvMpj4MMZYUNZDuU=signup'),
                 child: Text(
                   "SIGN UP >",
                   style: GoogleFonts.roboto(
@@ -200,22 +194,23 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
             ],
           ),
         const SizedBox(height: 16),
-        GradientButton(
-          label: widget.mode == 'login'
+        lmDy7TRPsjReTw4LGrabtn(
+          Q8jxoIEIflW2H4VN: widget.HvMpj4MMZYUNZDuU == 'login'
               ? 'Login'
-              : widget.mode == 'signup'
+              : widget.HvMpj4MMZYUNZDuU == 'signup'
                   ? 'Sign up'
                   : 'Next',
-          onPressed: () async {
-            final app = context.read<AppState>();
-            if (widget.mode == 'login') {
-              await app.loginWithEmail(emailCtrl.text, pwdCtrl.text);
-            } else if (widget.mode == 'signup') {
-              // Create new user and login
-              await app.signupWithEmail(emailCtrl.text, pwdCtrl.text);
+          o7q0z205CtYy3Q1ID: () async {
+            final FOz4q2Cnj4dgGWq2 = context.read<AppState>();
+            if (widget.HvMpj4MMZYUNZDuU == 'login') {
+              await FOz4q2Cnj4dgGWq2.l3lteByquzLST80Zc(
+                  W5L4ZoGikeRcriWE.text, JOuDhBxZIddNZVgK.text);
+            } else if (widget.HvMpj4MMZYUNZDuU == 'signup') {
+              await FOz4q2Cnj4dgGWq2.lszNrddlteyGVoBP(
+                  W5L4ZoGikeRcriWE.text, JOuDhBxZIddNZVgK.text);
             }
             if (context.mounted) {
-              if (app.isLoggedIn) {
+              if (FOz4q2Cnj4dgGWq2.WMQtbwFITYixyRbr) {
                 context.go('/home');
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
@@ -232,7 +227,7 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
     );
   }
 
-  Widget _buildEula(BuildContext context) {
+  Widget b39Xt42hgedE3HqCz(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -254,9 +249,9 @@ class _AuthFormScreenState extends State<AuthFormScreen> {
             style: TextStyle(height: 1.5),
           ),
           const SizedBox(height: 24),
-          GradientButton(
-            label: 'I agree',
-            onPressed: () => context.pop(),
+          lmDy7TRPsjReTw4LGrabtn(
+            Q8jxoIEIflW2H4VN: 'I agree',
+            o7q0z205CtYy3Q1ID: () => context.pop(),
           ),
         ],
       ),

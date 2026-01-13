@@ -5,49 +5,51 @@ import 'package:provider/provider.dart';
 
 import '../models/tdpFegrWPc3sjlaQ_post.dart';
 import '../zzokdet_fangfa/app_state.dart';
-import 'widgets/common.dart';
-import '../zzokdet_fangfa/image_helper.dart';
+import 'widgets/fgS96lU0Lk2hc2aL_pocard.dart';
+import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class NigZlPuEaIKSmIsIHomeScreen extends StatefulWidget {
+  const NigZlPuEaIKSmIsIHomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<NigZlPuEaIKSmIsIHomeScreen> createState() =>
+      _NigZlPuEaIKSmIsIHomeState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
+class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
     with SingleTickerProviderStateMixin {
-  final tabs = const [
+  final yj5EEy1DWPw53TsS = const [
     'ALL',
     'Daily Glow',
     'Office Polished',
     'Travel Vibe',
     'Party Shine'
   ];
-  late TabController controller;
+  late TabController MLKE0dGHtjhhBzE7;
 
   @override
   void initState() {
     super.initState();
-    controller = TabController(length: tabs.length, vsync: this);
-    controller.addListener(_onTabChanged);
+    MLKE0dGHtjhhBzE7 =
+        TabController(length: yj5EEy1DWPw53TsS.length, vsync: this);
+    MLKE0dGHtjhhBzE7.addListener(KSUuZHrCscBYrzN4);
   }
 
   @override
   void dispose() {
-    controller.removeListener(_onTabChanged);
-    controller.dispose();
+    MLKE0dGHtjhhBzE7.removeListener(KSUuZHrCscBYrzN4);
+    MLKE0dGHtjhhBzE7.dispose();
     super.dispose();
   }
 
-  void _onTabChanged() {
+  void KSUuZHrCscBYrzN4() {
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    final app = context.watch<AppState>();
-    final user = app.currentUser;
+    final dbppyaHLTWf6QAVD = context.watch<AppState>();
+    final h2j6pBuA7KnwD51C = dbppyaHLTWf6QAVD.NLbGEpZKzMfAbV3k;
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -89,8 +91,8 @@ class _HomeScreenState extends State<HomeScreen>
                                 padding: const EdgeInsets.all(3.0),
                                 child: CircleAvatar(
                                   radius: 28,
-                                  backgroundImage:
-                                      smartImageProvider(user.RmXHAp70ovHNBN4U),
+                                  backgroundImage: UPClh6pI9Z9yX3xQ(
+                                      h2j6pBuA7KnwD51C.RmXHAp70ovHNBN4U),
                                 ),
                               ),
                             ),
@@ -102,16 +104,16 @@ class _HomeScreenState extends State<HomeScreen>
                                   'Hello!👋',
                                   style: GoogleFonts.montserrat(
                                     fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white70,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(height: 4),
                                 Text(
-                                  user.AWWxvC6FbYICMs9P,
+                                  h2j6pBuA7KnwD51C.AWWxvC6FbYICMs9P,
                                   style: GoogleFonts.montserrat(
                                     fontSize: 18,
-                                    fontWeight: FontWeight.w600,
+                                    fontWeight: FontWeight.w700,
                                   ),
                                 ),
                               ],
@@ -122,7 +124,6 @@ class _HomeScreenState extends State<HomeScreen>
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // 三行文本
                             Text(
                               'Your exclusive',
                               style: GoogleFonts.montserrat(
@@ -168,14 +169,13 @@ class _HomeScreenState extends State<HomeScreen>
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // 选中项标题
                     Padding(
                       padding: EdgeInsets.only(
                           top:
                               MediaQuery.sizeOf(context).height > 800 ? 80 : 50,
                           left: 20),
                       child: Text(
-                        tabs[controller.index],
+                        yj5EEy1DWPw53TsS[MLKE0dGHtjhhBzE7.index],
                         style: GoogleFonts.montserrat(
                           fontSize: 24,
                           fontWeight: FontWeight.w700,
@@ -241,26 +241,25 @@ class _HomeScreenState extends State<HomeScreen>
               ),
             ),
             SizedBox(height: 16),
-            // 分割线
             Container(
               height: 1,
               color: Colors.white.withOpacity(0.8),
             ),
-            // 自定义 TabBar
-            _CustomTabBar(
-              tabs: tabs,
-              controller: controller,
+            C6U295KaS4SvA74fz(
+              t73u5Log54hc2t6Ea: yj5EEy1DWPw53TsS,
+              yZ4druC02Kkw2AHd: MLKE0dGHtjhhBzE7,
             ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TabBarView(
-                  controller: controller,
-                  children: tabs
+                  controller: MLKE0dGHtjhhBzE7,
+                  children: yj5EEy1DWPw53TsS
                       .map(
-                        (c) => _PostsList(
-                          posts: app.postsByCategory(c, imageOnly: true),
-                          app: app,
+                        (c) => MYZwL8ZDFgDh9zvn(
+                          hOwkQTL5CPB4SAJl: dbppyaHLTWf6QAVD.fSSOym06dKmPMy5Y(c,
+                              yozkeCEmzCeGXNNu: true),
+                          uIdr98APeLRw2QYS: dbppyaHLTWf6QAVD,
                         ),
                       )
                       .toList(),
@@ -274,33 +273,33 @@ class _HomeScreenState extends State<HomeScreen>
   }
 }
 
-class _CustomTabBar extends StatefulWidget {
-  const _CustomTabBar({
-    required this.tabs,
-    required this.controller,
+class C6U295KaS4SvA74fz extends StatefulWidget {
+  const C6U295KaS4SvA74fz({
+    required this.t73u5Log54hc2t6Ea,
+    required this.yZ4druC02Kkw2AHd,
   });
 
-  final List<String> tabs;
-  final TabController controller;
+  final List<String> t73u5Log54hc2t6Ea;
+  final TabController yZ4druC02Kkw2AHd;
 
   @override
-  State<_CustomTabBar> createState() => _CustomTabBarState();
+  State<C6U295KaS4SvA74fz> createState() => _C6U295KaS4SvA74fzState();
 }
 
-class _CustomTabBarState extends State<_CustomTabBar> {
+class _C6U295KaS4SvA74fzState extends State<C6U295KaS4SvA74fz> {
   @override
   void initState() {
     super.initState();
-    widget.controller.addListener(_onTabChanged);
+    widget.yZ4druC02Kkw2AHd.addListener(KSUuZHrCscBYrzN4);
   }
 
   @override
   void dispose() {
-    widget.controller.removeListener(_onTabChanged);
+    widget.yZ4druC02Kkw2AHd.removeListener(KSUuZHrCscBYrzN4);
     super.dispose();
   }
 
-  void _onTabChanged() {
+  void KSUuZHrCscBYrzN4() {
     setState(() {});
   }
 
@@ -311,17 +310,17 @@ class _CustomTabBarState extends State<_CustomTabBar> {
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
-          children: widget.tabs.asMap().entries.map((entry) {
-            final index = entry.key;
-            final tab = entry.value;
-            final isSelected = widget.controller.index == index;
+          children: widget.t73u5Log54hc2t6Ea.asMap().entries.map((entry) {
+            final enYRyfqlRnGL60JP = entry.key;
+            final uuGidBSq5fZ7eaFX = entry.value;
+            final s03kbT4tqG9t3dEss =
+                widget.yZ4druC02Kkw2AHd.index == enYRyfqlRnGL60JP;
 
             return Container(
               constraints: BoxConstraints(minWidth: 80),
               child: Stack(
                 children: [
-                  // 垂直分割线（从顶部开始）
-                  if (index < widget.tabs.length - 1)
+                  if (enYRyfqlRnGL60JP < widget.t73u5Log54hc2t6Ea.length - 1)
                     Positioned(
                       right: 0,
                       top: 0,
@@ -331,21 +330,21 @@ class _CustomTabBarState extends State<_CustomTabBar> {
                         color: Colors.white.withOpacity(0.8),
                       ),
                     ),
-                  // Tab 内容
                   GestureDetector(
                     onTap: () {
-                      widget.controller.animateTo(index);
+                      widget.yZ4druC02Kkw2AHd.animateTo(enYRyfqlRnGL60JP);
                     },
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: 16),
                       child: Center(
                         child: Padding(
-                          padding: EdgeInsets.only(left: index == 0 ? 10 : 0),
+                          padding: EdgeInsets.only(
+                              left: enYRyfqlRnGL60JP == 0 ? 10 : 0),
                           child: Text(
-                            tab,
+                            uuGidBSq5fZ7eaFX,
                             style: GoogleFonts.montserrat(
                               fontSize: 14,
-                              fontWeight: isSelected
+                              fontWeight: s03kbT4tqG9t3dEss
                                   ? FontWeight.w600
                                   : FontWeight.w400,
                               fontStyle: FontStyle.italic,
@@ -368,28 +367,31 @@ class _CustomTabBarState extends State<_CustomTabBar> {
   }
 }
 
-class _PostsList extends StatelessWidget {
-  const _PostsList({required this.posts, required this.app});
-  final List<TdpFegrWPc3sjlaQPost> posts;
-  final AppState app;
+class MYZwL8ZDFgDh9zvn extends StatelessWidget {
+  const MYZwL8ZDFgDh9zvn(
+      {required this.hOwkQTL5CPB4SAJl, required this.uIdr98APeLRw2QYS});
+  final List<TdpFegrWPc3sjlaQPost> hOwkQTL5CPB4SAJl;
+  final AppState uIdr98APeLRw2QYS;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.only(bottom: 120, top: 16),
-      itemCount: posts.length,
-      itemBuilder: (context, index) {
-        final post = posts[index];
-        final author = app.userById(post.nlPxQBFl8qKNMmCt);
-        return PostCard(
-          post: post,
-          author: author,
-          onTap: () {
-            // 图片帖子跳转到图片详情页，视频帖子跳转到视频详情页
-            if (post.ocN7sEFUY2qW0Zgr == 0) {
-              context.push('/h5/article-detail?id=${post.qCzdv3cLqVGfralN}');
+      itemCount: hOwkQTL5CPB4SAJl.length,
+      itemBuilder: (context, XoAVzM62ZcvpXjEj) {
+        final tPcnVXlaO4IUgznx = hOwkQTL5CPB4SAJl[XoAVzM62ZcvpXjEj];
+        final ituTRNLVBAFlO55r =
+            uIdr98APeLRw2QYS.IyC8CUrMp1zDTN8h(tPcnVXlaO4IUgznx.nlPxQBFl8qKNMmCt);
+        return FgS96lU0Lk2hc2aLPocard(
+          p84Dja5VAwuAOcrSB: tPcnVXlaO4IUgznx,
+          X7bbhydcsnABQBSz: ituTRNLVBAFlO55r,
+          XIHEOpn9N8S2Ra4I: () {
+            if (tPcnVXlaO4IUgznx.ocN7sEFUY2qW0Zgr == 0) {
+              context.push(
+                  '/h5/article-detail?id=${tPcnVXlaO4IUgznx.qCzdv3cLqVGfralN}');
             } else {
-              context.push('/h5/short-video?id=${post.qCzdv3cLqVGfralN}');
+              context.push(
+                  '/h5/short-video?id=${tPcnVXlaO4IUgznx.qCzdv3cLqVGfralN}');
             }
           },
         );

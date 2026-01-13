@@ -7,19 +7,18 @@ import 'package:zoryo/models/tdpFegrWPc3sjlaQ_post.dart';
 import 'package:zoryo/models/u2749HToRfgbLVPrM_user.dart';
 
 import '../zzokdet_fangfa/app_state.dart';
-import '../zzokdet_fangfa/image_helper.dart';
+import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
-class DiscoverScreen extends StatelessWidget {
-  const DiscoverScreen({super.key});
+class GQnFc05HatX1P7DjDiscoverScreen extends StatelessWidget {
+  const GQnFc05HatX1P7DjDiscoverScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final app = context.watch<AppState>();
-    // Only show video posts (dynamicType == 1), filtered posts already exclude blocked users
-    final videos =
-        app.filteredPosts.where((p) => p.ocN7sEFUY2qW0Zgr == 1).toList();
-    // Total items: 1 (Release card) + videos.length
-    final totalItems = 1 + videos.length;
+    final M5m3TFaFQYjAB0y6 = context.watch<AppState>();
+    final s9a7WDEopR8oyCMM = M5m3TFaFQYjAB0y6.glufK0J7UE7AEAHL
+        .where((p) => p.ocN7sEFUY2qW0Zgr == 1)
+        .toList();
+    final G9WPQG1yhP3gDhWj = 1 + s9a7WDEopR8oyCMM.length;
 
     return Scaffold(
       body: Column(
@@ -57,16 +56,18 @@ class DiscoverScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
                 crossAxisSpacing: 12,
-                itemCount: totalItems,
-                itemBuilder: (context, index) {
-                  if (index == 0) {
-                    // First item: Release your work card
-                    return _ReleaseYourWorkCard();
+                itemCount: G9WPQG1yhP3gDhWj,
+                itemBuilder: (context, hU9nW0JGoJ406H3v) {
+                  if (hU9nW0JGoJ406H3v == 0) {
+                    return Rs92CVxJ3tY8zlbfH();
                   } else {
-                    // Video cards
-                    final post = videos[index - 1];
-                    final user = app.userById(post.nlPxQBFl8qKNMmCt);
-                    return _DiscoverCard(post: post, user: user);
+                    final p4VX3HxSp3Us5J47B =
+                        s9a7WDEopR8oyCMM[hU9nW0JGoJ406H3v - 1];
+                    final AVEv07PnlXoqJNp8 = M5m3TFaFQYjAB0y6.IyC8CUrMp1zDTN8h(
+                        p4VX3HxSp3Us5J47B.nlPxQBFl8qKNMmCt);
+                    return ZP6vWXov4x4t8hMq(
+                        pQu6CNhF88ILYG6W: p4VX3HxSp3Us5J47B,
+                        aFhwquwHdAO8AVPK: AVEv07PnlXoqJNp8);
                   }
                 },
               ),
@@ -78,20 +79,18 @@ class DiscoverScreen extends StatelessWidget {
   }
 }
 
-class _ReleaseYourWorkCard extends StatelessWidget {
-  const _ReleaseYourWorkCard();
+class Rs92CVxJ3tY8zlbfH extends StatelessWidget {
+  const Rs92CVxJ3tY8zlbfH();
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // 跳转到上传视频帖子页面
         context.push('/h5/publish-video');
       },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(18),
         child: AspectRatio(
-          // 使用较小的aspectRatio来使卡片高度更低
           aspectRatio: 1.0,
           child: Container(
             decoration: BoxDecoration(
@@ -117,7 +116,6 @@ class _ReleaseYourWorkCard extends StatelessWidget {
                     height: 60,
                   ),
                   const SizedBox(height: 6),
-                  // 文本
                   RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
@@ -151,24 +149,25 @@ class _ReleaseYourWorkCard extends StatelessWidget {
   }
 }
 
-class _DiscoverCard extends StatelessWidget {
-  const _DiscoverCard({required this.post, required this.user});
-  final TdpFegrWPc3sjlaQPost post;
-  final U2749HToRfgbLVPrMUser user;
+class ZP6vWXov4x4t8hMq extends StatelessWidget {
+  const ZP6vWXov4x4t8hMq({
+    required this.pQu6CNhF88ILYG6W,
+    required this.aFhwquwHdAO8AVPK,
+  });
+  final TdpFegrWPc3sjlaQPost pQu6CNhF88ILYG6W;
+  final U2749HToRfgbLVPrMUser aFhwquwHdAO8AVPK;
 
   @override
   Widget build(BuildContext context) {
-    final app = context.watch<AppState>();
-    final currentUser = app.currentUser;
+    final Y5Co9BDgsV7gFhAd = context.watch<AppState>();
+    final E8Kge6C0yooxRHs3 = Y5Co9BDgsV7gFhAd.NLbGEpZKzMfAbV3k;
 
-    // 判断是否已点赞：视频帖子检查 videoPostLikeIds
-    final isLiked =
-        currentUser.IibbF2RfvAxYkcQo.contains(post.qCzdv3cLqVGfralN);
+    final ioMpsWZG5uUiLVlb = E8Kge6C0yooxRHs3.IibbF2RfvAxYkcQo.contains(
+        pQu6CNhF88ILYG6W.qCzdv3cLqVGfralN);
 
     return GestureDetector(
       onTap: () {
-        // 视频帖子跳转到视频详情页
-        context.push('/h5/short-video?id=${post.qCzdv3cLqVGfralN}');
+        context.push('/h5/short-video?id=${pQu6CNhF88ILYG6W.qCzdv3cLqVGfralN}');
       },
       child: Container(
         decoration: BoxDecoration(
@@ -186,9 +185,8 @@ class _DiscoverCard extends StatelessWidget {
                     child: Stack(
                       fit: StackFit.expand,
                       children: [
-                        SmartImage(
-                          url: post.kitYNCH7Xp32Jfbn,
-                          fit: BoxFit.cover,
+                        SnLjQVJIDwvDQeiSMimg(
+                          dIJEHnEuK8jQOYZ6: pQu6CNhF88ILYG6W.kitYNCH7Xp32Jfbn,
                         ),
                         const Center(
                           child: Icon(
@@ -217,8 +215,8 @@ class _DiscoverCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: CircleAvatar(
-                        backgroundImage:
-                            smartImageProvider(user.RmXHAp70ovHNBN4U),
+                        backgroundImage: UPClh6pI9Z9yX3xQ(
+                            aFhwquwHdAO8AVPK.RmXHAp70ovHNBN4U),
                         radius: 14,
                       ),
                     ),
@@ -226,7 +224,7 @@ class _DiscoverCard extends StatelessWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      user.AWWxvC6FbYICMs9P,
+                      aFhwquwHdAO8AVPK.AWWxvC6FbYICMs9P,
                       style: const TextStyle(
                         fontWeight: FontWeight.w700,
                         color: Colors.black,
@@ -237,7 +235,7 @@ class _DiscoverCard extends StatelessWidget {
                   Row(
                     children: [
                       Image.asset(
-                        isLiked
+                        ioMpsWZG5uUiLVlb
                             ? 'assets/images/imUilxE1Sy10vMHMblue.png'
                             : 'assets/images/imUilxE1Sy10vMHMhui.png',
                         width: 20,
@@ -245,9 +243,9 @@ class _DiscoverCard extends StatelessWidget {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        post.jShz1CDkEjVxqPS0 > 1000
-                            ? '${(post.jShz1CDkEjVxqPS0 / 1000).toStringAsFixed(post.jShz1CDkEjVxqPS0 % 1000 == 0 ? 0 : 1)}k'
-                            : '${post.jShz1CDkEjVxqPS0}',
+                        pQu6CNhF88ILYG6W.jShz1CDkEjVxqPS0 > 1000
+                            ? '${(pQu6CNhF88ILYG6W.jShz1CDkEjVxqPS0 / 1000).toStringAsFixed(pQu6CNhF88ILYG6W.jShz1CDkEjVxqPS0 % 1000 == 0 ? 0 : 1)}k'
+                            : '${pQu6CNhF88ILYG6W.jShz1CDkEjVxqPS0}',
                         style: const TextStyle(
                           color: Colors.black,
                         ),

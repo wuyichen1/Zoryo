@@ -1,29 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../core/theme/app_theme.dart';
-
-class GradientButton extends StatelessWidget {
-  const GradientButton({
+class lmDy7TRPsjReTw4LGrabtn extends StatelessWidget {
+  const lmDy7TRPsjReTw4LGrabtn({
     super.key,
-    required this.label,
-    this.textStyle,
-    this.onPressed,
-    this.width = 240,
-    this.height = 55,
+    required this.Q8jxoIEIflW2H4VN,
+    this.jNmPS8ESz78iE6wY,
+    this.o7q0z205CtYy3Q1ID,
+    this.gvXl8QjSpir7sOAs = 240,
+    this.gKk83Jcj0BNDVBtV = 55,
   });
 
-  final String label;
-  final TextStyle? textStyle;
-  final VoidCallback? onPressed;
-  final double? width;
-  final double? height;
+  final String Q8jxoIEIflW2H4VN;
+  final TextStyle? jNmPS8ESz78iE6wY;
+  final VoidCallback? o7q0z205CtYy3Q1ID;
+  final double? gvXl8QjSpir7sOAs;
+  final double? gKk83Jcj0BNDVBtV;
 
   @override
   Widget build(BuildContext context) {
     final child = Container(
-      width: width,
-      height: height,
+      width: gvXl8QjSpir7sOAs,
+      height: gKk83Jcj0BNDVBtV,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.white,
@@ -34,18 +32,13 @@ class GradientButton extends StatelessWidget {
             Colors.black,
             const Color.fromARGB(255, 22, 87, 178),
           ],
-          // colors: [
-          //   Color(0xFFFF8133),
-          //   Colors.black,
-          //   Color(0xFF1C7BFF),
-          // ],
         ),
         borderRadius: BorderRadius.circular(53),
       ),
       child: Center(
         child: Text(
-          label,
-          style: textStyle ??
+          Q8jxoIEIflW2H4VN,
+          style: jNmPS8ESz78iE6wY ??
               GoogleFonts.montserrat(
                 fontWeight: FontWeight.w600,
                 fontSize: 18,
@@ -55,10 +48,10 @@ class GradientButton extends StatelessWidget {
       ),
     );
     return SizedBox(
-      width: width,
-      height: height,
+      width: gvXl8QjSpir7sOAs,
+      height: gKk83Jcj0BNDVBtV,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: o7q0z205CtYy3Q1ID,
         style: ElevatedButton.styleFrom(padding: EdgeInsets.zero),
         child: child,
       ),

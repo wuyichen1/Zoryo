@@ -24,10 +24,10 @@ dart run lib/core/utils/json_encryption_tool.dart decrypt assets/jsons/initial_d
 
 ### 3. 在应用中使用加密文件
 
-修改 `lib/main.dart` 中的 `LocalStorageService` 初始化，指定使用加密文件：
+修改 `lib/main.dart` 中的 `LtFQAFrj0VRpIL8RLocalstore` 初始化，指定使用加密文件：
 
 ```dart
-final storage = LocalStorageService(
+final storage = LtFQAFrj0VRpIL8RLocalstore(
   assetPath: 'assets/jsons/initial_data.encrypted.json',
   useEncryptedAsset: true,
 );
@@ -36,10 +36,10 @@ final storage = LocalStorageService(
 或者，如果希望自动检测（先尝试解密，失败则按普通 JSON 解析），可以保持默认配置：
 
 ```dart
-final storage = LocalStorageService();
+final storage = LtFQAFrj0VRpIL8RLocalstore();
 ```
 
-`LocalStorageService` 会自动检测文件是否为加密格式，如果是加密的会自动解密。
+`LtFQAFrj0VRpIL8RLocalstore` 会自动检测文件是否为加密格式，如果是加密的会自动解密。
 
 ## 加密原理
 

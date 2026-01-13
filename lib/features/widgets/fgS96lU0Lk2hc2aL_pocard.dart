@@ -4,28 +4,32 @@ import 'package:provider/provider.dart';
 import '../../models/tdpFegrWPc3sjlaQ_post.dart';
 import '../../models/u2749HToRfgbLVPrM_user.dart';
 import '../../zzokdet_fangfa/app_state.dart';
-import '../../zzokdet_fangfa/image_helper.dart';
+import '../../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
-class PostCard extends StatelessWidget {
-  const PostCard(
-      {super.key, required this.post, required this.author, this.onTap});
+class FgS96lU0Lk2hc2aLPocard extends StatelessWidget {
+  const FgS96lU0Lk2hc2aLPocard(
+      {super.key,
+      required this.p84Dja5VAwuAOcrSB,
+      required this.X7bbhydcsnABQBSz,
+      this.XIHEOpn9N8S2Ra4I});
 
-  final TdpFegrWPc3sjlaQPost post;
-  final U2749HToRfgbLVPrMUser author;
-  final VoidCallback? onTap;
+  final TdpFegrWPc3sjlaQPost p84Dja5VAwuAOcrSB;
+  final U2749HToRfgbLVPrMUser X7bbhydcsnABQBSz;
+  final VoidCallback? XIHEOpn9N8S2Ra4I;
 
   @override
   Widget build(BuildContext context) {
-    final app = context.watch<AppState>();
-    final currentUser = app.currentUser;
+    final uekBe3Y7jmJ4b0j2 = context.watch<AppState>();
+    final GxaGrZYt9xIL5CNl = uekBe3Y7jmJ4b0j2.NLbGEpZKzMfAbV3k;
 
-    // 判断是否已点赞：图片帖子检查 picPostLikeIds，视频帖子检查 videoPostLikeIds
-    final isLiked = post.ocN7sEFUY2qW0Zgr == 0
-        ? currentUser.KYDuo9abCwLnI6Hs.contains(post.qCzdv3cLqVGfralN)
-        : currentUser.IibbF2RfvAxYkcQo.contains(post.qCzdv3cLqVGfralN);
+    final S4V56exN0T3PWmWW = p84Dja5VAwuAOcrSB.ocN7sEFUY2qW0Zgr == 0
+        ? GxaGrZYt9xIL5CNl.KYDuo9abCwLnI6Hs.contains(
+            p84Dja5VAwuAOcrSB.qCzdv3cLqVGfralN)
+        : GxaGrZYt9xIL5CNl.IibbF2RfvAxYkcQo.contains(
+            p84Dja5VAwuAOcrSB.qCzdv3cLqVGfralN);
 
     return InkWell(
-      onTap: onTap,
+      onTap: XIHEOpn9N8S2Ra4I,
       child: Card(
         margin: const EdgeInsets.only(bottom: 16),
         child: Padding(
@@ -33,19 +37,8 @@ class PostCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildImageLayout(),
+              N7LEUew4dX2o4rO3(),
               const SizedBox(height: 10),
-              // Text(post.title,
-              //     style: const TextStyle(
-              //         fontWeight: FontWeight.w700, fontSize: 16)),
-              // const SizedBox(height: 6),
-              // Text(
-              //   post.description,
-              //   style: const TextStyle(color: Colors.white70),
-              //   maxLines: 2,
-              //   overflow: TextOverflow.ellipsis,
-              // ),
-              // const SizedBox(height: 10),
               Row(
                 children: [
                   Container(
@@ -58,7 +51,8 @@ class PostCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: CircleAvatar(
-                        backgroundImage: smartImageProvider(author.RmXHAp70ovHNBN4U),
+                        backgroundImage: UPClh6pI9Z9yX3xQ(
+                            X7bbhydcsnABQBSz.RmXHAp70ovHNBN4U),
                         radius: 18,
                       ),
                     ),
@@ -78,7 +72,7 @@ class PostCard extends StatelessWidget {
                     },
                     blendMode: BlendMode.srcIn,
                     child: Text(
-                      author.AWWxvC6FbYICMs9P,
+                      X7bbhydcsnABQBSz.AWWxvC6FbYICMs9P,
                       style: const TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 18,
@@ -89,7 +83,7 @@ class PostCard extends StatelessWidget {
                   Row(
                     children: [
                       Image.asset(
-                        isLiked
+                        S4V56exN0T3PWmWW
                             ? 'assets/images/imUilxE1Sy10vMHMpink.png'
                             : 'assets/images/imUilxE1Sy10vMHMhui.png',
                         width: 36,
@@ -97,9 +91,9 @@ class PostCard extends StatelessWidget {
                       ),
                       const SizedBox(width: 6),
                       Text(
-                        post.jShz1CDkEjVxqPS0 > 1000
-                            ? '${(post.jShz1CDkEjVxqPS0 / 1000).toStringAsFixed(post.jShz1CDkEjVxqPS0 % 1000 == 0 ? 0 : 1)}k'
-                            : '${post.jShz1CDkEjVxqPS0}',
+                        p84Dja5VAwuAOcrSB.jShz1CDkEjVxqPS0 > 1000
+                            ? '${(p84Dja5VAwuAOcrSB.jShz1CDkEjVxqPS0 / 1000).toStringAsFixed(p84Dja5VAwuAOcrSB.jShz1CDkEjVxqPS0 % 1000 == 0 ? 0 : 1)}k'
+                            : '${p84Dja5VAwuAOcrSB.jShz1CDkEjVxqPS0}',
                         style: const TextStyle(
                           fontWeight: FontWeight.w600,
                           color: Color.fromARGB(255, 55, 55, 55),
@@ -116,12 +110,11 @@ class PostCard extends StatelessWidget {
     );
   }
 
-  Widget _buildImageLayout() {
-    final images = post.DFaJPr04YQi08GFg;
-    final imageCount = images.length;
+  Widget N7LEUew4dX2o4rO3() {
+    final i7tKQj8xyNe0R2b0D = p84Dja5VAwuAOcrSB.DFaJPr04YQi08GFg;
+    final GEFzgzwfTW1OSM1E = i7tKQj8xyNe0R2b0D.length;
 
-    // 如果是视频，显示视频封面
-    if (post.amKEbF9mgIneMVni) {
+    if (p84Dja5VAwuAOcrSB.amKEbF9mgIneMVni) {
       return ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: AspectRatio(
@@ -129,9 +122,8 @@ class PostCard extends StatelessWidget {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              SmartImage(
-                url: post.kitYNCH7Xp32Jfbn,
-                fit: BoxFit.cover,
+              SnLjQVJIDwvDQeiSMimg(
+                dIJEHnEuK8jQOYZ6: p84Dja5VAwuAOcrSB.kitYNCH7Xp32Jfbn,
               ),
               const Center(
                 child:
@@ -143,27 +135,23 @@ class PostCard extends StatelessWidget {
       );
     }
 
-    // 如果没有图片，返回空容器
-    if (imageCount == 0) {
+    if (GEFzgzwfTW1OSM1E == 0) {
       return const SizedBox.shrink();
     }
 
-    // 1张图片：横向铺满
-    if (imageCount == 1) {
+    if (GEFzgzwfTW1OSM1E == 1) {
       return ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: AspectRatio(
           aspectRatio: 4 / 3,
-          child: SmartImage(
-            url: images[0],
-            fit: BoxFit.cover,
+          child: SnLjQVJIDwvDQeiSMimg(
+            dIJEHnEuK8jQOYZ6: i7tKQj8xyNe0R2b0D[0],
           ),
         ),
       );
     }
 
-    // 2张图片：左右各一张
-    if (imageCount == 2) {
+    if (GEFzgzwfTW1OSM1E == 2) {
       return Row(
         children: [
           Expanded(
@@ -171,9 +159,8 @@ class PostCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               child: AspectRatio(
                 aspectRatio: 3 / 4,
-                child: SmartImage(
-                  url: images[0],
-                  fit: BoxFit.cover,
+                child: SnLjQVJIDwvDQeiSMimg(
+                  dIJEHnEuK8jQOYZ6: i7tKQj8xyNe0R2b0D[0],
                 ),
               ),
             ),
@@ -184,9 +171,8 @@ class PostCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               child: AspectRatio(
                 aspectRatio: 3 / 4,
-                child: SmartImage(
-                  url: images[1],
-                  fit: BoxFit.cover,
+                child: SnLjQVJIDwvDQeiSMimg(
+                  dIJEHnEuK8jQOYZ6: i7tKQj8xyNe0R2b0D[1],
                 ),
               ),
             ),
@@ -195,62 +181,54 @@ class PostCard extends StatelessWidget {
       );
     }
 
-    // 3张及以上：左边一张大图，右边纵向排列其余小图
-    final leftImage = images[0];
-    final rightImages = images.sublist(1);
-    final showMoreCount = imageCount > 4;
-    final displayCount = showMoreCount ? 3 : rightImages.length; // 最多显示3张小图
-    final remainingCount = imageCount - 4; // 超过4张的剩余数量
-    const spacing = 8.0; // 小图之间的间距
+    final jZcyvBoEoeyZyYvJ = i7tKQj8xyNe0R2b0D[0];
+    final r77Pz3Ilh0FuEdPaQ = i7tKQj8xyNe0R2b0D.sublist(1);
+    final cP8h4ZbJdmrBs4Zg = GEFzgzwfTW1OSM1E > 4;
+    final xXn1dQuSnJy72CKE = cP8h4ZbJdmrBs4Zg ? 3 : r77Pz3Ilh0FuEdPaQ.length;
+    final tNEVDjXh1hwTm8DB = GEFzgzwfTW1OSM1E - 4;
+    const adBh1lq7OkPdAfwn = 8.0;
 
-    // 3张图片单独处理：左图比例小一点，右图比例大一点
-    if (imageCount == 3) {
+    if (GEFzgzwfTW1OSM1E == 3) {
       return LayoutBuilder(
-        builder: (context, constraints) {
-          final totalWidth = constraints.maxWidth - spacing;
-          // 3张图片时：左边占2/3，右边占1/3（比4张时的比例更平衡）
-          final leftWidth = totalWidth * 2 / 3;
-          final leftHeight = leftWidth; // 正方形
-          final rightWidth = totalWidth * 1 / 3;
+        builder: (context, WxP5udl7W8BCqwlr) {
+          final oAk7DEFahORLF3i6 = WxP5udl7W8BCqwlr.maxWidth - adBh1lq7OkPdAfwn;
+          final XtiptQSbgHdoeZxJ = oAk7DEFahORLF3i6 * 2 / 3;
+          final l6EzrCHuKyuUqaI1G = XtiptQSbgHdoeZxJ;
+          final eC6ByNofwnoCOcx6 = oAk7DEFahORLF3i6 * 1 / 3;
 
           return Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 左边大图
               SizedBox(
-                width: leftWidth,
-                height: leftHeight,
+                width: XtiptQSbgHdoeZxJ,
+                height: l6EzrCHuKyuUqaI1G,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
-                  child: SmartImage(
-                    url: leftImage,
-                    fit: BoxFit.cover,
+                  child: SnLjQVJIDwvDQeiSMimg(
+                    dIJEHnEuK8jQOYZ6: jZcyvBoEoeyZyYvJ,
                   ),
                 ),
               ),
-              SizedBox(width: spacing),
-              // 右边两小图
+              SizedBox(width: adBh1lq7OkPdAfwn),
               SizedBox(
-                width: rightWidth,
-                height: leftHeight,
+                width: eC6ByNofwnoCOcx6,
+                height: l6EzrCHuKyuUqaI1G,
                 child: Column(
                   children: [
                     Expanded(
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(16),
-                        child: SmartImage(
-                          url: rightImages[0],
-                          fit: BoxFit.cover,
+                        child: SnLjQVJIDwvDQeiSMimg(
+                          dIJEHnEuK8jQOYZ6: r77Pz3Ilh0FuEdPaQ[0],
                         ),
                       ),
                     ),
-                    SizedBox(height: spacing),
+                    SizedBox(height: adBh1lq7OkPdAfwn),
                     Expanded(
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(16),
-                        child: SmartImage(
-                          url: rightImages[1],
-                          fit: BoxFit.cover,
+                        child: SnLjQVJIDwvDQeiSMimg(
+                          dIJEHnEuK8jQOYZ6: r77Pz3Ilh0FuEdPaQ[1],
                         ),
                       ),
                     ),
@@ -263,47 +241,42 @@ class PostCard extends StatelessWidget {
       );
     }
 
-    // 4张及以上：左边一张大图，右边纵向排列其余小图
     return LayoutBuilder(
-      builder: (context, constraints) {
-        // 计算左边大图的宽度（flex: 3）
-        final totalWidth = constraints.maxWidth - spacing;
-        final leftWidth = totalWidth * 3 / 4; // flex 3:1 的比例
-        final leftHeight = leftWidth; // 正方形
+      builder: (context, NIalPOvD0OMkbzVD) {
+        final oAk7DEFahORLF3i6 = NIalPOvD0OMkbzVD.maxWidth - adBh1lq7OkPdAfwn;
+        final XtiptQSbgHdoeZxJ = oAk7DEFahORLF3i6 * 3 / 4;
+        final l6EzrCHuKyuUqaI1G = XtiptQSbgHdoeZxJ;
 
-        // 计算右边小图列的宽度
-        final rightWidth = totalWidth * 1 / 4;
+        final eC6ByNofwnoCOcx6 = oAk7DEFahORLF3i6 * 1 / 4;
 
         return Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 左边大图
             SizedBox(
-              width: leftWidth,
-              height: leftHeight,
+              width: XtiptQSbgHdoeZxJ,
+              height: l6EzrCHuKyuUqaI1G,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(16),
-                child: SmartImage(
-                  url: leftImage,
-                  fit: BoxFit.cover,
+                child: SnLjQVJIDwvDQeiSMimg(
+                  dIJEHnEuK8jQOYZ6: jZcyvBoEoeyZyYvJ,
                 ),
               ),
             ),
-            SizedBox(width: spacing),
-            // 右边小图列
+            SizedBox(width: adBh1lq7OkPdAfwn),
             SizedBox(
-              width: rightWidth,
-              height: leftHeight,
+              width: eC6ByNofwnoCOcx6,
+              height: l6EzrCHuKyuUqaI1G,
               child: Column(
-                children: List.generate(displayCount * 2 - 1, (index) {
-                  // 偶数索引是图片，奇数索引是间距
-                  if (index.isOdd) {
-                    return SizedBox(height: spacing);
+                children:
+                    List.generate(xXn1dQuSnJy72CKE * 2 - 1, (TIwYjQ6p1X3e3ftk) {
+                  if (TIwYjQ6p1X3e3ftk.isOdd) {
+                    return SizedBox(height: adBh1lq7OkPdAfwn);
                   }
 
-                  final imageIndex = index ~/ 2;
-                  final isLast = imageIndex == displayCount - 1;
-                  final shouldShowMore = showMoreCount && isLast;
+                  final i1s6vcwpNwWNxBJfd = TIwYjQ6p1X3e3ftk ~/ 2;
+                  final XwSDH299udv8GBZB =
+                      i1s6vcwpNwWNxBJfd == xXn1dQuSnJy72CKE - 1;
+                  final LLcoyOSDF85s5tvE = cP8h4ZbJdmrBs4Zg && XwSDH299udv8GBZB;
 
                   return Expanded(
                     child: ClipRRect(
@@ -311,11 +284,11 @@ class PostCard extends StatelessWidget {
                       child: Stack(
                         fit: StackFit.expand,
                         children: [
-                          SmartImage(
-                            url: rightImages[imageIndex],
-                            fit: BoxFit.cover,
+                          SnLjQVJIDwvDQeiSMimg(
+                            dIJEHnEuK8jQOYZ6:
+                                r77Pz3Ilh0FuEdPaQ[i1s6vcwpNwWNxBJfd],
                           ),
-                          if (shouldShowMore)
+                          if (LLcoyOSDF85s5tvE)
                             Container(
                               decoration: BoxDecoration(
                                 color: Colors.black.withOpacity(0.5),
@@ -323,7 +296,7 @@ class PostCard extends StatelessWidget {
                               ),
                               child: Center(
                                 child: Text(
-                                  '+$remainingCount',
+                                  '+$tNEVDjXh1hwTm8DB',
                                   style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 20,

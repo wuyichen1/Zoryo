@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/zzokdet_fangfa/payfunc.dart';
+import 'package:zoryo/zzokdet_fangfa/rFj3K214p596M2gf_payfunc.dart';
 
 import '../models/bJpjHVrAqvtNbCtL_diapack.dart';
 import '../zzokdet_fangfa/app_state.dart';
@@ -13,31 +13,30 @@ import '../zzokdet_fangfa/app_state.dart';
 class WebViewScreen extends StatefulWidget {
   const WebViewScreen({
     super.key,
-    required this.url,
-    this.title,
+    required this.xV7wDbbWHIG4ebaBUrl,
+    this.lOrJMO5uyGbwIXgb,
   });
 
-  final String url;
-  final String? title;
+  final String xV7wDbbWHIG4ebaBUrl;
+  final String? lOrJMO5uyGbwIXgb;
 
   @override
   State<WebViewScreen> createState() => _WebViewScreenState();
 }
 
 class _WebViewScreenState extends State<WebViewScreen> {
-  InAppWebViewController? webViewController;
-  bool isLoading = true;
-  UnmodifiableListView<UserScript>? _initialUserScripts;
-  URLRequest? _initialUrlRequest;
-  InAppWebViewSettings? _initialSettings;
+  InAppWebViewController? v7tXl1wxexUTTuhK;
+  bool f1NLieOYxHDoUki7 = true;
+  UnmodifiableListView<UserScript>? JxeErJwaC9ivtGNn;
+  URLRequest? eqWxTrOeoVJlcK4r;
+  InAppWebViewSettings? ZMauexcwzXkMzWoq;
 
   @override
   void initState() {
     super.initState();
-    // 在initState中初始化不依赖context的配置，确保只创建一次
-    _initialUrlRequest = URLRequest(url: WebUri(widget.url));
+    eqWxTrOeoVJlcK4r = URLRequest(url: WebUri(widget.xV7wDbbWHIG4ebaBUrl));
 
-    _initialSettings = InAppWebViewSettings(
+    ZMauexcwzXkMzWoq = InAppWebViewSettings(
       javaScriptEnabled: true,
       domStorageEnabled: true,
       useHybridComposition: true,
@@ -54,13 +53,11 @@ class _WebViewScreenState extends State<WebViewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // 只在初始化时需要app数据，避免数据更新时触发rebuild导致H5刷新
-    final app = Provider.of<AppState>(context, listen: false);
+    final a4vdQjcrZlNJQJ4EH = Provider.of<AppState>(context, listen: false);
 
-    // 只在首次build时初始化脚本（需要app数据），避免rebuild时重新创建导致页面重新加载
-    _initialUserScripts ??= UnmodifiableListView([
+    JxeErJwaC9ivtGNn ??= UnmodifiableListView([
       UserScript(
-        source: _buildInjectionScript(app),
+        source: jNh5ixTdr1Ni67Eb(a4vdQjcrZlNJQJ4EH),
         injectionTime: UserScriptInjectionTime.AT_DOCUMENT_START,
       ),
     ]);
@@ -68,31 +65,25 @@ class _WebViewScreenState extends State<WebViewScreen> {
       body: Stack(
         children: [
           InAppWebView(
-            // 不设置key，依赖缓存的initial*属性和WebViewScreen的key来保证稳定性
-            // 如果设置key，需要与路由中的WebViewScreen key保持一致，但这会导致key管理复杂
-            // 通过缓存initial*属性，确保每次build时使用的都是相同的对象引用
-            initialUrlRequest: _initialUrlRequest!, // 使用缓存的URLRequest，确保对象引用不变
-            initialUserScripts: _initialUserScripts!, // 使用缓存的脚本，确保对象引用不变
-            initialSettings: _initialSettings!, // 使用缓存的设置，确保对象引用不变
-            onConsoleMessage: (controller, consoleMessage) {
+            initialUrlRequest: eqWxTrOeoVJlcK4r!,
+            initialUserScripts: JxeErJwaC9ivtGNn!,
+            initialSettings: ZMauexcwzXkMzWoq!,
+            onConsoleMessage: (CvFkNxLpKjRAOot2, consoleMessage) {
               debugPrint('WebView Console: ${consoleMessage.message}');
             },
-            onWebViewCreated: (controller) {
-              webViewController = controller;
-              // 不在onWebViewCreated中注入，等待onLoadStop时注入，确保页面已加载完成
+            onWebViewCreated: (CvFkNxLpKjRAOot2) {
+              v7tXl1wxexUTTuhK = CvFkNxLpKjRAOot2;
 
-              // close - 关闭H5网页
-              webViewController!.addJavaScriptHandler(
+              v7tXl1wxexUTTuhK!.addJavaScriptHandler(
                 handlerName: 'close',
-                callback: (args) {
-                  // 在关闭H5页面之前，清除可能保存的H5路由位置，防止路由重新评估时恢复H5页面
-                  final currentPath = GoRouter.of(context)
+                callback: (vpIsKCIc4NenJOi1) {
+                  final Z4Ytu7kCNUX2I8IX = GoRouter.of(context)
                       .routerDelegate
                       .currentConfiguration
                       .uri
                       .toString();
-                  if (currentPath.startsWith('/h5/')) {
-                    app.saveRouteLocation('');
+                  if (Z4Ytu7kCNUX2I8IX.startsWith('/h5/')) {
+                    a4vdQjcrZlNJQJ4EH.s8HGVKPpcO4RCTngj('');
                   }
                   if (mounted) {
                     Navigator.of(context).pop();
@@ -101,26 +92,23 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 },
               );
 
-              // logout - 退出登录
-              webViewController!.addJavaScriptHandler(
+              v7tXl1wxexUTTuhK!.addJavaScriptHandler(
                 handlerName: 'logout',
-                callback: (args) {
-                  app.logout();
+                callback: (vpIsKCIc4NenJOi1) {
+                  a4vdQjcrZlNJQJ4EH.a7cngZic3wGbStpc();
                   return null;
                 },
               );
 
-              // updateUser - 更新用户数据
-              webViewController!.addJavaScriptHandler(
+              v7tXl1wxexUTTuhK!.addJavaScriptHandler(
                 handlerName: 'updateUser',
-                callback: (args) async {
+                callback: (vpIsKCIc4NenJOi1) async {
                   try {
-                    if (args.isNotEmpty && args[0] is List) {
-                      // H5会自动关闭页面，这里延迟一下数据更新，确保H5页面关闭完成后再触发路由重新评估
-                      // 这样可以避免路由重新评估时H5路由仍在栈中导致重新打开的问题
+                    if (vpIsKCIc4NenJOi1.isNotEmpty &&
+                        vpIsKCIc4NenJOi1[0] is List) {
                       await Future.delayed(const Duration(milliseconds: 300));
-                      // 在页面关闭后再更新数据，触发路由重新评估时H5路由已经不在栈中了
-                      await app.updateUsers(args[0] as List<dynamic>);
+                      await a4vdQjcrZlNJQJ4EH.u6nge5FH92FMre2FQ(
+                          vpIsKCIc4NenJOi1[0] as List<dynamic>);
                     }
                   } catch (e) {
                     debugPrint('Error in updateUser handler: $e');
@@ -129,18 +117,15 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 },
               );
 
-              // updatePost - 更新帖子数据
-              webViewController!.addJavaScriptHandler(
+              v7tXl1wxexUTTuhK!.addJavaScriptHandler(
                 handlerName: 'updatePost',
-                callback: (args) async {
-                  print('updatePost: $args');
+                callback: (LNJ7aHgsiCZ86Y59) async {
                   try {
-                    if (args.isNotEmpty && args[0] is List) {
-                      // H5会自动关闭页面，这里延迟一下数据更新，确保H5页面关闭完成后再触发路由重新评估
-                      // 这样可以避免路由重新评估时H5路由仍在栈中导致重新打开的问题
+                    if (LNJ7aHgsiCZ86Y59.isNotEmpty &&
+                        LNJ7aHgsiCZ86Y59[0] is List) {
                       await Future.delayed(const Duration(milliseconds: 300));
-                      // 在页面关闭后再更新数据，触发路由重新评估时H5路由已经不在栈中了
-                      await app.updatePosts(args[0] as List<dynamic>);
+                      await a4vdQjcrZlNJQJ4EH.E7BmPQ8TmME2zbij(
+                          LNJ7aHgsiCZ86Y59[0] as List<dynamic>);
                     }
                   } catch (e) {
                     debugPrint('Error in updatePost handler: $e');
@@ -149,13 +134,14 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 },
               );
 
-              // updateComment - 更新评论数据
-              webViewController!.addJavaScriptHandler(
+              v7tXl1wxexUTTuhK!.addJavaScriptHandler(
                 handlerName: 'updateComment',
-                callback: (args) async {
+                callback: (rHFKU9KkYXVcKwfk) async {
                   try {
-                    if (args.isNotEmpty && args[0] is List) {
-                      await app.updateComments(args[0] as List<dynamic>);
+                    if (rHFKU9KkYXVcKwfk.isNotEmpty &&
+                        rHFKU9KkYXVcKwfk[0] is List) {
+                      await a4vdQjcrZlNJQJ4EH.hosdxq6R9auF73IT(
+                          rHFKU9KkYXVcKwfk[0] as List<dynamic>);
                     }
                   } catch (e) {
                     debugPrint('Error in updateComment handler: $e');
@@ -164,13 +150,14 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 },
               );
 
-              // uploadChat - 更新聊天室数据
-              webViewController!.addJavaScriptHandler(
+              v7tXl1wxexUTTuhK!.addJavaScriptHandler(
                 handlerName: 'uploadChat',
-                callback: (args) async {
+                callback: (nkVl3ozC061lnDME) async {
                   try {
-                    if (args.isNotEmpty && args[0] is List) {
-                      await app.updateChatRooms(args[0] as List<dynamic>);
+                    if (nkVl3ozC061lnDME.isNotEmpty &&
+                        nkVl3ozC061lnDME[0] is List) {
+                      await a4vdQjcrZlNJQJ4EH.Tuj1rgvoEtWI61Ec(
+                          nkVl3ozC061lnDME[0] as List<dynamic>);
                     }
                   } catch (e) {
                     debugPrint('Error in uploadChat handler: $e');
@@ -179,13 +166,14 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 },
               );
 
-              // uploadMessage - 更新消息数据
-              webViewController!.addJavaScriptHandler(
+              v7tXl1wxexUTTuhK!.addJavaScriptHandler(
                 handlerName: 'uploadMessage',
-                callback: (args) async {
+                callback: (cQsjgKwpdZPYtUGP) async {
                   try {
-                    if (args.isNotEmpty && args[0] is List) {
-                      await app.updateMessages(args[0] as List<dynamic>);
+                    if (cQsjgKwpdZPYtUGP.isNotEmpty &&
+                        cQsjgKwpdZPYtUGP[0] is List) {
+                      await a4vdQjcrZlNJQJ4EH.l83PDcafhhfvj99q(
+                          cQsjgKwpdZPYtUGP[0] as List<dynamic>);
                     }
                   } catch (e) {
                     debugPrint('Error in uploadMessage handler: $e');
@@ -194,12 +182,11 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 },
               );
 
-              // deleteaccount - 注销账号
-              webViewController!.addJavaScriptHandler(
+              v7tXl1wxexUTTuhK!.addJavaScriptHandler(
                 handlerName: 'deleteaccount',
-                callback: (args) async {
+                callback: (cQsjgKwpdZPYtUGP) async {
                   try {
-                    await app.deleteAccount();
+                    await a4vdQjcrZlNJQJ4EH.d3CaC6Cs7ksQW10cM();
                   } catch (e) {
                     debugPrint('Error in deleteaccount handler: $e');
                   }
@@ -207,32 +194,33 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 },
               );
 
-              // Recharge - 支付事件
-              webViewController!.addJavaScriptHandler(
+              v7tXl1wxexUTTuhK!.addJavaScriptHandler(
                 handlerName: 'Recharge',
-                callback: (args) async {
+                callback: (cQsjgKwpdZPYtUGP) async {
                   try {
-                    if (args.isNotEmpty && args[0] is String) {
-                      final paymentId = args[0] as String;
-                      // 查找对应的金币包
-                      final pack = app.diamondPacks.firstWhere(
-                        (p) => p.k4g89xQIHDro7dyFy == paymentId,
-                        orElse: () => app.diamondPacks.isNotEmpty
-                            ? app.diamondPacks.first
-                            : BJpjHVrAqvtNbCtLDiapack(k4g89xQIHDro7dyFy: '', LylHtfRBcO1D0w0M: 0, oY2gDyZaF80kazMx: 0),
+                    if (cQsjgKwpdZPYtUGP.isNotEmpty &&
+                        cQsjgKwpdZPYtUGP[0] is String) {
+                      final YA86ZFRfPdgErTID = cQsjgKwpdZPYtUGP[0] as String;
+                      final EGXFGsHizrh12LFY =
+                          a4vdQjcrZlNJQJ4EH.d9dEr1cTYR0dnRD6v.firstWhere(
+                        (p) => p.k4g89xQIHDro7dyFy == YA86ZFRfPdgErTID,
+                        orElse: () =>
+                            a4vdQjcrZlNJQJ4EH.d9dEr1cTYR0dnRD6v.isNotEmpty
+                                ? a4vdQjcrZlNJQJ4EH.d9dEr1cTYR0dnRD6v.first
+                                : BJpjHVrAqvtNbCtLDiapack(
+                                    k4g89xQIHDro7dyFy: '',
+                                    LylHtfRBcO1D0w0M: 0,
+                                    oY2gDyZaF80kazMx: 0),
                       );
 
-                      if (pack.k4g89xQIHDro7dyFy.isNotEmpty) {
-                        // 执行支付，等待支付结果
-                        final paymentSuccess =
-                            await thotharapisRahephylothFanffa(
-                                context, paymentId);
+                      if (EGXFGsHizrh12LFY.k4g89xQIHDro7dyFy.isNotEmpty) {
+                        final s5atEne092tvXJ60C =
+                            await Bw3B2gHjC4ETi2DY(context, YA86ZFRfPdgErTID);
 
-                        // 只有支付成功后才调用H5的onRechargeSuccess回调，传入购买的金币数量（不是用户金币总数）
-                        if (paymentSuccess) {
-                          await controller.evaluateJavascript(
+                        if (s5atEne092tvXJ60C) {
+                          await CvFkNxLpKjRAOot2.evaluateJavascript(
                             source:
-                                'window.onRechargeSuccess && window.onRechargeSuccess(${pack.LylHtfRBcO1D0w0M})',
+                                'window.onRechargeSuccess && window.onRechargeSuccess(${EGXFGsHizrh12LFY.LylHtfRBcO1D0w0M})',
                           );
                         }
                       }
@@ -246,31 +234,24 @@ class _WebViewScreenState extends State<WebViewScreen> {
             },
             onLoadStart: (controller, url) {
               setState(() {
-                isLoading = true;
+                f1NLieOYxHDoUki7 = true;
               });
             },
             onLoadStop: (controller, url) async {
-              // 只在首次加载完成时注入数据，避免H5更新数据后再次注入导致刷新
-              // if (!_hasInitialized) {
-              //   await _injectDataToWebView(controller, app);
-              //   _hasInitialized = true;
-              // }
               setState(() {
-                isLoading = false;
+                f1NLieOYxHDoUki7 = false;
               });
             },
             onReceivedError: (controller, request, error) {
               setState(() {
-                isLoading = false;
+                f1NLieOYxHDoUki7 = false;
               });
             },
             shouldOverrideUrlLoading: (controller, navigationAction) async {
-              // Allow all navigation
               return NavigationActionPolicy.ALLOW;
             },
           ),
-          // 显示loading指示器
-          if (isLoading)
+          if (f1NLieOYxHDoUki7)
             Container(
               color: Colors.transparent,
               child: const Center(
@@ -282,117 +263,103 @@ class _WebViewScreenState extends State<WebViewScreen> {
     );
   }
 
-  // 将本地资源路径转换为网络URL
-  static const String _baseUrl =
+  static const String C9d1wmXEp2oiAZm1 =
       'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/';
 
-  String _convertToNetworkUrl(String path) {
-    if (path.isEmpty) return path;
-    // 如果已经是网络URL，直接返回
-    if (path.startsWith('http://') || path.startsWith('https://')) {
-      return path;
+  String wE010MAHjv7VBASGtonet(String WCTKBYT4bFNT0qGs) {
+    if (WCTKBYT4bFNT0qGs.isEmpty) return WCTKBYT4bFNT0qGs;
+    if (WCTKBYT4bFNT0qGs.startsWith('http://') ||
+        WCTKBYT4bFNT0qGs.startsWith('https://')) {
+      return WCTKBYT4bFNT0qGs;
     }
-    // 如果是assets路径，转换为网络URL
-    if (path.startsWith('assets/')) {
-      // 提取文件名（去掉assets/前缀和所有中间目录）
-      // 例如: assets/images/xxx.png -> xxx.png
-      final fileName = path.split('/').last;
-      return '$_baseUrl$fileName';
+    if (WCTKBYT4bFNT0qGs.startsWith('assets/')) {
+      // assets/images/xxx.png -> xxx.png
+      final o9CDDnv7u5RNptvQ = WCTKBYT4bFNT0qGs.split('/').last;
+      return '$C9d1wmXEp2oiAZm1$o9CDDnv7u5RNptvQ';
     }
-    // 其他情况（可能是相对路径），提取文件名
-    final fileName = path.split('/').last;
-    return '$_baseUrl$fileName';
+    final o9CDDnv7u5RNptvQ = WCTKBYT4bFNT0qGs.split('/').last;
+    return '$C9d1wmXEp2oiAZm1$o9CDDnv7u5RNptvQ';
   }
 
-  String _buildInjectionScript(AppState app) {
-    // 转换用户数据 - 处理头像
-    final currentUserMap = app.currentUser.toMap();
-    currentUserMap['avator'] =
-        _convertToNetworkUrl(currentUserMap['avator'] as String);
-    final userJson = jsonEncode(currentUserMap);
+  String jNh5ixTdr1Ni67Eb(AppState qkfAkzV1Omau2nW3) {
+    final zwYQoJk5KrCwZOnS = qkfAkzV1Omau2nW3.NLbGEpZKzMfAbV3k.toMap();
+    zwYQoJk5KrCwZOnS['avator'] =
+        wE010MAHjv7VBASGtonet(zwYQoJk5KrCwZOnS['avator'] as String);
+    final u2YU986pmty1rFTJ1 = jsonEncode(zwYQoJk5KrCwZOnS);
 
-    // 转换用户列表数据 - 处理每个用户的头像
-    final userListJson = jsonEncode(
-      app.users.map((u) {
-        final userMap = u.toMap();
-        userMap['avator'] = _convertToNetworkUrl(userMap['avator'] as String);
-        return userMap;
+    final l9VBXsOIUDp4etC0P = jsonEncode(
+      qkfAkzV1Omau2nW3.EGX7N1GxSRqAoJMH.map((u) {
+        final uNh7rO1lVlbTgkJr = u.toMap();
+        uNh7rO1lVlbTgkJr['avator'] =
+            wE010MAHjv7VBASGtonet(uNh7rO1lVlbTgkJr['avator'] as String);
+        return uNh7rO1lVlbTgkJr;
       }).toList(),
     );
 
-    // 转换帖子数据 - 处理图片和视频（使用过滤后的帖子列表，排除blockList中用户的帖子）
-    final dynamicJson = jsonEncode(
-      app.filteredPosts.map((p) {
-        final postMap = p.toMap();
-        // 转换图片列表
-        final picList = (postMap['dynamicPic'] as List<dynamic>)
-            .map((pic) => _convertToNetworkUrl(pic.toString()))
-            .toList();
-        postMap['dynamicPic'] = picList;
-        // 转换视频路径
-        postMap['dynamicVideo'] =
-            _convertToNetworkUrl(postMap['dynamicVideo'] as String);
-        return postMap;
+    final DlbCYUuVp6z52ut2 = jsonEncode(
+      qkfAkzV1Omau2nW3.glufK0J7UE7AEAHL.map((p) {
+        final cwJTwPtP10VRiHZA = p.toMap();
+        final GqCymKEFp3ltpQIX =
+            (cwJTwPtP10VRiHZA['dynamicPic'] as List<dynamic>)
+                .map((pic) => wE010MAHjv7VBASGtonet(pic.toString()))
+                .toList();
+        cwJTwPtP10VRiHZA['dynamicPic'] = GqCymKEFp3ltpQIX;
+        cwJTwPtP10VRiHZA['dynamicVideo'] =
+            wE010MAHjv7VBASGtonet(cwJTwPtP10VRiHZA['dynamicVideo'] as String);
+        return cwJTwPtP10VRiHZA;
       }).toList(),
     );
 
-    // Build commentJson (评论数据不需要转换资源路径，但需要过滤blockList中用户的评论)
-    // 注意：这里传递所有评论，H5页面应该根据blockList过滤
-    // 但由于我们在Flutter端已经过滤，为了保持一致性，这里也过滤
-    final commentJson = jsonEncode(
-      app.comments
-          .where((c) => !app.currentUser.gJSvmz87tX112yqC.contains(c.YjHeuERpQWrW2rzh))
+    final WrZuk6fNa6w97B8m = jsonEncode(
+      qkfAkzV1Omau2nW3.c8ZkaRw4rlzkixIFq
+          .where((c) => !qkfAkzV1Omau2nW3.NLbGEpZKzMfAbV3k.gJSvmz87tX112yqC
+              .contains(c.YjHeuERpQWrW2rzh))
           .map((c) => c.toMap())
           .toList(),
     );
 
-    // Build chatListJson (聊天室数据不需要转换资源路径，但需要过滤包含blockList用户的聊天室)
-    final chatListJson = jsonEncode(
-      app.filteredChatRooms.map((c) => c.toMap()).toList(),
+    final hTUqiZnufSRInctG = jsonEncode(
+      qkfAkzV1Omau2nW3.bbZAttxRai3tdwtX.map((c) => c.toMap()).toList(),
     );
 
-    // 转换消息数据 - 处理图片
-    final messageListJson = jsonEncode(
-      app.messages.map((m) {
-        final messageMap = m.toMap();
-        messageMap['sendPicUrl'] =
-            _convertToNetworkUrl(messageMap['sendPicUrl'] as String);
-        return messageMap;
+    final xcwegWfntiq5w4Bo = jsonEncode(
+      qkfAkzV1Omau2nW3.tR0XyhJEMWYqEVcI.map((m) {
+        final oqXBK8axnty5uLnq = m.toMap();
+        oqXBK8axnty5uLnq['sendPicUrl'] =
+            wE010MAHjv7VBASGtonet(oqXBK8axnty5uLnq['sendPicUrl'] as String);
+        return oqXBK8axnty5uLnq;
       }).toList(),
     );
 
-    // Build coinListJson (金币包数据不需要转换资源路径)
-    final coinListJson = jsonEncode(
-      app.diamondPacks.map((d) => d.toMap()).toList(),
+    final IpwEydY1oVo1NIY3 = jsonEncode(
+      qkfAkzV1Omau2nW3.d9dEr1cTYR0dnRD6v.map((d) => d.toMap()).toList(),
     );
 
-    // Build reportListJson (举报选项数据不需要转换资源路径)
-    final reportListJson = jsonEncode(
-      app.reportOptions.map((r) => r.toMap()).toList(),
+    final cmK9ByjbJm33VncN = jsonEncode(
+      qkfAkzV1Omau2nW3.r8YzzvkFXPY5rzyud.map((r) => r.toMap()).toList(),
     );
 
-    // Build publishImageListJson (发布选项数据不需要转换资源路径)
-    final publishImageListJson = jsonEncode(
-      app.publishOptions.map((p) => p.toMap()).toList(),
+    final aWYSr9rCef7nH7NR = jsonEncode(
+      qkfAkzV1Omau2nW3.p1BbHOzt95PwWRrUg.map((p) => p.toMap()).toList(),
     );
 
-    // Build chatBotDesc (AI模块数据不需要转换资源路径)
-    final chatBotDescJson =
-        app.chatBotDesc != null ? jsonEncode(app.chatBotDesc!.toMap()) : 'null';
+    final VTcNO3sWVRzWt8jQ = qkfAkzV1Omau2nW3.c9wiGW5uJ9s1YPtXI != null
+        ? jsonEncode(qkfAkzV1Omau2nW3.c9wiGW5uJ9s1YPtXI!.toMap())
+        : 'null';
 
     return '''
       (function() {
         // Set all window objects according to Flutter ↔ H5 Communication Rules
-        window.userJson = $userJson;
-        window.userListJson = $userListJson;
-        window.dynamicJson = $dynamicJson;
-        window.commentJson = $commentJson;
-        window.chatListJson = $chatListJson;
-        window.messageListJson = $messageListJson;
-        window.coinListJson = $coinListJson;
-        window.reportListJson = $reportListJson;
-        window.publishImageListJson = $publishImageListJson;
-        window.chatBotDesc = $chatBotDescJson;
+        window.userJson = $u2YU986pmty1rFTJ1;
+        window.userListJson = $l9VBXsOIUDp4etC0P;
+        window.dynamicJson = $DlbCYUuVp6z52ut2;
+        window.commentJson = $WrZuk6fNa6w97B8m;
+        window.chatListJson = $hTUqiZnufSRInctG;
+        window.messageListJson = $xcwegWfntiq5w4Bo;
+        window.coinListJson = $IpwEydY1oVo1NIY3;
+        window.reportListJson = $cmK9ByjbJm33VncN;
+        window.publishImageListJson = $aWYSr9rCef7nH7NR;
+        window.chatBotDesc = $VTcNO3sWVRzWt8jQ;
         
         // Dispatch custom event to notify H5 that data is ready
         if (typeof window !== 'undefined') {

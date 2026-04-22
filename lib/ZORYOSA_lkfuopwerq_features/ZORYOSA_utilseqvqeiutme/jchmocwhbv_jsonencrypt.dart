@@ -65,8 +65,8 @@ Future<void> _v2j9d4h1HandleCommand(
   exit(1);
 }
 
-// dart run lib/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/json_encryption_tool.dart encrypt assets/jsons/initial_data.json assets/jsons/initial_data.encrypted.json
-// dart run lib/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/json_encryption_tool.dart decrypt assets/jsons/initial_data.encrypted.json assets/jsons/initial_data.json
+// dart run lib/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/jchmocwhbv_jsonencrypt.dart encrypt assets/jsons/initial_data.json assets/jsons/initial_data.encrypted.json
+// dart run lib/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/jchmocwhbv_jsonencrypt.dart decrypt assets/jsons/initial_data.encrypted.json assets/jsons/initial_data.json
 void main(List<String> args) async {
   if (args.length < 3) {
     exit(1);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_encrypted_media_vault.dart';
 
 import '../../ZORYOSA_modelscqnskskmdm/tdpFegrWPc3sjlaQ_post.dart';
 import '../../ZORYOSA_modelscqnskskmdm/u2749HToRfgbLVPrM_user.dart';
@@ -84,7 +84,7 @@ class FgS96lU0Lk2hc2aLPocard extends StatelessWidget {
                   Row(
                     children: [
                       ZoryoResolvedImage(
-                        imageName: S4V56exN0T3PWmWW
+                        imghihbqrdijzName: S4V56exN0T3PWmWW
                             ? 'imUilxE1Sy10vMHMpink.png'
                             : 'imUilxE1Sy10vMHMhui.png',
                         width: 36,

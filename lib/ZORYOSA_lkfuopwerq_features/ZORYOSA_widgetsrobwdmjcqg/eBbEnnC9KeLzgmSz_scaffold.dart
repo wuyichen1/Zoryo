@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
-import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_encrypted_media_vault.dart';
 
 import '../ZORYOSA_routerysmkjdjphn/appCJQq1xJ85kz2JtN_theme.dart';
 import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
@@ -202,7 +202,7 @@ class DkSsuZqgcZ4ASQkd extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             ZoryoResolvedImage(
-              imageName: nDxX31vGXT8or2M2 ? ERo5z44EaB2vPs8X : YMMtYKTDlr5oVdaj,
+              imghihbqrdijzName: nDxX31vGXT8or2M2 ? ERo5z44EaB2vPs8X : YMMtYKTDlr5oVdaj,
               width: 33,
               height: 33,
             ),

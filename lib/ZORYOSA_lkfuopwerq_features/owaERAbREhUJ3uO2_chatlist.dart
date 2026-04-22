@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
-import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_encrypted_media_vault.dart';
 
 import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
@@ -78,7 +78,7 @@ class OwaERAbREhUJ3uO2ChatlistScreen extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 100),
                     child: const ZoryoResolvedImage(
-                      imageName: 'Ub0NxSu42HA1fLtP.png',
+                      imghihbqrdijzName: 'Ub0NxSu42HA1fLtP.png',
                       width: 200,
                       height: 200,
                       fit: BoxFit.cover,

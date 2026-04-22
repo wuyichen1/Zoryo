@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
-import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_encrypted_media_vault.dart';
 import 'package:zoryo/ZORYOSA_modelscqnskskmdm/tdpFegrWPc3sjlaQ_post.dart';
 import 'package:zoryo/ZORYOSA_modelscqnskskmdm/u2749HToRfgbLVPrM_user.dart';
 
@@ -104,7 +104,7 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                                 '2q_z2xtNRkYAc-IbqQ7H-vg'.cx3hpvXCSg6mF());
                           },
                           child: const ZoryoResolvedImage(
-                            imageName: 'NpRm3VLh4uF56aw1.png',
+                            imghihbqrdijzName: 'NpRm3VLh4uF56aw1.png',
                             width: 24,
                             height: 24,
                             fit: BoxFit.cover,
@@ -312,7 +312,7 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                       ? Padding(
                           padding: EdgeInsets.only(top: 32.0, bottom: 130),
                           child: const ZoryoResolvedImage(
-                            imageName: 'Ub0NxSu42HA1fLtP.png',
+                            imghihbqrdijzName: 'Ub0NxSu42HA1fLtP.png',
                             width: 200,
                             height: 200,
                             fit: BoxFit.cover,
@@ -351,7 +351,7 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
             child: GestureDetector(
               onTap: () => context.push('trlswT9H2WAyRHAgEFxS4xTm'.cx3hpvXCSg6mF()),
               child: const ZoryoResolvedImage(
-                imageName: 'QCSjqmRHBZ4WlARW.png',
+                imghihbqrdijzName: 'QCSjqmRHBZ4WlARW.png',
                 width: 40,
                 height: 40,
                 fit: BoxFit.cover,
@@ -477,7 +477,7 @@ class V3AS6r2Px2546dkda extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           ZoryoResolvedImage(
-                            imageName: Ut6AWW7DNHvp6YTd
+                            imghihbqrdijzName: Ut6AWW7DNHvp6YTd
                                 ? 'imUilxE1Sy10vMHMpink.png'
                                 : 'imUilxE1Sy10vMHMhui.png',
                             width: 35,

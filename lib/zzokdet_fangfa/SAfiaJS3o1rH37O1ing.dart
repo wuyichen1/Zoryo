@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
-import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_encrypted_media_vault.dart';
 
 final XDC9b7h0QHoPozPc = Ht8PYFJof3ZHNCHh();
 
@@ -353,7 +353,9 @@ class _W7GsohHlpS6cb2W1State extends State<W7GsohHlpS6cb2W1>
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   ZoryoResolvedImage(
-                      imageName: widget.q6yEFxJP2jk0H8r9, width: 21, height: 21),
+                      imghihbqrdijzName: widget.q6yEFxJP2jk0H8r9,
+                      width: 21,
+                      height: 21),
                   const SizedBox(width: 13),
                   Flexible(
                     child: Text(

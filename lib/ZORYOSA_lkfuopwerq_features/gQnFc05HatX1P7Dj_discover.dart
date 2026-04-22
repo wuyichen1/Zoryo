@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
-import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_encrypted_media_vault.dart';
 import 'package:zoryo/ZORYOSA_modelscqnskskmdm/tdpFegrWPc3sjlaQ_post.dart';
 import 'package:zoryo/ZORYOSA_modelscqnskskmdm/u2749HToRfgbLVPrM_user.dart';
 
@@ -114,7 +114,7 @@ class Rs92CVxJ3tY8zlbfH extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const ZoryoResolvedImage(
-                    imageName: 'whx0uhWW7CLyGm0T.png',
+                    imghihbqrdijzName: 'whx0uhWW7CLyGm0T.png',
                     width: 60,
                     height: 60,
                   ),
@@ -238,7 +238,7 @@ class ZP6vWXov4x4t8hMq extends StatelessWidget {
                   Row(
                     children: [
                       ZoryoResolvedImage(
-                        imageName: ioMpsWZG5uUiLVlb
+                        imghihbqrdijzName: ioMpsWZG5uUiLVlb
                             ? 'imUilxE1Sy10vMHMblue.png'
                             : 'imUilxE1Sy10vMHMhui.png',
                         width: 20,

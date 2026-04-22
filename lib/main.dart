@@ -10,7 +10,7 @@ import 'zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await ZoryoEncryptedMediaVault.instance.ensureReady();
+  await ZoryoEncryptedMediaVault.instance.ensureReadyeaaydwptua();
   final PAmBi51XpfiX1h1L = LtFQAFrj0VRpIL8RLocalstore(
     GHcVLasWOpZtKtt8: 'assets/jsons/initial_data.encrypted.json',
     uuRv4rwu3P8hjVcv: true,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
-import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_encrypted_media_vault.dart';
 
 bool GsBYXpnSOS8kPcSl(String ijCuavrmsRMJWtBl) {
   if (ijCuavrmsRMJWtBl.isEmpty) return false;
@@ -30,13 +30,13 @@ class SnLjQVJIDwvDQeiSMimg extends StatelessWidget {
   Widget build(BuildContext context) {
     if (dIJEHnEuK8jQOYZ6.isEmpty) {
       return ZoryoResolvedImage(
-        imageName: _kDefAv,
+        imghihbqrdijzName: _kDefAv,
         fit: BoxFit.cover,
         width: uxPA9shcTkowRtWr,
         height: HiV1Jw06WVodhDMy,
         errorBuilder: (context, error, stackTrace) =>
             hQ2EKjohILntix17 ??
-            const ZoryoResolvedImage(imageName: _kDefAv, fit: BoxFit.cover),
+            const ZoryoResolvedImage(imghihbqrdijzName: _kDefAv, fit: BoxFit.cover),
       );
     }
 
@@ -60,17 +60,17 @@ class SnLjQVJIDwvDQeiSMimg extends StatelessWidget {
         },
         errorBuilder: (context, error, stackTrace) =>
             hQ2EKjohILntix17 ??
-            const ZoryoResolvedImage(imageName: _kDefAv, fit: BoxFit.cover),
+            const ZoryoResolvedImage(imghihbqrdijzName: _kDefAv, fit: BoxFit.cover),
       );
     } else {
       return ZoryoResolvedImage(
-        imageName: dIJEHnEuK8jQOYZ6,
+        imghihbqrdijzName: dIJEHnEuK8jQOYZ6,
         fit: BoxFit.cover,
         width: uxPA9shcTkowRtWr,
         height: HiV1Jw06WVodhDMy,
         errorBuilder: (context, error, stackTrace) =>
             hQ2EKjohILntix17 ??
-            const ZoryoResolvedImage(imageName: _kDefAv, fit: BoxFit.cover),
+            const ZoryoResolvedImage(imghihbqrdijzName: _kDefAv, fit: BoxFit.cover),
       );
     }
   }

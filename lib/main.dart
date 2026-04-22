@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/zzokdet_fangfa/rFj3K214p596M2gf_payfunc.dart';
 
@@ -43,11 +44,15 @@ class _ZoryoAppState extends State<ZoryoApp> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    B1iTdI2hfnKNUv2T ??= ZoryosaMomentionRouter(context.read<Kl3bGE2D4dsgMTqGState>());
+    B1iTdI2hfnKNUv2T ??=
+        ZoryosaMomentionRouter(context.read<Kl3bGE2D4dsgMTqGState>());
   }
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     final SnEHg8uqQ56TXgKE = B1iTdI2hfnKNUv2T?.router;
     if (SnEHg8uqQ56TXgKE == null) {
       return const SizedBox.shrink();

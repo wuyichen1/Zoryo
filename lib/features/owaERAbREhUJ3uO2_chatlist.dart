@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
 
-import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
+import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 
 class OwaERAbREhUJ3uO2ChatlistScreen extends StatelessWidget {
   const OwaERAbREhUJ3uO2ChatlistScreen({super.key});
@@ -22,7 +23,8 @@ class OwaERAbREhUJ3uO2ChatlistScreen extends StatelessWidget {
         height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: Image.asset('assets/images/S9x8jgtlLhyxicIV.png').image,
+            image: zoryoResolvedImageProvider(
+                'S9x8jgtlLhyxicIV.png'),
             fit: BoxFit.fill,
           ),
         ),
@@ -33,8 +35,8 @@ class OwaERAbREhUJ3uO2ChatlistScreen extends StatelessWidget {
               height: 136,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image:
-                      Image.asset('assets/images/PnFD0Zf3MZY6l7GS.png').image,
+                  image: zoryoResolvedImageProvider(
+                      'PnFD0Zf3MZY6l7GS.png'),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -76,8 +78,8 @@ class OwaERAbREhUJ3uO2ChatlistScreen extends StatelessWidget {
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 100),
-                    child: Image.asset(
-                      'assets/images/Ub0NxSu42HA1fLtP.png',
+                    child: const ZoryoResolvedImage(
+                      imageName: 'Ub0NxSu42HA1fLtP.png',
                       width: 200,
                       height: 200,
                       fit: BoxFit.cover,

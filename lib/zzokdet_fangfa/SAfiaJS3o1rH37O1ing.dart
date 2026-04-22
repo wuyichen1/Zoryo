@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
 
 final XDC9b7h0QHoPozPc = Ht8PYFJof3ZHNCHh();
 
@@ -350,7 +351,8 @@ class _W7GsohHlpS6cb2W1State extends State<W7GsohHlpS6cb2W1>
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Image.asset(widget.q6yEFxJP2jk0H8r9, width: 21, height: 21),
+                  ZoryoResolvedImage(
+                      imageName: widget.q6yEFxJP2jk0H8r9, width: 21, height: 21),
                   const SizedBox(width: 13),
                   Flexible(
                     child: Text(
@@ -396,7 +398,7 @@ class SAfiaJS3o1rH37O1ing {
       context,
       m5qCuVOHaiRr8pjjA: rJ2e8C2BL6pudP0Q ?? 'Success',
       b8wLXKIgw19fWsWB3: const Color.fromARGB(255, 92, 173, 95),
-      sHezot5NPdk05oxb: 'assets/images/F13J0C4W9tDUMaeh.png',
+      sHezot5NPdk05oxb: 'F13J0C4W9tDUMaeh.png',
     );
   }
 
@@ -408,7 +410,7 @@ class SAfiaJS3o1rH37O1ing {
       context,
       m5qCuVOHaiRr8pjjA: m5t1SfgrAUKHYvMTV ?? 'Failed',
       b8wLXKIgw19fWsWB3: const Color.fromARGB(255, 217, 77, 67),
-      sHezot5NPdk05oxb: 'assets/images/EYaADgkH0Zfbwvnr.png',
+      sHezot5NPdk05oxb: 'EYaADgkH0Zfbwvnr.png',
     );
   }
 

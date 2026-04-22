@@ -3,12 +3,14 @@ import 'package:provider/provider.dart';
 import 'package:zoryo/zzokdet_fangfa/rFj3K214p596M2gf_payfunc.dart';
 
 import 'features/router/app_router.dart';
+import 'features/utils/zoryo_encrypted_media_vault.dart';
 import 'zzokdet_fangfa/ltFQAFrj0VRpIL8R_store.dart';
 import 'features/router/appCJQq1xJ85kz2JtN_theme.dart';
 import 'zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await ZoryoEncryptedMediaVault.instance.ensureReady();
   final PAmBi51XpfiX1h1L = LtFQAFrj0VRpIL8RLocalstore(
     GHcVLasWOpZtKtt8: 'assets/jsons/initial_data.encrypted.json',
     uuRv4rwu3P8hjVcv: true,

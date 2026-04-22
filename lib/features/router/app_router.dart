@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
 
 import '../uyVclDaiEkntsqM6_account.dart';
 import '../auth/rtb0LjrVwalrXIZ3_authform_screen.dart';
@@ -62,9 +63,9 @@ class H5RouteBuilder {
     final param5QLej8tZwpxT7 = <String, String>{};
 
     if (c1PagV5NZyXQJn0VM.reqIdys4AK5ySw6HMIMeB) {
-      final id = state.uri.queryParameters['id'] ?? '';
+      final id = state.uri.queryParameters['40SznlTe'.cx3hpvXCSg6mF()] ?? '';
       if (id.isNotEmpty) {
-        param5QLej8tZwpxT7['id'] = id;
+        param5QLej8tZwpxT7['40SznlTe'.cx3hpvXCSg6mF()] = id;
       }
     }
 
@@ -77,7 +78,7 @@ class H5RouteBuilder {
     H5configtbmjfejOdP2R2FVG config,
     Map<String, String> fdc7rYal8rQwluC0,
   ) {
-    final id = fdc7rYal8rQwluC0['id'];
+    final id = fdc7rYal8rQwluC0['40SznlTe'.cx3hpvXCSg6mF()];
     return config.urlbuidGmrKVc1pJ4XzBvfk(id);
   }
 
@@ -92,30 +93,31 @@ class H5RouteBuilder {
 
   static void t2d81ppHmZzyLmtkU(
       String wt7B34CxPUNUF8Ie, Map<String, String> xx3S2THFH7AT1zPe) {
-    debugPrint('Route View: $wt7B34CxPUNUF8Ie with params: $xx3S2THFH7AT1zPe');
+    debugPrint(
+        '${'rQvH-1XuMv1dUwnmMrRH'.cx3hpvXCSg6mF()} $wt7B34CxPUNUF8Ie with params: $xx3S2THFH7AT1zPe');
   }
 }
 
 class X355c8o9V8W17UM8H5Regst {
   static List<H5configtbmjfejOdP2R2FVG> get _routeConfigs => [
         H5configtbmjfejOdP2R2FVG(
-          pathIh1zfasLwJFo3vdw: '/h5/webview',
+          pathIh1zfasLwJFo3vdw: 'ZPFlXpEP0MOYPJ-EZ8xs'.cx3hpvXCSg6mF(),
           rouname2448TXT8qO2rc7z7: 'webview',
           urlbuidGmrKVc1pJ4XzBvfk: (_) {
             return '';
           },
           titleanolziQuSghtVnif: '',
           cacheJ4B83yvdMBwYkqTI: false,
-          analyticsEvent: 'webview_opened',
+          analyticsEvent: 'VjrFv8fVJzuIxyoMb4Ie7nZg'.cx3hpvXCSg6mF(),
         ),
         H5configtbmjfejOdP2R2FVG(
-          pathIh1zfasLwJFo3vdw: '/h5/article-detail',
-          rouname2448TXT8qO2rc7z7: 'h5-article-detail',
+          pathIh1zfasLwJFo3vdw: '5e8TlhANpgsRJd9D7MusesbclyvTsw'.cx3hpvXCSg6mF(),
+          rouname2448TXT8qO2rc7z7: 'tO1N0GZW4D9NIYwHMsAu9RTDfO3l'.cx3hpvXCSg6mF(),
           urlbuidGmrKVc1pJ4XzBvfk: (id) => H5Routes.articleDetail(id ?? ''),
-          titleanolziQuSghtVnif: 'Article Detail',
+          titleanolziQuSghtVnif: 'eptTjJVjp3Nmb44AYDZ9LF4J'.cx3hpvXCSg6mF(),
           reqIdys4AK5ySw6HMIMeB: true,
           cacheJ4B83yvdMBwYkqTI: true,
-          analyticsEvent: 'article_detail_viewed',
+          analyticsEvent: 'UMVOgMtJume4QYNLnhhwIGTjQUJM0IlQag'.cx3hpvXCSg6mF(),
         ),
         H5configtbmjfejOdP2R2FVG(
           pathIh1zfasLwJFo3vdw: '/h5/short-video',
@@ -270,8 +272,7 @@ class AppRouter {
         RSovjZY2NikxL0Hq.isNotEmpty &&
         RSovjZY2NikxL0Hq != '/') {
       if (RSovjZY2NikxL0Hq.startsWith('/h5/')) {
-        final isRegH5 =
-            RSovjZY2NikxL0Hq.startsWith('/h5/user-register');
+        final isRegH5 = RSovjZY2NikxL0Hq.startsWith('/h5/user-register');
         if (isRegH5 &&
             xgWtDDrTyYrELU5l.vbK7PendingRegProfile &&
             !xgWtDDrTyYrELU5l.WMQtbwFITYixyRbr) {

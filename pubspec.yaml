@@ -76,6 +76,8 @@ dependencies:
   fluttertoast: ^8.2.10
   vibration: ^2.0.1
   encrypt: ^5.0.3
+  archive: ^4.0.9
+  path: ^1.9.1
 
 dependency_overrides:
   http: 1.4.0
@@ -112,11 +114,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/fonts/
-    - assets/images/
-    - assets/videos/
-    - assets/audios/
-    - assets/rive_animations/
+    - assets/images/zoryo_inip.png
+    - assets/images/zoryo_logo.png
+    - assets/images_encrypted.zip
+    - assets/videos_encrypted.zip
     - assets/jsons/
 
 

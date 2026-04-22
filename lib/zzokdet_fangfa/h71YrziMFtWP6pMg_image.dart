@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
 
 bool GsBYXpnSOS8kPcSl(String ijCuavrmsRMJWtBl) {
   if (ijCuavrmsRMJWtBl.isEmpty) return false;
@@ -22,16 +23,19 @@ class SnLjQVJIDwvDQeiSMimg extends StatelessWidget {
   final Widget? hQ2EKjohILntix17;
   final Widget? JtPaIhSMAyRqB7fv;
 
+  static const String _kDefAv = 'zoryo_defava.png';
+
   @override
   Widget build(BuildContext context) {
     if (dIJEHnEuK8jQOYZ6.isEmpty) {
-      return Image.asset(
-        'assets/images/zoryo_defava.png',
+      return ZoryoResolvedImage(
+        imageName: _kDefAv,
         fit: BoxFit.cover,
         width: uxPA9shcTkowRtWr,
         height: HiV1Jw06WVodhDMy,
         errorBuilder: (context, error, stackTrace) =>
-            hQ2EKjohILntix17 ?? Image.asset('assets/images/zoryo_defava.png'),
+            hQ2EKjohILntix17 ??
+            const ZoryoResolvedImage(imageName: _kDefAv, fit: BoxFit.cover),
       );
     }
 
@@ -54,16 +58,18 @@ class SnLjQVJIDwvDQeiSMimg extends StatelessWidget {
               );
         },
         errorBuilder: (context, error, stackTrace) =>
-            hQ2EKjohILntix17 ?? Image.asset('assets/images/zoryo_defava.png'),
+            hQ2EKjohILntix17 ??
+            const ZoryoResolvedImage(imageName: _kDefAv, fit: BoxFit.cover),
       );
     } else {
-      return Image.asset(
-        dIJEHnEuK8jQOYZ6,
+      return ZoryoResolvedImage(
+        imageName: dIJEHnEuK8jQOYZ6,
         fit: BoxFit.cover,
         width: uxPA9shcTkowRtWr,
         height: HiV1Jw06WVodhDMy,
         errorBuilder: (context, error, stackTrace) =>
-            hQ2EKjohILntix17 ?? Image.asset('assets/images/zoryo_defava.png'),
+            hQ2EKjohILntix17 ??
+            const ZoryoResolvedImage(imageName: _kDefAv, fit: BoxFit.cover),
       );
     }
   }
@@ -71,12 +77,12 @@ class SnLjQVJIDwvDQeiSMimg extends StatelessWidget {
 
 ImageProvider UPClh6pI9Z9yX3xQ(String BR6J3ZKSYXbCmhYE) {
   if (BR6J3ZKSYXbCmhYE.isEmpty) {
-    return const AssetImage('assets/images/zoryo_defava.png');
+    return zoryoResolvedImageProvider('zoryo_defava.png');
   }
 
   if (GsBYXpnSOS8kPcSl(BR6J3ZKSYXbCmhYE)) {
     return NetworkImage(BR6J3ZKSYXbCmhYE);
   } else {
-    return AssetImage(BR6J3ZKSYXbCmhYE);
+    return zoryoResolvedImageProvider(BR6J3ZKSYXbCmhYE);
   }
 }

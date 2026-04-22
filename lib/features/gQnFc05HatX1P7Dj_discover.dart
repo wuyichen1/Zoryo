@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
 import 'package:zoryo/models/tdpFegrWPc3sjlaQ_post.dart';
 import 'package:zoryo/models/u2749HToRfgbLVPrM_user.dart';
 
@@ -29,7 +30,8 @@ class GQnFc05HatX1P7DjDiscoverScreen extends StatelessWidget {
             height: 136,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: Image.asset('assets/images/T6RnpSSbVbCaZN78.png').image,
+                image: zoryoResolvedImageProvider(
+                    'T6RnpSSbVbCaZN78.png'),
                 fit: BoxFit.fill,
               ),
             ),
@@ -111,8 +113,8 @@ class Rs92CVxJ3tY8zlbfH extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    'assets/images/whx0uhWW7CLyGm0T.png',
+                  const ZoryoResolvedImage(
+                    imageName: 'whx0uhWW7CLyGm0T.png',
                     width: 60,
                     height: 60,
                   ),
@@ -235,10 +237,10 @@ class ZP6vWXov4x4t8hMq extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Image.asset(
-                        ioMpsWZG5uUiLVlb
-                            ? 'assets/images/imUilxE1Sy10vMHMblue.png'
-                            : 'assets/images/imUilxE1Sy10vMHMhui.png',
+                      ZoryoResolvedImage(
+                        imageName: ioMpsWZG5uUiLVlb
+                            ? 'imUilxE1Sy10vMHMblue.png'
+                            : 'imUilxE1Sy10vMHMhui.png',
                         width: 20,
                         height: 20,
                       ),

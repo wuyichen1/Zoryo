@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/features/auth/uzXo7BzvDdw43vBi_authselect_screen.dart';
 import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
 
 import '../widgets/lmDy7TRPsjReTw4L_grabtn.dart';
 import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
@@ -49,8 +50,8 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
               children: [
                 GestureDetector(
                   onTap: () => context.pop(),
-                  child: Image.asset(
-                    'assets/images/fxBUcK3QLhJKXIwg.png',
+                  child: const ZoryoResolvedImage(
+                    imageName: 'fxBUcK3QLhJKXIwg.png',
                     width: 38,
                     height: 38,
                   ),
@@ -212,8 +213,8 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
                   W5L4ZoGikeRcriWE.text, JOuDhBxZIddNZVgK.text);
             }
             if (context.mounted) {
-              final isSignup = widget.HvMpj4MMZYUNZDuU ==
-                  'mo33lIdqEExQhQ'.cx3hpvXCSg6mF();
+              final isSignup =
+                  widget.HvMpj4MMZYUNZDuU == 'mo33lIdqEExQhQ'.cx3hpvXCSg6mF();
               if (isSignup) {
                 if (FOz4q2Cnj4dgGWq2.vbK7PendingRegProfile) {
                   context.push('/h5/user-register');
@@ -226,7 +227,7 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
                   );
                 }
               } else if (FOz4q2Cnj4dgGWq2.WMQtbwFITYixyRbr) {
-                context.go('/home');
+                context.go('pOwWRtEK-blK'.cx3hpvXCSg6mF());
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(

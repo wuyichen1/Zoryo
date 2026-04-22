@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
 
 import '../../models/tdpFegrWPc3sjlaQ_post.dart';
 import '../../models/u2749HToRfgbLVPrM_user.dart';
@@ -82,10 +83,10 @@ class FgS96lU0Lk2hc2aLPocard extends StatelessWidget {
                   const Spacer(),
                   Row(
                     children: [
-                      Image.asset(
-                        S4V56exN0T3PWmWW
-                            ? 'assets/images/imUilxE1Sy10vMHMpink.png'
-                            : 'assets/images/imUilxE1Sy10vMHMhui.png',
+                      ZoryoResolvedImage(
+                        imageName: S4V56exN0T3PWmWW
+                            ? 'imUilxE1Sy10vMHMpink.png'
+                            : 'imUilxE1Sy10vMHMhui.png',
                         width: 36,
                         height: 36,
                       ),

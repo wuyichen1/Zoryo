@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
 
 import '../router/appCJQq1xJ85kz2JtN_theme.dart';
 import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
@@ -125,23 +126,23 @@ class ZyNiX4k9K0achLKt extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 DkSsuZqgcZ4ASQkd(
-                  YMMtYKTDlr5oVdaj: 'assets/images/homeACGgxq7fEfqZnJYE.png',
-                  ERo5z44EaB2vPs8X: 'assets/images/ACGgxq7fEfqZnJYE.png',
+                  YMMtYKTDlr5oVdaj: 'homeACGgxq7fEfqZnJYE.png',
+                  ERo5z44EaB2vPs8X: 'ACGgxq7fEfqZnJYE.png',
                   l1pSGPowJkfGj8cuu: 'Home',
                   nDxX31vGXT8or2M2: GL7ekdqqh7RTkgdg == 0,
                   b2gHH4Kg5ipUi50F8: () => DmkRvdbRvmLiDDbc(0),
                 ),
                 DkSsuZqgcZ4ASQkd(
-                  YMMtYKTDlr5oVdaj: 'assets/images/starpA4fb0awN1RGCDJH.png',
-                  ERo5z44EaB2vPs8X: 'assets/images/pA4fb0awN1RGCDJH.png',
+                  YMMtYKTDlr5oVdaj: 'starpA4fb0awN1RGCDJH.png',
+                  ERo5z44EaB2vPs8X: 'pA4fb0awN1RGCDJH.png',
                   l1pSGPowJkfGj8cuu: 'Discover',
                   nDxX31vGXT8or2M2: GL7ekdqqh7RTkgdg == 1,
                   b2gHH4Kg5ipUi50F8: () => DmkRvdbRvmLiDDbc(1),
                 ),
                 SizedBox(width: 30),
                 DkSsuZqgcZ4ASQkd(
-                  YMMtYKTDlr5oVdaj: 'assets/images/ding1dkl4u5zV7x0kFjE.png',
-                  ERo5z44EaB2vPs8X: 'assets/images/1dkl4u5zV7x0kFjE.png',
+                  YMMtYKTDlr5oVdaj: 'ding1dkl4u5zV7x0kFjE.png',
+                  ERo5z44EaB2vPs8X: '1dkl4u5zV7x0kFjE.png',
                   l1pSGPowJkfGj8cuu: 'Chat',
                   nDxX31vGXT8or2M2: GL7ekdqqh7RTkgdg == 2,
                   b2gHH4Kg5ipUi50F8: () => DmkRvdbRvmLiDDbc(2),
@@ -199,8 +200,8 @@ class DkSsuZqgcZ4ASQkd extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(
-              nDxX31vGXT8or2M2 ? ERo5z44EaB2vPs8X : YMMtYKTDlr5oVdaj,
+            ZoryoResolvedImage(
+              imageName: nDxX31vGXT8or2M2 ? ERo5z44EaB2vPs8X : YMMtYKTDlr5oVdaj,
               width: 33,
               height: 33,
             ),

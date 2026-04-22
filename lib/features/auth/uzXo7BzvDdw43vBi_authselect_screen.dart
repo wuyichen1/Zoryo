@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
 
 import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../widgets/lmDy7TRPsjReTw4L_grabtn.dart';
@@ -66,9 +67,9 @@ class _UzXo7BzvDdw43vBiSelectState
     return Scaffold(
       extendBodyBehindAppBar: true,
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/KfbqjUNps6xmZCHU.png'),
+            image: zoryoResolvedImageProvider('KfbqjUNps6xmZCHU.png'),
             fit: BoxFit.cover,
             // colorFilter: ColorFilter.mode(Colors.black54, BlendMode.darken),
           ),
@@ -107,8 +108,8 @@ class _UzXo7BzvDdw43vBiSelectState
                 children: [
                   EIITT29GdyJe4x4dLogo(),
                   const SizedBox(height: 16),
-                  const Text(
-                    'Zoryo',
+                  Text(
+                    'jRNRrb3mo0J3'.cx3hpvXCSg6mF(),
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -120,7 +121,7 @@ class _UzXo7BzvDdw43vBiSelectState
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   lmDy7TRPsjReTw4LGrabtn(
-                    Q8jxoIEIflW2H4VN: "I'm new",
+                    Q8jxoIEIflW2H4VN: "cVNKP4Lup-2S3pU".cx3hpvXCSg6mF(),
                     o7q0z205CtYy3Q1ID: () async {
                       if (!xTmeMN0WDyEwoFh0) {
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -132,10 +133,11 @@ class _UzXo7BzvDdw43vBiSelectState
                         );
                         return;
                       }
-                      final JMmEiDkTz4tVAV3I = context.read<Kl3bGE2D4dsgMTqGState>();
+                      final JMmEiDkTz4tVAV3I =
+                          context.read<Kl3bGE2D4dsgMTqGState>();
                       await JMmEiDkTz4tVAV3I.sYBxKNVVyDvzxp7m();
                       if (context.mounted) {
-                        context.go('/home');
+                        context.go('EKm-DkV3UfH-'.cx3hpvXCSg6mF());
                       }
                     },
                   ),
@@ -195,7 +197,8 @@ class _UzXo7BzvDdw43vBiSelectState
                             ),
                             GestureDetector(
                               onTap: () {
-                                context.push('/h5/user-agreement');
+                                context.push('3ma0WBe0AckcvSmepX8Na_5V6WndIg'
+                                    .cx3hpvXCSg6mF());
                               },
                               child: Text(
                                 'IPZ8Ei8fmdKLH3PUr8tftrO0'.cx3hpvXCSg6mF(),
@@ -209,7 +212,7 @@ class _UzXo7BzvDdw43vBiSelectState
                               ),
                             ),
                             Text(
-                              ' and ',
+                              'jQTdG8cbM804'.cx3hpvXCSg6mF(),
                               style: GoogleFonts.montserrat(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -220,7 +223,9 @@ class _UzXo7BzvDdw43vBiSelectState
                             ),
                             GestureDetector(
                               onTap: () {
-                                context.push('/h5/privacy-agreement');
+                                context.push(
+                                    'ndDW89guY65YSgfxJuv1mTv91MIXrePGLw'
+                                        .cx3hpvXCSg6mF());
                               },
                               child: Text(
                                 'g16t8I2mRAhvpTykfXkP2CNR'.cx3hpvXCSg6mF(),
@@ -263,10 +268,10 @@ Widget EIITT29GdyJe4x4dLogo() {
     ),
     child: Padding(
       padding: const EdgeInsets.all(2.0),
-      child: ClipRRect(
+        child: ClipRRect(
         borderRadius: BorderRadiusGeometry.circular(22),
-        child: Image.asset(
-          'assets/images/zoryo_logo.png',
+        child: const ZoryoResolvedImage(
+          imageName: 'zoryo_logo.png',
           width: 100,
         ),
       ),

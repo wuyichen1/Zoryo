@@ -102,7 +102,7 @@ class S8YIF6RxS8bKjDNk2 {
 }
 
 void main() {
-  final original = "/account";
+  final original = "article_detail_viewed";
   print(original);
   final encrypted = original.g0Y1pioMFKQyUlwL();
   print(encrypted);

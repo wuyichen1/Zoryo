@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
 
 import '../models/tdpFegrWPc3sjlaQ_post.dart';
 import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
@@ -59,9 +60,9 @@ class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
           image: DecorationImage(
             alignment: Alignment.topCenter,
             fit: BoxFit.cover,
-            image: Image.asset(
-              'assets/images/qcGkzrBc98JyKny6.png',
-            ).image,
+            image: zoryoResolvedImageProvider(
+              'qcGkzrBc98JyKny6.png',
+            ),
           ),
         ),
         child: Column(
@@ -154,8 +155,8 @@ class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
                       ],
                     ),
                   ),
-                  Image.asset(
-                    'assets/images/gYFdrTokerNA7UtH.png',
+                  const ZoryoResolvedImage(
+                    imageName: 'gYFdrTokerNA7UtH.png',
                     width: 140,
                     height: 140,
                   ),
@@ -220,8 +221,8 @@ class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
                                   ),
                                 ),
                                 SizedBox(width: 6),
-                                Image.asset(
-                                  'assets/images/JjKkUBqOxtZJlzSa.png',
+                                const ZoryoResolvedImage(
+                                  imageName: 'JjKkUBqOxtZJlzSa.png',
                                   width: 28,
                                   height: 28,
                                 ),
@@ -229,8 +230,8 @@ class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
                               ],
                             ),
                           ),
-                          Image.asset(
-                            'assets/images/y0jTlAELxMOQxaiP.png',
+                          const ZoryoResolvedImage(
+                            imageName: 'y0jTlAELxMOQxaiP.png',
                             width: 50,
                             height: 50,
                           ),

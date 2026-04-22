@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
 
 import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../widgets/lmDy7TRPsjReTw4L_grabtn.dart';
@@ -18,7 +19,7 @@ class N0zGIgNBdQH7A6LkEulaDialog extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/XgO09plIteZzbXdT.png'),
+            image: zoryoResolvedImageProvider('XgO09plIteZzbXdT.png'),
             fit: BoxFit.fill,
           ),
         ),
@@ -41,32 +42,42 @@ class N0zGIgNBdQH7A6LkEulaDialog extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    const Text(
-                      'Welcome to Zoryo! To make a better place, the following content is not allowed in the app in particular:',
+                    Text(
+                      'UrQELvtP6N-ycfniiAOatWAMrY0GhOCMMBaZVQn8SBDmhzz0yVikzLF9_6fQTM6Hal6yjUvI25R5FZ8eD7NHROGMPKA'
+                              .cx3hpvXCSg6mF() +
+                          'DikH-AHsp-j25b_t1I3Szq6X98WNOcPFqdCaeFhxRZRgJyo4HPbk8_Xw7bY'
+                              .cx3hpvXCSg6mF(),
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black87, height: 1.5),
                     ),
                     const SizedBox(height: 12),
-                    const Text(
-                      '1. Any content about child harm, pornography related detrimental to children.',
+                    Text(
+                      'RQzl2q6sRSm-DV0NgKrv_myile94k-D7I7CxgzNQKrQWSEQAv_IKGr4bGhyOtPPiIqTQ4nuI8Osjt7yeLV1nuRlOSEC_9gpIsxwUAou2_vUs'
+                          .cx3hpvXCSg6mF(),
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black87, height: 1.5),
                     ),
                     const SizedBox(height: 8),
-                    const Text(
-                      '2. Fake and harmful messages about recent or current events.',
+                    Text(
+                      'yHKHmRDGJ2EysXoNE0RZeu1dJSD7F1tu61wI2oP9yejawamEV5wnVTa5ekMGClIopV8iP-8HWTqmXA3MjO7ftQ'
+                          .cx3hpvXCSg6mF(),
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black87, height: 1.5),
                     ),
                     const SizedBox(height: 8),
-                    const Text(
-                      '3. Any violence, bullying content, publicly promotes pornography and other content.',
+                    Text(
+                      'u9n0fCZhVEsoOKxmDP7GWBbAoRywq9FdFdmB4rIhehGDc12gYWNUejMj4HkG_dMdCNGrXf-9wUJZ0If-u25-DIx3ULc1LhpuZi74eADjil4XzbBV_r2K'
+                          .cx3hpvXCSg6mF(),
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black87, height: 1.5),
                     ),
                     const SizedBox(height: 16),
-                    const Text(
-                      'If we find any content including and not limited to the above violations your content will be deleted and account will be banned. By clicking the above button, you agree to the Terms of Use and Privacy Policy.',
+                    Text(
+                      'vTlT8l7J8_ctgY3vCZUp0hR6A8X9R3fCFXRna7kCFIGLDvkjN8695GjPhPJHnWDeE3dGwrJdbIcPaCIitgMXgopH4S14w7L0Ic6F9UeIZsYI'.cx3hpvXCSg6mF() +
+                          'ZRZLrJ_vpFSEG400L7loAU7AeQUaYp4NRqla2F9fHsq3Jeyd0PmlTtAJiixj7mMIAoJ6DlRjn08Dn0acHFIZzfwt4Zmf-KNf0B-BL3mrIQ9XlG8PVCrb'
+                              .cx3hpvXCSg6mF() +
+                          'zr_dY1FaKNE4QAeSHVfnS6v9xXKD--hq4fXxHI7HVxZlzUDbTBUNgzBRFJQBV8NL5-DObo0'
+                              .cx3hpvXCSg6mF(),
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black87, height: 1.5),
                     ),

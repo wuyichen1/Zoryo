@@ -5,13 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
 import 'package:zoryo/zzokdet_fangfa/rFj3K214p596M2gf_payfunc.dart';
 
-import '../models/bJpjHVrAqvtNbCtL_diapack.dart';
+import '../ZORYOSA_modelscqnskskmdm/bJpjHVrAqvtNbCtL_diapack.dart';
 import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 
-class WebViewScreen extends StatefulWidget {
-  const WebViewScreen({
+class ZoryosaWebevvkrhjfch extends StatefulWidget {
+  const ZoryosaWebevvkrhjfch({
     super.key,
     required this.xV7wDbbWHIG4ebaBUrl,
     this.lOrJMO5uyGbwIXgb,
@@ -20,24 +21,21 @@ class WebViewScreen extends StatefulWidget {
   final String xV7wDbbWHIG4ebaBUrl;
   final String? lOrJMO5uyGbwIXgb;
 
-  static const String lSdk9H5CdnBase =
-      'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/';
+  static String lSdk9H5CdnBase =
+      'Mx0NheXn-WPNv4o2taCiKJ6OqFpgbMkUnpdyuCwmUeIJLiO2-fajctLs3GyztrBok4iwFnxo0EqdhXXwEiFX8QAnPqfg9uNnkQ'
+          .cx3hpvXCSg6mF();
+  static String kH5DefaultAvatarAsset =
+      'C1koNAS826fisu-h2HC5kLsMgoeSMLe2pU97KwvxI1E'.cx3hpvXCSg6mF();
 
-  /// App 内默认头像资源；用于拼 H5 可访问的 OSS 地址（`template_development` 下需有同名文件）。
-  static const String kH5DefaultAvatarAsset = 'assets/images/zoryo_logo.png';
-
-  /// 与注入 `window.userJson` 时头像规则一致，供 H5 展示用。
-  ///
-  /// 注意：OSS 目录里若不存在与本地 assets 同名的文件（例如仅有 `zoryo_logo.png` 而无
-  /// `zoryo_defava.png`），浏览器会 404；故对 `zoryo_defava.png` 与空串回退到 [kH5DefaultAvatarAsset] 再解析。
   static String p6ResolveH5MediaUrl(String WCTKBYT4bFNT0qGs) {
     var s = WCTKBYT4bFNT0qGs.trim();
     if (s.isEmpty) {
       s = kH5DefaultAvatarAsset;
-    } else if (s.endsWith('zoryo_defava.png')) {
+    } else if (s.endsWith('v5kLv2Ng-TQlXsc2DzC34VITtRQ'.cx3hpvXCSg6mF())) {
       s = kH5DefaultAvatarAsset;
     }
-    if (s.startsWith('http://') || s.startsWith('https://')) {
+    if (s.startsWith('wcSf9nNOa_R2Axg'.cx3hpvXCSg6mF()) ||
+        s.startsWith('CXIOZQuc-oPn4InW'.cx3hpvXCSg6mF())) {
       return s;
     }
     final o9CDDnv7u5RNptvQ = s.split('/').last;
@@ -45,10 +43,10 @@ class WebViewScreen extends StatefulWidget {
   }
 
   @override
-  State<WebViewScreen> createState() => _WebViewScreenState();
+  State<ZoryosaWebevvkrhjfch> createState() => _ZoryosaWebevvkrhjfchState();
 }
 
-class _WebViewScreenState extends State<WebViewScreen> {
+class _ZoryosaWebevvkrhjfchState extends State<ZoryosaWebevvkrhjfch> {
   InAppWebViewController? v7tXl1wxexUTTuhK;
   bool f1NLieOYxHDoUki7 = true;
   UnmodifiableListView<UserScript>? JxeErJwaC9ivtGNn;
@@ -70,7 +68,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
       allowsInlineMediaPlayback: true,
       transparentBackground: true,
       cacheEnabled: true,
-      iframeAllow: "camera; microphone",
+      iframeAllow: "UI0rTclixr6plPjBlyyCfGInk25LGA".cx3hpvXCSg6mF(),
       mediaPlaybackRequiresUserGesture: false,
     );
   }
@@ -94,24 +92,27 @@ class _WebViewScreenState extends State<WebViewScreen> {
             initialUserScripts: JxeErJwaC9ivtGNn!,
             initialSettings: ZMauexcwzXkMzWoq!,
             onConsoleMessage: (CvFkNxLpKjRAOot2, consoleMessage) {
-              debugPrint('WebView Console: ${consoleMessage.message}');
+              debugPrint(
+                  '${'vqo6Q09F2Icgd6X3Kw2edxQYb80'.cx3hpvXCSg6mF()} ${consoleMessage.message}');
             },
             onWebViewCreated: (CvFkNxLpKjRAOot2) {
               v7tXl1wxexUTTuhK = CvFkNxLpKjRAOot2;
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
-                handlerName: 'close',
+                handlerName: 'MW-iq-iJTUrZ'.cx3hpvXCSg6mF(),
                 callback: (vpIsKCIc4NenJOi1) async {
                   final Z4Ytu7kCNUX2I8IX = GoRouter.of(context)
                       .routerDelegate
                       .currentConfiguration
                       .uri
                       .toString();
-                  if (Z4Ytu7kCNUX2I8IX.contains('/h5/user-register') &&
+                  if (Z4Ytu7kCNUX2I8IX.contains(
+                          'SANPRY0R-vymGIKr38lgYWy-a5xv'.cx3hpvXCSg6mF()) &&
                       a4vdQjcrZlNJQJ4EH.vbK7PendingRegProfile) {
                     await a4vdQjcrZlNJQJ4EH.k9AbandonSignupDraftIfPending();
                   }
-                  if (Z4Ytu7kCNUX2I8IX.startsWith('/h5/')) {
+                  if (Z4Ytu7kCNUX2I8IX.startsWith(
+                      'bU1b9-ir7qo'.cx3hpvXCSg6mF())) {
                     a4vdQjcrZlNJQJ4EH.s8HGVKPpcO4RCTngj('');
                   }
                   if (mounted) {
@@ -122,7 +123,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
               );
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
-                handlerName: 'logout',
+                handlerName: 'gHAnrLaJwFV-rA'.cx3hpvXCSg6mF(),
                 callback: (vpIsKCIc4NenJOi1) {
                   a4vdQjcrZlNJQJ4EH.a7cngZic3wGbStpc();
                   return null;
@@ -130,7 +131,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
               );
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
-                handlerName: 'toLogin',
+                handlerName: 'uYXqEmeUJs8jhOw'.cx3hpvXCSg6mF(),
                 callback: (vpIsKCIc4NenJOi1) {
                   if (!mounted) return null;
                   GoRouter.of(context)
@@ -140,16 +141,19 @@ class _WebViewScreenState extends State<WebViewScreen> {
               );
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
-                handlerName: 'newUserData',
+                handlerName: 'tp2-on52SWUyYCRyASEV'.cx3hpvXCSg6mF(),
                 callback: (vpIsKCIc4NenJOi1) async {
                   Map<String, dynamic> readDraft() {
                     final u = a4vdQjcrZlNJQJ4EH.NLbGEpZKzMfAbV3k;
-                    var rawAv = u.RmXHAp70ovHNBN4U.trim();
-                    if (rawAv.isEmpty)
-                      rawAv = WebViewScreen.kH5DefaultAvatarAsset;
+                    var rawAvqpbhsrmxwu = u.RmXHAp70ovHNBN4U.trim();
+                    if (rawAvqpbhsrmxwu.isEmpty)
+                      rawAvqpbhsrmxwu =
+                          ZoryosaWebevvkrhjfch.kH5DefaultAvatarAsset;
                     return <String, dynamic>{
-                      'name': u.AWWxvC6FbYICMs9P,
-                      'avator': WebViewScreen.p6ResolveH5MediaUrl(rawAv),
+                      'dcAdbqFX8Jk'.cx3hpvXCSg6mF(): u.AWWxvC6FbYICMs9P,
+                      '0Iv8Jkt3HcA0gQ'.cx3hpvXCSg6mF():
+                          ZoryosaWebevvkrhjfch.p6ResolveH5MediaUrl(
+                              rawAvqpbhsrmxwu),
                     };
                   }
 
@@ -157,34 +161,38 @@ class _WebViewScreenState extends State<WebViewScreen> {
                     if (vpIsKCIc4NenJOi1.isEmpty) {
                       return readDraft();
                     }
-                    var raw = vpIsKCIc4NenJOi1[0];
-                    if (raw is List && raw.isNotEmpty) raw = raw.first;
-                    if (raw is! Map) {
+                    var rawpjqslngiow = vpIsKCIc4NenJOi1[0];
+                    if (rawpjqslngiow is List && rawpjqslngiow.isNotEmpty)
+                      rawpjqslngiow = rawpjqslngiow.first;
+                    if (rawpjqslngiow is! Map) {
                       return readDraft();
                     }
                     if (!a4vdQjcrZlNJQJ4EH.vbK7PendingRegProfile) {
-                      debugPrint(
-                          'newUserData submit ignored: not in signup profile flow');
-                      return <String, dynamic>{'ok': false};
+                      return <String, dynamic>{
+                        'YWaDntS3'.cx3hpvXCSg6mF(): false
+                      };
                     }
-                    final m = Map<String, dynamic>.from(raw);
+                    final mnzulgwshcn =
+                        Map<String, dynamic>.from(rawpjqslngiow);
                     await a4vdQjcrZlNJQJ4EH.m7RegisterProfileFinalize(
-                      m['name']?.toString() ?? '',
-                      m['avator']?.toString() ?? '',
+                      mnzulgwshcn['dcAdbqFX8Jk'.cx3hpvXCSg6mF()]?.toString() ??
+                          '',
+                      mnzulgwshcn['0Iv8Jkt3HcA0gQ'.cx3hpvXCSg6mF()]
+                              ?.toString() ??
+                          '',
                     );
                     if (mounted) {
-                      GoRouter.of(context).go('/home');
+                      GoRouter.of(context).go('eP-WHv0decFm'.cx3hpvXCSg6mF());
                     }
-                    return <String, dynamic>{'ok': true};
+                    return <String, dynamic>{'YWaDntS3'.cx3hpvXCSg6mF(): true};
                   } catch (e) {
-                    debugPrint('Error in newUserData handler: $e');
-                    return <String, dynamic>{'ok': false};
+                    return <String, dynamic>{'YWaDntS3'.cx3hpvXCSg6mF(): false};
                   }
                 },
               );
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
-                handlerName: 'updateUser',
+                handlerName: '9_uJEyQBbcD2BnTUxME'.cx3hpvXCSg6mF(),
                 callback: (vpIsKCIc4NenJOi1) async {
                   try {
                     if (vpIsKCIc4NenJOi1.isNotEmpty &&
@@ -193,15 +201,13 @@ class _WebViewScreenState extends State<WebViewScreen> {
                       await a4vdQjcrZlNJQJ4EH.u6nge5FH92FMre2FQ(
                           vpIsKCIc4NenJOi1[0] as List<dynamic>);
                     }
-                  } catch (e) {
-                    debugPrint('Error in updateUser handler: $e');
-                  }
+                  } catch (e) {}
                   return null;
                 },
               );
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
-                handlerName: 'updatePost',
+                handlerName: '7oOz8j2JV-ENjhvp608'.cx3hpvXCSg6mF(),
                 callback: (LNJ7aHgsiCZ86Y59) async {
                   try {
                     if (LNJ7aHgsiCZ86Y59.isNotEmpty &&
@@ -210,15 +216,13 @@ class _WebViewScreenState extends State<WebViewScreen> {
                       await a4vdQjcrZlNJQJ4EH.E7BmPQ8TmME2zbij(
                           LNJ7aHgsiCZ86Y59[0] as List<dynamic>);
                     }
-                  } catch (e) {
-                    debugPrint('Error in updatePost handler: $e');
-                  }
+                  } catch (e) {}
                   return null;
                 },
               );
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
-                handlerName: 'updateComment',
+                handlerName: 'H2X42AyrHAfeqNMDpHDL96g'.cx3hpvXCSg6mF(),
                 callback: (rHFKU9KkYXVcKwfk) async {
                   try {
                     if (rHFKU9KkYXVcKwfk.isNotEmpty &&
@@ -226,15 +230,13 @@ class _WebViewScreenState extends State<WebViewScreen> {
                       await a4vdQjcrZlNJQJ4EH.hosdxq6R9auF73IT(
                           rHFKU9KkYXVcKwfk[0] as List<dynamic>);
                     }
-                  } catch (e) {
-                    debugPrint('Error in updateComment handler: $e');
-                  }
+                  } catch (e) {}
                   return null;
                 },
               );
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
-                handlerName: 'uploadChat',
+                handlerName: 'jqweJ51S8tp4cPXTWRA'.cx3hpvXCSg6mF(),
                 callback: (nkVl3ozC061lnDME) async {
                   try {
                     if (nkVl3ozC061lnDME.isNotEmpty &&
@@ -242,15 +244,13 @@ class _WebViewScreenState extends State<WebViewScreen> {
                       await a4vdQjcrZlNJQJ4EH.Tuj1rgvoEtWI61Ec(
                           nkVl3ozC061lnDME[0] as List<dynamic>);
                     }
-                  } catch (e) {
-                    debugPrint('Error in uploadChat handler: $e');
-                  }
+                  } catch (e) {}
                   return null;
                 },
               );
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
-                handlerName: 'uploadMessage',
+                handlerName: 'wTMZ5m7Z9Rst__wfGJiuwBs'.cx3hpvXCSg6mF(),
                 callback: (cQsjgKwpdZPYtUGP) async {
                   try {
                     if (cQsjgKwpdZPYtUGP.isNotEmpty &&
@@ -258,27 +258,23 @@ class _WebViewScreenState extends State<WebViewScreen> {
                       await a4vdQjcrZlNJQJ4EH.l83PDcafhhfvj99q(
                           cQsjgKwpdZPYtUGP[0] as List<dynamic>);
                     }
-                  } catch (e) {
-                    debugPrint('Error in uploadMessage handler: $e');
-                  }
+                  } catch (e) {}
                   return null;
                 },
               );
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
-                handlerName: 'deleteaccount',
+                handlerName: 'XZBpf9NjhWicnWBwZCdqLm4'.cx3hpvXCSg6mF(),
                 callback: (cQsjgKwpdZPYtUGP) async {
                   try {
                     await a4vdQjcrZlNJQJ4EH.d3CaC6Cs7ksQW10cM();
-                  } catch (e) {
-                    debugPrint('Error in deleteaccount handler: $e');
-                  }
+                  } catch (e) {}
                   return null;
                 },
               );
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
-                handlerName: 'Recharge',
+                handlerName: 'wY9aM0lguakthZWi'.cx3hpvXCSg6mF(),
                 callback: (cQsjgKwpdZPYtUGP) async {
                   try {
                     if (cQsjgKwpdZPYtUGP.isNotEmpty &&
@@ -303,14 +299,14 @@ class _WebViewScreenState extends State<WebViewScreen> {
                         if (s5atEne092tvXJ60C) {
                           await CvFkNxLpKjRAOot2.evaluateJavascript(
                             source:
-                                'window.onRechargeSuccess && window.onRechargeSuccess(${EGXFGsHizrh12LFY.LylHtfRBcO1D0w0M})',
+                                'AXFWQiyOuLTjrsC5xXtpYNZaVJGzMnOU3F05ITu_XWRE9vTwNJD4v-KLi7XDSH5k22hTlbUEdYQ'
+                                        .cx3hpvXCSg6mF() +
+                                    '(${EGXFGsHizrh12LFY.LylHtfRBcO1D0w0M})',
                           );
                         }
                       }
                     }
-                  } catch (e) {
-                    debugPrint('Error in Recharge handler: $e');
-                  }
+                  } catch (e) {}
                   return null;
                 },
               );
@@ -348,15 +344,17 @@ class _WebViewScreenState extends State<WebViewScreen> {
 
   String jNh5ixTdr1Ni67Eb(Kl3bGE2D4dsgMTqGState qkfAkzV1Omau2nW3) {
     final zwYQoJk5KrCwZOnS = qkfAkzV1Omau2nW3.NLbGEpZKzMfAbV3k.toMap();
-    zwYQoJk5KrCwZOnS['avator'] =
-        WebViewScreen.p6ResolveH5MediaUrl(zwYQoJk5KrCwZOnS['avator'] as String);
+    zwYQoJk5KrCwZOnS['qH81SWOD1KNclQ'.cx3hpvXCSg6mF()] =
+        ZoryosaWebevvkrhjfch.p6ResolveH5MediaUrl(
+            zwYQoJk5KrCwZOnS['qH81SWOD1KNclQ'.cx3hpvXCSg6mF()] as String);
     final u2YU986pmty1rFTJ1 = jsonEncode(zwYQoJk5KrCwZOnS);
 
     final l9VBXsOIUDp4etC0P = jsonEncode(
       qkfAkzV1Omau2nW3.EGX7N1GxSRqAoJMH.map((u) {
         final uNh7rO1lVlbTgkJr = u.toMap();
-        uNh7rO1lVlbTgkJr['avator'] = WebViewScreen.p6ResolveH5MediaUrl(
-            uNh7rO1lVlbTgkJr['avator'] as String);
+        uNh7rO1lVlbTgkJr['qH81SWOD1KNclQ'.cx3hpvXCSg6mF()] =
+            ZoryosaWebevvkrhjfch.p6ResolveH5MediaUrl(
+                uNh7rO1lVlbTgkJr['qH81SWOD1KNclQ'.cx3hpvXCSg6mF()] as String);
         return uNh7rO1lVlbTgkJr;
       }).toList(),
     );
@@ -365,12 +363,17 @@ class _WebViewScreenState extends State<WebViewScreen> {
       qkfAkzV1Omau2nW3.glufK0J7UE7AEAHL.map((p) {
         final cwJTwPtP10VRiHZA = p.toMap();
         final GqCymKEFp3ltpQIX =
-            (cwJTwPtP10VRiHZA['dynamicPic'] as List<dynamic>)
-                .map((pic) => WebViewScreen.p6ResolveH5MediaUrl(pic.toString()))
+            (cwJTwPtP10VRiHZA['Q9JL9_kxpeSjU4DbhOk'.cx3hpvXCSg6mF()]
+                    as List<dynamic>)
+                .map((pic) =>
+                    ZoryosaWebevvkrhjfch.p6ResolveH5MediaUrl(pic.toString()))
                 .toList();
-        cwJTwPtP10VRiHZA['dynamicPic'] = GqCymKEFp3ltpQIX;
-        cwJTwPtP10VRiHZA['dynamicVideo'] = WebViewScreen.p6ResolveH5MediaUrl(
-            cwJTwPtP10VRiHZA['dynamicVideo'] as String);
+        cwJTwPtP10VRiHZA['Q9JL9_kxpeSjU4DbhOk'.cx3hpvXCSg6mF()] =
+            GqCymKEFp3ltpQIX;
+        cwJTwPtP10VRiHZA['cTyUs6_LeiCRzU8RcpAvGw'.cx3hpvXCSg6mF()] =
+            ZoryosaWebevvkrhjfch.p6ResolveH5MediaUrl(
+                cwJTwPtP10VRiHZA['cTyUs6_LeiCRzU8RcpAvGw'.cx3hpvXCSg6mF()]
+                    as String);
         return cwJTwPtP10VRiHZA;
       }).toList(),
     );
@@ -390,10 +393,13 @@ class _WebViewScreenState extends State<WebViewScreen> {
     final xcwegWfntiq5w4Bo = jsonEncode(
       qkfAkzV1Omau2nW3.tR0XyhJEMWYqEVcI.map((m) {
         final oqXBK8axnty5uLnq = m.toMap();
-        final vYg9SendPic = (oqXBK8axnty5uLnq['sendPicUrl'] as String).trim();
-        oqXBK8axnty5uLnq['sendPicUrl'] = vYg9SendPic.isEmpty
-            ? ''
-            : WebViewScreen.p6ResolveH5MediaUrl(vYg9SendPic);
+        final vYg9SendPic =
+            (oqXBK8axnty5uLnq['P8YqhepZxHeaR6FMmxI'.cx3hpvXCSg6mF()] as String)
+                .trim();
+        oqXBK8axnty5uLnq['P8YqhepZxHeaR6FMmxI'.cx3hpvXCSg6mF()] =
+            vYg9SendPic.isEmpty
+                ? ''
+                : ZoryosaWebevvkrhjfch.p6ResolveH5MediaUrl(vYg9SendPic);
         return oqXBK8axnty5uLnq;
       }).toList(),
     );
@@ -412,21 +418,21 @@ class _WebViewScreenState extends State<WebViewScreen> {
 
     final VTcNO3sWVRzWt8jQ = qkfAkzV1Omau2nW3.c9wiGW5uJ9s1YPtXI != null
         ? jsonEncode(qkfAkzV1Omau2nW3.c9wiGW5uJ9s1YPtXI!.toMap())
-        : 'null';
+        : 'psXV6W5OORs'.cx3hpvXCSg6mF();
 
     return '''
       (function() {
         // Set all window objects according to Flutter ↔ H5 Communication Rules
-        window.userJson = $u2YU986pmty1rFTJ1;
-        window.userListJson = $l9VBXsOIUDp4etC0P;
-        window.dynamicJson = $DlbCYUuVp6z52ut2;
-        window.commentJson = $WrZuk6fNa6w97B8m;
-        window.chatListJson = $hTUqiZnufSRInctG;
-        window.messageListJson = $xcwegWfntiq5w4Bo;
-        window.coinListJson = $IpwEydY1oVo1NIY3;
-        window.reportListJson = $cmK9ByjbJm33VncN;
-        window.publishImageListJson = $aWYSr9rCef7nH7NR;
-        window.chatBotDesc = $VTcNO3sWVRzWt8jQ;
+        ${'PcPK3eBQJA-nXEwElB7y1Ini9A'.cx3hpvXCSg6mF()} = $u2YU986pmty1rFTJ1;
+        ${'opTNPItjI65Ci0ulPynxsTYt6boE6xM'.cx3hpvXCSg6mF()} = $l9VBXsOIUDp4etC0P;
+        ${'XA9y8cHsnBuIACThf6lJ33C6CNZekQ'.cx3hpvXCSg6mF()} = $DlbCYUuVp6z52ut2;
+        ${'BTmsZSjGQpf_1mqawJwPQ6x3Nmq1Rw'.cx3hpvXCSg6mF()} = $WrZuk6fNa6w97B8m;
+        ${'gpf26atkGBNiiKAeRC7Y5lYSstck6Mg'.cx3hpvXCSg6mF()} = $hTUqiZnufSRInctG;
+        ${'QPlu5O0GgBakFigVj8JXxJqmcvFmnVTqka4'.cx3hpvXCSg6mF()} = $xcwegWfntiq5w4Bo;
+        ${'caJCOLxxrKKTffSvdDOWtUcfZqY1_Zw'.cx3hpvXCSg6mF()} = $IpwEydY1oVo1NIY3;
+        ${'VW8Wk9iM-EWPoIBVmlejJmZ1jzReFbUnfQ'.cx3hpvXCSg6mF()} = $cmK9ByjbJm33VncN;
+        ${'j4Ma1p6Q9AB1nJwaTFm8_j8lo-cFFK_HJDl6rNrEUQ'.cx3hpvXCSg6mF()} = $aWYSr9rCef7nH7NR;
+        ${'qZA77nRv1Rhbj_3hOymF7QkuT8cN4w'.cx3hpvXCSg6mF()} = $VTcNO3sWVRzWt8jQ;
         
         // Dispatch custom event to notify H5 that data is ready
         if (typeof window !== 'undefined') {

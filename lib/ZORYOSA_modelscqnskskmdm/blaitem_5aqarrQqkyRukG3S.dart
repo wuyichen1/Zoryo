@@ -1,3 +1,5 @@
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
+
 class B5aqarrQqkyRukG3S {
   B5aqarrQqkyRukG3S({
     required this.keTQRjhZFGnAMeCu,
@@ -7,13 +9,13 @@ class B5aqarrQqkyRukG3S {
 
   factory B5aqarrQqkyRukG3S.fromMap(Map<String, dynamic> map) {
     return B5aqarrQqkyRukG3S(
-      keTQRjhZFGnAMeCu: map['userId'] as String,
+      keTQRjhZFGnAMeCu: map['wQw9pW7x2EEFEA'.cx3hpvXCSg6mF()] as String,
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
-      'userId': keTQRjhZFGnAMeCu,
+      'wQw9pW7x2EEFEA'.cx3hpvXCSg6mF(): keTQRjhZFGnAMeCu,
     };
   }
 }

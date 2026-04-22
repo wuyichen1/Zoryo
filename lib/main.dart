@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/zzokdet_fangfa/rFj3K214p596M2gf_payfunc.dart';
 
-import 'features/router/app_router.dart';
-import 'features/utils/zoryo_encrypted_media_vault.dart';
+import 'ZORYOSA_lkfuopwerq_features/ZORYOSA_routerysmkjdjphn/zoryosa_momention_router.dart';
+import 'ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_encrypted_media_vault.dart';
 import 'zzokdet_fangfa/ltFQAFrj0VRpIL8R_store.dart';
-import 'features/router/appCJQq1xJ85kz2JtN_theme.dart';
+import 'ZORYOSA_lkfuopwerq_features/ZORYOSA_routerysmkjdjphn/appCJQq1xJ85kz2JtN_theme.dart';
 import 'zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 
 void main() async {
@@ -38,12 +38,12 @@ class ZoryoApp extends StatefulWidget {
 }
 
 class _ZoryoAppState extends State<ZoryoApp> {
-  AppRouter? B1iTdI2hfnKNUv2T;
+  ZoryosaMomentionRouter? B1iTdI2hfnKNUv2T;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    B1iTdI2hfnKNUv2T ??= AppRouter(context.read<Kl3bGE2D4dsgMTqGState>());
+    B1iTdI2hfnKNUv2T ??= ZoryosaMomentionRouter(context.read<Kl3bGE2D4dsgMTqGState>());
   }
 
   @override

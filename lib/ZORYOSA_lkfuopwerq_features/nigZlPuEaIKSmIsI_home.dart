@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
-import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
 
-import '../models/tdpFegrWPc3sjlaQ_post.dart';
+import '../ZORYOSA_modelscqnskskmdm/tdpFegrWPc3sjlaQ_post.dart';
 import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
-import 'widgets/fgS96lU0Lk2hc2aL_pocard.dart';
+import 'ZORYOSA_widgetsrobwdmjcqg/fgS96lU0Lk2hc2aL_pocard.dart';
 import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
 class NigZlPuEaIKSmIsIHomeScreen extends StatefulWidget {
@@ -103,7 +103,7 @@ class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Hello!👋',
+                                  '${'vJ1OwF52oiIoJA'.cx3hpvXCSg6mF()}👋',
                                   style: GoogleFonts.montserrat(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500,
@@ -166,7 +166,8 @@ class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
             Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
-                onTap: () => context.push('/h5/chat-view'),
+                onTap: () =>
+                    context.push('mKOGRN1xM_1AY3-sby1VYCI'.cx3hpvXCSg6mF()),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -390,10 +391,11 @@ class MYZwL8ZDFgDh9zvn extends StatelessWidget {
           XIHEOpn9N8S2Ra4I: () {
             if (tPcnVXlaO4IUgznx.ocN7sEFUY2qW0Zgr == 0) {
               context.push(
-                  '/h5/article-detail?id=${tPcnVXlaO4IUgznx.qCzdv3cLqVGfralN}');
+                  'rbSjeihCFidZbk9nNAA8Fg4bB0_ryGxGD0Y'.cx3hpvXCSg6mF() +
+                      '${tPcnVXlaO4IUgznx.qCzdv3cLqVGfralN}');
             } else {
-              context.push(
-                  '/h5/short-video?id=${tPcnVXlaO4IUgznx.qCzdv3cLqVGfralN}');
+              context.push('Wb7dRJxcaP2XThqqd1vlbHLtwsdHyrA'.cx3hpvXCSg6mF() +
+                  '${tPcnVXlaO4IUgznx.qCzdv3cLqVGfralN}');
             }
           },
         );

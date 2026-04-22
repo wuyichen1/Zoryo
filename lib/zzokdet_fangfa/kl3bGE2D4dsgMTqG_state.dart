@@ -1,18 +1,18 @@
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
-import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
 
 import 'ltFQAFrj0VRpIL8R_store.dart';
-import '../models/blaitem_5aqarrQqkyRukG3S.dart';
-import '../models/zGQ5e04h9a1NvSNwChatBotDesc_chatbotdesc.dart';
-import '../models/mLWrwTEsH7mWmgZP_Commt.dart';
-import '../models/bJpjHVrAqvtNbCtL_diapack.dart';
-import '../models/pQ3j6P8wVMgm0na7_msg.dart';
-import '../models/tdpFegrWPc3sjlaQ_post.dart';
-import '../models/p8JqmePjljoN7whd3_puboption.dart';
-import '../models/vbiefCaW4r24pJKf_repitem.dart';
-import '../models/u2749HToRfgbLVPrM_user.dart';
+import '../ZORYOSA_modelscqnskskmdm/blaitem_5aqarrQqkyRukG3S.dart';
+import '../ZORYOSA_modelscqnskskmdm/zGQ5e04h9a1NvSNwChatBotDesc_chatbotdesc.dart';
+import '../ZORYOSA_modelscqnskskmdm/mLWrwTEsH7mWmgZP_Commt.dart';
+import '../ZORYOSA_modelscqnskskmdm/bJpjHVrAqvtNbCtL_diapack.dart';
+import '../ZORYOSA_modelscqnskskmdm/pQ3j6P8wVMgm0na7_msg.dart';
+import '../ZORYOSA_modelscqnskskmdm/tdpFegrWPc3sjlaQ_post.dart';
+import '../ZORYOSA_modelscqnskskmdm/p8JqmePjljoN7whd3_puboption.dart';
+import '../ZORYOSA_modelscqnskskmdm/vbiefCaW4r24pJKf_repitem.dart';
+import '../ZORYOSA_modelscqnskskmdm/u2749HToRfgbLVPrM_user.dart';
 
 class Kl3bGE2D4dsgMTqGState extends ChangeNotifier {
   Kl3bGE2D4dsgMTqGState(this.sOjugDTKPqzG6mvBs);
@@ -21,7 +21,6 @@ class Kl3bGE2D4dsgMTqGState extends ChangeNotifier {
   bool HMAJABja8J7tdhv8 = false;
   bool vB2GTgDbdOHDxBUH = false;
   bool WMQtbwFITYixyRbr = false;
-  /// 已创建账号草稿、待 H5 完善资料并完成登录态（此时 [WMQtbwFITYixyRbr] 为 false）。
   bool vbK7PendingRegProfile = false;
   String? s6LetX6FiwoOFmXwp;
   late U2749HToRfgbLVPrMUser NLbGEpZKzMfAbV3k;
@@ -136,11 +135,9 @@ class Kl3bGE2D4dsgMTqGState extends ChangeNotifier {
     }
 
     final jPendingUid = await sOjugDTKPqzG6mvBs.ka6RegProfilePendingIdRead();
-    if (jPendingUid != null &&
-        jPendingUid.isNotEmpty &&
-        !WMQtbwFITYixyRbr) {
-      final jIdx = EGX7N1GxSRqAoJMH
-          .indexWhere((u) => u.fkloYnZiRmbRtJ00 == jPendingUid);
+    if (jPendingUid != null && jPendingUid.isNotEmpty && !WMQtbwFITYixyRbr) {
+      final jIdx =
+          EGX7N1GxSRqAoJMH.indexWhere((u) => u.fkloYnZiRmbRtJ00 == jPendingUid);
       if (jIdx >= 0) {
         NLbGEpZKzMfAbV3k = EGX7N1GxSRqAoJMH[jIdx];
         vbK7PendingRegProfile = true;
@@ -156,11 +153,11 @@ class Kl3bGE2D4dsgMTqGState extends ChangeNotifier {
 
   U2749HToRfgbLVPrMUser ZUEqPPxydYoBh7Iz() {
     return U2749HToRfgbLVPrMUser(
-      fkloYnZiRmbRtJ00: 'u1',
+      fkloYnZiRmbRtJ00: 'awktObBO'.cx3hpvXCSg6mF(),
       UH6Wfi7WIQ8UtXwg: '',
       fyVNw5c7FRNN1Eui: '',
       RmXHAp70ovHNBN4U: '',
-      AWWxvC6FbYICMs9P: 'User',
+      AWWxvC6FbYICMs9P: 'w3C6UkiVX5I'.cx3hpvXCSg6mF(),
       Sfy5ovPIlV0PS5C2: '',
       IlyH5k6lZ7fVAHfQ: 0,
       isguest: 1,
@@ -305,7 +302,7 @@ class Kl3bGE2D4dsgMTqGState extends ChangeNotifier {
       orElse: () => ZUEqPPxydYoBh7Iz(),
     );
 
-    if (W1vhnt6ydaKPNytR.fkloYnZiRmbRtJ00 != 'u1' ||
+    if (W1vhnt6ydaKPNytR.fkloYnZiRmbRtJ00 != 'awktObBO'.cx3hpvXCSg6mF() ||
         EGX7N1GxSRqAoJMH.any((u) =>
             u.UH6Wfi7WIQ8UtXwg == xu094FVRzZYjaaXA &&
             u.fyVNw5c7FRNN1Eui == ohgvZZZRRGRK4zo1)) {
@@ -329,7 +326,8 @@ class Kl3bGE2D4dsgMTqGState extends ChangeNotifier {
       fkloYnZiRmbRtJ00: VTb0eUWsM4LB8pWb,
       UH6Wfi7WIQ8UtXwg: xu094FVRzZYjaaXA,
       fyVNw5c7FRNN1Eui: ohgvZZZRRGRK4zo1,
-      RmXHAp70ovHNBN4U: 'assets/images/zoryo_logo.png',
+      RmXHAp70ovHNBN4U:
+          'z5H9_Eh0Du8uirr5FCjU2P90t9_W-MLu4TeWY8fJTJk'.cx3hpvXCSg6mF(),
       AWWxvC6FbYICMs9P: xu094FVRzZYjaaXA.split('@').first,
       Sfy5ovPIlV0PS5C2: '',
       IlyH5k6lZ7fVAHfQ: 0,
@@ -351,20 +349,23 @@ class Kl3bGE2D4dsgMTqGState extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> m7RegisterProfileFinalize(String name, String avator) async {
-    const kDefaultAvator = 'assets/images/zoryo_defava.png';
-    final id = NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00;
-    final trimmedName = name.trim();
-    final trimmedAv = avator.trim();
-    final nm = trimmedName.isEmpty
+  Future<void> m7RegisterProfileFinalize(
+      String namerscmwuegtv, String avatormtcdabuoyo) async {
+    String kDefvfwskmyylyAvator =
+        'Z5Bp16B1mgCGiy4CfCl4_Vd1Q-RO-XbTQTI7hvfZoKn32Q'.cx3hpvXCSg6mF();
+    final idlhguksrfhz = NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00;
+    final trimmedNamewpbrjfaihl = namerscmwuegtv.trim();
+    final trimmedAv = avatormtcdabuoyo.trim();
+    final nm = trimmedNamewpbrjfaihl.isEmpty
         ? NLbGEpZKzMfAbV3k.AWWxvC6FbYICMs9P
-        : trimmedName;
-    final av = trimmedAv.isEmpty ? kDefaultAvator : trimmedAv;
+        : trimmedNamewpbrjfaihl;
+    final av = trimmedAv.isEmpty ? kDefvfwskmyylyAvator : trimmedAv;
     final next = NLbGEpZKzMfAbV3k.copyWith(
       AWWxvC6FbYICMs9P: nm,
       RmXHAp70ovHNBN4U: av,
     );
-    final idx = EGX7N1GxSRqAoJMH.indexWhere((u) => u.fkloYnZiRmbRtJ00 == id);
+    final idx =
+        EGX7N1GxSRqAoJMH.indexWhere((u) => u.fkloYnZiRmbRtJ00 == idlhguksrfhz);
     if (idx >= 0) {
       EGX7N1GxSRqAoJMH[idx] = next;
     }
@@ -372,18 +373,18 @@ class Kl3bGE2D4dsgMTqGState extends ChangeNotifier {
     WMQtbwFITYixyRbr = true;
     vbK7PendingRegProfile = false;
     await sOjugDTKPqzG6mvBs.PIJbSGMK2PHYyqXg(true);
-    await sOjugDTKPqzG6mvBs.wgQhCdcOn2ctJh2z(id);
+    await sOjugDTKPqzG6mvBs.wgQhCdcOn2ctJh2z(idlhguksrfhz);
     await sOjugDTKPqzG6mvBs.uQPpRegProfilePendingId(null);
     await XPskFHZDnriIqlXv();
     notifyListeners();
   }
 
-  /// 用户从完善资料页返回且未完成时，移除草稿账号并清理 pending。
   Future<void> k9AbandonSignupDraftIfPending() async {
     if (!vbK7PendingRegProfile) return;
-    final id = NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00;
+    final idbozdteytfz = NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00;
     EGX7N1GxSRqAoJMH =
-        EGX7N1GxSRqAoJMH.where((u) => u.fkloYnZiRmbRtJ00 != id).toList();
+        EGX7N1GxSRqAoJMH.where((u) => u.fkloYnZiRmbRtJ00 != idbozdteytfz)
+            .toList();
     vbK7PendingRegProfile = false;
     await sOjugDTKPqzG6mvBs.uQPpRegProfilePendingId(null);
     NLbGEpZKzMfAbV3k = ZUEqPPxydYoBh7Iz();
@@ -416,11 +417,13 @@ class Kl3bGE2D4dsgMTqGState extends ChangeNotifier {
     final VTb0eUWsM4LB8pWb = 'u_quick_${Random().nextInt(999999)}';
     final VrmIKMcMY7psdbDJ = U2749HToRfgbLVPrMUser(
       fkloYnZiRmbRtJ00: VTb0eUWsM4LB8pWb,
-      UH6Wfi7WIQ8UtXwg: 'quick_$VTb0eUWsM4LB8pWb@quick.com',
+      UH6Wfi7WIQ8UtXwg:
+          'quick_$VTb0eUWsM4LB8pWb@${'LMfgSvdICbvcARuxuw'.cx3hpvXCSg6mF()}',
       fyVNw5c7FRNN1Eui: '',
-      RmXHAp70ovHNBN4U: 'assets/images/zoryo_defava.png',
+      RmXHAp70ovHNBN4U:
+          'Z5Bp16B1mgCGiy4CfCl4_Vd1Q-RO-XbTQTI7hvfZoKn32Q'.cx3hpvXCSg6mF(),
       AWWxvC6FbYICMs9P:
-          'User ${VTb0eUWsM4LB8pWb.substring(VTb0eUWsM4LB8pWb.length - 4)}',
+          '${'pW7kEaqXAe0'.cx3hpvXCSg6mF()} ${VTb0eUWsM4LB8pWb.substring(VTb0eUWsM4LB8pWb.length - 4)}',
       Sfy5ovPIlV0PS5C2: '95xKrQBno1jpJI4uxj1uTsEVfxM'.cx3hpvXCSg6mF(),
       IlyH5k6lZ7fVAHfQ: 0,
       isguest: 1,
@@ -482,7 +485,8 @@ class Kl3bGE2D4dsgMTqGState extends ChangeNotifier {
       await XPskFHZDnriIqlXv();
       notifyListeners();
     } catch (e) {
-      debugPrint('Error updating EGX7N1GxSRqAoJMH: $e');
+      debugPrint(
+          '${'SQoXh-by5XqmUtprl6O5IWiz'.cx3hpvXCSg6mF()} EGX7N1GxSRqAoJMH: $e');
     }
   }
 
@@ -567,7 +571,6 @@ class Kl3bGE2D4dsgMTqGState extends ChangeNotifier {
     }
   }
 
-  // 支付
   Future<void> gtfsLkHm6MMk6spI(String mxYHrTcZZYBUGn43key) async {
     final zeKmXrHVh2MHZiJL = d9dEr1cTYR0dnRD6v.firstWhere(
       (p) => p.k4g89xQIHDro7dyFy == mxYHrTcZZYBUGn43key,

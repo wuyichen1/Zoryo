@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/features/auth/uzXo7BzvDdw43vBi_authselect_screen.dart';
-import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
-import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_authxfmbabozoz/uzXo7BzvDdw43vBi_authselect_screen.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
 
-import '../widgets/lmDy7TRPsjReTw4L_grabtn.dart';
+import '../ZORYOSA_widgetsrobwdmjcqg/lmDy7TRPsjReTw4L_grabtn.dart';
 import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 
 class Rtb0LjrVwalrXIZ3AuthFormScreen extends StatefulWidget {

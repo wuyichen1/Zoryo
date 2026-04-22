@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
-import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
 
-import '../router/appCJQq1xJ85kz2JtN_theme.dart';
+import '../ZORYOSA_routerysmkjdjphn/appCJQq1xJ85kz2JtN_theme.dart';
 import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
@@ -69,7 +69,8 @@ class EBbEnnC9KeLzgmSzScaffold extends StatelessWidget {
               child: ZyNiX4k9K0achLKt(
                 GL7ekdqqh7RTkgdg: dhsTqsF78WV8cVBC.currentIndex,
                 DmkRvdbRvmLiDDbc: nijDq1PYlIo328hh,
-                yhCcLT9R3e3Uzaad: () => context.push('/h5/send-dynamic'),
+                yhCcLT9R3e3Uzaad: () =>
+                    context.push('RWjx-LC2RKmjtefowkTe12NfqM8'.cx3hpvXCSg6mF()),
                 l6N4AhHrEgDYd8md: SMqaWwM5TE3r7YiP,
                 SaN4ZR9oHZKdghwb: SaN4ZR9oHZKdghwb,
               ),
@@ -128,14 +129,14 @@ class ZyNiX4k9K0achLKt extends StatelessWidget {
                 DkSsuZqgcZ4ASQkd(
                   YMMtYKTDlr5oVdaj: 'homeACGgxq7fEfqZnJYE.png',
                   ERo5z44EaB2vPs8X: 'ACGgxq7fEfqZnJYE.png',
-                  l1pSGPowJkfGj8cuu: 'Home',
+                  l1pSGPowJkfGj8cuu: 'PPPWKt4GO90'.cx3hpvXCSg6mF(),
                   nDxX31vGXT8or2M2: GL7ekdqqh7RTkgdg == 0,
                   b2gHH4Kg5ipUi50F8: () => DmkRvdbRvmLiDDbc(0),
                 ),
                 DkSsuZqgcZ4ASQkd(
                   YMMtYKTDlr5oVdaj: 'starpA4fb0awN1RGCDJH.png',
                   ERo5z44EaB2vPs8X: 'pA4fb0awN1RGCDJH.png',
-                  l1pSGPowJkfGj8cuu: 'Discover',
+                  l1pSGPowJkfGj8cuu: 'eChw35b3gw5s5m0B'.cx3hpvXCSg6mF(),
                   nDxX31vGXT8or2M2: GL7ekdqqh7RTkgdg == 1,
                   b2gHH4Kg5ipUi50F8: () => DmkRvdbRvmLiDDbc(1),
                 ),
@@ -143,12 +144,12 @@ class ZyNiX4k9K0achLKt extends StatelessWidget {
                 DkSsuZqgcZ4ASQkd(
                   YMMtYKTDlr5oVdaj: 'ding1dkl4u5zV7x0kFjE.png',
                   ERo5z44EaB2vPs8X: '1dkl4u5zV7x0kFjE.png',
-                  l1pSGPowJkfGj8cuu: 'Chat',
+                  l1pSGPowJkfGj8cuu: 'b-gGKoo258w'.cx3hpvXCSg6mF(),
                   nDxX31vGXT8or2M2: GL7ekdqqh7RTkgdg == 2,
                   b2gHH4Kg5ipUi50F8: () => DmkRvdbRvmLiDDbc(2),
                 ),
                 A6WYYoppsBokDl9vf(
-                  zsh0d1Z9pnpjYUoA: 'Account',
+                  zsh0d1Z9pnpjYUoA: 'J9Xu-8AoDebHU_I'.cx3hpvXCSg6mF(),
                   nDxX31vGXT8or2M2: GL7ekdqqh7RTkgdg == 3,
                   tsm6ejzHDJAGMpaK: () => DmkRvdbRvmLiDDbc(3),
                 ),

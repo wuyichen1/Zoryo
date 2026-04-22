@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
-import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
-import 'package:zoryo/models/tdpFegrWPc3sjlaQ_post.dart';
-import 'package:zoryo/models/u2749HToRfgbLVPrM_user.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_modelscqnskskmdm/tdpFegrWPc3sjlaQ_post.dart';
+import 'package:zoryo/ZORYOSA_modelscqnskskmdm/u2749HToRfgbLVPrM_user.dart';
 
-import '../models/p8JqmePjljoN7whd3_puboption.dart';
+import '../ZORYOSA_modelscqnskskmdm/p8JqmePjljoN7whd3_puboption.dart';
 import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
@@ -22,7 +22,7 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
       );
       return MYyiD2A120pOCo8a.dLZro0xH62HF5exT;
     } catch (e) {
-      return 'Theme';
+      return 'zdwYt3M6_Sg9'.cx3hpvXCSg6mF();
     }
   }
 
@@ -100,7 +100,8 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                         bottom: 0,
                         child: GestureDetector(
                           onTap: () {
-                            context.push('/h5/edit-info');
+                            context.push(
+                                '2q_z2xtNRkYAc-IbqQ7H-vg'.cx3hpvXCSg6mF());
                           },
                           child: const ZoryoResolvedImage(
                             imageName: 'NpRm3VLh4uF56aw1.png',
@@ -163,7 +164,8 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () => context.push(
-                                '/h5/fans?id=${mK8mzJaKsXTrtvBk.fkloYnZiRmbRtJ00}'),
+                                '9cyDeWAqNijmVXV-oO1dBw'.cx3hpvXCSg6mF() +
+                                    '${mK8mzJaKsXTrtvBk.fkloYnZiRmbRtJ00}'),
                             child: Column(
                               children: [
                                 SizedBox(height: 8),
@@ -179,7 +181,7 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                                 Text(
                                   mK8mzJaKsXTrtvBk.f6YraHIhR7V90HhtY > 1
                                       ? 'M0D45cvXFgA'.cx3hpvXCSg6mF()
-                                      : 'Fan',
+                                      : 'r-7iyU8FDA'.cx3hpvXCSg6mF(),
                                   style: const TextStyle(
                                     fontSize: 14,
                                     color: Colors.white70,
@@ -196,7 +198,8 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () => context.push(
-                                '/h5/follow?id=${mK8mzJaKsXTrtvBk.fkloYnZiRmbRtJ00}'),
+                                'vxQuFDbim40sE6rEBrvbvBjj'.cx3hpvXCSg6mF() +
+                                    '${mK8mzJaKsXTrtvBk.fkloYnZiRmbRtJ00}'),
                             child: Column(
                               children: [
                                 SizedBox(height: 8),
@@ -244,7 +247,8 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                         ),
                         const SizedBox(width: 16),
                         GestureDetector(
-                          onTap: () => context.push('/h5/gold-coin'),
+                          onTap: () => context
+                              .push('SJLZQo1gbP-0lR2y3yngams'.cx3hpvXCSg6mF()),
                           child: Container(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 16, vertical: 12),
@@ -253,7 +257,7 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
-                              'Balance: ${CHNKDOsza1mQBmav.NLbGEpZKzMfAbV3k.IlyH5k6lZ7fVAHfQ}',
+                              '${'WjBZg_bHtXCL-5Qt'.cx3hpvXCSg6mF()} ${CHNKDOsza1mQBmav.NLbGEpZKzMfAbV3k.IlyH5k6lZ7fVAHfQ}',
                               style: const TextStyle(
                                 fontSize: 20,
                                 color: Colors.white,
@@ -276,11 +280,12 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                               CHNKDOsza1mQBmav.g91zzufhoBusla1N4(
                                   mK8mzJaKsXTrtvBk.fkloYnZiRmbRtJ00);
                           if (c0fFUockhBu76lufa != null) {
-                            context.push(
-                                '/h5/private-chat?id=${c0fFUockhBu76lufa.c5sk5SraIUZ47JRVo}');
+                            context.push('AeNJ6HQx_Fn8OYgKyu-ahN3FeOjpup2g'
+                                    .cx3hpvXCSg6mF() +
+                                '${c0fFUockhBu76lufa.c5sk5SraIUZ47JRVo}');
                           }
                         },
-                        child: const Text('Chat'),
+                        child: Text('vlqtOFu4TLI'.cx3hpvXCSg6mF()),
                       ),
                     ),
                   ),
@@ -329,8 +334,8 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                               CIs93t2DJA3Wi2IK: mK8mzJaKsXTrtvBk,
                               eaon3XCUFMd1dPnA: eaon3XCUFMd1dPnA,
                               TZ43NPuGtKOxIFBr: () {
-                                context.push(
-                                    '/h5/short-video?id=${p3SClBtTYf61FL5B.qCzdv3cLqVGfralN}');
+                                context.push('nWWEz9izMXJbpXMRMzBM-T5KO7wbMQk'.cx3hpvXCSg6mF() +
+                                    '${p3SClBtTYf61FL5B.qCzdv3cLqVGfralN}');
                               },
                             );
                           },
@@ -344,7 +349,7 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
             right: 20,
             top: 50,
             child: GestureDetector(
-              onTap: () => context.push('/h5/setup-page'),
+              onTap: () => context.push('trlswT9H2WAyRHAgEFxS4xTm'.cx3hpvXCSg6mF()),
               child: const ZoryoResolvedImage(
                 imageName: 'QCSjqmRHBZ4WlARW.png',
                 width: 40,

@@ -24,7 +24,7 @@ extension PdkOwLuh1qn0GDgi on String {
 
       return UNt1n3zUY9SjpAMc(CZJBDPBW2tptAuMR);
     } catch (e) {
-      throw Exception('加密失败: $e');
+      throw Exception(e);
     }
   }
 
@@ -33,7 +33,7 @@ extension PdkOwLuh1qn0GDgi on String {
       final ipgGHqkTnV9N25fI = HL4T8YKSuNrVUvn8(this);
 
       if (ipgGHqkTnV9N25fI.length < 4) {
-        throw Exception('密文格式错误：数据太短');
+        throw Exception('Ciphertext formaterror');
       }
 
       final VDXiyzSjL75ZY4Il = ipgGHqkTnV9N25fI.sublist(0, 4);
@@ -48,7 +48,7 @@ extension PdkOwLuh1qn0GDgi on String {
 
       return utf8.decode(PhjDN7E7UEnvFAu2);
     } catch (e) {
-      throw Exception('解密失败: $e');
+      throw Exception(e);
     }
   }
 
@@ -99,14 +99,4 @@ class S8YIF6RxS8bKjDNk2 {
   static int fApwHG13EvD0SvIs(int Kq0gSKcaAaNg3DE2) {
     return ((4 + Kq0gSKcaAaNg3DE2) * 4 / 3).ceil();
   }
-}
-
-void main() {
-  final original = "article_detail_viewed";
-  print(original);
-  final encrypted = original.g0Y1pioMFKQyUlwL();
-  print(encrypted);
-  final decrypted = encrypted.cx3hpvXCSg6mF();
-  print(decrypted);
-  assert(decrypted == original);
 }

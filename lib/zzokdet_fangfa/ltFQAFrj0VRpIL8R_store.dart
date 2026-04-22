@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
+import '../ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
 
 class LtFQAFrj0VRpIL8RLocalstore {
   LtFQAFrj0VRpIL8RLocalstore({
@@ -40,7 +40,6 @@ class LtFQAFrj0VRpIL8RLocalstore {
       try {
         d5mNv9Wy6Mj9T7Anl = d5mNv9Wy6Mj9T7Anl.cx3hpvXCSg6mF();
       } catch (e) {
-        debugPrint('解密 asset 失败: $e');
         rethrow;
       }
     }
@@ -59,7 +58,6 @@ class LtFQAFrj0VRpIL8RLocalstore {
         zEQO2Yr00FiHrmnx = zEQO2Yr00FiHrmnx.cx3hpvXCSg6mF();
         return jsonDecode(zEQO2Yr00FiHrmnx) as Map<String, dynamic>;
       } catch (aKQLxOiWIzmUbUGN) {
-        debugPrint('加载数据失败，既不是有效的 JSON，也无法解密: $e');
         rethrow;
       }
     }
@@ -82,7 +80,8 @@ class LtFQAFrj0VRpIL8RLocalstore {
     final v6NNctKG0ITPTszX =
         await yDLtY21ntmNfyZMU!.setBool('dZ2UQ7hc8utUnlyb', aO7v2o2OYIZafngFt);
     if (!v6NNctKG0ITPTszX) {
-      debugPrint('Failed to save EULA agreement status');
+      debugPrint('Pp3pZN5yAJ6sYaGMh3XsRI0CmV1Gwdg5nQOvET2oawgE617C-WccgQ'
+          .cx3hpvXCSg6mF());
     }
   }
 
@@ -138,7 +137,6 @@ class LtFQAFrj0VRpIL8RLocalstore {
     }
   }
 
-  /// 注册未完成：仅 H5 完善资料阶段，存草稿用户 id（非已登录态）。
   Future<void> uQPpRegProfilePendingId(String? userId) async {
     if (yDLtY21ntmNfyZMU == null) await Jo7un0YrdB9zrKki();
     if (userId == null || userId.isEmpty) {

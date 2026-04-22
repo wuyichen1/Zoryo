@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:zoryo/features/utils/zoryo_encrypted_media_vault.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_encrypted_media_vault.dart';
 
 const String _kImagesPrefix = 'assets/images/';
 

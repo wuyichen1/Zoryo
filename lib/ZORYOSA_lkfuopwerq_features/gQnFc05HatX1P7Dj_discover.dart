@@ -3,10 +3,10 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
-import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
-import 'package:zoryo/models/tdpFegrWPc3sjlaQ_post.dart';
-import 'package:zoryo/models/u2749HToRfgbLVPrM_user.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_modelscqnskskmdm/tdpFegrWPc3sjlaQ_post.dart';
+import 'package:zoryo/ZORYOSA_modelscqnskskmdm/u2749HToRfgbLVPrM_user.dart';
 
 import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
@@ -89,7 +89,7 @@ class Rs92CVxJ3tY8zlbfH extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.push('/h5/publish-video');
+        context.push('vtvPojc5eh85NgVaAeDtTg3M-zP8'.cx3hpvXCSg6mF());
       },
       child: ClipRRect(
         borderRadius: BorderRadius.circular(18),
@@ -137,7 +137,7 @@ class Rs92CVxJ3tY8zlbfH extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: ' work',
+                          text: 't-mwUjEoX5Ip'.cx3hpvXCSg6mF(),
                         ),
                       ],
                     ),

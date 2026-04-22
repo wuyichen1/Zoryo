@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:zoryo/features/utils/zoryo_resolved_asset_image.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_resolved_asset_image.dart';
 
 bool GsBYXpnSOS8kPcSl(String ijCuavrmsRMJWtBl) {
   if (ijCuavrmsRMJWtBl.isEmpty) return false;
-  return ijCuavrmsRMJWtBl.startsWith('http://') ||
-      ijCuavrmsRMJWtBl.startsWith('https://');
+  return ijCuavrmsRMJWtBl.startsWith('MK79q-JQCUmBObo'.cx3hpvXCSg6mF()) ||
+      ijCuavrmsRMJWtBl.startsWith('iyavXo3oW5xltGjd'.cx3hpvXCSg6mF());
 }
 
 class SnLjQVJIDwvDQeiSMimg extends StatelessWidget {
@@ -77,7 +78,8 @@ class SnLjQVJIDwvDQeiSMimg extends StatelessWidget {
 
 ImageProvider UPClh6pI9Z9yX3xQ(String BR6J3ZKSYXbCmhYE) {
   if (BR6J3ZKSYXbCmhYE.isEmpty) {
-    return zoryoResolvedImageProvider('zoryo_defava.png');
+    return zoryoResolvedImageProvider(
+        'O9mVe-8gZ3CpHklqg_A9XdbTC0g'.cx3hpvXCSg6mF());
   }
 
   if (GsBYXpnSOS8kPcSl(BR6J3ZKSYXbCmhYE)) {

@@ -6,7 +6,7 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:in_app_purchase_storekit/in_app_purchase_storekit.dart';
 import 'package:in_app_purchase_storekit/store_kit_wrappers.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
+import 'package:zoryo/ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/sT4Ixl4VDmBmLyF0_encryption.dart';
 import 'package:zoryo/zzokdet_fangfa/SAfiaJS3o1rH37O1ing.dart';
 import 'package:zoryo/zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 
@@ -40,9 +40,33 @@ const List<String> wHXZYiCFtFOY73VRKeys = <String>[
 
 final Map<PurchaseStatus, Future<void> Function(PurchaseDetails)>
     r7Fz4rtdSaUAdOXjm = {};
+typedef Lgq5VmQ8y3CLjXsu = Future<void> Function(PurchaseDetails);
+
+void _k9v0Qj7cBz4wYf1h(bool valuetsnllyfjhi) {
+  if (dq53mHVMp33U7eOecmp != null && !dq53mHVMp33U7eOecmp!.isCompleted) {
+    dq53mHVMp33U7eOecmp!.complete(valuetsnllyfjhi);
+  }
+}
+
+ProductDetails? _j4hNc2mXq8vPz1Ta(String pidqlnvsyqewz) {
+  final matchedmlzlkdviqi =
+      og2ViNMtB5dHnUiR.where((item) => item.id == pidqlnvsyqewz).toList();
+  if (matchedmlzlkdviqi.isEmpty) return null;
+  return matchedmlzlkdviqi.first;
+}
+
+Future<void> _q2wEr8uIo3pAs6Df(ProductDetailsResponse resptxjhgjyxep) async {
+  if (resptxjhgjyxep.error != null) {
+    SFDR2PcqduwgmkeA(resptxjhgjyxep);
+    return;
+  }
+  DMlOxncHwJ7vXYOW(resptxjhgjyxep);
+}
 
 void w2cVdsWvvjIx44bf() {
-  r7Fz4rtdSaUAdOXjm[PurchaseStatus.error] =
+  final Map<PurchaseStatus, Lgq5VmQ8y3CLjXsu> handlersfxuarjdubi = {};
+
+  handlersfxuarjdubi[PurchaseStatus.error] =
       (PurchaseDetails eRNC8KvpEVOhjhWj) async {
     final yUwmVPbyWEso2WG2 = eRNC8KvpEVOhjhWj.error?.message ??
         'MQLt3d4WBgXTHetRvsjR8Zw'.cx3hpvXCSg6mF();
@@ -50,31 +74,31 @@ void w2cVdsWvvjIx44bf() {
         msg: 'qTyeElfae4BA1lfIIJU3pw9pAOYSRSCsAmeyVqxEt3yyGcIJZsFtwVPBFsAynTi2AiYaqV5cPKgEZuFR4w'
                 .cx3hpvXCSg6mF() +
             '${'2V6SB0ChcfYBtVn99noksboIEN7dOy7I_kvhN5rol2hlrKM3QKFx9gG1Wf32emi441oB0889J5z2UfJynvbD'.cx3hpvXCSg6mF()}: $yUwmVPbyWEso2WG2');
-    if (dq53mHVMp33U7eOecmp != null && !dq53mHVMp33U7eOecmp!.isCompleted) {
-      dq53mHVMp33U7eOecmp!.complete(false);
-    }
+    _k9v0Qj7cBz4wYf1h(false);
   };
 
-  r7Fz4rtdSaUAdOXjm[PurchaseStatus.purchased] =
+  handlersfxuarjdubi[PurchaseStatus.purchased] =
       (PurchaseDetails eRNC8KvpEVOhjhWj) async {
     await ZRNBXmip2j1IxSTQ(eRNC8KvpEVOhjhWj);
   };
 
-  r7Fz4rtdSaUAdOXjm[PurchaseStatus.restored] =
+  handlersfxuarjdubi[PurchaseStatus.restored] =
       (PurchaseDetails eRNC8KvpEVOhjhWj) async {
     await ZRNBXmip2j1IxSTQ(eRNC8KvpEVOhjhWj);
   };
 
-  r7Fz4rtdSaUAdOXjm[PurchaseStatus.canceled] =
+  handlersfxuarjdubi[PurchaseStatus.canceled] =
       (PurchaseDetails eRNC8KvpEVOhjhWj) async {
     await yLrqFKUrgMWORA9Y();
     SAfiaJS3o1rH37O1ing.showError(
         m5t1SfgrAUKHYvMTV: 'C_n3FjUODsnzD_uK1tDDtK2voq7O'.cx3hpvXCSg6mF(),
         context: jxao9LWE2uy3ZYUK);
-    if (dq53mHVMp33U7eOecmp != null && !dq53mHVMp33U7eOecmp!.isCompleted) {
-      dq53mHVMp33U7eOecmp!.complete(false);
-    }
+    _k9v0Qj7cBz4wYf1h(false);
   };
+
+  r7Fz4rtdSaUAdOXjm
+    ..clear()
+    ..addAll(handlersfxuarjdubi);
 }
 
 Future<void> ZRNBXmip2j1IxSTQ(PurchaseDetails eRNC8KvpEVOhjhWj) async {
@@ -90,9 +114,7 @@ Future<void> ZRNBXmip2j1IxSTQ(PurchaseDetails eRNC8KvpEVOhjhWj) async {
   o0mSiuMfWEpEAKTU();
   await yLrqFKUrgMWORA9Y();
 
-  if (dq53mHVMp33U7eOecmp != null && !dq53mHVMp33U7eOecmp!.isCompleted) {
-    dq53mHVMp33U7eOecmp!.complete(true);
-  }
+  _k9v0Qj7cBz4wYf1h(true);
 }
 
 KrSsTLv1jDyPOyrqinit() {
@@ -107,7 +129,9 @@ KrSsTLv1jDyPOyrqinit() {
     onError: (_) {},
   );
 
-  Platform.isIOS ? XPUf0ZFPrPl3Kzsp() : null;
+  if (Platform.isIOS) {
+    XPUf0ZFPrPl3Kzsp();
+  }
 }
 
 Future<bool> Bw3B2gHjC4ETi2DY(
@@ -124,10 +148,8 @@ Future<bool> Bw3B2gHjC4ETi2DY(
   i23bT9vpRZBP8V4Nz = wHXZYiCFtFOY73VRKeys.indexOf(c8Qk1r8n08aby3EIH);
   jxao9LWE2uy3ZYUK = iT04jmXttQlJNqVZ;
 
-  final nhri8XbJ4jQqwhlU = og2ViNMtB5dHnUiR.where((mBrQNoAT2bTEWQ6B) =>
-      mBrQNoAT2bTEWQ6B.id == wHXZYiCFtFOY73VRKeys[i23bT9vpRZBP8V4Nz]);
   final ProductDetails? OyifwWraV38WOgih =
-      nhri8XbJ4jQqwhlU.isEmpty ? null : nhri8XbJ4jQqwhlU.first;
+      _j4hNc2mXq8vPz1Ta(wHXZYiCFtFOY73VRKeys[i23bT9vpRZBP8V4Nz]);
 
   if (OyifwWraV38WOgih == null) {
     return MowVKMjiRP7CuCdg();
@@ -141,7 +163,7 @@ Future<void> ABNjw8uTpGKet2X0() async {
 }
 
 Future<bool> MowVKMjiRP7CuCdg() async {
-  dq53mHVMp33U7eOecmp?.complete(false);
+  _k9v0Qj7cBz4wYf1h(false);
   throw Exception(
       '${'hplCerRnpyhhc7VqRTKMGwonMkwi'.cx3hpvXCSg6mF()} ${wHXZYiCFtFOY73VRKeys[i23bT9vpRZBP8V4Nz]} ${'WD3DrNHcNlaHhTUvdtUbCDVh_BVDSV0'.cx3hpvXCSg6mF()}');
 }
@@ -187,14 +209,14 @@ Future XPUf0ZFPrPl3Kzsp() async {
     return;
   }
 
-  Platform.isIOS ? await r8WmxMSNGORMzLG1X() : null;
+  if (Platform.isIOS) {
+    await r8WmxMSNGORMzLG1X();
+  }
 
   final ProductDetailsResponse aZHiD384y27r0FeP =
       await x6spYkyIfeEWPit76.queryProductDetails(wHXZYiCFtFOY73VRKeys.toSet());
 
-  aZHiD384y27r0FeP.error != null
-      ? SFDR2PcqduwgmkeA(aZHiD384y27r0FeP)
-      : DMlOxncHwJ7vXYOW(aZHiD384y27r0FeP);
+  await _q2wEr8uIo3pAs6Df(aZHiD384y27r0FeP);
 }
 
 void SFDR2PcqduwgmkeA(ProductDetailsResponse r91d98120Bryc67q8) {
@@ -229,25 +251,30 @@ Future<void> LM0938j5ovQI0Jlj(List<PurchaseDetails> hAPre3SUjLe6xMjK) async {
 }
 
 Future<void> p2XTGYIMuRKymal2m(PurchaseDetails pWnvptOZkX5Ynr7W) async {
-  pWnvptOZkX5Ynr7W.status == PurchaseStatus.pending
-      ? SAfiaJS3o1rH37O1ing.show(
-          HTvl9ShAZuEtpEEl:
-              'DpQbuzhr4iT8ksdv0T_xHq43hQjD9LkVvDp9rkySbpNu'.cx3hpvXCSg6mF(),
-          context: jxao9LWE2uy3ZYUK)
-      : tplbZdJVPVAVOnnM(pWnvptOZkX5Ynr7W);
+  if (pWnvptOZkX5Ynr7W.status == PurchaseStatus.pending) {
+    SAfiaJS3o1rH37O1ing.show(
+        HTvl9ShAZuEtpEEl:
+            'DpQbuzhr4iT8ksdv0T_xHq43hQjD9LkVvDp9rkySbpNu'.cx3hpvXCSg6mF(),
+        context: jxao9LWE2uy3ZYUK);
+    return;
+  }
+  await tplbZdJVPVAVOnnM(pWnvptOZkX5Ynr7W);
 }
 
 Future<void> tplbZdJVPVAVOnnM(PurchaseDetails zbrBp0kO0qQdxlAB) async {
   SAfiaJS3o1rH37O1ing.dismiss();
 
   final OKvPyltXxo8q8u6L = r7Fz4rtdSaUAdOXjm[zbrBp0kO0qQdxlAB.status];
-  OKvPyltXxo8q8u6L != null ? await OKvPyltXxo8q8u6L(zbrBp0kO0qQdxlAB) : null;
+  if (OKvPyltXxo8q8u6L != null) {
+    await OKvPyltXxo8q8u6L(zbrBp0kO0qQdxlAB);
+  }
 }
 
 Future<void> m1vymEgGP8fl5hrH(PurchaseDetails MYNprsTeAw4bRNEWpurdel) async {
-  MYNprsTeAw4bRNEWpurdel.productID != wHXZYiCFtFOY73VRKeys[i23bT9vpRZBP8V4Nz]
-      ? JQzrOmoSbgx5lb0J.add(MYNprsTeAw4bRNEWpurdel)
-      : null;
+  if (MYNprsTeAw4bRNEWpurdel.productID !=
+      wHXZYiCFtFOY73VRKeys[i23bT9vpRZBP8V4Nz]) {
+    JQzrOmoSbgx5lb0J.add(MYNprsTeAw4bRNEWpurdel);
+  }
 }
 
 class T1qfwe1jmoKxS0xoQ implements SKPaymentQueueDelegateWrapper {

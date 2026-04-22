@@ -1,0 +1,17 @@
+<plist version="1.0">
+<dict>
+	<key>method</key>
+	<string>app-store</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>com.hpuiypznmeyw.zoryo</key>
+		<string>match AppStore com.hpuiypznmeyw.zoryo</string>
+	</dict>
+	<key>signingCertificate</key>
+	<string>Apple Distribution</string>
+	<key>signingStyle</key>
+	<string>manual</string>
+	<key>teamID</key>
+	<string>6NUFR97X3A</string>
+</dict>
+</plist>

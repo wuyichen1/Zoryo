@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
 
-import '../../zzokdet_fangfa/app_state.dart';
+import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../widgets/lmDy7TRPsjReTw4L_grabtn.dart';
 
 class N0zGIgNBdQH7A6LkEulaDialog extends StatelessWidget {
@@ -30,8 +31,8 @@ class N0zGIgNBdQH7A6LkEulaDialog extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     SizedBox(height: 10),
-                    const Text(
-                      'EULA',
+                    Text(
+                      'WKfEQ_dICJA'.cx3hpvXCSg6mF(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 24,
@@ -78,14 +79,14 @@ class N0zGIgNBdQH7A6LkEulaDialog extends StatelessWidget {
             lmDy7TRPsjReTw4LGrabtn(
               gvXl8QjSpir7sOAs: 230,
               gKk83Jcj0BNDVBtV: 52,
-              Q8jxoIEIflW2H4VN: 'I agree',
+              Q8jxoIEIflW2H4VN: 'Peyyot5CU1e6MS8'.cx3hpvXCSg6mF(),
               jNmPS8ESz78iE6wY: GoogleFonts.montserrat(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Colors.white,
               ),
               o7q0z205CtYy3Q1ID: () async {
-                final agw12S82W0OQmZwi = context.read<AppState>();
+                final agw12S82W0OQmZwi = context.read<Kl3bGE2D4dsgMTqGState>();
                 await agw12S82W0OQmZwi.s4DGwwJAWv14UaQpX(true);
                 if (context.mounted) {
                   Navigator.of(context).pop();

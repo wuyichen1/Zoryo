@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
 
-import '../router/app_theme.dart';
-import '../../zzokdet_fangfa/app_state.dart';
+import '../router/appCJQq1xJ85kz2JtN_theme.dart';
+import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
 class EBbEnnC9KeLzgmSzScaffold extends StatelessWidget {
@@ -18,7 +19,7 @@ class EBbEnnC9KeLzgmSzScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final SMqaWwM5TE3r7YiP =
-        Theme.of(context).extension<GradientTheme>()!.primaryGradient;
+        Theme.of(context).extension<GYE8xPs3egDeS7CItheme>()!.prijianbian;
     final SaN4ZR9oHZKdghwb = MediaQuery.of(context).padding.bottom;
     final tv8Ge2otCzusFzm0 = GoRouter.of(context);
     final LggNvY4gaC5aPI1r =
@@ -41,7 +42,8 @@ class EBbEnnC9KeLzgmSzScaffold extends StatelessWidget {
     }
 
     final zkG2O5Q1jMpUk4VD = c17B0LqjHcPNW110t.startsWith('/h5/');
-    final UANdJ3FTEpFG7mt5 = c17B0LqjHcPNW110t.startsWith('/chat/room');
+    final UANdJ3FTEpFG7mt5 =
+        c17B0LqjHcPNW110t.startsWith('hG-Ea_GGbJh7-G6QQUo'.cx3hpvXCSg6mF());
 
     if (zkG2O5Q1jMpUk4VD) {
       return Scaffold(body: dhsTqsF78WV8cVBC);
@@ -49,10 +51,10 @@ class EBbEnnC9KeLzgmSzScaffold extends StatelessWidget {
 
     final dPk5Lq2mY20pGMHV = !zkG2O5Q1jMpUk4VD &&
         !UANdJ3FTEpFG7mt5 &&
-        (c17B0LqjHcPNW110t == '/home' ||
-            c17B0LqjHcPNW110t == '/discover' ||
-            c17B0LqjHcPNW110t == '/chat' ||
-            c17B0LqjHcPNW110t == '/account');
+        (c17B0LqjHcPNW110t == 'joiYkseWd018'.cx3hpvXCSg6mF() ||
+            c17B0LqjHcPNW110t == 'vGJDTzm8qq4kpa2GFA'.cx3hpvXCSg6mF() ||
+            c17B0LqjHcPNW110t == '1isksx_CzCAV'.cx3hpvXCSg6mF() ||
+            c17B0LqjHcPNW110t == 'jxvNacbwLpR19guJ'.cx3hpvXCSg6mF());
 
     return Scaffold(
       body: Stack(
@@ -234,7 +236,8 @@ class A6WYYoppsBokDl9vf extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Vp5ZvEkNQoCzrtKf = context.watch<AppState>().NLbGEpZKzMfAbV3k;
+    final Vp5ZvEkNQoCzrtKf =
+        context.watch<Kl3bGE2D4dsgMTqGState>().NLbGEpZKzMfAbV3k;
 
     return GestureDetector(
       onTap: tsm6ejzHDJAGMpaK,

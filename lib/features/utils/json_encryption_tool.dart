@@ -1,15 +1,17 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'string_encryption.dart';
+import 'sT4Ixl4VDmBmLyF0_encryption.dart';
 
 void main(List<String> args) async {
   if (args.length < 3) {
     print('用法:');
+    // dart run lib/features/utils/json_encryption_tool.dart encrypt assets/jsons/initial_data.json assets/jsons/initial_data.encrypted.json
+    // dart run lib/features/utils/json_encryption_tool.dart decrypt assets/jsons/initial_data.encrypted.json assets/jsons/initial_data.json
     print(
-        '  加密: dart run lib/core/utils/json_encryption_tool.dart encrypt <输入文件> <输出文件>');
+        '  加密: dart run lib/features/utils/json_encryption_tool.dart encrypt <输入文件> <输出文件>');
     print(
-        '  解密: dart run lib/core/utils/json_encryption_tool.dart decrypt <输入文件> <输出文件>');
+        '  解密: dart run lib/features/utils/json_encryption_tool.dart decrypt <输入文件> <输出文件>');
     exit(1);
   }
 
@@ -49,7 +51,8 @@ Future<void> encryptJsonFile(String inputPath, String outputPath) async {
     throw Exception('输入文件不是有效的 JSON: $e');
   }
 
-  final encrypted = jsonContent.encrypt();
+  // 加密
+  final encrypted = jsonContent.g0Y1pioMFKQyUlwL();
 
   final outputFile = File(outputPath);
   await outputFile.writeAsString(encrypted, flush: true);
@@ -63,8 +66,8 @@ Future<void> decryptJsonFile(String inputPath, String outputPath) async {
   }
 
   final encryptedContent = await inputFile.readAsString();
-
-  final decrypted = encryptedContent.decrypt();
+  // 解密
+  final decrypted = encryptedContent.cx3hpvXCSg6mF();
 
   try {
     jsonDecode(decrypted);

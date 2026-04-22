@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
 import 'package:zoryo/models/tdpFegrWPc3sjlaQ_post.dart';
 import 'package:zoryo/models/u2749HToRfgbLVPrM_user.dart';
 
 import '../models/p8JqmePjljoN7whd3_puboption.dart';
-import '../zzokdet_fangfa/app_state.dart';
+import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
 class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
@@ -26,7 +27,7 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final CHNKDOsza1mQBmav = context.watch<AppState>();
+    final CHNKDOsza1mQBmav = context.watch<Kl3bGE2D4dsgMTqGState>();
     final mK8mzJaKsXTrtvBk = Gx36y4u0jtoFWw8G == null
         ? CHNKDOsza1mQBmav.NLbGEpZKzMfAbV3k
         : CHNKDOsza1mQBmav.IyC8CUrMp1zDTN8h(Gx36y4u0jtoFWw8G!);
@@ -47,8 +48,7 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                 height: 300,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image:
-                        UPClh6pI9Z9yX3xQ(mK8mzJaKsXTrtvBk.RmXHAp70ovHNBN4U),
+                    image: UPClh6pI9Z9yX3xQ(mK8mzJaKsXTrtvBk.RmXHAp70ovHNBN4U),
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.4),
@@ -89,8 +89,8 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                       ),
                       child: CircleAvatar(
                         radius: 40,
-                        backgroundImage: UPClh6pI9Z9yX3xQ(
-                            mK8mzJaKsXTrtvBk.RmXHAp70ovHNBN4U),
+                        backgroundImage:
+                            UPClh6pI9Z9yX3xQ(mK8mzJaKsXTrtvBk.RmXHAp70ovHNBN4U),
                       ),
                     ),
                     if (s8Nr1MwxZaX9dmPPZ)
@@ -145,8 +145,8 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(height: 4),
-                              const Text(
-                                'works',
+                              Text(
+                                'im1_cpOMjWtm'.cx3hpvXCSg6mF(),
                                 style: TextStyle(
                                   fontSize: 14,
                                   color: Colors.white70,
@@ -177,7 +177,7 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                                 const SizedBox(height: 4),
                                 Text(
                                   mK8mzJaKsXTrtvBk.f6YraHIhR7V90HhtY > 1
-                                      ? 'Fans'
+                                      ? 'M0D45cvXFgA'.cx3hpvXCSg6mF()
                                       : 'Fan',
                                   style: const TextStyle(
                                     fontSize: 14,
@@ -208,8 +208,8 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                                   ),
                                 ),
                                 const SizedBox(height: 4),
-                                const Text(
-                                  'Follow',
+                                Text(
+                                  '2EJgJXTXjN8M3Q'.cx3hpvXCSg6mF(),
                                   style: TextStyle(
                                     fontSize: 14,
                                     color: Colors.white70,
@@ -233,7 +233,8 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                           child: Text(
                             mK8mzJaKsXTrtvBk.Sfy5ovPIlV0PS5C2.isNotEmpty
                                 ? mK8mzJaKsXTrtvBk.Sfy5ovPIlV0PS5C2
-                                : 'Life is a journey, embrace it.',
+                                : 'WvNaNPgAvKfFMoHoZYt6mmLPRI1WzyqMddg8JRd-X1_4Dw'
+                                    .cx3hpvXCSg6mF(),
                             style: const TextStyle(
                               fontSize: 15,
                               color: Colors.white,
@@ -286,9 +287,9 @@ class UyVclDaiEkntsqM6AccountScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Row(
-                    children: const [
+                    children: [
                       Text(
-                        'Works',
+                        'WD5LG-XbucKQ'.cx3hpvXCSg6mF(),
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w700,
@@ -373,7 +374,7 @@ class V3AS6r2Px2546dkda extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final aGVzKphSMYXsk8Ae = context.watch<AppState>();
+    final aGVzKphSMYXsk8Ae = context.watch<Kl3bGE2D4dsgMTqGState>();
     final PQZn4CdRh4Qd7Fha = aGVzKphSMYXsk8Ae.NLbGEpZKzMfAbV3k;
 
     final Ut6AWW7DNHvp6YTd = PQZn4CdRh4Qd7Fha.IibbF2RfvAxYkcQo.contains(
@@ -437,9 +438,10 @@ class V3AS6r2Px2546dkda extends StatelessWidget {
                         fit: StackFit.expand,
                         children: [
                           SnLjQVJIDwvDQeiSMimg(
-                            dIJEHnEuK8jQOYZ6: p6vB6CxItETghrzTb.DFaJPr04YQi08GFg.isNotEmpty
-                                ? p6vB6CxItETghrzTb.DFaJPr04YQi08GFg.first
-                                : '',
+                            dIJEHnEuK8jQOYZ6:
+                                p6vB6CxItETghrzTb.DFaJPr04YQi08GFg.isNotEmpty
+                                    ? p6vB6CxItETghrzTb.DFaJPr04YQi08GFg.first
+                                    : '',
                           ),
                           const Center(
                             child: Icon(

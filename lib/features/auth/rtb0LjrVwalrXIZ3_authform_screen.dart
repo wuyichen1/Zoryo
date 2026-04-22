@@ -3,9 +3,10 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:zoryo/features/auth/uzXo7BzvDdw43vBi_authselect_screen.dart';
+import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
 
 import '../widgets/lmDy7TRPsjReTw4L_grabtn.dart';
-import '../../zzokdet_fangfa/app_state.dart';
+import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 
 class Rtb0LjrVwalrXIZ3AuthFormScreen extends StatefulWidget {
   const Rtb0LjrVwalrXIZ3AuthFormScreen(
@@ -31,12 +32,13 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
 
   @override
   Widget build(BuildContext context) {
-    final Ks1kNLT4Axy1DmSL = widget.HvMpj4MMZYUNZDuU == 'eula';
+    final Ks1kNLT4Axy1DmSL =
+        widget.HvMpj4MMZYUNZDuU == 'jKNPGINso8c'.cx3hpvXCSg6mF();
     final lHDdeCvnq77OmV2w = switch (widget.HvMpj4MMZYUNZDuU) {
-      'signup' => 'Sign up',
-      'forgot' => 'Forgot password',
-      'eula' => 'EULA',
-      _ => 'Login',
+      'signup' => 'vod5_UuUnuVpmmE'.cx3hpvXCSg6mF(),
+      'forgot' => 'i9LNL6MnP9p5TkWzVPnwhyfu-Q'.cx3hpvXCSg6mF(),
+      'eula' => '4CEQEH_C3N8'.cx3hpvXCSg6mF(),
+      _ => 'ka9Vu6dKsiBy'.cx3hpvXCSg6mF(),
     };
     return Scaffold(
       body: Column(
@@ -68,9 +70,7 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
             child: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(20),
-                child: Ks1kNLT4Axy1DmSL
-                    ? b39Xt42hgedE3HqCz(context)
-                    : NQ7elx2tlUiWRcpT(context, lHDdeCvnq77OmV2w),
+                child: NQ7elx2tlUiWRcpT(context, lHDdeCvnq77OmV2w),
               ),
             ),
           ),
@@ -85,8 +85,8 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
         const SizedBox(height: 20),
         EIITT29GdyJe4x4dLogo(),
         const SizedBox(height: 12),
-        const Text(
-          'Zoryo',
+        Text(
+          'N_VoQ8sEmqit'.cx3hpvXCSg6mF(),
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
@@ -95,7 +95,7 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Email',
+              'vlYs1F2hzQsl'.cx3hpvXCSg6mF(),
               style: GoogleFonts.montserrat(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
@@ -104,8 +104,8 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
             SizedBox(height: 12),
             TextField(
               controller: W5L4ZoGikeRcriWE,
-              decoration: const InputDecoration(
-                hintText: 'Enter email address',
+              decoration: InputDecoration(
+                hintText: 'BIoHDRtu8_790vrMzyvR7qAws7O8CcQ'.cx3hpvXCSg6mF(),
               ),
             ),
           ],
@@ -115,7 +115,7 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Password',
+              '1rGhsWBGUkwWdksh'.cx3hpvXCSg6mF(),
               style: GoogleFonts.montserrat(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
@@ -126,18 +126,18 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
               controller: JOuDhBxZIddNZVgK,
               obscureText: true,
               decoration: InputDecoration(
-                hintText: 'Enter password',
+                hintText: '9g1SURXtprrzVZqE07Z_fcGz'.cx3hpvXCSg6mF(),
               ),
             ),
           ],
         ),
-        if (widget.HvMpj4MMZYUNZDuU != 'login') ...[
+        if (widget.HvMpj4MMZYUNZDuU != 'Hb7ZpBtbPlvG'.cx3hpvXCSg6mF()) ...[
           const SizedBox(height: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Repeat password',
+                '0uc3Gn44x808O-_eHeyerODDYw'.cx3hpvXCSg6mF(),
                 style: GoogleFonts.montserrat(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
@@ -146,21 +146,21 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
               SizedBox(height: 12),
               TextField(
                 obscureText: true,
-                decoration: const InputDecoration(
-                  hintText: 'Repeat password',
+                decoration: InputDecoration(
+                  hintText: 'zH7Kt3SROiA2kkI7F0XzD-Y6_g'.cx3hpvXCSg6mF(),
                 ),
               ),
             ],
           ),
         ],
         const SizedBox(height: 20),
-        if (widget.HvMpj4MMZYUNZDuU == 'login')
+        if (widget.HvMpj4MMZYUNZDuU == 'qP8ayW4a_T5d'.cx3hpvXCSg6mF())
           Align(
             alignment: Alignment.centerLeft,
             child: GestureDetector(
               onTap: () => context.push('/auth/form?HvMpj4MMZYUNZDuU=forgot'),
               child: Text(
-                'FORGOT?',
+                '3IfkVnCyNqMou0M'.cx3hpvXCSg6mF(),
                 style: GoogleFonts.montserrat(
                   fontSize: 16,
                   color: Colors.white,
@@ -170,12 +170,12 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
             ),
           ),
         const SizedBox(height: 40),
-        if (widget.HvMpj4MMZYUNZDuU == 'login')
+        if (widget.HvMpj4MMZYUNZDuU == 'tj536HzbkB8v'.cx3hpvXCSg6mF())
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Don't have an account yet?  ",
+                "7RsMYAP-4skMo8yV4bbiQMTFvXehZMl738J5FXN8EUI".cx3hpvXCSg6mF(),
                 style: GoogleFonts.montserrat(
                   color: Colors.white.withOpacity(0.8),
                 ),
@@ -184,7 +184,7 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
                 onPressed: () =>
                     context.push('/auth/form?HvMpj4MMZYUNZDuU=signup'),
                 child: Text(
-                  "SIGN UP >",
+                  "P1EgN8qO54vq7Ojr1w".cx3hpvXCSg6mF(),
                   style: GoogleFonts.roboto(
                     color: Colors.white.withOpacity(0.8),
                     decoration: TextDecoration.underline,
@@ -195,28 +195,44 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
           ),
         const SizedBox(height: 16),
         lmDy7TRPsjReTw4LGrabtn(
-          Q8jxoIEIflW2H4VN: widget.HvMpj4MMZYUNZDuU == 'login'
-              ? 'Login'
-              : widget.HvMpj4MMZYUNZDuU == 'signup'
-                  ? 'Sign up'
-                  : 'Next',
+          Q8jxoIEIflW2H4VN:
+              widget.HvMpj4MMZYUNZDuU == 'ievGc48OIWh6'.cx3hpvXCSg6mF()
+                  ? 'eKAv3Z55yAJt'.cx3hpvXCSg6mF()
+                  : widget.HvMpj4MMZYUNZDuU == 'dDv61r3YHQqK0w'.cx3hpvXCSg6mF()
+                      ? 'MAzub9nrCZObAfY'.cx3hpvXCSg6mF()
+                      : 'qWnwF026CNE'.cx3hpvXCSg6mF(),
           o7q0z205CtYy3Q1ID: () async {
-            final FOz4q2Cnj4dgGWq2 = context.read<AppState>();
-            if (widget.HvMpj4MMZYUNZDuU == 'login') {
+            final FOz4q2Cnj4dgGWq2 = context.read<Kl3bGE2D4dsgMTqGState>();
+            if (widget.HvMpj4MMZYUNZDuU == 'qZTTKG9lNN9a'.cx3hpvXCSg6mF()) {
               await FOz4q2Cnj4dgGWq2.l3lteByquzLST80Zc(
                   W5L4ZoGikeRcriWE.text, JOuDhBxZIddNZVgK.text);
-            } else if (widget.HvMpj4MMZYUNZDuU == 'signup') {
+            } else if (widget.HvMpj4MMZYUNZDuU ==
+                'mo33lIdqEExQhQ'.cx3hpvXCSg6mF()) {
               await FOz4q2Cnj4dgGWq2.lszNrddlteyGVoBP(
                   W5L4ZoGikeRcriWE.text, JOuDhBxZIddNZVgK.text);
             }
             if (context.mounted) {
-              if (FOz4q2Cnj4dgGWq2.WMQtbwFITYixyRbr) {
+              final isSignup = widget.HvMpj4MMZYUNZDuU ==
+                  'mo33lIdqEExQhQ'.cx3hpvXCSg6mF();
+              if (isSignup) {
+                if (FOz4q2Cnj4dgGWq2.vbK7PendingRegProfile) {
+                  context.push('/h5/user-register');
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                        content: Text(
+                            'bIaLgIqTbGeZzkV1f1IkJQdwC1gkF0hQCi4X9eXFkPvxwb3ypY5uapKAV313UjJv'
+                                .cx3hpvXCSg6mF())),
+                  );
+                }
+              } else if (FOz4q2Cnj4dgGWq2.WMQtbwFITYixyRbr) {
                 context.go('/home');
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                      content:
-                          Text('Login failed. Please check your credentials.')),
+                  SnackBar(
+                      content: Text(
+                          'bIaLgIqTbGeZzkV1f1IkJQdwC1gkF0hQCi4X9eXFkPvxwb3ypY5uapKAV313UjJv'
+                              .cx3hpvXCSg6mF())),
                 );
               }
             }
@@ -224,37 +240,6 @@ class _Rtb0LjrVwalrXIZ3AuthFormState
         ),
         SizedBox(height: 40),
       ],
-    );
-  }
-
-  Widget b39Xt42hgedE3HqCz(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const Text(
-            'EULA',
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 16),
-          const Text(
-            'Welcome to Zoryo! Any content about child harm or pornography is strictly prohibited. '
-            'Fake or harmful messages about current events and violence or bullying are also forbidden.',
-            style: TextStyle(height: 1.5),
-          ),
-          const SizedBox(height: 16),
-          const Text(
-            'If such content is found, your account will be banned and content removed. '
-            'By clicking agree you accept the Terms of Use and Privacy Policy.',
-            style: TextStyle(height: 1.5),
-          ),
-          const SizedBox(height: 24),
-          lmDy7TRPsjReTw4LGrabtn(
-            Q8jxoIEIflW2H4VN: 'I agree',
-            o7q0z205CtYy3Q1ID: () => context.pop(),
-          ),
-        ],
-      ),
     );
   }
 }

@@ -252,7 +252,6 @@ class _DAm2GaLpjRv6ME6lState extends State<DAm2GaLpjRv6ME6l>
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
-                // color: Color(0xFF2C2C2C),
                 color: Colors.white,
                 letterSpacing: 0.4,
               ),
@@ -280,7 +279,6 @@ class _DAm2GaLpjRv6ME6lState extends State<DAm2GaLpjRv6ME6l>
               height: 10,
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(BgmZGvbJpFOsSr46),
-                // color: YPzVtZ57fmcmayWP.withOpacity(BgmZGvbJpFOsSr46),
                 shape: BoxShape.circle,
               ),
               transform: Matrix4.identity()..scale(WW4fS9y9DCYevqGK),
@@ -353,7 +351,6 @@ class _W7GsohHlpS6cb2W1State extends State<W7GsohHlpS6cb2W1>
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Image.asset(widget.q6yEFxJP2jk0H8r9, width: 21, height: 21),
-                  // Icon(widget.q6yEFxJP2jk0H8r9, color: Colors.white, size: 21),
                   const SizedBox(width: 13),
                   Flexible(
                     child: Text(
@@ -381,25 +378,23 @@ class _W7GsohHlpS6cb2W1State extends State<W7GsohHlpS6cb2W1>
 class SAfiaJS3o1rH37O1ing {
   static void show({
     required BuildContext context,
-    String? message,
-    Color? color,
+    String? HTvl9ShAZuEtpEEl,
     Color? vdr6MH9RMSJbVk5j,
   }) {
     OPlYjXJVfOtJ1sLw(
       context,
-      m5qCuVOHaiRr8pjjA: message,
-      tJcr9CBoDp1K3Yz2: color,
+      m5qCuVOHaiRr8pjjA: HTvl9ShAZuEtpEEl,
       b8wLXKIgw19fWsWB3: vdr6MH9RMSJbVk5j,
     );
   }
 
   static void showSuccess({
     required BuildContext context,
-    String? message,
+    String? rJ2e8C2BL6pudP0Q,
   }) {
     apIu7pPxSXGBZH83(
       context,
-      m5qCuVOHaiRr8pjjA: message ?? 'Success',
+      m5qCuVOHaiRr8pjjA: rJ2e8C2BL6pudP0Q ?? 'Success',
       b8wLXKIgw19fWsWB3: const Color.fromARGB(255, 92, 173, 95),
       sHezot5NPdk05oxb: 'assets/images/F13J0C4W9tDUMaeh.png',
     );
@@ -407,11 +402,11 @@ class SAfiaJS3o1rH37O1ing {
 
   static void showError({
     required BuildContext context,
-    String? message,
+    String? m5t1SfgrAUKHYvMTV,
   }) {
     apIu7pPxSXGBZH83(
       context,
-      m5qCuVOHaiRr8pjjA: message ?? 'Failed',
+      m5qCuVOHaiRr8pjjA: m5t1SfgrAUKHYvMTV ?? 'Failed',
       b8wLXKIgw19fWsWB3: const Color.fromARGB(255, 217, 77, 67),
       sHezot5NPdk05oxb: 'assets/images/EYaADgkH0Zfbwvnr.png',
     );

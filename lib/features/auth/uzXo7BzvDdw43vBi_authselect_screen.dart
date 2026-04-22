@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
 
-import '../../zzokdet_fangfa/app_state.dart';
+import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../widgets/lmDy7TRPsjReTw4L_grabtn.dart';
 import 'n0zGIgNBdQH7A6Lk_eula_dialog.dart';
 
@@ -35,7 +36,7 @@ class _UzXo7BzvDdw43vBiSelectState
   void w6Q6gOnGwWQEc8qI(BuildContext context) {
     if (!mounted) return;
 
-    final RBzzj31nMQECN1ys = context.read<AppState>();
+    final RBzzj31nMQECN1ys = context.read<Kl3bGE2D4dsgMTqGState>();
     if (RBzzj31nMQECN1ys.HMAJABja8J7tdhv8 &&
         !RBzzj31nMQECN1ys.vB2GTgDbdOHDxBUH &&
         !SmYKTVFRAVnnRNhG) {
@@ -56,7 +57,7 @@ class _UzXo7BzvDdw43vBiSelectState
 
   @override
   Widget build(BuildContext context) {
-    final JMmEiDkTz4tVAV3I = context.watch<AppState>();
+    final JMmEiDkTz4tVAV3I = context.watch<Kl3bGE2D4dsgMTqGState>();
 
     if (JMmEiDkTz4tVAV3I.vB2GTgDbdOHDxBUH && SmYKTVFRAVnnRNhG) {
       SmYKTVFRAVnnRNhG = false;
@@ -89,7 +90,7 @@ class _UzXo7BzvDdw43vBiSelectState
                   child: Padding(
                     padding: const EdgeInsets.only(top: 50),
                     child: lmDy7TRPsjReTw4LGrabtn(
-                      Q8jxoIEIflW2H4VN: 'EULA',
+                      Q8jxoIEIflW2H4VN: 'jiA_963D88Q'.cx3hpvXCSg6mF(),
                       jNmPS8ESz78iE6wY: GoogleFonts.montserrat(
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
@@ -123,14 +124,15 @@ class _UzXo7BzvDdw43vBiSelectState
                     o7q0z205CtYy3Q1ID: () async {
                       if (!xTmeMN0WDyEwoFh0) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
+                          SnackBar(
                             content: Text(
-                                'Please agree with the User Agreement and Privacy Policy'),
+                                'ybyw-HNeVecnQWjtFAYD3Kbx6dj2jBTF4qPxe4aW9bucmJEvTlde8nRFJuhTJBTQ8Ofj1b78D8Hu4N0'
+                                    .cx3hpvXCSg6mF()),
                           ),
                         );
                         return;
                       }
-                      final JMmEiDkTz4tVAV3I = context.read<AppState>();
+                      final JMmEiDkTz4tVAV3I = context.read<Kl3bGE2D4dsgMTqGState>();
                       await JMmEiDkTz4tVAV3I.sYBxKNVVyDvzxp7m();
                       if (context.mounted) {
                         context.go('/home');
@@ -139,13 +141,14 @@ class _UzXo7BzvDdw43vBiSelectState
                   ),
                   const SizedBox(height: 12),
                   lmDy7TRPsjReTw4LGrabtn(
-                    Q8jxoIEIflW2H4VN: 'Email Login',
+                    Q8jxoIEIflW2H4VN: 'B3s4eySc2WD-w5xg1lqA'.cx3hpvXCSg6mF(),
                     o7q0z205CtYy3Q1ID: () {
                       if (!xTmeMN0WDyEwoFh0) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
+                          SnackBar(
                             content: Text(
-                                'Please agree with the User Agreement and Privacy Policy'),
+                                'NPj1dd4CEGLMBa1oucLOU9G1rF1hyNFCl5-89itSOjYBVFyi4wsbd58B423-4Nlfh6OmUCm4ykab3JA'
+                                    .cx3hpvXCSg6mF()),
                           ),
                         );
                         return;
@@ -181,7 +184,7 @@ class _UzXo7BzvDdw43vBiSelectState
                           crossAxisAlignment: WrapCrossAlignment.center,
                           children: [
                             Text(
-                              'Agree with ',
+                              'FGfhHC-6E8_67w7Zyne3'.cx3hpvXCSg6mF(),
                               style: GoogleFonts.montserrat(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
@@ -195,7 +198,7 @@ class _UzXo7BzvDdw43vBiSelectState
                                 context.push('/h5/user-agreement');
                               },
                               child: Text(
-                                'User Agreement',
+                                'IPZ8Ei8fmdKLH3PUr8tftrO0'.cx3hpvXCSg6mF(),
                                 style: GoogleFonts.montserrat(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
@@ -220,7 +223,7 @@ class _UzXo7BzvDdw43vBiSelectState
                                 context.push('/h5/privacy-agreement');
                               },
                               child: Text(
-                                'Privacy Policy',
+                                'g16t8I2mRAhvpTykfXkP2CNR'.cx3hpvXCSg6mF(),
                                 style: GoogleFonts.montserrat(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,

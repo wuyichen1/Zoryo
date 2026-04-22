@@ -25,6 +25,7 @@ All messages MUST use the following JSON structure:
     name: 'laiyla1', //用户名称（String）
     about: '这个人很棒', //用户简介（String）
     coins: 0, //用户金币数（int）
+    isguest: 0, //是否游客：1 是，0 否（int）
     follow: [], //用户关注IDList（List<String>）
     fans: [], //用户粉丝IDList（List<String>）
     blockList: [], //用户黑名单IDList（List<String>）
@@ -64,6 +65,7 @@ All messages MUST use the following JSON structure:
         name: 'laiyla1', //用户名称（String）
         about: 'xxxxx', //用户简介（String）
         coins: 0, //用户金币数（int）
+        isguest: 0, //是否游客：1 是，0 否（int）
         follow: [], //用户关注IDList（List<String>）
         fans: [], //用户粉丝IDList（List<String>）
         blockList: [], //用户黑名单IDList（List<String>）
@@ -72,6 +74,41 @@ All messages MUST use the following JSON structure:
      }
  ]
 ```
+
+### H5 → App：`toLogin`（去登录）
+
+H5 在用户需要转为正式登录时调用（需在 `flutter_inappwebview` 可用后执行）：
+
+```javascript
+window.flutter_inappwebview.callHandler('toLogin');
+```
+
+App 将导航至登录表单路由：`/auth/form?HvMpj4MMZYUNZDuU=login`。
+
+**说明**：`window.userJson.isguest === 1` 表示当前为游客会话；正式账号登录成功后应为 `0`。游客会话下仍可打开登录页，不会被「已登录访问 /auth 即回首页」的重定向规则拦截。
+
+### H5 → App：`newUserData`（读草稿 / 提交完善并结束注册）
+
+**两阶段注册**：App 内 Sign up 仅创建草稿并进入 H5 完善页，此时**尚未**写入「已登录」；只有在本桥接**提交分支**成功后才会登录并进入首页。
+
+**1）只读（无参数）** — 返回当前草稿的 `name`、`avator`（空头像时为默认图经 CDN 解析后的地址，与 `window.userJson` 规则一致）：
+
+```javascript
+const data = await window.flutter_inappwebview.callHandler('newUserData');
+// data: { name: String, avator: String }
+```
+
+**2）提交最终资料（传入对象）** — App 更新用户、**此时才**标记已登录并持久化，再 `go('/home')`。须在「待完善资料」流程内，否则返回 `{ ok: false }`。
+
+```javascript
+const result = await window.flutter_inappwebview.callHandler('newUserData', {
+  name: '展示昵称',
+  avator: 'https://...' // 可省略或空字符串，空则使用默认本地头像 assets 路径
+});
+// result: { ok: true } 或 { ok: false }
+```
+
+用户在完善页关闭 WebView（`close`）且未完成时，App 会撤销草稿账号并回到可重新注册的状态。
 
 ### window.commentJson：评论对象List json
 

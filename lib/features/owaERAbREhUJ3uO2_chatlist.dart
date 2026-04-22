@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import '../zzokdet_fangfa/app_state.dart';
+import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
 class OwaERAbREhUJ3uO2ChatlistScreen extends StatelessWidget {
@@ -11,7 +11,7 @@ class OwaERAbREhUJ3uO2ChatlistScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final C2hU7gqXLEXtNDpC = context.watch<AppState>();
+    final C2hU7gqXLEXtNDpC = context.watch<Kl3bGE2D4dsgMTqGState>();
     final Y18puyI8YrEtJkdp = C2hU7gqXLEXtNDpC.bbZAttxRai3tdwtX
         .where((Vdj7LZmsKKo1FAvS) => Vdj7LZmsKKo1FAvS.R1DrlWpgkNODxc7I.contains(
             C2hU7gqXLEXtNDpC.NLbGEpZKzMfAbV3k.fkloYnZiRmbRtJ00))

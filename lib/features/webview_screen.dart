@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:zoryo/zzokdet_fangfa/rFj3K214p596M2gf_payfunc.dart';
 
 import '../models/bJpjHVrAqvtNbCtL_diapack.dart';
-import '../zzokdet_fangfa/app_state.dart';
+import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 
 class WebViewScreen extends StatefulWidget {
   const WebViewScreen({
@@ -19,6 +19,30 @@ class WebViewScreen extends StatefulWidget {
 
   final String xV7wDbbWHIG4ebaBUrl;
   final String? lOrJMO5uyGbwIXgb;
+
+  static const String lSdk9H5CdnBase =
+      'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/';
+
+  /// App 内默认头像资源；用于拼 H5 可访问的 OSS 地址（`template_development` 下需有同名文件）。
+  static const String kH5DefaultAvatarAsset = 'assets/images/zoryo_logo.png';
+
+  /// 与注入 `window.userJson` 时头像规则一致，供 H5 展示用。
+  ///
+  /// 注意：OSS 目录里若不存在与本地 assets 同名的文件（例如仅有 `zoryo_logo.png` 而无
+  /// `zoryo_defava.png`），浏览器会 404；故对 `zoryo_defava.png` 与空串回退到 [kH5DefaultAvatarAsset] 再解析。
+  static String p6ResolveH5MediaUrl(String WCTKBYT4bFNT0qGs) {
+    var s = WCTKBYT4bFNT0qGs.trim();
+    if (s.isEmpty) {
+      s = kH5DefaultAvatarAsset;
+    } else if (s.endsWith('zoryo_defava.png')) {
+      s = kH5DefaultAvatarAsset;
+    }
+    if (s.startsWith('http://') || s.startsWith('https://')) {
+      return s;
+    }
+    final o9CDDnv7u5RNptvQ = s.split('/').last;
+    return '$lSdk9H5CdnBase$o9CDDnv7u5RNptvQ';
+  }
 
   @override
   State<WebViewScreen> createState() => _WebViewScreenState();
@@ -53,7 +77,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final a4vdQjcrZlNJQJ4EH = Provider.of<AppState>(context, listen: false);
+    final a4vdQjcrZlNJQJ4EH =
+        Provider.of<Kl3bGE2D4dsgMTqGState>(context, listen: false);
 
     JxeErJwaC9ivtGNn ??= UnmodifiableListView([
       UserScript(
@@ -76,12 +101,16 @@ class _WebViewScreenState extends State<WebViewScreen> {
 
               v7tXl1wxexUTTuhK!.addJavaScriptHandler(
                 handlerName: 'close',
-                callback: (vpIsKCIc4NenJOi1) {
+                callback: (vpIsKCIc4NenJOi1) async {
                   final Z4Ytu7kCNUX2I8IX = GoRouter.of(context)
                       .routerDelegate
                       .currentConfiguration
                       .uri
                       .toString();
+                  if (Z4Ytu7kCNUX2I8IX.contains('/h5/user-register') &&
+                      a4vdQjcrZlNJQJ4EH.vbK7PendingRegProfile) {
+                    await a4vdQjcrZlNJQJ4EH.k9AbandonSignupDraftIfPending();
+                  }
                   if (Z4Ytu7kCNUX2I8IX.startsWith('/h5/')) {
                     a4vdQjcrZlNJQJ4EH.s8HGVKPpcO4RCTngj('');
                   }
@@ -97,6 +126,60 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 callback: (vpIsKCIc4NenJOi1) {
                   a4vdQjcrZlNJQJ4EH.a7cngZic3wGbStpc();
                   return null;
+                },
+              );
+
+              v7tXl1wxexUTTuhK!.addJavaScriptHandler(
+                handlerName: 'toLogin',
+                callback: (vpIsKCIc4NenJOi1) {
+                  if (!mounted) return null;
+                  GoRouter.of(context)
+                      .push('/auth/form?HvMpj4MMZYUNZDuU=login');
+                  return null;
+                },
+              );
+
+              v7tXl1wxexUTTuhK!.addJavaScriptHandler(
+                handlerName: 'newUserData',
+                callback: (vpIsKCIc4NenJOi1) async {
+                  Map<String, dynamic> readDraft() {
+                    final u = a4vdQjcrZlNJQJ4EH.NLbGEpZKzMfAbV3k;
+                    var rawAv = u.RmXHAp70ovHNBN4U.trim();
+                    if (rawAv.isEmpty)
+                      rawAv = WebViewScreen.kH5DefaultAvatarAsset;
+                    return <String, dynamic>{
+                      'name': u.AWWxvC6FbYICMs9P,
+                      'avator': WebViewScreen.p6ResolveH5MediaUrl(rawAv),
+                    };
+                  }
+
+                  try {
+                    if (vpIsKCIc4NenJOi1.isEmpty) {
+                      return readDraft();
+                    }
+                    var raw = vpIsKCIc4NenJOi1[0];
+                    if (raw is List && raw.isNotEmpty) raw = raw.first;
+                    if (raw is! Map) {
+                      return readDraft();
+                    }
+                    if (!a4vdQjcrZlNJQJ4EH.vbK7PendingRegProfile) {
+                      debugPrint(
+                          'newUserData submit ignored: not in signup profile flow');
+                      return <String, dynamic>{'ok': false};
+                    }
+                    final m = Map<String, dynamic>.from(raw);
+                    await a4vdQjcrZlNJQJ4EH.m7RegisterProfileFinalize(
+                      m['name']?.toString() ?? '',
+                      m['avator']?.toString() ?? '',
+                    );
+                    if (mounted) {
+                      GoRouter.of(context).go('/home');
+                    }
+                    return <String, dynamic>{'ok': true};
+                  } catch (e) {
+                    debugPrint('Error in newUserData handler: $e');
+                    return <String, dynamic>{'ok': false};
+                  }
                 },
               );
 
@@ -263,35 +346,17 @@ class _WebViewScreenState extends State<WebViewScreen> {
     );
   }
 
-  static const String C9d1wmXEp2oiAZm1 =
-      'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/';
-
-  String wE010MAHjv7VBASGtonet(String WCTKBYT4bFNT0qGs) {
-    if (WCTKBYT4bFNT0qGs.isEmpty) return WCTKBYT4bFNT0qGs;
-    if (WCTKBYT4bFNT0qGs.startsWith('http://') ||
-        WCTKBYT4bFNT0qGs.startsWith('https://')) {
-      return WCTKBYT4bFNT0qGs;
-    }
-    if (WCTKBYT4bFNT0qGs.startsWith('assets/')) {
-      // assets/images/xxx.png -> xxx.png
-      final o9CDDnv7u5RNptvQ = WCTKBYT4bFNT0qGs.split('/').last;
-      return '$C9d1wmXEp2oiAZm1$o9CDDnv7u5RNptvQ';
-    }
-    final o9CDDnv7u5RNptvQ = WCTKBYT4bFNT0qGs.split('/').last;
-    return '$C9d1wmXEp2oiAZm1$o9CDDnv7u5RNptvQ';
-  }
-
-  String jNh5ixTdr1Ni67Eb(AppState qkfAkzV1Omau2nW3) {
+  String jNh5ixTdr1Ni67Eb(Kl3bGE2D4dsgMTqGState qkfAkzV1Omau2nW3) {
     final zwYQoJk5KrCwZOnS = qkfAkzV1Omau2nW3.NLbGEpZKzMfAbV3k.toMap();
     zwYQoJk5KrCwZOnS['avator'] =
-        wE010MAHjv7VBASGtonet(zwYQoJk5KrCwZOnS['avator'] as String);
+        WebViewScreen.p6ResolveH5MediaUrl(zwYQoJk5KrCwZOnS['avator'] as String);
     final u2YU986pmty1rFTJ1 = jsonEncode(zwYQoJk5KrCwZOnS);
 
     final l9VBXsOIUDp4etC0P = jsonEncode(
       qkfAkzV1Omau2nW3.EGX7N1GxSRqAoJMH.map((u) {
         final uNh7rO1lVlbTgkJr = u.toMap();
-        uNh7rO1lVlbTgkJr['avator'] =
-            wE010MAHjv7VBASGtonet(uNh7rO1lVlbTgkJr['avator'] as String);
+        uNh7rO1lVlbTgkJr['avator'] = WebViewScreen.p6ResolveH5MediaUrl(
+            uNh7rO1lVlbTgkJr['avator'] as String);
         return uNh7rO1lVlbTgkJr;
       }).toList(),
     );
@@ -301,11 +366,11 @@ class _WebViewScreenState extends State<WebViewScreen> {
         final cwJTwPtP10VRiHZA = p.toMap();
         final GqCymKEFp3ltpQIX =
             (cwJTwPtP10VRiHZA['dynamicPic'] as List<dynamic>)
-                .map((pic) => wE010MAHjv7VBASGtonet(pic.toString()))
+                .map((pic) => WebViewScreen.p6ResolveH5MediaUrl(pic.toString()))
                 .toList();
         cwJTwPtP10VRiHZA['dynamicPic'] = GqCymKEFp3ltpQIX;
-        cwJTwPtP10VRiHZA['dynamicVideo'] =
-            wE010MAHjv7VBASGtonet(cwJTwPtP10VRiHZA['dynamicVideo'] as String);
+        cwJTwPtP10VRiHZA['dynamicVideo'] = WebViewScreen.p6ResolveH5MediaUrl(
+            cwJTwPtP10VRiHZA['dynamicVideo'] as String);
         return cwJTwPtP10VRiHZA;
       }).toList(),
     );
@@ -325,8 +390,10 @@ class _WebViewScreenState extends State<WebViewScreen> {
     final xcwegWfntiq5w4Bo = jsonEncode(
       qkfAkzV1Omau2nW3.tR0XyhJEMWYqEVcI.map((m) {
         final oqXBK8axnty5uLnq = m.toMap();
-        oqXBK8axnty5uLnq['sendPicUrl'] =
-            wE010MAHjv7VBASGtonet(oqXBK8axnty5uLnq['sendPicUrl'] as String);
+        final vYg9SendPic = (oqXBK8axnty5uLnq['sendPicUrl'] as String).trim();
+        oqXBK8axnty5uLnq['sendPicUrl'] = vYg9SendPic.isEmpty
+            ? ''
+            : WebViewScreen.p6ResolveH5MediaUrl(vYg9SendPic);
         return oqXBK8axnty5uLnq;
       }).toList(),
     );

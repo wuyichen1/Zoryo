@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AppTheme {
-  static const _primaryGradient = LinearGradient(
+class AICJQq1xJ85kz2JtNTheme {
+  static const chenlanGradnt = LinearGradient(
     colors: [Color(0xFFFF8133), Color(0xFF1C7BFF)],
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
   );
 
   static ThemeData get light {
-    final base = ThemeData.dark();
-    return base.copyWith(
+    final dijibase = ThemeData.dark();
+    return dijibase.copyWith(
       scaffoldBackgroundColor: const Color(0xFF0E080F),
-      colorScheme: base.colorScheme.copyWith(
+      colorScheme: dijibase.colorScheme.copyWith(
         primary: const Color(0xFF0E4FA4),
         secondary: const Color(0xFFD47A2F),
         surface: const Color(0xFF0F0F11),
       ),
-      textTheme: GoogleFonts.poppinsTextTheme(base.textTheme).apply(
+      textTheme: GoogleFonts.poppinsTextTheme(dijibase.textTheme).apply(
         bodyColor: Colors.white,
         displayColor: Colors.white,
       ),
@@ -56,7 +56,6 @@ class AppTheme {
       ),
       cardTheme: CardThemeData(
         color: Colors.white,
-        // color: const Color(0xFF0D2349),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
         elevation: 0,
       ),
@@ -64,29 +63,29 @@ class AppTheme {
         behavior: SnackBarBehavior.floating,
       ),
       extensions: <ThemeExtension<dynamic>>[
-        GradientTheme(primaryGradient: _primaryGradient),
+        GYE8xPs3egDeS7CItheme(prijianbian: chenlanGradnt),
       ],
     );
   }
 }
 
-class GradientTheme extends ThemeExtension<GradientTheme> {
-  const GradientTheme({required this.primaryGradient});
-  final Gradient primaryGradient;
+class GYE8xPs3egDeS7CItheme extends ThemeExtension<GYE8xPs3egDeS7CItheme> {
+  const GYE8xPs3egDeS7CItheme({required this.prijianbian});
+  final Gradient prijianbian;
 
   @override
-  ThemeExtension<GradientTheme> copyWith({Gradient? primaryGradient}) {
-    return GradientTheme(
-      primaryGradient: primaryGradient ?? this.primaryGradient,
+  ThemeExtension<GYE8xPs3egDeS7CItheme> copyWith({Gradient? prijianbian}) {
+    return GYE8xPs3egDeS7CItheme(
+      prijianbian: prijianbian ?? this.prijianbian,
     );
   }
 
   @override
-  ThemeExtension<GradientTheme> lerp(
-    covariant ThemeExtension<GradientTheme>? other,
+  ThemeExtension<GYE8xPs3egDeS7CItheme> lerp(
+    covariant ThemeExtension<GYE8xPs3egDeS7CItheme>? other,
     double t,
   ) {
-    if (other is! GradientTheme) return this;
-    return GradientTheme(primaryGradient: other.primaryGradient);
+    if (other is! GYE8xPs3egDeS7CItheme) return this;
+    return GYE8xPs3egDeS7CItheme(prijianbian: other.prijianbian);
   }
 }

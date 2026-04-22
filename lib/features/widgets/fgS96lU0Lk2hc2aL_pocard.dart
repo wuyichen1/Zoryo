@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../models/tdpFegrWPc3sjlaQ_post.dart';
 import '../../models/u2749HToRfgbLVPrM_user.dart';
-import '../../zzokdet_fangfa/app_state.dart';
+import '../../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
 class FgS96lU0Lk2hc2aLPocard extends StatelessWidget {
@@ -19,7 +19,7 @@ class FgS96lU0Lk2hc2aLPocard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final uekBe3Y7jmJ4b0j2 = context.watch<AppState>();
+    final uekBe3Y7jmJ4b0j2 = context.watch<Kl3bGE2D4dsgMTqGState>();
     final GxaGrZYt9xIL5CNl = uekBe3Y7jmJ4b0j2.NLbGEpZKzMfAbV3k;
 
     final S4V56exN0T3PWmWW = p84Dja5VAwuAOcrSB.ocN7sEFUY2qW0Zgr == 0

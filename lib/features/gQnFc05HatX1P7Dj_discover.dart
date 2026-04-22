@@ -3,10 +3,11 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
 import 'package:zoryo/models/tdpFegrWPc3sjlaQ_post.dart';
 import 'package:zoryo/models/u2749HToRfgbLVPrM_user.dart';
 
-import '../zzokdet_fangfa/app_state.dart';
+import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
 class GQnFc05HatX1P7DjDiscoverScreen extends StatelessWidget {
@@ -14,7 +15,7 @@ class GQnFc05HatX1P7DjDiscoverScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final M5m3TFaFQYjAB0y6 = context.watch<AppState>();
+    final M5m3TFaFQYjAB0y6 = context.watch<Kl3bGE2D4dsgMTqGState>();
     final s9a7WDEopR8oyCMM = M5m3TFaFQYjAB0y6.glufK0J7UE7AEAHL
         .where((p) => p.ocN7sEFUY2qW0Zgr == 1)
         .toList();
@@ -37,8 +38,8 @@ class GQnFc05HatX1P7DjDiscoverScreen extends StatelessWidget {
               child: Row(
                 children: [
                   const SizedBox(width: 20),
-                  const Text(
-                    'Discover',
+                  Text(
+                    'Hu9A9jwMs-fGIb34'.cx3hpvXCSg6mF(),
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
@@ -125,9 +126,9 @@ class Rs92CVxJ3tY8zlbfH extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                       ),
                       children: [
-                        TextSpan(text: 'Release '),
+                        TextSpan(text: 'CFid2jCrcQ3ys1BO'.cx3hpvXCSg6mF()),
                         TextSpan(
-                          text: 'your',
+                          text: 'sY3RSnJsJKo'.cx3hpvXCSg6mF(),
                           style: GoogleFonts.montserrat(
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.italic,
@@ -159,7 +160,7 @@ class ZP6vWXov4x4t8hMq extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Y5Co9BDgsV7gFhAd = context.watch<AppState>();
+    final Y5Co9BDgsV7gFhAd = context.watch<Kl3bGE2D4dsgMTqGState>();
     final E8Kge6C0yooxRHs3 = Y5Co9BDgsV7gFhAd.NLbGEpZKzMfAbV3k;
 
     final ioMpsWZG5uUiLVlb = E8Kge6C0yooxRHs3.IibbF2RfvAxYkcQo.contains(
@@ -215,8 +216,8 @@ class ZP6vWXov4x4t8hMq extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: CircleAvatar(
-                        backgroundImage: UPClh6pI9Z9yX3xQ(
-                            aFhwquwHdAO8AVPK.RmXHAp70ovHNBN4U),
+                        backgroundImage:
+                            UPClh6pI9Z9yX3xQ(aFhwquwHdAO8AVPK.RmXHAp70ovHNBN4U),
                         radius: 14,
                       ),
                     ),

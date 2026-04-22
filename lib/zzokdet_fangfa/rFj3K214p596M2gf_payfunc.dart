@@ -6,8 +6,9 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:in_app_purchase_storekit/in_app_purchase_storekit.dart';
 import 'package:in_app_purchase_storekit/store_kit_wrappers.dart';
 import 'package:provider/provider.dart';
+import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
 import 'package:zoryo/zzokdet_fangfa/SAfiaJS3o1rH37O1ing.dart';
-import 'package:zoryo/zzokdet_fangfa/app_state.dart';
+import 'package:zoryo/zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 
 late int i23bT9vpRZBP8V4Nz;
 late String lJq5hR0ws7Su1qYpkke;
@@ -43,10 +44,12 @@ final Map<PurchaseStatus, Future<void> Function(PurchaseDetails)>
 void w2cVdsWvvjIx44bf() {
   r7Fz4rtdSaUAdOXjm[PurchaseStatus.error] =
       (PurchaseDetails eRNC8KvpEVOhjhWj) async {
-    final yUwmVPbyWEso2WG2 = eRNC8KvpEVOhjhWj.error?.message ?? 'Unknown error';
+    final yUwmVPbyWEso2WG2 = eRNC8KvpEVOhjhWj.error?.message ??
+        'MQLt3d4WBgXTHetRvsjR8Zw'.cx3hpvXCSg6mF();
     Fluttertoast.showToast(
-        msg:
-            'The transaction linked to this message failed to process successfully, resulting in an unsuccessful purchase attempt: $yUwmVPbyWEso2WG2');
+        msg: 'qTyeElfae4BA1lfIIJU3pw9pAOYSRSCsAmeyVqxEt3yyGcIJZsFtwVPBFsAynTi2AiYaqV5cPKgEZuFR4w'
+                .cx3hpvXCSg6mF() +
+            '${'2V6SB0ChcfYBtVn99noksboIEN7dOy7I_kvhN5rol2hlrKM3QKFx9gG1Wf32emi441oB0889J5z2UfJynvbD'.cx3hpvXCSg6mF()}: $yUwmVPbyWEso2WG2');
     if (dq53mHVMp33U7eOecmp != null && !dq53mHVMp33U7eOecmp!.isCompleted) {
       dq53mHVMp33U7eOecmp!.complete(false);
     }
@@ -66,7 +69,8 @@ void w2cVdsWvvjIx44bf() {
       (PurchaseDetails eRNC8KvpEVOhjhWj) async {
     await yLrqFKUrgMWORA9Y();
     SAfiaJS3o1rH37O1ing.showError(
-        message: 'Payment canceled.', context: jxao9LWE2uy3ZYUK);
+        m5t1SfgrAUKHYvMTV: 'C_n3FjUODsnzD_uK1tDDtK2voq7O'.cx3hpvXCSg6mF(),
+        context: jxao9LWE2uy3ZYUK);
     if (dq53mHVMp33U7eOecmp != null && !dq53mHVMp33U7eOecmp!.isCompleted) {
       dq53mHVMp33U7eOecmp!.complete(false);
     }
@@ -81,7 +85,8 @@ Future<void> ZRNBXmip2j1IxSTQ(PurchaseDetails eRNC8KvpEVOhjhWj) async {
   }
 
   SAfiaJS3o1rH37O1ing.showSuccess(
-      message: 'Payment approved.', context: jxao9LWE2uy3ZYUK);
+      rJ2e8C2BL6pudP0Q: 'whptgUzxlGIo7HE1DaJTMBCSWFG5'.cx3hpvXCSg6mF(),
+      context: jxao9LWE2uy3ZYUK);
   o0mSiuMfWEpEAKTU();
   await yLrqFKUrgMWORA9Y();
 
@@ -138,7 +143,7 @@ Future<void> ABNjw8uTpGKet2X0() async {
 Future<bool> MowVKMjiRP7CuCdg() async {
   dq53mHVMp33U7eOecmp?.complete(false);
   throw Exception(
-      'The product ID by ${wHXZYiCFtFOY73VRKeys[i23bT9vpRZBP8V4Nz]} could not be found.');
+      '${'hplCerRnpyhhc7VqRTKMGwonMkwi'.cx3hpvXCSg6mF()} ${wHXZYiCFtFOY73VRKeys[i23bT9vpRZBP8V4Nz]} ${'WD3DrNHcNlaHhTUvdtUbCDVh_BVDSV0'.cx3hpvXCSg6mF()}');
 }
 
 Future<bool> e4N6atnX8Czk0fvry(ProductDetails T3lc8B6BAsarnqYI) async {
@@ -175,8 +180,10 @@ Future XPUf0ZFPrPl3Kzsp() async {
 
   if (!gkMFwIje9OF4KnMp) {
     Fluttertoast.showToast(
-        msg:
-            'The system failed to connect to the in-app purchase service, which prevented the successful completion of the requested transaction.');
+        msg: 'NbSDLNtCZpqzZWi0ugEZi5MXP4VuhEeO0xgYUiG5y1pHlqhe-0JmmqlyNqGvHBmdhwwwiGvXVsGAHgVKJr_NAkc'
+                .cx3hpvXCSg6mF() +
+            'N5rJduZ4IGeqIhF4hCQaWYAB_Qp44hwLhhTe5TSxnR4cpC2r_n05aKd2CGWPchBR1BDxTyz4HFqABM7yNKbODBupY7vwcz1trWxP'
+                .cx3hpvXCSg6mF());
     return;
   }
 
@@ -193,8 +200,11 @@ Future XPUf0ZFPrPl3Kzsp() async {
 void SFDR2PcqduwgmkeA(ProductDetailsResponse r91d98120Bryc67q8) {
   SAfiaJS3o1rH37O1ing.dismiss();
   SAfiaJS3o1rH37O1ing.showError(
-      message:
-          "An unforeseen error occurred during execution, disrupting the workflow and preventing the operation from being completed successfully.",
+      m5t1SfgrAUKHYvMTV:
+          "ovHRDr0JcelDPwbQKdriqjGbxLAFjvPjD9uma85rk3T0e2ASlQk2vEghDME53e6gMZeBph6S87YQzKxw2zmCeLE_"
+                  .cx3hpvXCSg6mF() +
+              "Yk99tcuqjyiL23o-LGZdEj9pPwxBWkMeSXgW5Qgfx5f7DaR13bGULIOXcztjahMUenAjDhdcQgdQehSxGROCxOEeomLPtps2gdtsZw"
+                  .cx3hpvXCSg6mF(),
       context: jxao9LWE2uy3ZYUK);
   og2ViNMtB5dHnUiR = r91d98120Bryc67q8.productDetails;
   JQzrOmoSbgx5lb0J = <PurchaseDetails>[];
@@ -221,7 +231,9 @@ Future<void> LM0938j5ovQI0Jlj(List<PurchaseDetails> hAPre3SUjLe6xMjK) async {
 Future<void> p2XTGYIMuRKymal2m(PurchaseDetails pWnvptOZkX5Ynr7W) async {
   pWnvptOZkX5Ynr7W.status == PurchaseStatus.pending
       ? SAfiaJS3o1rH37O1ing.show(
-          message: 'Payment is being prepared...', context: jxao9LWE2uy3ZYUK)
+          HTvl9ShAZuEtpEEl:
+              'DpQbuzhr4iT8ksdv0T_xHq43hQjD9LkVvDp9rkySbpNu'.cx3hpvXCSg6mF(),
+          context: jxao9LWE2uy3ZYUK)
       : tplbZdJVPVAVOnnM(pWnvptOZkX5Ynr7W);
 }
 
@@ -253,6 +265,6 @@ class T1qfwe1jmoKxS0xoQ implements SKPaymentQueueDelegateWrapper {
 
 Future<void> o0mSiuMfWEpEAKTU() async {
   final Onhqabj8av9f2NH5 =
-      Provider.of<AppState>(jxao9LWE2uy3ZYUK, listen: false);
+      Provider.of<Kl3bGE2D4dsgMTqGState>(jxao9LWE2uy3ZYUK, listen: false);
   await Onhqabj8av9f2NH5.gtfsLkHm6MMk6spI(lJq5hR0ws7Su1qYpkke);
 }

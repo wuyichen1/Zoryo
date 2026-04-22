@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:zoryo/features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
 
 import '../models/tdpFegrWPc3sjlaQ_post.dart';
-import '../zzokdet_fangfa/app_state.dart';
+import '../zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
 import 'widgets/fgS96lU0Lk2hc2aL_pocard.dart';
 import '../zzokdet_fangfa/h71YrziMFtWP6pMg_image.dart';
 
@@ -18,12 +19,12 @@ class NigZlPuEaIKSmIsIHomeScreen extends StatefulWidget {
 
 class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
     with SingleTickerProviderStateMixin {
-  final yj5EEy1DWPw53TsS = const [
-    'ALL',
-    'Daily Glow',
-    'Office Polished',
-    'Travel Vibe',
-    'Party Shine'
+  final yj5EEy1DWPw53TsS = [
+    'MwlQDswznA'.cx3hpvXCSg6mF(),
+    '3KIKHXJ548ceKuXd6S0'.cx3hpvXCSg6mF(),
+    'Nm-pct-DT2mismFWj0s2QJtcHQ'.cx3hpvXCSg6mF(),
+    'YZf6Qu9_G6aJk7KAYi3V'.cx3hpvXCSg6mF(),
+    '7JQ7RhZryaAO3ICy_yKU'.cx3hpvXCSg6mF()
   ];
   late TabController MLKE0dGHtjhhBzE7;
 
@@ -48,7 +49,7 @@ class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
 
   @override
   Widget build(BuildContext context) {
-    final dbppyaHLTWf6QAVD = context.watch<AppState>();
+    final dbppyaHLTWf6QAVD = context.watch<Kl3bGE2D4dsgMTqGState>();
     final h2j6pBuA7KnwD51C = dbppyaHLTWf6QAVD.NLbGEpZKzMfAbV3k;
     return Scaffold(
       body: Container(
@@ -125,7 +126,7 @@ class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Your exclusive',
+                              'XIBssO-ZmUzHjXwnak1RGG8v'.cx3hpvXCSg6mF(),
                               style: GoogleFonts.montserrat(
                                 fontSize: 24,
                                 fontWeight: FontWeight.w600,
@@ -133,7 +134,7 @@ class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
                               ),
                             ),
                             Text(
-                              'jewelry paired ',
+                              'S47x9M9hBue6hPCohSfOx2084Q'.cx3hpvXCSg6mF(),
                               style: GoogleFonts.montserrat(
                                 fontSize: 24,
                                 fontStyle: FontStyle.italic,
@@ -141,7 +142,7 @@ class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
                               ),
                             ),
                             Text(
-                              'with AI assistant',
+                              '3oWLaU-Sf59JrGrd6U4yQ-g7OnPH'.cx3hpvXCSg6mF(),
                               style: GoogleFonts.montserrat(
                                 fontSize: 24,
                                 fontWeight: FontWeight.w600,
@@ -209,7 +210,7 @@ class _NigZlPuEaIKSmIsIHomeState extends State<NigZlPuEaIKSmIsIHomeScreen>
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Text(
-                                  'Go unlock',
+                                  'wFPM7V2mbA4l1wviAQ'.cx3hpvXCSg6mF(),
                                   style: TextStyle(
                                     fontSize: 17,
                                     fontWeight: FontWeight.w700,
@@ -371,7 +372,7 @@ class MYZwL8ZDFgDh9zvn extends StatelessWidget {
   const MYZwL8ZDFgDh9zvn(
       {required this.hOwkQTL5CPB4SAJl, required this.uIdr98APeLRw2QYS});
   final List<TdpFegrWPc3sjlaQPost> hOwkQTL5CPB4SAJl;
-  final AppState uIdr98APeLRw2QYS;
+  final Kl3bGE2D4dsgMTqGState uIdr98APeLRw2QYS;
 
   @override
   Widget build(BuildContext context) {
@@ -380,8 +381,8 @@ class MYZwL8ZDFgDh9zvn extends StatelessWidget {
       itemCount: hOwkQTL5CPB4SAJl.length,
       itemBuilder: (context, XoAVzM62ZcvpXjEj) {
         final tPcnVXlaO4IUgznx = hOwkQTL5CPB4SAJl[XoAVzM62ZcvpXjEj];
-        final ituTRNLVBAFlO55r =
-            uIdr98APeLRw2QYS.IyC8CUrMp1zDTN8h(tPcnVXlaO4IUgznx.nlPxQBFl8qKNMmCt);
+        final ituTRNLVBAFlO55r = uIdr98APeLRw2QYS.IyC8CUrMp1zDTN8h(
+            tPcnVXlaO4IUgznx.nlPxQBFl8qKNMmCt);
         return FgS96lU0Lk2hc2aLPocard(
           p84Dja5VAwuAOcrSB: tPcnVXlaO4IUgznx,
           X7bbhydcsnABQBSz: ituTRNLVBAFlO55r,

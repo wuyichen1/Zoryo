@@ -26,12 +26,12 @@ class SnLjQVJIDwvDQeiSMimg extends StatelessWidget {
   Widget build(BuildContext context) {
     if (dIJEHnEuK8jQOYZ6.isEmpty) {
       return Image.asset(
-        'assets/images/zoryo_logo.png',
+        'assets/images/zoryo_defava.png',
         fit: BoxFit.cover,
         width: uxPA9shcTkowRtWr,
         height: HiV1Jw06WVodhDMy,
         errorBuilder: (context, error, stackTrace) =>
-            hQ2EKjohILntix17 ?? Image.asset('assets/images/zoryo_logo.png'),
+            hQ2EKjohILntix17 ?? Image.asset('assets/images/zoryo_defava.png'),
       );
     }
 
@@ -54,7 +54,7 @@ class SnLjQVJIDwvDQeiSMimg extends StatelessWidget {
               );
         },
         errorBuilder: (context, error, stackTrace) =>
-            hQ2EKjohILntix17 ?? Image.asset('assets/images/zoryo_logo.png'),
+            hQ2EKjohILntix17 ?? Image.asset('assets/images/zoryo_defava.png'),
       );
     } else {
       return Image.asset(
@@ -63,7 +63,7 @@ class SnLjQVJIDwvDQeiSMimg extends StatelessWidget {
         width: uxPA9shcTkowRtWr,
         height: HiV1Jw06WVodhDMy,
         errorBuilder: (context, error, stackTrace) =>
-            hQ2EKjohILntix17 ?? Image.asset('assets/images/zoryo_logo.png'),
+            hQ2EKjohILntix17 ?? Image.asset('assets/images/zoryo_defava.png'),
       );
     }
   }
@@ -71,7 +71,7 @@ class SnLjQVJIDwvDQeiSMimg extends StatelessWidget {
 
 ImageProvider UPClh6pI9Z9yX3xQ(String BR6J3ZKSYXbCmhYE) {
   if (BR6J3ZKSYXbCmhYE.isEmpty) {
-    return const AssetImage('assets/images/zoryo_logo.png');
+    return const AssetImage('assets/images/zoryo_defava.png');
   }
 
   if (GsBYXpnSOS8kPcSl(BR6J3ZKSYXbCmhYE)) {

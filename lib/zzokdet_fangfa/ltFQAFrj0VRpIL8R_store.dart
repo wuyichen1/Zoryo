@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../features/utils/string_encryption.dart';
+import '../features/utils/sT4Ixl4VDmBmLyF0_encryption.dart';
 
 class LtFQAFrj0VRpIL8RLocalstore {
   LtFQAFrj0VRpIL8RLocalstore({
@@ -38,7 +38,7 @@ class LtFQAFrj0VRpIL8RLocalstore {
 
     if (uuRv4rwu3P8hjVcv) {
       try {
-        d5mNv9Wy6Mj9T7Anl = d5mNv9Wy6Mj9T7Anl.decrypt();
+        d5mNv9Wy6Mj9T7Anl = d5mNv9Wy6Mj9T7Anl.cx3hpvXCSg6mF();
       } catch (e) {
         debugPrint('解密 asset 失败: $e');
         rethrow;
@@ -56,7 +56,7 @@ class LtFQAFrj0VRpIL8RLocalstore {
       return jsonDecode(zEQO2Yr00FiHrmnx) as Map<String, dynamic>;
     } catch (e) {
       try {
-        zEQO2Yr00FiHrmnx = zEQO2Yr00FiHrmnx.decrypt();
+        zEQO2Yr00FiHrmnx = zEQO2Yr00FiHrmnx.cx3hpvXCSg6mF();
         return jsonDecode(zEQO2Yr00FiHrmnx) as Map<String, dynamic>;
       } catch (aKQLxOiWIzmUbUGN) {
         debugPrint('加载数据失败，既不是有效的 JSON，也无法解密: $e');
@@ -136,5 +136,20 @@ class LtFQAFrj0VRpIL8RLocalstore {
     } else {
       await yDLtY21ntmNfyZMU!.setString('yaqfJyWvoZjkom3B', kR6N17rHJRtatZe0);
     }
+  }
+
+  /// 注册未完成：仅 H5 完善资料阶段，存草稿用户 id（非已登录态）。
+  Future<void> uQPpRegProfilePendingId(String? userId) async {
+    if (yDLtY21ntmNfyZMU == null) await Jo7un0YrdB9zrKki();
+    if (userId == null || userId.isEmpty) {
+      await yDLtY21ntmNfyZMU!.remove('n4Qk8RegProfilePendingUid');
+    } else {
+      await yDLtY21ntmNfyZMU!.setString('n4Qk8RegProfilePendingUid', userId);
+    }
+  }
+
+  Future<String?> ka6RegProfilePendingIdRead() async {
+    if (yDLtY21ntmNfyZMU == null) await Jo7un0YrdB9zrKki();
+    return yDLtY21ntmNfyZMU!.getString('n4Qk8RegProfilePendingUid');
   }
 }

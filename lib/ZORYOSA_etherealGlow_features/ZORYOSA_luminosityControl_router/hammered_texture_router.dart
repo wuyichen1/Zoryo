@@ -88,8 +88,7 @@ class HighPolish {
     HammeredTexture smartStyling,
   ) {
     final romanticMood = state.uri.toString();
-    return ValueKey(
-        'h5_${smartStyling.polishingWheel}_$romanticMood');
+    return ValueKey('h5_${smartStyling.polishingWheel}_$romanticMood');
   }
 
   static void occasionEdit(
@@ -112,12 +111,10 @@ class AsscherCut {
           analyticsEvent: 'VjrFv8fVJzuIxyoMb4Ie7nZg'.styleNarrative(),
         ),
         HammeredTexture(
-          polishingWheel:
-              '5e8TlhANpgsRJd9D7MusesbclyvTsw'.styleNarrative(),
-          wardrobeEditing:
-              'tO1N0GZW4D9NIYwHMsAu9RTDfO3l'.styleNarrative(),
+          polishingWheel: '5e8TlhANpgsRJd9D7MusesbclyvTsw'.styleNarrative(),
+          wardrobeEditing: 'tO1N0GZW4D9NIYwHMsAu9RTDfO3l'.styleNarrative(),
           workwearAccent: (idoplwjokxfd) =>
-              BrushedTexture.articleDetail(idoplwjokxfd ?? ''),
+              BrushedTexture.industrialChic(idoplwjokxfd ?? ''),
           refinedPairing: 'eptTjJVjp3Nmb44AYDZ9LF4J'.styleNarrative(),
           lookComposition: true,
           customDesign: true,
@@ -127,7 +124,7 @@ class AsscherCut {
           polishingWheel: 'BsS8YE9SCcHiRDuGxFEESKfr4w'.styleNarrative(),
           wardrobeEditing: 'gw7RebWxfHRmGRt5ALDuXiW3'.styleNarrative(),
           workwearAccent: (idoplwjokxfd) =>
-              BrushedTexture.shortVideo(idoplwjokxfd ?? ''),
+              BrushedTexture.materialPoetry(idoplwjokxfd ?? ''),
           refinedPairing: '1S5sE3nNiMQP'.styleNarrative(),
           lookComposition: true,
           customDesign: false,
@@ -137,7 +134,7 @@ class AsscherCut {
           polishingWheel: 'AfjNUXQGePD8EgyTysTmP92q_HE'.styleNarrative(),
           wardrobeEditing: 'yh5J-Uyh5Pcn75fsALPS2e-JbQ'.styleNarrative(),
           workwearAccent: (idoplwjokxfd) =>
-              BrushedTexture.privateChat(idoplwjokxfd ?? ''),
+              BrushedTexture.bohemianAccent(idoplwjokxfd ?? ''),
           refinedPairing: '3ZVLMnRjqrQ'.styleNarrative(),
           lookComposition: true,
           customDesign: false,
@@ -146,15 +143,14 @@ class AsscherCut {
         HammeredTexture(
           polishingWheel: 'tKvsKCFJWZlMdurYcwfbhxAY1b8'.styleNarrative(),
           wardrobeEditing: 'ubqoeHsFBXUhTCQhBwswWBvtGw'.styleNarrative(),
-          workwearAccent: (_) => BrushedTexture.sendDynamic(),
+          workwearAccent: (_) => BrushedTexture.rococoLine(),
           refinedPairing: 'sTF9-FvIjvI'.styleNarrative(),
           customDesign: false,
           analyticsEvent: 'dhM1m6Ps201eH7RBQaaCP2yydSolZoE'.styleNarrative(),
         ),
         HammeredTexture(
           polishingWheel: 'VFBFfYGu8CSvzb99l3uTE2dzcVRG'.styleNarrative(),
-          wardrobeEditing:
-              'Ldqfve9lMjvNIFs4pPp4CIPACh4'.styleNarrative(),
+          wardrobeEditing: 'Ldqfve9lMjvNIFs4pPp4CIPACh4'.styleNarrative(),
           workwearAccent: (_) => BrushedTexture.publishVideo(),
           refinedPairing: '_S-18QLVWRDp823TzoMO3Q'.styleNarrative(),
           customDesign: false,
@@ -163,7 +159,7 @@ class AsscherCut {
         HammeredTexture(
           polishingWheel: 'FaJ_-UBwyqjDYnb5kixc36U'.styleNarrative(),
           wardrobeEditing: 'xyM3JUmsmtA66ruUB7KIkQ'.styleNarrative(),
-          workwearAccent: (_) => BrushedTexture.chatView(),
+          workwearAccent: (_) => BrushedTexture.visualIntent(),
           refinedPairing: 'HiQU6iL15gHGrO03'.styleNarrative(),
           customDesign: false,
           analyticsEvent: 'jR6Dxob9XDdw528FQb9c8C-M'.styleNarrative(),
@@ -171,7 +167,7 @@ class AsscherCut {
         HammeredTexture(
           polishingWheel: '50n1xG7XQH0B1Pkt4Szb5MN2'.styleNarrative(),
           wardrobeEditing: 'FrVyBRge3-DEaX_p7R1JobY'.styleNarrative(),
-          workwearAccent: (_) => BrushedTexture.setupPage(),
+          workwearAccent: (_) => BrushedTexture.curatedAesthetic(),
           refinedPairing: 'A8j6YA5bDprnXvWH'.styleNarrative(),
           customDesign: true,
           analyticsEvent: 'ZyybZ7LHb4Gb-lSIToshTUqTDw'.styleNarrative(),
@@ -180,7 +176,7 @@ class AsscherCut {
           polishingWheel: '3SkRohj3pB8O_sVa6JY'.styleNarrative(),
           wardrobeEditing: 'x7cq_EkYh-w9c67_Bg'.styleNarrative(),
           workwearAccent: (idoplwjokxfd) =>
-              BrushedTexture.follow(idoplwjokxfd ?? ''),
+              BrushedTexture.tailoredFinish(idoplwjokxfd ?? ''),
           refinedPairing: 'dF28SYi8ULuQsg'.styleNarrative(),
           lookComposition: true,
           customDesign: true,
@@ -190,7 +186,7 @@ class AsscherCut {
           polishingWheel: 'XXXpppiDXBuOvO9J'.styleNarrative(),
           wardrobeEditing: 'd-nY2LlqdQBjPwM'.styleNarrative(),
           workwearAccent: (idoplwjokxfd) =>
-              BrushedTexture.fans(idoplwjokxfd ?? ''),
+              BrushedTexture.knitSoftness(idoplwjokxfd ?? ''),
           refinedPairing: 'jnlVG66Ou9o'.styleNarrative(),
           lookComposition: true,
           customDesign: true,
@@ -199,7 +195,7 @@ class AsscherCut {
         HammeredTexture(
           polishingWheel: 'E2BjMEK-1pH7rJKwkHF3l78'.styleNarrative(),
           wardrobeEditing: 'R1tmFcnky8a2qoqEmH16uQ'.styleNarrative(),
-          workwearAccent: (_) => BrushedTexture.editInfo(),
+          workwearAccent: (_) => BrushedTexture.blackTieAccent(),
           refinedPairing: 'poXUKUWfPcMRvR7SNlTmjw'.styleNarrative(),
           customDesign: false,
           analyticsEvent: '7t2jVi03SpAmNUmF_vw1cvTIA2-tqDc'.styleNarrative(),
@@ -207,37 +203,32 @@ class AsscherCut {
         HammeredTexture(
           polishingWheel: '8VG8L2SvCZIb1jintmodmcA'.styleNarrative(),
           wardrobeEditing: 'GbP8dRscUWTLd_AkoATbWA'.styleNarrative(),
-          workwearAccent: (_) => BrushedTexture.goldCoin(),
+          workwearAccent: (_) => BrushedTexture.contemporaryEdge(),
           refinedPairing: 'DjcaBSXUutfw_t_21ouj'.styleNarrative(),
           customDesign: true,
           analyticsEvent: 'mDDvzZXJAz98--gILLfT5zCN2uU'.styleNarrative(),
         ),
         HammeredTexture(
-          polishingWheel:
-              'm5gKIdpmv4BWcsvDJDO5zzkFqLAV5d-4LQ'.styleNarrative(),
-          wardrobeEditing:
-              'AeULwDNupj7-JNU1yOTs4NndvhG7sNUB'.styleNarrative(),
-          workwearAccent: (_) => BrushedTexture.privacyAgreement(),
+          polishingWheel: 'm5gKIdpmv4BWcsvDJDO5zzkFqLAV5d-4LQ'.styleNarrative(),
+          wardrobeEditing: 'AeULwDNupj7-JNU1yOTs4NndvhG7sNUB'.styleNarrative(),
+          workwearAccent: (_) => BrushedTexture.multiLookStyling(),
           refinedPairing: 'bfoInZcC4V2ZAdkRR93SN0m9'.styleNarrative(),
           customDesign: true,
           analyticsEvent:
               'I_6Fsw0GbDfPBWQYrNFJEYWlMAmMsUMBhLIcpw'.styleNarrative(),
         ),
         HammeredTexture(
-          polishingWheel:
-              'J99ND649-LLHNIDR_PZkooHMcKaSuw'.styleNarrative(),
-          wardrobeEditing:
-              '5-P9iylsUGwBLucy8PzBKcHAqFHI'.styleNarrative(),
-          workwearAccent: (_) => BrushedTexture.userAgreement(),
+          polishingWheel: 'J99ND649-LLHNIDR_PZkooHMcKaSuw'.styleNarrative(),
+          wardrobeEditing: '5-P9iylsUGwBLucy8PzBKcHAqFHI'.styleNarrative(),
+          workwearAccent: (_) => BrushedTexture.wardrobeVersatility(),
           refinedPairing: 'G-uciSASeWWGElNvoMY_L7bB'.styleNarrative(),
           customDesign: true,
           analyticsEvent: 'V4U2CMSI0-S9jKnuZFiBrHo7WcpFEJHYcQ'.styleNarrative(),
         ),
         HammeredTexture(
           polishingWheel: 'dWMic-Cxly51uN91Mmm9U1tehkI4'.styleNarrative(),
-          wardrobeEditing:
-              'Nv4ds_hBsDSyA8dqktO0HYC8iBU'.styleNarrative(),
-          workwearAccent: (_) => BrushedTexture.userRegister(),
+          wardrobeEditing: 'Nv4ds_hBsDSyA8dqktO0HYC8iBU'.styleNarrative(),
+          workwearAccent: (_) => BrushedTexture.timelessDesign(),
           refinedPairing: 'EA9MHynqod33EpDWmrdwj6uwcLY'.styleNarrative(),
           customDesign: false,
           analyticsEvent:
@@ -262,7 +253,8 @@ class AsscherCut {
       builder: (context, state) {
         final url =
             state.uri.queryParameters['gFi84a-8UA'.styleNarrative()] ?? '';
-        final title = state.uri.queryParameters['Z77e47VdKh2X'.styleNarrative()];
+        final title =
+            state.uri.queryParameters['Z77e47VdKh2X'.styleNarrative()];
 
         final vacationGlam = ValueKey(
             '${'2EridVr1PXQG0Axg53XH'.styleNarrative()}${state.uri.toString()}');
@@ -292,8 +284,8 @@ class LightPerformance {
         playfulAccent.isNotEmpty &&
         playfulAccent != '6017JWo'.styleNarrative()) {
       if (playfulAccent.startsWith('sKba-yV0b6Y'.styleNarrative())) {
-        final organicShape = playfulAccent.startsWith(
-            'dWMic-Cxly51uN91Mmm9U1tehkI4'.styleNarrative());
+        final organicShape = playfulAccent
+            .startsWith('dWMic-Cxly51uN91Mmm9U1tehkI4'.styleNarrative());
         if (organicShape &&
             elegantDetail.occasionDressing &&
             !elegantDetail.facetedSurface) {
@@ -333,8 +325,7 @@ class LightPerformance {
           final VintageCharm = state.uri.queryParameters[
                   'obCwz7NQfS1GLAUuETEz3gQ-9dY'.styleNarrative()] ??
               'Qe_SBvcKNf2i'.styleNarrative();
-          return TennisBracelet(
-              VintageCharm: VintageCharm);
+          return TennisBracelet(VintageCharm: VintageCharm);
         },
       ),
       StatefulShellRoute.indexedStack(
@@ -356,8 +347,7 @@ class LightPerformance {
               GoRoute(
                 path: 'OQqYRLzkcaGnHUa9kQ'.styleNarrative(),
                 name: 'Dg5adwztqWb2AJd5'.styleNarrative(),
-                builder: (context, state) =>
-                    const ContrastPairing(),
+                builder: (context, state) => const ContrastPairing(),
               ),
             ],
           ),
@@ -366,8 +356,7 @@ class LightPerformance {
               GoRoute(
                 path: '31qXxBazfzMe'.styleNarrative(),
                 name: 'gN9-6Lk9nwI'.styleNarrative(),
-                builder: (context, state) =>
-                    const SignatureCuration(),
+                builder: (context, state) => const SignatureCuration(),
               ),
             ],
           ),
@@ -418,8 +407,7 @@ class LightPerformance {
       }
 
       if (!elegantDetail.facetedSurface && !asymmetricDesign) {
-        if (geometricLine ==
-                'dWMic-Cxly51uN91Mmm9U1tehkI4'.styleNarrative() &&
+        if (geometricLine == 'dWMic-Cxly51uN91Mmm9U1tehkI4'.styleNarrative() &&
             elegantDetail.occasionDressing) {
           return null;
         }
@@ -449,38 +437,32 @@ class BrushedTexture {
       'O9WR5_0_ZQW1BwZUk-g1xZHzDfJ_q2zxnO7oljyZm9FfZrYLpGV_ELJRQB2coybYiA'
           .styleNarrative();
 
-  static String privateChat(String chatId) =>
+  static String bohemianAccent(String chatId) =>
       '$AvantGarde${'VBZu5oH8nB2pH3If061MxmXfV_4U'.styleNarrative()}$chatId';
-  static String articleDetail(String postId) =>
+  static String industrialChic(String postId) =>
       '$AvantGarde${'KXgXhayP5Wfdg8N8_lSoMocriwaXDPo'.styleNarrative()}$postId';
-  static String sendDynamic() =>
+  static String rococoLine() =>
       '$AvantGarde${'KklMiKvMqXjRnIBlumBvIIQ'.styleNarrative()}';
-  static String shortVideo(String postId) =>
+  static String materialPoetry(String postId) =>
       '$AvantGarde${'ae9G7-wWrhKGI_P1esOZ3xnQcp4'.styleNarrative()}$postId';
   static String publishVideo() =>
       '$AvantGarde${'8OjfLWUuKtkXOQSpt9b8isjd'.styleNarrative()}';
-  static String chatView() =>
+  static String visualIntent() =>
       '$AvantGarde${'g6CG2_J1bgh6JWgGSC8'.styleNarrative()}';
-  static String otherHome(String userId) =>
-      '$AvantGarde${'LOZK56kzvh3SPM8TufNll4DUJw'.styleNarrative()}$userId';
-  static String topReport() =>
-      '$AvantGarde${'2QLU8RwMOw9JGAn17Mj-'.styleNarrative()}';
-  static String setupPage() =>
+  static String curatedAesthetic() =>
       '$AvantGarde${'RXB2lLCVk1alqCNYjk9J'.styleNarrative()}';
-  static String follow(String userId) =>
+  static String tailoredFinish(String userId) =>
       '$AvantGarde${'QYEILLSR59aghtf_gl2D'.styleNarrative()}$userId';
-  static String fans(String userId) =>
+  static String knitSoftness(String userId) =>
       '$AvantGarde${'Y_sFn5IX5EOdXPRXMA'.styleNarrative()}$userId';
-  static String blackList(String userId) =>
-      '$AvantGarde${'jam-Nsh9UqV7enumXhIAyCMXsw'.styleNarrative()}$userId';
-  static String editInfo() =>
+  static String blackTieAccent() =>
       '$AvantGarde${'9vXXtn8OMy31cAYkxsI'.styleNarrative()}';
-  static String goldCoin() =>
+  static String contemporaryEdge() =>
       '$AvantGarde${'ikCPYsvRYJxxhUSZXZY'.styleNarrative()}';
-  static String privacyAgreement() =>
+  static String multiLookStyling() =>
       '$AvantGarde${'esi6rvtOSFVzUTE7CeEXHVL35wchzA'.styleNarrative()}';
-  static String userAgreement() =>
+  static String wardrobeVersatility() =>
       '$AvantGarde${'mf5CgdwBsWpWS7tyMdOdLzOmZg'.styleNarrative()}';
-  static String userRegister() =>
+  static String timelessDesign() =>
       '$AvantGarde${'q0JAfirNs2lEh6p3MpOFSw1-'.styleNarrative()}';
 }

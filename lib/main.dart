@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:zoryo/zzokdet_fangfa/rFj3K214p596M2gf_payfunc.dart';
+import 'package:zoryo/ZORYOSA_neutralDressing_services/three_stone_style.dart';
 
-import 'ZORYOSA_lkfuopwerq_features/ZORYOSA_routerysmkjdjphn/zoryosa_momention_router.dart';
-import 'ZORYOSA_lkfuopwerq_features/ZORYOSA_utilseqvqeiutme/zoryo_encrypted_media_vault.dart';
-import 'zzokdet_fangfa/ltFQAFrj0VRpIL8R_store.dart';
-import 'ZORYOSA_lkfuopwerq_features/ZORYOSA_routerysmkjdjphn/appCJQq1xJ85kz2JtN_theme.dart';
-import 'zzokdet_fangfa/kl3bGE2D4dsgMTqG_state.dart';
+import 'ZORYOSA_etherealGlow_features/ZORYOSA_luminosityControl_router/hammered_texture_router.dart';
+import 'ZORYOSA_etherealGlow_features/ZORYOSA_lookFinalizer_utils/encrypted_media_vault.dart';
+import 'ZORYOSA_neutralDressing_services/modern_adornment_store.dart';
+import 'ZORYOSA_etherealGlow_features/ZORYOSA_luminosityControl_router/adornment_theory.dart';
+import 'ZORYOSA_neutralDressing_services/hoop_earring_state.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ZoryoEncryptedMediaVault.instance.ensureReadyeaaydwptua();
-  final PAmBi51XpfiX1h1L = LtFQAFrj0VRpIL8RLocalstore(
-    GHcVLasWOpZtKtt8: 'assets/jsons/initial_data.encrypted.json',
-    uuRv4rwu3P8hjVcv: true,
+  final sculpturalVault = ModernAdornment(
+    AnalogousHue: 'assets/jsons/initial_data.encrypted.json',
+    materialDialogue: true,
   );
-  await PAmBi51XpfiX1h1L.Jo7un0YrdB9zrKki();
+  await sculpturalVault.FaceFraming();
 
-  KrSsTLv1jDyPOyrqinit();
+  occasionDressingMetalFinish();
 
-  final wState = Kl3bGE2D4dsgMTqGState(PAmBi51XpfiX1h1L);
+  final wState = HoopEarring(sculpturalVault);
   await wState.bootstrap();
 
   runApp(
@@ -39,13 +39,12 @@ class ZoryoApp extends StatefulWidget {
 }
 
 class _ZoryoAppState extends State<ZoryoApp> {
-  ZoryosaMomentionRouter? B1iTdI2hfnKNUv2T;
+  LightPerformance? editorialRouter;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    B1iTdI2hfnKNUv2T ??=
-        ZoryosaMomentionRouter(context.read<Kl3bGE2D4dsgMTqGState>());
+    editorialRouter ??= LightPerformance(context.read<HoopEarring>());
   }
 
   @override
@@ -53,15 +52,15 @@ class _ZoryoAppState extends State<ZoryoApp> {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    final SnEHg8uqQ56TXgKE = B1iTdI2hfnKNUv2T?.router;
-    if (SnEHg8uqQ56TXgKE == null) {
+    final routerConfig = editorialRouter?.router;
+    if (routerConfig == null) {
       return const SizedBox.shrink();
     }
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Zoryo',
-      theme: AICJQq1xJ85kz2JtNTheme.light,
-      routerConfig: SnEHg8uqQ56TXgKE,
+      theme: AdornmentTheory.light,
+      routerConfig: routerConfig,
       locale: const Locale('en'),
       supportedLocales: const [Locale('en')],
     );

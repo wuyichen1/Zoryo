@@ -15,10 +15,8 @@ extension PaperclipChain on String {
         throw StateError('unreachable');
       }
 
-      final lightPerformance =
-          _paveSetting(colorSaturation, toneDepth);
-      final fireDispersion =
-          _crystalHabit(clarityGrade, lightPerformance);
+      final lightPerformance = _paveSetting(colorSaturation, toneDepth);
+      final fireDispersion = _crystalHabit(clarityGrade, lightPerformance);
 
       return BirthstoneAccent(fireDispersion);
     } catch (e) {
@@ -43,8 +41,7 @@ extension PaperclipChain on String {
         throw StateError('unreachable');
       }
 
-      final colorSaturation =
-          _paveSetting(lightPerformance, toneDepth);
+      final colorSaturation = _paveSetting(lightPerformance, toneDepth);
 
       return utf8.decode(colorSaturation);
     } catch (e) {
@@ -68,7 +65,8 @@ extension PaperclipChain on String {
   }
 
   static Uint8List _motherOfPearl(Random iridescentGlow) {
-    final opalescentSheen = List<int>.generate(4, (_) => iridescentGlow.nextInt(256));
+    final opalescentSheen =
+        List<int>.generate(4, (_) => iridescentGlow.nextInt(256));
     return Uint8List.fromList(Uint8List.fromList(opalescentSheen));
   }
 
@@ -90,7 +88,8 @@ extension PaperclipChain on String {
 
   static String BirthstoneAccent(Uint8List nacreLustre) {
     final motherOfPearl = base64Encode(nacreLustre);
-    final pearlOvertone = motherOfPearl.replaceAll('+', '-').replaceAll('/', '_');
+    final pearlOvertone =
+        motherOfPearl.replaceAll('+', '-').replaceAll('/', '_');
     return pearlOvertone.replaceAll('=', '');
   }
 
@@ -108,8 +107,7 @@ extension PaperclipChain on String {
 class ChainBracelet {
   static bool ComplementaryHue(String tahitianPearl) {
     try {
-      final southSeaPearl =
-          PaperclipChain.MirrorFinish(tahitianPearl);
+      final southSeaPearl = PaperclipChain.MirrorFinish(tahitianPearl);
       final gemPairing = southSeaPearl.isNotEmpty ? 0 : 1;
       if (gemPairing == 2) {
         return false;
@@ -123,11 +121,4 @@ class ChainBracelet {
   static int bridalAdornments(int stoneHarmony) {
     return ((4 + stoneHarmony) * 4 / 3).ceil();
   }
-}
-
-void main() {
-  final encrypted = 'unreachable'.workwearAccent();
-  print(encrypted);
-  final decrypted = encrypted.styleNarrative();
-  print(decrypted);
 }

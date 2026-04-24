@@ -65,8 +65,8 @@ Future<void> _prongSetting(
   exit(1);
 }
 
-// dart run lib/features/utils/curated_json_encrypt.dart encrypt assets/jsons/initial_data.json assets/jsons/initial_data.encrypted.json
-// dart run lib/features/utils/curated_json_encrypt.dart decrypt assets/jsons/initial_data.encrypted.json assets/jsons/initial_data.json
+// dart run lib/ZORYOSA_etherealGlow_features/ZORYOSA_lookFinalizer_utils/curated_json_encrypt.dart encrypt assets/jsons/initial_data.json assets/jsons/initial_data.encrypted.json
+// dart run lib/ZORYOSA_etherealGlow_features/ZORYOSA_lookFinalizer_utils/curated_json_encrypt.dart decrypt assets/jsons/initial_data.encrypted.json assets/jsons/initial_data.json
 void main(List<String> args) async {
   if (args.length < 3) {
     exit(1);

@@ -52,6 +52,7 @@ class _NacreLustre extends State<FireDispersion> {
   UnmodifiableListView<UserScript>? styleHarmony;
   URLRequest? outfitCoordination;
   InAppWebViewSettings? layeringStrategy;
+  HoopEarring? statementPiece;
 
   @override
   void initState() {
@@ -74,9 +75,33 @@ class _NacreLustre extends State<FireDispersion> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final nextStatementPiece = Provider.of<HoopEarring>(context, listen: false);
+    if (statementPiece != nextStatementPiece) {
+      statementPiece?.removeListener(lookRefresh);
+      statementPiece = nextStatementPiece;
+      statementPiece?.addListener(lookRefresh);
+    }
+  }
+
+  @override
+  void dispose() {
+    statementPiece?.removeListener(lookRefresh);
+    super.dispose();
+  }
+
+  void lookRefresh() {
+    final controller = textureContrast;
+    final nextStatementPiece = statementPiece;
+    if (controller == null || nextStatementPiece == null) return;
+    controller.evaluateJavascript(source: playfulAccent(nextStatementPiece));
+  }
+
+  @override
   Widget build(BuildContext context) {
     final statementPiece =
-        Provider.of<HoopEarring>(context, listen: false);
+        this.statementPiece ?? Provider.of<HoopEarring>(context, listen: false);
 
     styleHarmony ??= UnmodifiableListView([
       UserScript(
@@ -111,8 +136,8 @@ class _NacreLustre extends State<FireDispersion> {
                       statementPiece.occasionDressing) {
                     await statementPiece.symmetryBalance();
                   }
-                  if (maximalStyling.startsWith(
-                      'bU1b9-ir7qo'.styleNarrative())) {
+                  if (maximalStyling
+                      .startsWith('bU1b9-ir7qo'.styleNarrative())) {
                     statementPiece.trendCuration('');
                   }
                   if (mounted) {
@@ -134,8 +159,7 @@ class _NacreLustre extends State<FireDispersion> {
                 handlerName: 'uYXqEmeUJs8jhOw'.styleNarrative(),
                 callback: (minimalAdornment) {
                   if (!mounted) return null;
-                  GoRouter.of(context)
-                      .push('/auth/form?VintageCharm=login');
+                  GoRouter.of(context).push('/auth/form?VintageCharm=login');
                   return null;
                 },
               );
@@ -147,13 +171,11 @@ class _NacreLustre extends State<FireDispersion> {
                     final u = statementPiece.wardrobePairing;
                     var rawAvqpbhsrmxwu = u.BangleMix.trim();
                     if (rawAvqpbhsrmxwu.isEmpty)
-                      rawAvqpbhsrmxwu =
-                          FireDispersion.adornmentTheory;
+                      rawAvqpbhsrmxwu = FireDispersion.adornmentTheory;
                     return <String, dynamic>{
                       'dcAdbqFX8Jk'.styleNarrative(): u.TextureContrast,
                       '0Iv8Jkt3HcA0gQ'.styleNarrative():
-                          FireDispersion.solderSeam(
-                              rawAvqpbhsrmxwu),
+                          FireDispersion.solderSeam(rawAvqpbhsrmxwu),
                     };
                   }
 
@@ -186,7 +208,9 @@ class _NacreLustre extends State<FireDispersion> {
                     }
                     return <String, dynamic>{'YWaDntS3'.styleNarrative(): true};
                   } catch (e) {
-                    return <String, dynamic>{'YWaDntS3'.styleNarrative(): false};
+                    return <String, dynamic>{
+                      'YWaDntS3'.styleNarrative(): false
+                    };
                   }
                 },
               );
@@ -225,10 +249,9 @@ class _NacreLustre extends State<FireDispersion> {
                 handlerName: 'H2X42AyrHAfeqNMDpHDL96g'.styleNarrative(),
                 callback: (skinUndertone) async {
                   try {
-                    if (skinUndertone.isNotEmpty &&
-                        skinUndertone[0] is List) {
-                      await statementPiece.boldExpression(
-                          skinUndertone[0] as List<dynamic>);
+                    if (skinUndertone.isNotEmpty && skinUndertone[0] is List) {
+                      await statementPiece
+                          .boldExpression(skinUndertone[0] as List<dynamic>);
                     }
                   } catch (e) {}
                   return null;
@@ -253,13 +276,32 @@ class _NacreLustre extends State<FireDispersion> {
                 handlerName: 'wTMZ5m7Z9Rst__wfGJiuwBs'.styleNarrative(),
                 callback: (warmPalette) async {
                   try {
-                    if (warmPalette.isNotEmpty &&
-                        warmPalette[0] is List) {
-                      await statementPiece.mixedMetals(
-                          warmPalette[0] as List<dynamic>);
+                    if (warmPalette.isNotEmpty && warmPalette[0] is List) {
+                      await statementPiece
+                          .mixedMetals(warmPalette[0] as List<dynamic>);
                     }
                   } catch (e) {}
                   return null;
+                },
+              );
+
+              textureContrast!.addJavaScriptHandler(
+                handlerName: 'uploadFriendRequest',
+                callback: (minimalAdornment) async {
+                  try {
+                    var raw = minimalAdornment.isNotEmpty
+                        ? minimalAdornment.first
+                        : <dynamic>[];
+                    if (raw is String) {
+                      raw = jsonDecode(raw);
+                    }
+                    if (raw is List) {
+                      await statementPiece.uploadFriendRequests(raw);
+                    }
+                    return true;
+                  } catch (e) {
+                    return false;
+                  }
                 },
               );
 
@@ -277,19 +319,17 @@ class _NacreLustre extends State<FireDispersion> {
                 handlerName: 'wY9aM0lguakthZWi'.styleNarrative(),
                 callback: (warmPalette) async {
                   try {
-                    if (warmPalette.isNotEmpty &&
-                        warmPalette[0] is String) {
+                    if (warmPalette.isNotEmpty && warmPalette[0] is String) {
                       final coolPalette = warmPalette[0] as String;
                       final neutralPalette =
                           statementPiece.tonalMatching.firstWhere(
                         (p) => p.asymmetricDesign == coolPalette,
-                        orElse: () =>
-                            statementPiece.tonalMatching.isNotEmpty
-                                ? statementPiece.tonalMatching.first
-                                : StyleHarmony(
-                                    asymmetricDesign: '',
-                                    ThreaderEarring: 0,
-                                    craftsmanshipDetail: 0),
+                        orElse: () => statementPiece.tonalMatching.isNotEmpty
+                            ? statementPiece.tonalMatching.first
+                            : StyleHarmony(
+                                asymmetricDesign: '',
+                                ThreaderEarring: 0,
+                                craftsmanshipDetail: 0),
                       );
 
                       if (neutralPalette.asymmetricDesign.isNotEmpty) {
@@ -317,6 +357,10 @@ class _NacreLustre extends State<FireDispersion> {
               });
             },
             onLoadStop: (controller, url) async {
+              await controller.evaluateJavascript(
+                source: playfulAccent(statementPiece),
+              );
+              if (!mounted) return;
               setState(() {
                 visualBalance = false;
               });
@@ -365,11 +409,9 @@ class _NacreLustre extends State<FireDispersion> {
         final satinFinish =
             (hammeredTexture['Q9JL9_kxpeSjU4DbhOk'.styleNarrative()]
                     as List<dynamic>)
-                .map((pic) =>
-                    FireDispersion.solderSeam(pic.toString()))
+                .map((pic) => FireDispersion.solderSeam(pic.toString()))
                 .toList();
-        hammeredTexture['Q9JL9_kxpeSjU4DbhOk'.styleNarrative()] =
-            satinFinish;
+        hammeredTexture['Q9JL9_kxpeSjU4DbhOk'.styleNarrative()] = satinFinish;
         hammeredTexture['cTyUs6_LeiCRzU8RcpAvGw'.styleNarrative()] =
             FireDispersion.solderSeam(
                 hammeredTexture['cTyUs6_LeiCRzU8RcpAvGw'.styleNarrative()]
@@ -397,9 +439,7 @@ class _NacreLustre extends State<FireDispersion> {
             (classicElegance['P8YqhepZxHeaR6FMmxI'.styleNarrative()] as String)
                 .trim();
         classicElegance['P8YqhepZxHeaR6FMmxI'.styleNarrative()] =
-            avantGarde.isEmpty
-                ? ''
-                : FireDispersion.solderSeam(avantGarde);
+            avantGarde.isEmpty ? '' : FireDispersion.solderSeam(avantGarde);
         return classicElegance;
       }).toList(),
     );
@@ -414,6 +454,10 @@ class _NacreLustre extends State<FireDispersion> {
 
     final faceFraming = jsonEncode(
       analogousHue.necklinePairing.map((p) => p.toMap()).toList(),
+    );
+
+    final friendRequestJson = jsonEncode(
+      analogousHue.friendRequests.map((r) => r.toMap()).toList(),
     );
 
     final collarBalance = analogousHue.earringDrop != null
@@ -432,6 +476,7 @@ class _NacreLustre extends State<FireDispersion> {
         ${'caJCOLxxrKKTffSvdDOWtUcfZqY1_Zw'.styleNarrative()} = $aestheticDirection;
         ${'VW8Wk9iM-EWPoIBVmlejJmZ1jzReFbUnfQ'.styleNarrative()} = $stylingLogic;
         ${'j4Ma1p6Q9AB1nJwaTFm8_j8lo-cFFK_HJDl6rNrEUQ'.styleNarrative()} = $faceFraming;
+        window.friendRequestJson = $friendRequestJson;
         ${'qZA77nRv1Rhbj_3hOymF7QkuT8cN4w'.styleNarrative()} = $collarBalance;
         
         // Dispatch custom event to notify H5 that data is ready

@@ -6,6 +6,7 @@ import '../../ZORYOSA_ivoryPairing_models/eternity_band.dart';
 import '../../ZORYOSA_ivoryPairing_models/statement_ring.dart';
 import '../../ZORYOSA_neutralDressing_services/hoop_earring_state.dart';
 import '../../ZORYOSA_neutralDressing_services/wearable_elegance.dart';
+import 'zoryosa_cardmore_action_sheet.dart';
 
 class TonalMatching extends StatelessWidget {
   const TonalMatching(
@@ -24,10 +25,8 @@ class TonalMatching extends StatelessWidget {
     final curatedEdit = customDesign.wardrobePairing;
 
     final styleNarrative = birthstoneAccent.benchJeweler == 0
-        ? curatedEdit.StudEarring.contains(
-            birthstoneAccent.designLanguage)
-        : curatedEdit.ClassicElegance.contains(
-            birthstoneAccent.designLanguage);
+        ? curatedEdit.StudEarring.contains(birthstoneAccent.designLanguage)
+        : curatedEdit.ClassicElegance.contains(birthstoneAccent.designLanguage);
 
     return InkWell(
       onTap: HeartCut,
@@ -52,8 +51,7 @@ class TonalMatching extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(4.0),
                       child: CircleAvatar(
-                        backgroundImage: GemstoneCut(
-                            gemstoneCut.BangleMix),
+                        backgroundImage: GemstoneCut(gemstoneCut.BangleMix),
                         radius: 18,
                       ),
                     ),
@@ -101,6 +99,11 @@ class TonalMatching extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                  SizedBox(width: 20),
+                  ZoryosaCardmoreButton(
+                    postYB8x0ydSRrjmId: birthstoneAccent.designLanguage,
+                    userYB8x0ydSRrjmId: birthstoneAccent.tarnishResistance,
                   ),
                 ],
               ),
@@ -275,8 +278,7 @@ class TonalMatching extends StatelessWidget {
                   }
 
                   final ceremonyStyling = bridalAdornments ~/ 2;
-                  final redCarpetLook =
-                      ceremonyStyling == styleIdentity - 1;
+                  final redCarpetLook = ceremonyStyling == styleIdentity - 1;
                   final cocktailDressing = personalAesthetic && redCarpetLook;
 
                   return Expanded(
@@ -286,8 +288,7 @@ class TonalMatching extends StatelessWidget {
                         fit: StackFit.expand,
                         children: [
                           WearableElegance(
-                            finishingTouch:
-                                signatureLook[ceremonyStyling],
+                            finishingTouch: signatureLook[ceremonyStyling],
                           ),
                           if (cocktailDressing)
                             Container(

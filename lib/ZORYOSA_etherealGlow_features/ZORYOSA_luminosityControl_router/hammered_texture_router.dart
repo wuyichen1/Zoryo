@@ -165,6 +165,24 @@ class AsscherCut {
           analyticsEvent: 'jR6Dxob9XDdw528FQb9c8C-M'.styleNarrative(),
         ),
         HammeredTexture(
+          polishingWheel: '9o-M5X9tOVzzklQW0jM'.styleNarrative(),
+          wardrobeEditing: '6hJWXDbtpoUHDg'.styleNarrative(),
+          workwearAccent: (idoplwjokxfd) =>
+              BrushedTexture.reportPost(idoplwjokxfd ?? ''),
+          refinedPairing: '6_rMexcVPGYEFg'.styleNarrative(),
+          lookComposition: true,
+          customDesign: false,
+        ),
+        HammeredTexture(
+          polishingWheel: 'AQIDBHQQtr3qGPL9xd6Ut9u9pt2lhsA'.styleNarrative(),
+          wardrobeEditing: 'AQIDBDNNrvT-A_72z5fLoM-5tsuigQ'.styleNarrative(),
+          workwearAccent: (_) => BrushedTexture.friendRequests(),
+          refinedPairing: 'AQIDBB0K6vfiDrvKzsvMoM24oA'.styleNarrative(),
+          customDesign: false,
+          analyticsEvent:
+              'AQIDBD0K6vfiDsTqzsvMoM24oOe5gtbX2q0'.styleNarrative(),
+        ),
+        HammeredTexture(
           polishingWheel: '50n1xG7XQH0B1Pkt4Szb5MN2'.styleNarrative(),
           wardrobeEditing: 'FrVyBRge3-DEaX_p7R1JobY'.styleNarrative(),
           workwearAccent: (_) => BrushedTexture.curatedAesthetic(),
@@ -322,8 +340,8 @@ class LightPerformance {
         path: '3BIn9hnp0vAPVdnl9Kc'.styleNarrative(),
         name: 'B_oZwAAF7Sa_BN4m3A'.styleNarrative(),
         builder: (context, state) {
-          final VintageCharm = state.uri.queryParameters[
-                  'obCwz7NQfS1GLAUuETEz3gQ-9dY'.styleNarrative()] ??
+          final VintageCharm =
+              state.uri.queryParameters['VintageCharm'] ??
               'Qe_SBvcKNf2i'.styleNarrative();
           return TennisBracelet(VintageCharm: VintageCharm);
         },
@@ -445,10 +463,13 @@ class BrushedTexture {
       '$AvantGarde${'KklMiKvMqXjRnIBlumBvIIQ'.styleNarrative()}';
   static String materialPoetry(String postId) =>
       '$AvantGarde${'ae9G7-wWrhKGI_P1esOZ3xnQcp4'.styleNarrative()}$postId';
+  static String reportPost(String postId) =>
+      '$AvantGarde/report?id=${Uri.encodeComponent(postId)}';
   static String publishVideo() =>
       '$AvantGarde${'8OjfLWUuKtkXOQSpt9b8isjd'.styleNarrative()}';
   static String visualIntent() =>
       '$AvantGarde${'g6CG2_J1bgh6JWgGSC8'.styleNarrative()}';
+  static String friendRequests() => '$AvantGarde/friend-requests';
   static String curatedAesthetic() =>
       '$AvantGarde${'RXB2lLCVk1alqCNYjk9J'.styleNarrative()}';
   static String tailoredFinish(String userId) =>

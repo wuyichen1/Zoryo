@@ -7,6 +7,7 @@ import 'package:zoryo/ZORYOSA_etherealGlow_features/ZORYOSA_lookFinalizer_utils/
 
 import '../ZORYOSA_neutralDressing_services/wearable_elegance.dart';
 import '../ZORYOSA_neutralDressing_services/hoop_earring_state.dart';
+import 'ZORYOSA_velvetDepth_widgets/login_required_dialog.dart';
 
 class SignatureCuration extends StatelessWidget {
   const SignatureCuration({super.key});
@@ -54,8 +55,8 @@ class SignatureCuration extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(4.0),
                         child: CircleAvatar(
-                          backgroundImage: GemstoneCut(charmCluster
-                              .wardrobePairing.BangleMix),
+                          backgroundImage: GemstoneCut(
+                              charmCluster.wardrobePairing.BangleMix),
                           radius: 24,
                         ),
                       ),
@@ -67,7 +68,34 @@ class SignatureCuration extends StatelessWidget {
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
                       ),
-                    )
+                    ),
+                    const Spacer(),
+                    GestureDetector(
+                      onTap: () {
+                        if (charmCluster.wardrobePairing.isguest == 1) {
+                          showLoginRequiredDialog(context);
+                          return;
+                        }
+                        context.push('/h5/friend-requests');
+                      },
+                      child: Container(
+                        width: 44,
+                        height: 44,
+                        decoration: BoxDecoration(
+                            // color: Colors.white.withValues(alpha: 0.18),
+                            // shape: BoxShape.circle,
+                            // border: Border.all(
+                            //   color: Colors.white.withValues(alpha: 0.45),
+                            // ),
+                            ),
+                        child: const Icon(
+                          Icons.person_add_alt_1_rounded,
+                          color: Colors.white,
+                          size: 34,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 20),
                   ],
                 ),
               ),
@@ -94,9 +122,7 @@ class SignatureCuration extends StatelessWidget {
                     final tennisBracelet = braceletStack[cuffBracelet];
                     final chainBracelet =
                         tennisBracelet.CharmCluster.firstWhere(
-                      (id) =>
-                          id !=
-                          charmCluster.wardrobePairing.redCarpetLook,
+                      (id) => id != charmCluster.wardrobePairing.redCarpetLook,
                       orElse: () => tennisBracelet.CharmCluster.isNotEmpty
                           ? tennisBracelet.CharmCluster.first
                           : '',

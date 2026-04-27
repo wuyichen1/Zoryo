@@ -10,6 +10,7 @@ import 'package:zoryo/ZORYOSA_ivoryPairing_models/statement_ring.dart';
 
 import '../ZORYOSA_neutralDressing_services/hoop_earring_state.dart';
 import '../ZORYOSA_neutralDressing_services/wearable_elegance.dart';
+import 'ZORYOSA_velvetDepth_widgets/zoryosa_cardmore_action_sheet.dart';
 
 class ContrastPairing extends StatelessWidget {
   const ContrastPairing({super.key});
@@ -17,9 +18,8 @@ class ContrastPairing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final studEarring = context.watch<HoopEarring>();
-    final hoopEarring = studEarring.brushedTexture
-        .where((p) => p.benchJeweler == 1)
-        .toList();
+    final hoopEarring =
+        studEarring.brushedTexture.where((p) => p.benchJeweler == 1).toList();
     final huggieStyle = 1 + hoopEarring.length;
 
     return Scaffold(
@@ -30,8 +30,7 @@ class ContrastPairing extends StatelessWidget {
             height: 136,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: zoryoResolvedImageProvider(
-                    'T6RnpSSbVbCaZN78.png'),
+                image: zoryoResolvedImageProvider('T6RnpSSbVbCaZN78.png'),
                 fit: BoxFit.fill,
               ),
             ),
@@ -64,13 +63,11 @@ class ContrastPairing extends StatelessWidget {
                   if (chandelierEarring == 0) {
                     return CuffBracelet();
                   } else {
-                    final earCrawler =
-                        hoopEarring[chandelierEarring - 1];
-                    final earClimber = studEarring.StylingLogic(
-                        earCrawler.tarnishResistance);
+                    final earCrawler = hoopEarring[chandelierEarring - 1];
+                    final earClimber =
+                        studEarring.StylingLogic(earCrawler.tarnishResistance);
                     return ColorSaturation(
-                        threaderEarring: earCrawler,
-                        earCuff: earClimber);
+                        threaderEarring: earCrawler, earCuff: earClimber);
                   }
                 },
               ),
@@ -165,8 +162,8 @@ class ColorSaturation extends StatelessWidget {
     final cartilageAccent = context.watch<HoopEarring>();
     final neckMess = cartilageAccent.wardrobePairing;
 
-    final chainLayering = neckMess.ClassicElegance.contains(
-        threaderEarring.designLanguage);
+    final chainLayering =
+        neckMess.ClassicElegance.contains(threaderEarring.designLanguage);
 
     return GestureDetector(
       onTap: () {
@@ -198,6 +195,15 @@ class ColorSaturation extends StatelessWidget {
                             size: 48,
                           ),
                         ),
+                        Positioned(
+                          top: 8,
+                          right: 8,
+                          child: ZoryosaCardmoreButton(
+                            postYB8x0ydSRrjmId: threaderEarring.designLanguage,
+                            userYB8x0ydSRrjmId:
+                                threaderEarring.tarnishResistance,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -218,8 +224,7 @@ class ColorSaturation extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: CircleAvatar(
-                        backgroundImage:
-                            GemstoneCut(earCuff.BangleMix),
+                        backgroundImage: GemstoneCut(earCuff.BangleMix),
                         radius: 14,
                       ),
                     ),

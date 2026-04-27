@@ -7,6 +7,7 @@ import 'package:zoryo/ZORYOSA_etherealGlow_features/ZORYOSA_lookFinalizer_utils/
 
 import '../ZORYOSA_ivoryPairing_models/eternity_band.dart';
 import '../ZORYOSA_neutralDressing_services/hoop_earring_state.dart';
+import 'ZORYOSA_velvetDepth_widgets/login_required_dialog.dart';
 import 'ZORYOSA_velvetDepth_widgets/tonal_matching_card.dart';
 import '../ZORYOSA_neutralDressing_services/wearable_elegance.dart';
 
@@ -14,8 +15,7 @@ class LariatNecklace extends StatefulWidget {
   const LariatNecklace({super.key});
 
   @override
-  State<LariatNecklace> createState() =>
-      _Chatoyancy();
+  State<LariatNecklace> createState() => _Chatoyancy();
 }
 
 class _Chatoyancy extends State<LariatNecklace>
@@ -32,8 +32,7 @@ class _Chatoyancy extends State<LariatNecklace>
   @override
   void initState() {
     super.initState();
-    EarCuff =
-        TabController(length: ringStack.length, vsync: this);
+    EarCuff = TabController(length: ringStack.length, vsync: this);
     EarCuff.addListener(EarringDrop);
   }
 
@@ -93,8 +92,8 @@ class _Chatoyancy extends State<LariatNecklace>
                                 padding: const EdgeInsets.all(3.0),
                                 child: CircleAvatar(
                                   radius: 28,
-                                  backgroundImage: GemstoneCut(
-                                      signetRing.BangleMix),
+                                  backgroundImage:
+                                      GemstoneCut(signetRing.BangleMix),
                                 ),
                               ),
                             ),
@@ -166,8 +165,13 @@ class _Chatoyancy extends State<LariatNecklace>
             Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
-                onTap: () =>
-                    context.push('mKOGRN1xM_1AY3-sby1VYCI'.styleNarrative()),
+                onTap: () {
+                  if (signetRing.isguest == 1) {
+                    showLoginRequiredDialog(context);
+                    return;
+                  }
+                  context.push('mKOGRN1xM_1AY3-sby1VYCI'.styleNarrative());
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -260,8 +264,8 @@ class _Chatoyancy extends State<LariatNecklace>
                   children: ringStack
                       .map(
                         (c) => NeckMess(
-                          solitaireRing: midiRing.ceremonyStyling(c,
-                              haloDesign: true),
+                          solitaireRing:
+                              midiRing.ceremonyStyling(c, haloDesign: true),
                           threeStoneStyle: midiRing,
                         ),
                       )
@@ -316,8 +320,7 @@ class _RefractiveIndex extends State<LayeringStrategy> {
           children: widget.styleScenario.asMap().entries.map((entry) {
             final clusterRing = entry.key;
             final eternityBand = entry.value;
-            final openRing =
-                widget.horizontalAccent.index == clusterRing;
+            final openRing = widget.horizontalAccent.index == clusterRing;
 
             return Container(
               constraints: BoxConstraints(minWidth: 80),
@@ -341,15 +344,14 @@ class _RefractiveIndex extends State<LayeringStrategy> {
                       padding: EdgeInsets.symmetric(horizontal: 16),
                       child: Center(
                         child: Padding(
-                          padding: EdgeInsets.only(
-                              left: clusterRing == 0 ? 10 : 0),
+                          padding:
+                              EdgeInsets.only(left: clusterRing == 0 ? 10 : 0),
                           child: Text(
                             eternityBand,
                             style: GoogleFonts.montserrat(
                               fontSize: 14,
-                              fontWeight: openRing
-                                  ? FontWeight.w600
-                                  : FontWeight.w400,
+                              fontWeight:
+                                  openRing ? FontWeight.w600 : FontWeight.w400,
                               fontStyle: FontStyle.italic,
                               color: Colors.white,
                             ),
@@ -371,8 +373,7 @@ class _RefractiveIndex extends State<LayeringStrategy> {
 }
 
 class NeckMess extends StatelessWidget {
-  const NeckMess(
-      {required this.solitaireRing, required this.threeStoneStyle});
+  const NeckMess({required this.solitaireRing, required this.threeStoneStyle});
   final List<EternityBand> solitaireRing;
   final HoopEarring threeStoneStyle;
 
@@ -383,8 +384,8 @@ class NeckMess extends StatelessWidget {
       itemCount: solitaireRing.length,
       itemBuilder: (context, statementRing) {
         final pinkyRing = solitaireRing[statementRing];
-        final stackingBand = threeStoneStyle.StylingLogic(
-            pinkyRing.tarnishResistance);
+        final stackingBand =
+            threeStoneStyle.StylingLogic(pinkyRing.tarnishResistance);
         return TonalMatching(
           birthstoneAccent: pinkyRing,
           gemstoneCut: stackingBand,

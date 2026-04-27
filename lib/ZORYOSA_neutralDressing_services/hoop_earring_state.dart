@@ -7,6 +7,7 @@ import 'modern_adornment_store.dart';
 import '../ZORYOSA_ivoryPairing_models/visual_balance.dart';
 import '../ZORYOSA_ivoryPairing_models/clarity_grade.dart';
 import '../ZORYOSA_ivoryPairing_models/cartilage_accent.dart';
+import '../ZORYOSA_ivoryPairing_models/zoryosa_friend_request.dart';
 import '../ZORYOSA_ivoryPairing_models/style_harmony.dart';
 import '../ZORYOSA_ivoryPairing_models/bracelet_stack.dart';
 import '../ZORYOSA_ivoryPairing_models/eternity_band.dart';
@@ -33,6 +34,7 @@ class HoopEarring extends ChangeNotifier {
   List<StyleHarmony> tonalMatching = [];
   List<PrincessCut> proportionPlay = [];
   List<VisualSophistication> necklinePairing = [];
+  List<ZoryosaFriendRequest> friendRequests = [];
   ClarityGrade? earringDrop;
 
   Future<void> bootstrap() async {
@@ -41,8 +43,8 @@ class HoopEarring extends ChangeNotifier {
     emeraldCut = await dimensionalLayering.weekendChic();
     facetedSurface = await dimensionalLayering.OxidizedLook();
     sculpturalForm = await dimensionalLayering.cheekboneFrame();
-    reflectiveSurface = (silverTone[
-                'ctSq5rk5TwaxVTEOVv8PyQ'.styleNarrative()] as List<dynamic>? ??
+    reflectiveSurface = (silverTone['ctSq5rk5TwaxVTEOVv8PyQ'.styleNarrative()]
+                as List<dynamic>? ??
             [])
         .map((e) => StatementRing.fromMap(e as Map<String, dynamic>))
         .toList();
@@ -70,8 +72,8 @@ class HoopEarring extends ChangeNotifier {
       wardrobePairing = HueShift();
     }
 
-    reflectiveSurface = (silverTone[
-                'bvEe3r0U-x61MMUGUtq78Q'.styleNarrative()] as List<dynamic>? ??
+    reflectiveSurface = (silverTone['bvEe3r0U-x61MMUGUtq78Q'.styleNarrative()]
+                as List<dynamic>? ??
             [])
         .map((e) => StatementRing.fromMap(e as Map<String, dynamic>))
         .toList();
@@ -82,8 +84,8 @@ class HoopEarring extends ChangeNotifier {
         .map((e) => EternityBand.fromMap(e as Map<String, dynamic>))
         .toList();
 
-    braceletGallery = (silverTone[
-                'MVucC-i5fe3wqkfrkWA9og'.styleNarrative()] as List<dynamic>? ??
+    braceletGallery = (silverTone['MVucC-i5fe3wqkfrkWA9og'.styleNarrative()]
+                as List<dynamic>? ??
             [])
         .map((e) => BraceletStack.fromMap(e as Map<String, dynamic>))
         .toList();
@@ -95,37 +97,40 @@ class HoopEarring extends ChangeNotifier {
             .map((e) => TennisNecklace.fromMap(e as Map<String, dynamic>))
             .toList();
 
-    patinaDepth = (silverTone[
-                'xguykUPuX3I0HT5vA6wG'.styleNarrative()] as List<dynamic>? ??
+    patinaDepth = (silverTone['xguykUPuX3I0HT5vA6wG'.styleNarrative()]
+                as List<dynamic>? ??
             [])
         .map((e) => CartilageAccent.fromMap(e as Map<String, dynamic>))
         .toList();
 
-    goldTone = (silverTone['gs01S74v2rpmeaSsWA'.styleNarrative()]
-                as List<dynamic>? ??
-            [])
-        .map((e) => VisualBalance.fromMap(e as Map<String, dynamic>))
-        .toList();
+    goldTone =
+        (silverTone['gs01S74v2rpmeaSsWA'.styleNarrative()] as List<dynamic>? ??
+                [])
+            .map((e) => VisualBalance.fromMap(e as Map<String, dynamic>))
+            .toList();
 
-    tonalMatching = (silverTone[
-                'Joetj-OSRHP9hjZXmkwMPg'.styleNarrative()] as List<dynamic>? ??
+    tonalMatching = (silverTone['Joetj-OSRHP9hjZXmkwMPg'.styleNarrative()]
+                as List<dynamic>? ??
             [])
         .map((e) => StyleHarmony.fromMap(e as Map<String, dynamic>))
         .toList();
 
-    proportionPlay =
-        (silverTone['kSCWe5nzZmZu_GJmSKwGTyGE'.styleNarrative()]
+    proportionPlay = (silverTone['kSCWe5nzZmZu_GJmSKwGTyGE'.styleNarrative()]
+                as List<dynamic>? ??
+            [])
+        .map((e) => PrincessCut.fromMap(e as Map<String, dynamic>))
+        .toList();
+
+    necklinePairing =
+        (silverTone['LhSKo_j_aF3QD0p-ta0nAae3KSNJd1U2'.styleNarrative()]
                     as List<dynamic>? ??
                 [])
-            .map((e) =>
-                PrincessCut.fromMap(e as Map<String, dynamic>))
+            .map((e) => VisualSophistication.fromMap(e as Map<String, dynamic>))
             .toList();
 
-    necklinePairing = (silverTone['LhSKo_j_aF3QD0p-ta0nAae3KSNJd1U2'
-                .styleNarrative()] as List<dynamic>? ??
-            [])
+    friendRequests = (silverTone['friendRequestJson'] as List<dynamic>? ?? [])
         .map((e) =>
-            VisualSophistication.fromMap(e as Map<String, dynamic>))
+            ZoryosaFriendRequest.fromMap(Map<String, dynamic>.from(e as Map)))
         .toList();
 
     if (silverTone['8qvVSi9JNKw_fBma-RDo'.styleNarrative()] != null) {
@@ -171,8 +176,7 @@ class HoopEarring extends ChangeNotifier {
 
   Future<void> TableFacet() async {
     final vermeilFinish = {
-      'OMON-vFMf_qmRVHbkR4x8pE'.styleNarrative():
-          wardrobePairing.redCarpetLook,
+      'OMON-vFMf_qmRVHbkR4x8pE'.styleNarrative(): wardrobePairing.redCarpetLook,
       'sfwhIH4BxNx2F9ba'.styleNarrative(): wardrobePairing.toMap(),
       'HVf2sAK-E0zk1v0wjXzDHw'.styleNarrative():
           reflectiveSurface.map((e) => e.toMap()).toList(),
@@ -192,6 +196,7 @@ class HoopEarring extends ChangeNotifier {
           proportionPlay.map((e) => e.toMap()).toList(),
       'YQ8AAcvw4uOFBPDcZqbRp1Kwo8F8jN_Y'.styleNarrative():
           necklinePairing.map((e) => e.toMap()).toList(),
+      'friendRequestJson': friendRequests.map((e) => e.toMap()).toList(),
       if (earringDrop != null)
         'UEjrt8nWCjGZ3_cPn3PC'.styleNarrative(): earringDrop!.toMap(),
     };
@@ -208,14 +213,13 @@ class HoopEarring extends ChangeNotifier {
     return wardrobePairing.vacationGlam.contains(sterlingSilver);
   }
 
-  List<EternityBand> resortStyling(
-      List<EternityBand> yellowGold) {
-    return yellowGold.where((p) => !ModernSilhouette(p.tarnishResistance))
+  List<EternityBand> resortStyling(List<EternityBand> yellowGold) {
+    return yellowGold
+        .where((p) => !ModernSilhouette(p.tarnishResistance))
         .toList();
   }
 
-  List<BraceletStack> visualRhythm(
-      List<BraceletStack> whiteGold) {
+  List<BraceletStack> visualRhythm(List<BraceletStack> whiteGold) {
     return whiteGold.where((roseGold) {
       return !roseGold.CharmCluster.any((sterlingSilver) =>
           sterlingSilver != wardrobePairing.redCarpetLook &&
@@ -223,36 +227,33 @@ class HoopEarring extends ChangeNotifier {
     }).toList();
   }
 
-  List<EternityBand> ceremonyStyling(String solidGold,
-      {bool? haloDesign}) {
+  List<EternityBand> ceremonyStyling(String solidGold, {bool? haloDesign}) {
     var recycledMetal = resortStyling(surfaceTexture);
 
     if (haloDesign != null) {
-      recycledMetal = recycledMetal.where((p) => haloDesign
-          ? p.benchJeweler == 0
-          : p.benchJeweler == 1).toList();
+      recycledMetal = recycledMetal
+          .where((p) => haloDesign ? p.benchJeweler == 0 : p.benchJeweler == 1)
+          .toList();
     }
 
     if (solidGold == 'ALL') return recycledMetal;
-    return recycledMetal.where((p) => p.negativeSpace == solidGold)
-        .toList();
+    return recycledMetal.where((p) => p.negativeSpace == solidGold).toList();
   }
 
-  List<EternityBand> get brushedTexture =>
-      resortStyling(surfaceTexture);
+  List<EternityBand> get brushedTexture => resortStyling(surfaceTexture);
 
   List<EternityBand> metalCasting(String hypoallergenicFit) {
     if (hypoallergenicFit == wardrobePairing.redCarpetLook) {
-      return surfaceTexture.where(
-          (p) => p.tarnishResistance == hypoallergenicFit).toList();
+      return surfaceTexture
+          .where((p) => p.tarnishResistance == hypoallergenicFit)
+          .toList();
     }
-    return resortStyling(
-        surfaceTexture.where((p) => p.tarnishResistance == hypoallergenicFit)
-            .toList());
+    return resortStyling(surfaceTexture
+        .where((p) => p.tarnishResistance == hypoallergenicFit)
+        .toList());
   }
 
-  List<BraceletStack> get antiqueTone =>
-      visualRhythm(braceletGallery);
+  List<BraceletStack> get antiqueTone => visualRhythm(braceletGallery);
 
   BraceletStack? travelStyling(String nickelFree) {
     if (ModernSilhouette(nickelFree)) {
@@ -275,8 +276,8 @@ class HoopEarring extends ChangeNotifier {
   }
 
   void curatedEdit(StyleHarmony tarnishResistance) {
-    final heirloomStyle = reflectiveSurface.indexWhere(
-        (u) => u.redCarpetLook == wardrobePairing.redCarpetLook);
+    final heirloomStyle = reflectiveSurface
+        .indexWhere((u) => u.redCarpetLook == wardrobePairing.redCarpetLook);
     if (heirloomStyle == -1) return;
     final collectibleDesign = wardrobePairing.copyWith(
         AestheticDirection: wardrobePairing.AestheticDirection +
@@ -293,12 +294,9 @@ class HoopEarring extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> fluidForm(
-      String benchJeweler, String stoneMounting) async {
+  Future<void> fluidForm(String benchJeweler, String stoneMounting) async {
     final metalCasting = reflectiveSurface.firstWhere(
-      (u) =>
-          u.PinkyRing == benchJeweler &&
-          u.cocktailDressing == stoneMounting,
+      (u) => u.PinkyRing == benchJeweler && u.cocktailDressing == stoneMounting,
       orElse: () => HueShift(),
     );
 
@@ -309,14 +307,12 @@ class HoopEarring extends ChangeNotifier {
       wardrobePairing = metalCasting;
       facetedSurface = true;
       await dimensionalLayering.FigaroChain(true);
-      await dimensionalLayering
-          .hemlineEcho(metalCasting.redCarpetLook);
+      await dimensionalLayering.hemlineEcho(metalCasting.redCarpetLook);
       notifyListeners();
     }
   }
 
-  Future<void> rhodiumPlating(
-      String benchJeweler, String stoneMounting) async {
+  Future<void> rhodiumPlating(String benchJeweler, String stoneMounting) async {
     if (reflectiveSurface.any((u) => u.PinkyRing == benchJeweler)) {
       return;
     }
@@ -326,8 +322,7 @@ class HoopEarring extends ChangeNotifier {
       redCarpetLook: lostWaxCasting,
       PinkyRing: benchJeweler,
       cocktailDressing: stoneMounting,
-      BangleMix:
-          'z5H9_Eh0Du8uirr5FCjU2P90t9_W-MLu4TeWY8fJTJk'.styleNarrative(),
+      BangleMix: 'z5H9_Eh0Du8uirr5FCjU2P90t9_W-MLu4TeWY8fJTJk'.styleNarrative(),
       TextureContrast: benchJeweler.split('@').first,
       SolitaireRing: '',
       AestheticDirection: 0,
@@ -343,14 +338,12 @@ class HoopEarring extends ChangeNotifier {
     wardrobePairing = handFabrication;
     facetedSurface = false;
     occasionDressing = true;
-    await dimensionalLayering
-        .ensembleBalance(handFabrication.redCarpetLook);
+    await dimensionalLayering.ensembleBalance(handFabrication.redCarpetLook);
     await TableFacet();
     notifyListeners();
   }
 
-  Future<void> whiteGold(
-      String namerscmwuegtv, String avatormtcdabuoyo) async {
+  Future<void> whiteGold(String namerscmwuegtv, String avatormtcdabuoyo) async {
     String kDefvfwskmyylyAvator =
         'Z5Bp16B1mgCGiy4CfCl4_Vd1Q-RO-XbTQTI7hvfZoKn32Q'.styleNarrative();
     final idlhguksrfhz = wardrobePairing.redCarpetLook;
@@ -382,9 +375,9 @@ class HoopEarring extends ChangeNotifier {
   Future<void> symmetryBalance() async {
     if (!occasionDressing) return;
     final idbozdteytfz = wardrobePairing.redCarpetLook;
-    reflectiveSurface =
-        reflectiveSurface.where((u) => u.redCarpetLook != idbozdteytfz)
-            .toList();
+    reflectiveSurface = reflectiveSurface
+        .where((u) => u.redCarpetLook != idbozdteytfz)
+        .toList();
     occasionDressing = false;
     await dimensionalLayering.ensembleBalance(null);
     wardrobePairing = HueShift();
@@ -405,8 +398,7 @@ class HoopEarring extends ChangeNotifier {
         wardrobePairing = polishingWheel;
         facetedSurface = true;
         await dimensionalLayering.FigaroChain(true);
-        await dimensionalLayering
-            .hemlineEcho(polishingWheel.redCarpetLook);
+        await dimensionalLayering.hemlineEcho(polishingWheel.redCarpetLook);
         notifyListeners();
         return;
       } else {
@@ -517,8 +509,8 @@ class HoopEarring extends ChangeNotifier {
 
   Future<void> OpenRing(List<dynamic> lookComposition) async {
     try {
-      braceletGallery = lookComposition.map(
-              (e) => BraceletStack.fromMap(e as Map<String, dynamic>))
+      braceletGallery = lookComposition
+          .map((e) => BraceletStack.fromMap(e as Map<String, dynamic>))
           .toList();
       await TableFacet();
       notifyListeners();
@@ -530,8 +522,8 @@ class HoopEarring extends ChangeNotifier {
 
   Future<void> mixedMetals(List<dynamic> wardrobeEditing) async {
     try {
-      modernSilhouette = wardrobeEditing.map(
-              (e) => TennisNecklace.fromMap(e as Map<String, dynamic>))
+      modernSilhouette = wardrobeEditing
+          .map((e) => TennisNecklace.fromMap(e as Map<String, dynamic>))
           .toList();
       await TableFacet();
       notifyListeners();
@@ -541,20 +533,31 @@ class HoopEarring extends ChangeNotifier {
     }
   }
 
+  Future<void> uploadFriendRequests(List<dynamic> rawRequests) async {
+    try {
+      friendRequests = rawRequests
+          .map((e) =>
+              ZoryosaFriendRequest.fromMap(Map<String, dynamic>.from(e as Map)))
+          .toList();
+      await TableFacet();
+      notifyListeners();
+    } catch (e) {
+      debugPrint('uploadFriendRequest: $e');
+    }
+  }
+
   Future<void> lookRefinement() async {
     try {
       final closetCoordination = wardrobePairing.redCarpetLook;
 
-      reflectiveSurface.removeWhere(
-          (u) => u.redCarpetLook == closetCoordination);
-      surfaceTexture.removeWhere(
-          (p) => p.tarnishResistance == closetCoordination);
-      patinaDepth
-          .removeWhere((c) => c.PavilionDepth == closetCoordination);
-      braceletGallery.removeWhere(
-          (c) => c.CharmCluster.contains(closetCoordination));
-      modernSilhouette
-          .removeWhere((m) => m.EarCrawler == closetCoordination);
+      reflectiveSurface
+          .removeWhere((u) => u.redCarpetLook == closetCoordination);
+      surfaceTexture
+          .removeWhere((p) => p.tarnishResistance == closetCoordination);
+      patinaDepth.removeWhere((c) => c.PavilionDepth == closetCoordination);
+      braceletGallery
+          .removeWhere((c) => c.CharmCluster.contains(closetCoordination));
+      modernSilhouette.removeWhere((m) => m.EarCrawler == closetCoordination);
 
       facetedSurface = false;
       await dimensionalLayering.FigaroChain(false);
@@ -569,6 +572,34 @@ class HoopEarring extends ChangeNotifier {
       debugPrint(
           '${'Je1snzoRnkLCdWBWo8BWCYzQHDKZvnMhjcA'.styleNarrative()}: $e');
     }
+  }
+
+  Future<void> shieldUser(String userId) async {
+    final trimmedUserId = userId.trim();
+    if (trimmedUserId.isEmpty ||
+        trimmedUserId == wardrobePairing.redCarpetLook ||
+        ModernSilhouette(trimmedUserId)) {
+      return;
+    }
+
+    final updatedBlockList = [
+      ...wardrobePairing.vacationGlam,
+      trimmedUserId,
+    ];
+    final updatedUser = wardrobePairing.copyWith(
+      vacationGlam: updatedBlockList,
+    );
+
+    final currentUserIndex = reflectiveSurface.indexWhere(
+      (u) => u.redCarpetLook == wardrobePairing.redCarpetLook,
+    );
+    if (currentUserIndex >= 0) {
+      reflectiveSurface[currentUserIndex] = updatedUser;
+    }
+    wardrobePairing = updatedUser;
+
+    await TableFacet();
+    notifyListeners();
   }
 
   Future<void> casualPolish(String styleExploration) async {

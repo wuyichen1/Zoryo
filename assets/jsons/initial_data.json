@@ -1,0 +1,404 @@
+{
+  "currentUserId": "u1",
+  "userJson": {
+    "userId": "u1",
+    "email": "zoryo@gmail.com",
+    "password": "123456",
+    "avator": "assets/images/9vTQmShMo404vaqU1.jpg",
+    "name": "Henry",
+    "about": "Life is a journey, embrace it.",
+    "coins": 0,
+    "isguest": 0,
+    "follow": ["u2"],
+    "fans": ["u2", "u3"],
+    "blockList": [],
+    "picPostLikeIds": ["p1", "p4"],
+    "videoPostLikeIds": ["p2"]
+  },
+  "userListJson": [
+    {
+      "userId": "u1",
+      "email": "zoryo@gmail.com",
+      "password": "123456",
+      "avator": "assets/images/9vTQmShMo404vaqU1.jpg",
+      "name": "Henry",
+      "about": "Light up your daily life with details",
+      "coins": 0,
+      "isguest": 0,
+      "follow": ["u2"],
+      "fans": ["u2", "u3"],
+      "blockList": [],
+      "picPostLikeIds": ["p1", "p4"],
+      "videoPostLikeIds": ["p2"]
+    },
+    {
+      "userId": "u2",
+      "email": "222@22.com",
+      "password": "222222",
+      "avator": "assets/images/9vTQmShMo404vaqU2.jpg",
+      "name": "Lewis",
+      "about": "My accessories have stories",
+      "coins": 0,
+      "isguest": 0,
+      "follow": ["u1"],
+      "fans": ["u1"],
+      "blockList": [],
+      "picPostLikeIds": ["p1"],
+      "videoPostLikeIds": ["p2", "p3"]
+    },
+    {
+      "userId": "u3",
+      "email": "",
+      "password": "",
+      "avator": "assets/images/9vTQmShMo404vaqU3.jpg",
+      "name": "Carlos",
+      "about": "Clothing requires a bit of ingenuity",
+      "coins": 0,
+      "isguest": 0,
+      "follow": ["u1"],
+      "fans": [],
+      "blockList": [],
+      "picPostLikeIds": ["p4"],
+      "videoPostLikeIds": ["p3"]
+    },
+    {
+      "userId": "u4",
+      "email": "",
+      "password": "",
+      "avator": "assets/images/9vTQmShMo404vaqU4.jpg",
+      "name": "Shirley",
+      "about": "Pearls of old times, chains of new trends",
+      "coins": 0,
+      "isguest": 0,
+      "follow": [],
+      "fans": [],
+      "blockList": [],
+      "picPostLikeIds": ["p4"],
+      "videoPostLikeIds": ["p3"]
+    },
+    {
+      "userId": "u5",
+      "email": "",
+      "password": "",
+      "avator": "assets/images/9vTQmShMo404vaqU5.jpg",
+      "name": "Diana",
+      "about": "Accessories convey today's mood",
+      "coins": 0,
+      "follow": [],
+      "fans": [],
+      "blockList": [],
+      "picPostLikeIds": ["p4"],
+      "videoPostLikeIds": ["p3"]
+    },
+    {
+      "userId": "u6",
+      "email": "",
+      "password": "",
+      "avator": "assets/images/9vTQmShMo404vaqU6.jpg",
+      "name": "Jeanne",
+      "about": "Accessories are an extension of one's attitude towards dressing",
+      "coins": 0,
+      "isguest": 0,
+      "follow": [],
+      "fans": [],
+      "blockList": [],
+      "picPostLikeIds": ["p4"],
+      "videoPostLikeIds": ["p3"]
+    }
+  ],
+  "dynamicJson": [
+    {
+      "dynamicId": "p1",
+      "userId": "u2",
+      "dynamicType": 1,
+      "dynamicDesc": "Easiest way to style rings! ",
+      "dynamicTitleType": 0,
+      "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So1.png"],
+      "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf1.mp4",
+      "dynamicLikeCount": 1200,
+      "dynamicCommentCount": 1
+    },
+    {
+      "dynamicId": "p2",
+      "userId": "u3",
+      "dynamicType": 1,
+      "dynamicDesc": "The Importance of Accessories",
+      "dynamicTitleType": 3,
+      "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So2.png"],
+      "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf2.mp4",
+      "dynamicLikeCount": 139,
+      "dynamicCommentCount": 1
+    },
+    {
+      "dynamicId": "p3",
+      "userId": "u4",
+      "dynamicType": 1,
+      "dynamicDesc": "Accessories make clothing no longer monotonous",
+      "dynamicTitleType": 2,
+      "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So3.png"],
+      "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf3.mp4",
+      "dynamicLikeCount": 820,
+      "dynamicCommentCount": 1
+    },
+    {
+      "dynamicId": "p4",
+      "userId": "u5",
+      "dynamicType": 1,
+      "dynamicDesc": "jewelry layering",
+      "dynamicTitleType": 1,
+      "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So4.png"],
+      "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf4.mp4",
+      "dynamicLikeCount": 650,
+      "dynamicCommentCount": 1
+    },
+    {
+      "dynamicId": "p5",
+      "userId": "u6",
+      "dynamicType": 1,
+      "dynamicDesc": "The art of layering jewelry",
+      "dynamicTitleType": 0,
+      "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So5.png"],
+      "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf5.mp4",
+      "dynamicLikeCount": 225,
+      "dynamicCommentCount": 1
+    },
+    {
+      "dynamicId": "p6",
+      "userId": "u1",
+      "dynamicType": 1,
+      "dynamicDesc": "I haven’t worn necklaces in a while!  I honestly forgot how much I love them!",
+      "dynamicTitleType": 3,
+      "dynamicPic": ["assets/images/gCRFtoaZL4xfI4So6.png"],
+      "dynamicVideo": "assets/videos/ZFiOeG8fJUPzZgrf6.mp4",
+      "dynamicLikeCount": 400,
+      "dynamicCommentCount": 1
+    },
+    {
+      "dynamicId": "p7",
+      "userId": "u4",
+      "dynamicType": 0,
+      "dynamicDesc": "A single pearl pendant necklace, with a low-key and lustrous sheen, immediately fills the atmosphere to the fullest",
+      "dynamicTitleType": 0,
+      "dynamicPic": ["assets/images/K7kxctK0RgCEUQzX11.jpg","assets/images/K7kxctK0RgCEUQzX12.jpg","assets/images/K7kxctK0RgCEUQzX13.jpg","assets/images/K7kxctK0RgCEUQzX14.jpg"],
+      "dynamicVideo": "",
+      "dynamicLikeCount": 1320,
+      "dynamicCommentCount": 1
+    },
+    {
+      "dynamicId": "p8",
+      "userId": "u5",
+      "dynamicType": 0,
+      "dynamicDesc": "Boys don't need many accessories. A plain ring and a necklace are enough. They can be worn for both commuting and casual occasions, showing a low-key and high-quality look!",
+      "dynamicTitleType": 1,
+      "dynamicPic": ["assets/images/K7kxctK0RgCEUQzX21.jpg","assets/images/K7kxctK0RgCEUQzX22.jpg"],
+      "dynamicVideo": "",
+      "dynamicLikeCount": 1309,
+      "dynamicCommentCount": 0
+    },
+    {
+      "dynamicId": "p9",
+      "userId": "u6",
+      "dynamicType": 0,
+      "dynamicDesc": "Gold exudes an air of nobility, while silver is full of coolness!",
+      "dynamicTitleType": 2,
+      "dynamicPic": ["assets/images/K7kxctK0RgCEUQzX31.jpg","assets/images/K7kxctK0RgCEUQzX32.jpg","assets/images/K7kxctK0RgCEUQzX33.jpg"],
+      "dynamicVideo": "",
+      "dynamicLikeCount": 993,
+      "dynamicCommentCount": 0
+    },
+    {
+      "dynamicId": "p10",
+      "userId": "u6",
+      "dynamicType": 0,
+      "dynamicDesc": "A savior for lazy travelers! With a headscarf on, you can stand out even without makeup!",
+      "dynamicTitleType": 3,
+      "dynamicPic": ["assets/images/K7kxctK0RgCEUQzX41.jpg","assets/images/K7kxctK0RgCEUQzX42.jpg","assets/images/K7kxctK0RgCEUQzX43.jpg","assets/images/K7kxctK0RgCEUQzX44.jpg"],
+      "dynamicVideo": "",
+      "dynamicLikeCount": 26,
+      "dynamicCommentCount": 1
+    },
+    {
+      "dynamicId": "p11",
+      "userId": "u6",
+      "dynamicType": 0,
+      "dynamicDesc": "The low-key metal stud earrings and thin bracelet are not eye-catching but give people a sense of refinement.",
+      "dynamicTitleType": 0,
+      "dynamicPic": ["assets/images/K7kxctK0RgCEUQzX51.jpg","assets/images/K7kxctK0RgCEUQzX52.jpg"],
+      "dynamicVideo": "",
+      "dynamicLikeCount": 883,
+      "dynamicCommentCount": 0
+    }
+  ],
+  "commentJson": [
+    {
+      "dynamicId": "p1",
+      "commentId": "c1",
+      "userId": "u2",
+      "content": "a very straight perspective on rings"
+    },
+    {
+      "dynamicId": "p2",
+      "commentId": "c2",
+      "userId": "u3",
+      "content": "It's too trendy."
+    },
+    {
+      "dynamicId": "p3",
+      "commentId": "c3",
+      "userId": "u4",
+      "content": "Beautiful pieces!!!"
+    },
+    {
+      "dynamicId": "p4",
+      "commentId": "c4",
+      "userId": "u5",
+      "content": "omg so cool!!"
+    },
+    {
+      "dynamicId": "p5",
+      "commentId": "c5",
+      "userId": "u6",
+      "content": "Forever in love with this jewelry"
+    },
+    {
+      "dynamicId": "p6",
+      "commentId": "c6",
+      "userId": "u6",
+      "content": "You are my source of fashion inspiration"
+    },
+    {
+      "dynamicId": "p7",
+      "commentId": "c7",
+      "userId": "u6",
+      "content": "Pearl necklaces give people a very gentle feeling"
+    },
+    {
+      "dynamicId": "p10",
+      "commentId": "c8",
+      "userId": "u6",
+      "content": "These headscarves are very unique and great for taking photos."
+    }
+  ],
+  "chatListJson": [
+    {
+      "chatId": "c1",
+      "chatUserIds": ["u1", "u2"],
+      "lastSendContent": "Hello, I am interested in your stuff.",
+      "lastSendTime": "2024-08-01 12:00:00",
+      "unreadMsgCount": 1,
+      "lastSendUserId": "u2"
+    }
+  ],
+  "messageListJson": [
+    {
+      "msgId": "m1",
+      "chatId": "c1",
+      "userId": "u2",
+      "sendContent": "Hello, I am interested in your stuff.",
+      "sendPicUrl": "",
+      "sendTime": "2024-08-01 12:00:00"
+    }
+  ],
+  "friendRequestJson": [
+    {
+      "requestId": "1714363200000_friend_request",
+      "fromUserId": "u3",
+      "toUserId": "u1",
+      "status": "pending",
+      "createTime": "2026-04-29 12:00:00"
+    }
+  ],
+  "blockList": [],
+  "reportListJson": [
+    {
+      "reportContext": "Harassment"
+    },
+    {
+      "reportContext": "Malicious fraud"
+    },
+    {
+      "reportContext": "Pornography"
+    },
+    {
+      "reportContext": "Malicious insults"
+    },
+    {
+      "reportContext": "False Information"
+    }
+  ],
+  "publishImageListJson": [
+    {
+      "name": "Daily Glow",
+      "value": 0
+    },
+    {
+      "name": "Office Polished",
+      "value": 1
+    },
+    {
+      "name": "Travel Vibe",
+      "value": 2
+    },
+    {
+      "name": "Party Shine",
+      "value": 3
+    }
+  ],
+  "coinListJson": [
+    {
+      "key": "xnsyngamrnisdpgh",
+      "cions": 400,
+      "meney": 0.99
+    },
+    {
+      "key": "oavhllqhzyyqlrhu",
+      "cions": 800,
+      "meney": 1.99
+    },
+    {
+      "key": "kyoeiqwylantcmwq",
+      "cions": 2190,
+      "meney": 3.99
+    },
+    {
+      "key": "posmmlgnqdawfmly",
+      "cions": 2450,
+      "meney": 4.99
+    },
+    {
+      "key": "ubcsmpumzzpsezzt",
+      "cions": 3950,
+      "meney": 8.99
+    },
+    {
+      "key": "osbfudddptodnmyv",
+      "cions": 5150,
+      "meney": 9.99
+    },
+    {
+      "key": "hlsvaiffpemytmis",
+      "cions": 5700,
+      "meney": 12.99
+    },
+    {
+      "key": "rrcqnugmmsaczdrx",
+      "cions": 10800,
+      "meney": 19.99
+    },
+    {
+      "key": "sfmrubyparkejfvc",
+      "cions": 29400,
+      "meney": 49.99
+    },
+    {
+      "key": "xsnwdfoqrmqqarei",
+      "cions": 63700,
+      "meney": 99.99
+    }
+  ],
+  "chatBotDesc": {
+    "title": "Zoryo AI",
+    "content": "Hi! I am Zoryo AI, your exclusive accessory matching assistant. No matter what style of styling you want to create, I can customize exclusive plans and share matching techniques for you, making every piece of your jewelry shine brightly. Let's create your own personalized look together!",
+    "points": 200
+  }
+}

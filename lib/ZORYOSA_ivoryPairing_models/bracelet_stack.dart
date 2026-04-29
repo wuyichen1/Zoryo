@@ -45,6 +45,24 @@ class BraceletStack {
       '6w9qSSnkmaMlEmy5wLRFeOG9'.styleNarrative(): BeadedChain,
     };
   }
+
+  BraceletStack copyWith({
+    String? handcraftedDetail,
+    List<String>? CharmCluster,
+    String? dimensionalLayering,
+    String? styleExploration,
+    int? silhouetteEcho,
+    String? BeadedChain,
+  }) {
+    return BraceletStack(
+      handcraftedDetail: handcraftedDetail ?? this.handcraftedDetail,
+      CharmCluster: CharmCluster ?? this.CharmCluster,
+      dimensionalLayering: dimensionalLayering ?? this.dimensionalLayering,
+      styleExploration: styleExploration ?? this.styleExploration,
+      silhouetteEcho: silhouetteEcho ?? this.silhouetteEcho,
+      BeadedChain: BeadedChain ?? this.BeadedChain,
+    );
+  }
 }
 
 class TennisNecklace {

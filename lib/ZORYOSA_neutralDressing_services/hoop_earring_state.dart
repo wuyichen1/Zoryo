@@ -546,6 +546,23 @@ class HoopEarring extends ChangeNotifier {
     }
   }
 
+  Future<void> clearUnreadCountForChat(String chatId) async {
+    final trimmedChatId = chatId.trim();
+    if (trimmedChatId.isEmpty) return;
+
+    final chatIndex = braceletGallery.indexWhere(
+      (chat) => chat.handcraftedDetail == trimmedChatId,
+    );
+    if (chatIndex < 0) return;
+
+    final targetChat = braceletGallery[chatIndex];
+    if (targetChat.silhouetteEcho == 0) return;
+
+    braceletGallery[chatIndex] = targetChat.copyWith(silhouetteEcho: 0);
+    await TableFacet();
+    notifyListeners();
+  }
+
   Future<void> lookRefinement() async {
     try {
       final closetCoordination = wardrobePairing.redCarpetLook;

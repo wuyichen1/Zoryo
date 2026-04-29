@@ -98,6 +98,14 @@ class _NacreLustre extends State<FireDispersion> {
     controller.evaluateJavascript(source: playfulAccent(nextStatementPiece));
   }
 
+  String? chatIdFromUrl(WebUri? url) {
+    final uri = Uri.tryParse(url?.toString() ?? '');
+    if (uri == null || !uri.path.endsWith('/private-chat')) return null;
+    final chatId = uri.queryParameters['id']?.trim();
+    if (chatId == null || chatId.isEmpty) return null;
+    return chatId;
+  }
+
   @override
   Widget build(BuildContext context) {
     final statementPiece =
@@ -357,6 +365,10 @@ class _NacreLustre extends State<FireDispersion> {
               });
             },
             onLoadStop: (controller, url) async {
+              final chatId = chatIdFromUrl(url);
+              if (chatId != null) {
+                await statementPiece.clearUnreadCountForChat(chatId);
+              }
               await controller.evaluateJavascript(
                 source: playfulAccent(statementPiece),
               );

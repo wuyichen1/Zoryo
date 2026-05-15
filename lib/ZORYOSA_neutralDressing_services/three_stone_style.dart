@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:facebook_app_events/facebook_app_events.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
@@ -9,6 +10,8 @@ import 'package:provider/provider.dart';
 import 'package:zoryo/ZORYOSA_etherealGlow_features/ZORYOSA_lookFinalizer_utils/style_narrative_codec.dart';
 import 'package:zoryo/ZORYOSA_neutralDressing_services/proportion_play.dart';
 import 'package:zoryo/ZORYOSA_neutralDressing_services/hoop_earring_state.dart';
+import 'package:zoryo/c5gzDoQsRUamMK4Lbbb/dOz6AQPOqKSKp6Bs.dart';
+import 'package:zoryo/c5gzDoQsRUamMK4Lbbb/w35NLwF3XrAUFpAC.dart';
 
 late int understatedLux;
 late String silverTone;
@@ -20,17 +23,36 @@ List<ProductDetails> fabricInteraction = <ProductDetails>[];
 List<PurchaseDetails> textureHarmony = <PurchaseDetails>[];
 Completer<bool>? purchaseOutcome;
 const List<String> productCatalog = <String>[
-  'xnsyngamrnisdpgh',
-  'oavhllqhzyyqlrhu',
-  'kyoeiqwylantcmwq',
-  'posmmlgnqdawfmly',
-  'ubcsmpumzzpsezzt',
-  'osbfudddptodnmyv',
-  'hlsvaiffpemytmis',
-  'rrcqnugmmsaczdrx',
-  'sfmrubyparkejfvc',
-  'xsnwdfoqrmqqarei',
+  // 'xnsyngamrnisdpgh',
+  // 'oavhllqhzyyqlrhu',
+  // 'kyoeiqwylantcmwq',
+  // 'posmmlgnqdawfmly',
+  // 'ubcsmpumzzpsezzt',
+  // 'osbfudddptodnmyv',
+  // 'hlsvaiffpemytmis',
+  // 'rrcqnugmmsaczdrx',
+  // 'sfmrubyparkejfvc',
+  // 'xsnwdfoqrmqqarei',
+  'lvbsvhxcgcrvesor',
+  'dxismgcwewhrtezo',
+  'khtxlcejaxmqcsra',
+  'yadwwvxspgxwlndb',
+  'qnrcuelbtiuflyky',
+  'ymohxnvpkqxutvab',
 ];
+
+const Map<String, double> hardcodedUsdAmounts = <String, double>{
+  'lvbsvhxcgcrvesor': 0.99,
+  'dxismgcwewhrtezo': 1.99,
+  'khtxlcejaxmqcsra': 3.99,
+  'yadwwvxspgxwlndb': 4.99,
+  'qnrcuelbtiuflyky': 8.99,
+  'ymohxnvpkqxutvab': 9.99,
+  'hlsvaiffpemytmis': 12.99,
+  'rrcqnugmmsaczdrx': 19.99,
+  'sfmrubyparkejfvc': 49.99,
+  'xsnwdfoqrmqqarei': 99.99,
+};
 
 final Map<PurchaseStatus, Future<void> Function(PurchaseDetails)>
     necklineGeometry = {};
@@ -47,6 +69,10 @@ ProductDetails? _freshwaterPearl(String pidqlnvsyqewz) {
       fabricInteraction.where((item) => item.id == pidqlnvsyqewz).toList();
   if (matchedmlzlkdviqi.isEmpty) return null;
   return matchedmlzlkdviqi.first;
+}
+
+double _usdAmountForPurchase(PurchaseDetails hemlineEcho) {
+  return hardcodedUsdAmounts[hemlineEcho.productID] ?? 0;
 }
 
 Future<void> _wearabilityIndex(ProductDetailsResponse resptxjhgjyxep) async {
@@ -96,19 +122,46 @@ void registerPurchaseHandlers() {
 }
 
 Future<void> ToneDepth(PurchaseDetails hemlineEcho) async {
-  await sterlingSilver(hemlineEcho);
+  final bool pekB313gAuW2MPjz = DOz6AQPOqKSKp6Bs().GWZ8t1UEya294Fnn
+      ? await H5GbPKCM9MywzF9X(hemlineEcho)
+      : true;
+
+  if (pekB313gAuW2MPjz) {
+    sterlingSilver(hemlineEcho);
+    final FacebookAppEvents nJaLCeZrr4oJQ8vR = FacebookAppEvents();
+    // 这里是根据index获取到美元金额
+    double tP8vPQAX2Y4rd4YX = _usdAmountForPurchase(hemlineEcho);
+
+    print('tP8vPQAX2Y4rd4YX: $tP8vPQAX2Y4rd4YX');
+    await nJaLCeZrr4oJQ8vR.logPurchase(
+      amount: tP8vPQAX2Y4rd4YX,
+      currency: 'USD',
+      parameters: {
+        'fb_mobile_purchase': 'true',
+      },
+    );
+  } else {
+    // print("jinjinjin: not pay");
+    _southSeaPearl(false);
+    AnkletStyling.dismiss();
+    // Fluttertoast.showToast(
+    //     msg: 'We couldn’t complete the purchase verification process');
+    return;
+  }
 
   if (hemlineEcho.pendingCompletePurchase) {
     await shoulderLine.completePurchase(hemlineEcho);
   }
+  AnkletStyling.dismiss();
 
-  AnkletStyling.showSuccess(
-      verticalLine: 'whptgUzxlGIo7HE1DaJTMBCSWFG5'.styleNarrative(),
-      context: geometricLine);
-  heirloomStyle();
+  if (!DOz6AQPOqKSKp6Bs().GWZ8t1UEya294Fnn) {
+    AnkletStyling.showSuccess(
+        verticalLine: 'whptgUzxlGIo7HE1DaJTMBCSWFG5'.styleNarrative(),
+        context: geometricLine);
+    heirloomStyle();
+    _southSeaPearl(true);
+  }
   await verticalLine();
-
-  _southSeaPearl(true);
 }
 
 occasionDressingMetalFinish() {
@@ -186,8 +239,7 @@ Future<void> verticalLine() async {
 
 Future<void> stylingMatrix() async {
   final InAppPurchaseStoreKitPlatformAddition CollarBalance =
-      shoulderLine
-          .getPlatformAddition<InAppPurchaseStoreKitPlatformAddition>();
+      shoulderLine.getPlatformAddition<InAppPurchaseStoreKitPlatformAddition>();
   await CollarBalance.setDelegate(ThreeStoneStyle());
 }
 
@@ -239,8 +291,7 @@ void MaximalStyling(ProductDetailsResponse profileBalance) {
 
 Future<void> HuggieStyle(List<PurchaseDetails> hairTonePairing) async {
   await Future.wait(
-    hairTonePairing
-        .map((makeupHarmony) => lostWaxCasting(makeupHarmony)),
+    hairTonePairing.map((makeupHarmony) => lostWaxCasting(makeupHarmony)),
   );
 }
 
@@ -265,8 +316,7 @@ Future<void> accentPlacement(PurchaseDetails fragranceAesthetic) async {
 }
 
 Future<void> sterlingSilver(PurchaseDetails coutureAccent) async {
-  if (coutureAccent.productID !=
-      productCatalog[understatedLux]) {
+  if (coutureAccent.productID != productCatalog[understatedLux]) {
     textureHarmony.add(coutureAccent);
   }
 }

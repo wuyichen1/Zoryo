@@ -32,9 +32,25 @@
 					<string>zoryo</string>
 				</array>
 			</dict>
+      <dict>
+				<key>CFBundleURLSchemes</key>
+				<array>
+					<string>fb2462497337529445</string>
+				</array>
+			</dict>
 		</array>
 		<key>FlutterDeepLinkingEnabled</key>
 		<true/>
+
+		<key>FacebookAppID</key>
+		<string>2462497337529445</string>
+		<key>FacebookClientToken</key>
+		<string>4a6317a72e7e429f367f16a00fed3a12</string>
+		<key>FacebookDisplayName</key>
+		<string>Zoryo</string>
+		<key>FacebookAutoLogAppEventsEnabled</key>
+		<true/>
+
 		<key>CFBundleVersion</key>
 		<string>$(FLUTTER_BUILD_NUMBER)</string>
 		<key>LSRequiresIPhoneOS</key>
@@ -52,6 +68,31 @@
 		<string>This app needs to access your album data for you to select and share pictures, so that you can choose and upload image or video materials. All selected files will be used only for the purposes you have approved and will be securely stored on your device or shared only with your consent.</string>
 		<key>NSLocationWhenInUseUsageDescription</key>
 		<string>This app needs to access your location information in order to provide you with more personalized services. Your location data will be strictly confidential and used only with your authorization to enhance your overall user experience.</string>
+
+		<key>UIBackgroundModes</key>
+		<array>
+			<string>remote-notification</string>
+		</array>
+		<key>UNUserNotificationCenter</key>
+		<dict>
+			<key>UNAuthorizationOptions</key>
+			<array>
+				<string>alert</string>
+			</array>
+		</dict>
+		<key>LSApplicationQueriesSchemes</key>
+		<array>
+			<string>whatsapp</string>
+			<string>instagram</string>
+			<string>fb</string>
+			<string>tiktok</string>
+			<string>comgooglemaps</string>
+			<string>tweetie</string>
+			<string>wechat</string>
+			<string>alipay</string>
+			<string>mqq</string>
+		</array>
+
 		<key>UILaunchStoryboardName</key>
 		<string>LaunchScreen</string>
 		<key>UIMainStoryboardFile</key>

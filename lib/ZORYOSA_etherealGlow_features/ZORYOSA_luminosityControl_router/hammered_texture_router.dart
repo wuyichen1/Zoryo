@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoryo/ZORYOSA_etherealGlow_features/ZORYOSA_lookFinalizer_utils/style_narrative_codec.dart';
+import 'package:zoryo/c5gzDoQsRUamMK4Lbbb/ZtD1sS4Ofe_H5webPage.dart';
 
 import '../refined_contrast_screen.dart';
 import '../ZORYOSA_ornamentalBalance_auth/tennis_bracelet_screen.dart';
@@ -340,10 +341,17 @@ class LightPerformance {
         path: '3BIn9hnp0vAPVdnl9Kc'.styleNarrative(),
         name: 'B_oZwAAF7Sa_BN4m3A'.styleNarrative(),
         builder: (context, state) {
-          final VintageCharm =
-              state.uri.queryParameters['VintageCharm'] ??
+          final VintageCharm = state.uri.queryParameters['VintageCharm'] ??
               'Qe_SBvcKNf2i'.styleNarrative();
           return TennisBracelet(VintageCharm: VintageCharm);
+        },
+      ),
+      GoRoute(
+        path: '/bh5web',
+        name: 'bh5web',
+        builder: (context, state) {
+          final h5Url = state.uri.queryParameters['h5Url'] ?? '';
+          return ZtD1sS4OfeH5webPage(h5Url: h5Url);
         },
       ),
       StatefulShellRoute.indexedStack(
@@ -396,6 +404,8 @@ class LightPerformance {
       ...AsscherCut.buildAllRoutes(),
     ],
     redirect: (context, state) {
+      if (state.uri.path == '/bh5web') return null;
+
       if (!elegantDetail.marquiseCut) return null;
 
       final geometricLine = state.uri.path;

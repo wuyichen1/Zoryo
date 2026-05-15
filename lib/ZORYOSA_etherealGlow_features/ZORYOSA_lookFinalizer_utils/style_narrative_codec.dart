@@ -122,10 +122,3 @@ class ChainBracelet {
     return ((4 + stoneHarmony) * 4 / 3).ceil();
   }
 }
-
-void main() {
-  String text1 = "Report".workwearAccent();
-  String text2 = text1.styleNarrative();
-  print(text1);
-  print(text2);
-}

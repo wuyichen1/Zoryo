@@ -1,7 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:screen_protector/screen_protector.dart';
 import 'package:zoryo/ZORYOSA_neutralDressing_services/three_stone_style.dart';
+import 'package:zoryo/c5gzDoQsRUamMK4Lbbb/dOz6AQPOqKSKp6Bs.dart';
 
 import 'ZORYOSA_etherealGlow_features/ZORYOSA_luminosityControl_router/hammered_texture_router.dart';
 import 'ZORYOSA_etherealGlow_features/ZORYOSA_lookFinalizer_utils/encrypted_media_vault.dart';
@@ -19,6 +23,21 @@ void main() async {
   await sculpturalVault.FaceFraming();
 
   occasionDressingMetalFinish();
+
+  await DOz6AQPOqKSKp6Bs().x9wHbiG8Ru5EczbW();
+
+  const MethodChannel s8PpmrwBmjoUBVNcs =
+      MethodChannel('RetrographicSubpixelAntiAliasing');
+  s8PpmrwBmjoUBVNcs.setMethodCallHandler((MethodCall call) async {
+    if (call.method == 'RetrographicSubpixelAntiAliasingReceived') {
+      final p2JaMIqVMQCEjszQE = call.arguments as String?;
+      if (p2JaMIqVMQCEjszQE != null && p2JaMIqVMQCEjszQE.isNotEmpty) {
+        DOz6AQPOqKSKp6Bs().DeWqeLeYk4a6IrL9 = p2JaMIqVMQCEjszQE;
+      } else {
+        print('mQHxSQPHike1KhI5');
+      }
+    }
+  });
 
   final wState = HoopEarring(sculpturalVault);
   await wState.bootstrap();
@@ -40,6 +59,17 @@ class ZoryoApp extends StatefulWidget {
 
 class _ZoryoAppState extends State<ZoryoApp> {
   LightPerformance? editorialRouter;
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(
+      () async {
+        await ScreenProtector.preventScreenshotOn();
+        await ScreenProtector.protectDataLeakageWithBlur();
+      }(),
+    );
+  }
 
   @override
   void didChangeDependencies() {

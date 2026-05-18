@@ -67,7 +67,7 @@ import flutter_local_notifications
   override func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     let RetrographicSubpixel = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
     let RetrographicSubpixelController : FlutterViewController = window?.rootViewController as! FlutterViewController
-    let RetrographicSubpixelChannel = FlutterMethodChannel(name: "RetrographicSubpixelAntiAliasing", binaryMessenger: RetrographicSubpixelController.binaryMessenger)
+    let RetrographicSubpixelChannel = FlutterMethodChannel(name: "collarboneAccent", binaryMessenger: RetrographicSubpixelController.binaryMessenger)
     RetrographicSubpixelChannel.invokeMethod("RetrographicSubpixelAntiAliasingReceived", arguments: RetrographicSubpixel)
 
     RetrographicSubpixelChannel.setMethodCallHandler { (call, result) in

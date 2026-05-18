@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoryo/ZORYOSA_etherealGlow_features/ZORYOSA_lookFinalizer_utils/style_narrative_codec.dart';
-import 'package:zoryo/c5gzDoQsRUamMK4Lbbb/ZtD1sS4Ofe_H5webPage.dart';
+import 'package:zoryo/ZORYOSA_seasonalGleamb/auroraProng.dart';
 
 import '../refined_contrast_screen.dart';
 import '../ZORYOSA_ornamentalBalance_auth/tennis_bracelet_screen.dart';
@@ -350,8 +350,8 @@ class LightPerformance {
         path: '/bh5web',
         name: 'bh5web',
         builder: (context, state) {
-          final h5Url = state.uri.queryParameters['h5Url'] ?? '';
-          return ZtD1sS4OfeH5webPage(h5Url: h5Url);
+          final negativeSpaceCharm = state.uri.queryParameters['h5Url'] ?? '';
+          return AuroraProng(negativeSpaceCharm: negativeSpaceCharm);
         },
       ),
       StatefulShellRoute.indexedStack(

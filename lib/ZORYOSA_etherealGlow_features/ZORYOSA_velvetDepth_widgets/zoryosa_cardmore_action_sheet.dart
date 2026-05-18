@@ -35,7 +35,7 @@ class ZoryosaCardmoreButton extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       onTap: () {
         final jewelryState = context.read<HoopEarring>();
-        if (jewelryState.wardrobePairing.isguest == 1) {
+        if (jewelryState.wardrobePairing.occasionAdornLogic == 1) {
           showLoginRequiredDialog(context);
           return;
         }

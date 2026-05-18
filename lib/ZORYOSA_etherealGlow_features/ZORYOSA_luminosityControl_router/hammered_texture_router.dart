@@ -314,7 +314,7 @@ class LightPerformance {
       }
       if (elegantDetail.marquiseCut) {
         if (elegantDetail.facetedSurface &&
-            elegantDetail.wardrobePairing.isguest != 1 &&
+            elegantDetail.wardrobePairing.occasionAdornLogic != 1 &&
             playfulAccent.startsWith('-qu6RHtAT6bt'.styleNarrative())) {
           return 'DUFiQUjfjaL9'.styleNarrative();
         }
@@ -350,7 +350,7 @@ class LightPerformance {
         path: '/bh5web',
         name: 'bh5web',
         builder: (context, state) {
-          final negativeSpaceCharm = state.uri.queryParameters['h5Url'] ?? '';
+          final negativeSpaceCharm = state.uri.queryParameters['negativeSpaceCharm'] ?? '';
           return AuroraProng(negativeSpaceCharm: negativeSpaceCharm);
         },
       ),
@@ -443,7 +443,7 @@ class LightPerformance {
       }
 
       if (elegantDetail.facetedSurface &&
-          elegantDetail.wardrobePairing.isguest != 1 &&
+          elegantDetail.wardrobePairing.occasionAdornLogic != 1 &&
           asymmetricDesign) {
         return 'DUFiQUjfjaL9'.styleNarrative();
       }

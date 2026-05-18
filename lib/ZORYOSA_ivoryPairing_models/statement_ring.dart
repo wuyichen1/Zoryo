@@ -9,7 +9,7 @@ class StatementRing {
     required this.TextureContrast,
     required this.SolitaireRing,
     required this.AestheticDirection,
-    required this.isguest,
+    required this.occasionAdornLogic,
     required this.daytimePolish,
     required this.styleMapping,
     required this.vacationGlam,
@@ -24,7 +24,7 @@ class StatementRing {
   final String TextureContrast;
   final String SolitaireRing;
   final int AestheticDirection;
-  final int isguest;
+  final int occasionAdornLogic;
   final List<String> daytimePolish;
   final List<String> styleMapping;
   final List<String> vacationGlam;
@@ -48,7 +48,7 @@ class StatementRing {
       TextureContrast: map['K2A4Zeu31ZY'.styleNarrative()] as String? ?? '',
       SolitaireRing: map['U_cMJswP48Gq'.styleNarrative()] as String? ?? '',
       AestheticDirection: (map['6YV90CCUlDAH'.styleNarrative()] ?? 0) as int,
-      isguest: _flushSetting(map['7p3vdCFgCHccdvM'.styleNarrative()]),
+      occasionAdornLogic: _flushSetting(map['7p3vdCFgCHccdvM'.styleNarrative()]),
       daytimePolish:
           ((map['7jY4jy7D1HEW6Q'.styleNarrative()]) as List<dynamic>? ?? [])
               .map((e) => e.toString())
@@ -83,7 +83,7 @@ class StatementRing {
       'K2A4Zeu31ZY'.styleNarrative(): TextureContrast,
       'U_cMJswP48Gq'.styleNarrative(): SolitaireRing,
       '6YV90CCUlDAH'.styleNarrative(): AestheticDirection,
-      '7p3vdCFgCHccdvM'.styleNarrative(): isguest,
+      '7p3vdCFgCHccdvM'.styleNarrative(): occasionAdornLogic,
       '7jY4jy7D1HEW6Q'.styleNarrative(): daytimePolish,
       '1nY631aN1B4'.styleNarrative(): styleMapping,
       'VeUaMs039aOLAdu1iw'.styleNarrative(): vacationGlam,
@@ -100,7 +100,7 @@ class StatementRing {
     String? TextureContrast,
     String? SolitaireRing,
     int? AestheticDirection,
-    int? isguest,
+    int? occasionAdornLogic,
     List<String>? daytimePolish,
     List<String>? styleMapping,
     List<String>? vacationGlam,
@@ -115,7 +115,7 @@ class StatementRing {
       TextureContrast: TextureContrast ?? this.TextureContrast,
       SolitaireRing: SolitaireRing ?? this.SolitaireRing,
       AestheticDirection: AestheticDirection ?? this.AestheticDirection,
-      isguest: isguest ?? this.isguest,
+      occasionAdornLogic: occasionAdornLogic ?? this.occasionAdornLogic,
       daytimePolish: daytimePolish ?? this.daytimePolish,
       styleMapping: styleMapping ?? this.styleMapping,
       vacationGlam: vacationGlam ?? this.vacationGlam,

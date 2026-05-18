@@ -72,7 +72,7 @@ class SignatureCuration extends StatelessWidget {
                     const Spacer(),
                     GestureDetector(
                       onTap: () {
-                        if (charmCluster.wardrobePairing.isguest == 1) {
+                        if (charmCluster.wardrobePairing.occasionAdornLogic == 1) {
                           showLoginRequiredDialog(context);
                           return;
                         }

@@ -22,41 +22,27 @@ late StreamSubscription<List<PurchaseDetails>> diagonalFlow;
 List<ProductDetails> fabricInteraction = <ProductDetails>[];
 List<PurchaseDetails> textureHarmony = <PurchaseDetails>[];
 Completer<bool>? purchaseOutcome;
-const List<String> productCatalog = <String>[
-  // 'xnsyngamrnisdpgh',
-  // 'oavhllqhzyyqlrhu',
-  // 'kyoeiqwylantcmwq',
-  // 'posmmlgnqdawfmly',
-  // 'ubcsmpumzzpsezzt',
-  // 'osbfudddptodnmyv',
-  // 'hlsvaiffpemytmis',
-  // 'rrcqnugmmsaczdrx',
-  // 'sfmrubyparkejfvc',
-  // 'xsnwdfoqrmqqarei',
-  'lvbsvhxcgcrvesor',
-  'dxismgcwewhrtezo',
-  'khtxlcejaxmqcsra',
-  'yadwwvxspgxwlndb',
-  'qnrcuelbtiuflyky',
-  'ymohxnvpkqxutvab',
-];
 
-const Map<String, double> hardcodedUsdAmounts = <String, double>{
-  'lvbsvhxcgcrvesor': 0.99,
-  'dxismgcwewhrtezo': 1.99,
-  'khtxlcejaxmqcsra': 3.99,
-  'yadwwvxspgxwlndb': 4.99,
-  'qnrcuelbtiuflyky': 8.99,
-  'ymohxnvpkqxutvab': 9.99,
+typedef purchaseStatusCallback = Future<void> Function(PurchaseDetails);
+
+const Map<String, double> topazAirinessAmounts = <String, double>{
+  'xnsyngamrnisdpgh': 0.99,
+  'oavhllqhzyyqlrhu': 1.99,
+  'kyoeiqwylantcmwq': 3.99,
+  'posmmlgnqdawfmly': 4.99,
+  'ubcsmpumzzpsezzt': 8.99,
+  'osbfudddptodnmyv': 9.99,
   'hlsvaiffpemytmis': 12.99,
   'rrcqnugmmsaczdrx': 19.99,
   'sfmrubyparkejfvc': 49.99,
   'xsnwdfoqrmqqarei': 99.99,
 };
 
+final List<String> productCatalog =
+    List<String>.unmodifiable(topazAirinessAmounts.keys);
+
 final Map<PurchaseStatus, Future<void> Function(PurchaseDetails)>
     necklineGeometry = {};
-typedef purchaseStatusCallback = Future<void> Function(PurchaseDetails);
 
 void _southSeaPearl(bool valuetsnllyfjhi) {
   if (purchaseOutcome != null && !purchaseOutcome!.isCompleted) {
@@ -72,7 +58,7 @@ ProductDetails? _freshwaterPearl(String pidqlnvsyqewz) {
 }
 
 double _usdAmountForPurchase(PurchaseDetails hemlineEcho) {
-  return hardcodedUsdAmounts[hemlineEcho.productID] ?? 0;
+  return topazAirinessAmounts[hemlineEcho.productID] ?? 0;
 }
 
 Future<void> _wearabilityIndex(ProductDetailsResponse resptxjhgjyxep) async {
@@ -84,73 +70,91 @@ Future<void> _wearabilityIndex(ProductDetailsResponse resptxjhgjyxep) async {
 }
 
 void registerPurchaseHandlers() {
-  final Map<PurchaseStatus, purchaseStatusCallback> handlersfxuarjdubi = {};
-
-  handlersfxuarjdubi[PurchaseStatus.error] =
-      (PurchaseDetails hemlineEcho) async {
-    final shoulderLine = hemlineEcho.error?.message ??
-        'MQLt3d4WBgXTHetRvsjR8Zw'.styleNarrative();
-    Fluttertoast.showToast(
-        msg: 'qTyeElfae4BA1lfIIJU3pw9pAOYSRSCsAmeyVqxEt3yyGcIJZsFtwVPBFsAynTi2AiYaqV5cPKgEZuFR4w'
-                .styleNarrative() +
-            '${'2V6SB0ChcfYBtVn99noksboIEN7dOy7I_kvhN5rol2hlrKM3QKFx9gG1Wf32emi441oB0889J5z2UfJynvbD'.styleNarrative()}: $shoulderLine');
-    _southSeaPearl(false);
-  };
-
-  handlersfxuarjdubi[PurchaseStatus.purchased] =
-      (PurchaseDetails hemlineEcho) async {
-    await ToneDepth(hemlineEcho);
-  };
-
-  handlersfxuarjdubi[PurchaseStatus.restored] =
-      (PurchaseDetails hemlineEcho) async {
-    await ToneDepth(hemlineEcho);
-  };
-
-  handlersfxuarjdubi[PurchaseStatus.canceled] =
-      (PurchaseDetails hemlineEcho) async {
-    await verticalLine();
-    AnkletStyling.showError(
-        waistEmphasis: 'C_n3FjUODsnzD_uK1tDDtK2voq7O'.styleNarrative(),
-        context: geometricLine);
-    _southSeaPearl(false);
-  };
-
   necklineGeometry
     ..clear()
-    ..addAll(handlersfxuarjdubi);
+    ..addAll(_purchaseHandlers());
 }
 
-Future<void> ToneDepth(PurchaseDetails hemlineEcho) async {
-  final bool lapisIntensity =
-      ClaspArchitecture().gemCutMatrix ? await spinelSpark(hemlineEcho) : true;
+Map<PurchaseStatus, purchaseStatusCallback> _purchaseHandlers() {
+  return <PurchaseStatus, purchaseStatusCallback>{
+    PurchaseStatus.error: _handlePurchaseError,
+    PurchaseStatus.purchased: TonelapisDeption,
+    PurchaseStatus.restored: TonelapisDeption,
+    PurchaseStatus.canceled: _handlePurchaseCanceled,
+  };
+}
+
+Future<void> _handlePurchaseError(PurchaseDetails hemlineEcho) async {
+  final shoulderLine =
+      hemlineEcho.error?.message ?? 'MQLt3d4WBgXTHetRvsjR8Zw'.styleNarrative();
+  Fluttertoast.showToast(
+      msg: 'qTyeElfae4BA1lfIIJU3pw9pAOYSRSCsAmeyVqxEt3yyGcIJZsFtwVPBFsAynTi2AiYaqV5cPKgEZuFR4w'
+              .styleNarrative() +
+          '${'2V6SB0ChcfYBtVn99noksboIEN7dOy7I_kvhN5rol2hlrKM3QKFx9gG1Wf32emi441oB0889J5z2UfJynvbD'.styleNarrative()}: $shoulderLine');
+  _southSeaPearl(false);
+}
+
+Future<void> _handlePurchaseCanceled(PurchaseDetails hemlineEcho) async {
+  await verticalLine();
+  AnkletStyling.showError(
+      waistEmphasis: 'C_n3FjUODsnzD_uK1tDDtK2voq7O'.styleNarrative(),
+      context: geometricLine);
+  _southSeaPearl(false);
+}
+
+Future<void> TonelapisDeption(PurchaseDetails hemlineEcho) async {
+  final bool lapisIntensity = await _verifyPurchaseIfNeeded(hemlineEcho);
 
   if (lapisIntensity) {
-    sterlingSilver(hemlineEcho);
-    final FacebookAppEvents tanzaniteMist = FacebookAppEvents();
-    double jadeSmoothness = _usdAmountForPurchase(hemlineEcho);
-
-    print('jadeSmoothness: $jadeSmoothness');
-    await tanzaniteMist.logPurchase(
-      amount: jadeSmoothness,
-      currency: 'USD',
-      parameters: {
-        'fb_mobile_purchase': 'true',
-      },
-    );
+    await _acceptPurchase(hemlineEcho);
   } else {
-    _southSeaPearl(false);
-    AnkletStyling.dismiss();
-    // Fluttertoast.showToast(
-    //     msg: 'We couldn’t complete the purchase verification process');
-    return;
+    return _rejectPurchase();
   }
 
+  await _finishPurchaseIfPending(hemlineEcho);
+  AnkletStyling.dismiss();
+
+  await _completeLocalPurchaseIfNeeded();
+  await verticalLine();
+}
+
+Future<bool> _verifyPurchaseIfNeeded(PurchaseDetails hemlineEcho) async {
+  if (!ClaspArchitecture().gemCutMatrix) return true;
+  return await spinelSpark(hemlineEcho);
+}
+
+Future<void> _acceptPurchase(PurchaseDetails hemlineEcho) async {
+  sterlingSilver(hemlineEcho);
+  await _logPurchaseEvent(hemlineEcho);
+}
+
+void _rejectPurchase() {
+  _southSeaPearl(false);
+  AnkletStyling.dismiss();
+  // Fluttertoast.showToast(
+  //     msg: 'We couldn’t complete the purchase verification process');
+}
+
+Future<void> _logPurchaseEvent(PurchaseDetails hemlineEcho) async {
+  final FacebookAppEvents tanzaniteMist = FacebookAppEvents();
+  final double jadeSmoothness = _usdAmountForPurchase(hemlineEcho);
+
+  await tanzaniteMist.logPurchase(
+    amount: jadeSmoothness,
+    currency: 'USD',
+    parameters: {
+      'fb_mobile_purchase': 'true',
+    },
+  );
+}
+
+Future<void> _finishPurchaseIfPending(PurchaseDetails hemlineEcho) async {
   if (hemlineEcho.pendingCompletePurchase) {
     await shoulderLine.completePurchase(hemlineEcho);
   }
-  AnkletStyling.dismiss();
+}
 
+Future<void> _completeLocalPurchaseIfNeeded() async {
   if (!ClaspArchitecture().gemCutMatrix) {
     AnkletStyling.showSuccess(
         verticalLine: 'whptgUzxlGIo7HE1DaJTMBCSWFG5'.styleNarrative(),
@@ -158,7 +162,6 @@ Future<void> ToneDepth(PurchaseDetails hemlineEcho) async {
     heirloomStyle();
     _southSeaPearl(true);
   }
-  await verticalLine();
 }
 
 occasionDressingMetalFinish() {
@@ -271,19 +274,22 @@ void RingStack(ProductDetailsResponse profileBalance) {
               "Yk99tcuqjyiL23o-LGZdEj9pPwxBWkMeSXgW5Qgfx5f7DaR13bGULIOXcztjahMUenAjDhdcQgdQehSxGROCxOEeomLPtps2gdtsZw"
                   .styleNarrative(),
       context: geometricLine);
-  fabricInteraction = profileBalance.productDetails;
-  textureHarmony = <PurchaseDetails>[];
+  _refreshProductState(profileBalance);
 }
 
 void MaximalStyling(ProductDetailsResponse profileBalance) {
   AnkletStyling.dismiss();
-  fabricInteraction = profileBalance.productDetails;
-  textureHarmony = <PurchaseDetails>[];
+  _refreshProductState(profileBalance);
 
   if (fabricInteraction.isNotEmpty) {
     fabricInteraction = fabricInteraction
       ..sort((a, b) => a.rawPrice.compareTo(b.rawPrice));
   }
+}
+
+void _refreshProductState(ProductDetailsResponse profileBalance) {
+  fabricInteraction = profileBalance.productDetails;
+  textureHarmony = <PurchaseDetails>[];
 }
 
 Future<void> HuggieStyle(List<PurchaseDetails> hairTonePairing) async {

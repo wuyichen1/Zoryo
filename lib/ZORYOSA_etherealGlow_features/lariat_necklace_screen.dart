@@ -166,7 +166,7 @@ class _Chatoyancy extends State<LariatNecklace>
               alignment: Alignment.centerRight,
               child: GestureDetector(
                 onTap: () {
-                  if (signetRing.isguest == 1) {
+                  if (signetRing.occasionAdornLogic == 1) {
                     showLoginRequiredDialog(context);
                     return;
                   }

@@ -1,4 +1,12 @@
 PODS:
+  - Adjust (5.6.2):
+    - Adjust/Adjust (= 5.6.2)
+  - Adjust/Adjust (5.6.2):
+    - AdjustSignature (= 3.67.0)
+  - adjust_sdk (5.6.2):
+    - Adjust (= 5.6.2)
+    - Flutter
+  - AdjustSignature (3.67.0)
   - connectivity_plus (0.0.1):
     - Flutter
   - device_info_plus (0.0.1):
@@ -64,6 +72,7 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
+  - adjust_sdk (from `.symlinks/plugins/adjust_sdk/ios`)
   - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
   - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
   - devicelocale (from `.symlinks/plugins/devicelocale/ios`)
@@ -89,6 +98,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Adjust
+    - AdjustSignature
     - FBAEMKit
     - FBSDKCoreKit
     - FBSDKCoreKit_Basics
@@ -96,6 +107,8 @@ SPEC REPOS:
     - ScreenProtectorKit
 
 EXTERNAL SOURCES:
+  adjust_sdk:
+    :path: ".symlinks/plugins/adjust_sdk/ios"
   connectivity_plus:
     :path: ".symlinks/plugins/connectivity_plus/ios"
   device_info_plus:
@@ -142,33 +155,36 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/vpn_detector/ios"
 
 SPEC CHECKSUMS:
-  connectivity_plus: 2a701ffec2c0ae28a48cf7540e279787e77c447d
-  device_info_plus: bf2e3232933866d73fe290f2942f2156cdd10342
-  devicelocale: 35ba84dc7f45f527c3001535d8c8d104edd5d926
-  facebook_app_events: 6b4e3e9d2838e82c75996867a0c6c18dcabf2441
+  Adjust: 62ea53a252534df416676e7ac2f1558d60e6e39e
+  adjust_sdk: caa67ac211e1ff70e129232b3f378124e411ed9b
+  AdjustSignature: 9498705a4ac67b719e31828be4d74fbb8656950c
+  connectivity_plus: cb623214f4e1f6ef8fe7403d580fdad517d2f7dd
+  device_info_plus: 21fcca2080fbcd348be798aa36c3e5ed849eefbe
+  devicelocale: bd64aa714485a8afdaded0892c1e7d5b7f680cf8
+  facebook_app_events: cfa07e73912a052992b5f218f79a19a66a99bf1a
   FBAEMKit: 56a4f5a9607957b547b6458b17a98c5bb2736367
   FBSDKCoreKit: 54f1240567e16862ab71c53c33dc347db5c524c5
   FBSDKCoreKit_Basics: eb530cd6a79030dbb11df460aafb2767bcad9028
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_inappwebview_ios: 6f63631e2c62a7c350263b13fa5427aedefe81d4
-  flutter_local_notifications: ff50f8405aaa0ccdc7dcfb9022ca192e8ad9688f
-  flutter_native_splash: df59bb2e1421aa0282cb2e95618af4dcb0c56c29
-  flutter_native_timezone: 5f05b2de06c9776b4cc70e1839f03de178394d22
-  flutter_secure_storage: d33dac7ae2ea08509be337e775f6b59f1ff45f12
-  fluttertoast: 21eecd6935e7064cc1fcb733a4c5a428f3f24f0f
-  geocoding_ios: eafacae6ad11a1eb56681f7d11df602a5fd49416
-  geolocator_apple: 66b711889fd333205763b83c9dcf0a57a28c7afd
-  in_app_purchase_storekit: a1ce04056e23eecc666b086040239da7619cd783
+  flutter_inappwebview_ios: b89ba3482b96fb25e00c967aae065701b66e9b99
+  flutter_local_notifications: a5a732f069baa862e728d839dd2ebb904737effb
+  flutter_native_splash: c32d145d68aeda5502d5f543ee38c192065986cf
+  flutter_native_timezone: 5fe32678d72d1894880e94303ef41c2919f014e5
+  flutter_secure_storage: 1ed9476fba7e7a782b22888f956cce43e2c62f13
+  fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
+  geocoding_ios: 33776c9ebb98d037b5e025bb0e7537f6dd19646e
+  geolocator_apple: ab36aa0e8b7d7a2d7639b3b4e48308394e8cef5e
+  in_app_purchase_storekit: d1a48cb0f8b29dbf5f85f782f5dd79b21b90a5e6
   OrderedSet: e539b66b644ff081c73a262d24ad552a69be3a94
-  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
-  screen_protector: e2bf297dd1b12760776fe7f918d96efd9e6cd823
+  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
+  screen_protector: 9a24dd925f864f7b5794ca9da644eea44c2196f7
   ScreenProtectorKit: 83a6281b02c7a5902ee6eac4f5045f674e902ae4
-  shared_preferences_foundation: fcdcbc04712aee1108ac7fda236f363274528f78
-  sqflite: 673a0e54cc04b7d6dba8d24fb8095b31c3a99eec
-  system_keyboard_languages: a5e2640c1f1fef2876f37a05eec6f1e66989026e
-  url_launcher_ios: 5334b05cef931de560670eeae103fd3e431ac3fe
-  vibration: 7d883d141656a1c1a6d8d238616b2042a51a1241
-  vpn_detector: 329f4baf79c44147fb60ec4c20f5a538bb5b0593
+  shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
+  sqflite: c35dad70033b8862124f8337cc994a809fcd9fa3
+  system_keyboard_languages: 3d0a8a57105879ac7436b3a19a4d04fc112012cd
+  url_launcher_ios: 694010445543906933d732453a59da0a173ae33d
+  vibration: 8e2f50fc35bb736f9eecb7dd9f7047fbb6a6e888
+  vpn_detector: 24f7c7155ced8572fe86239a3832a23b7eb14dfa
 
 PODFILE CHECKSUM: 19d4946698bb937b57949847828c42a9b53cf53c
 

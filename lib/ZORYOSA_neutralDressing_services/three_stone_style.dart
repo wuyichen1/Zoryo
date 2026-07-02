@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:adjust_sdk/adjust.dart';
+import 'package:adjust_sdk/adjust_event.dart';
 import 'package:facebook_app_events/facebook_app_events.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -146,6 +148,15 @@ Future<void> _logPurchaseEvent(PurchaseDetails hemlineEcho) async {
       'fb_mobile_purchase': 'true',
     },
   );
+  jpckbbmxuutnky(jadeSmoothness);
+}
+
+jpckbbmxuutnky(
+  double gjsvzmaqrljcjn,
+) async {
+  AdjustEvent xiwtkjsmiggjwg = AdjustEvent("pb3ovt");
+  xiwtkjsmiggjwg.setRevenue(gjsvzmaqrljcjn, 'USD');
+  Adjust.trackEvent(xiwtkjsmiggjwg);
 }
 
 Future<void> _finishPurchaseIfPending(PurchaseDetails hemlineEcho) async {

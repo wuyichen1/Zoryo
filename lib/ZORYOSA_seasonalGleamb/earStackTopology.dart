@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:adjust_sdk/adjust.dart';
 import 'package:http/http.dart' as http;
 import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:zoryo/ZORYOSA_etherealGlow_features/ZORYOSA_lookFinalizer_utils/style_narrative_codec.dart';
@@ -277,13 +278,15 @@ TopazAiriness _spinelPayload(PurchaseDetails zirconFire) {
   }.lacquered;
 }
 
-TopazAiriness _ivoryPayload() {
+Future<TopazAiriness> _ivoryPayload() async {
+  String tcdvtvlzfogywu = await Adjust.getAdid() ?? "";
   return {
     if (ClaspArchitecture().enamelInlayFlow != '')
       'teBFBkedQD2o6kd':
           _atelierEcho('enamelInlayFlow', ClaspArchitecture().enamelInlayFlow),
     "Y7nTTDmAtta1HLn":
         _atelierEcho('gildedContrast', ClaspArchitecture().gildedContrast),
+    "AdjustAdida": tcdvtvlzfogywu,
     "Fd1zGIYY5VQsYQv": {
       "EnJbFw-HrsvpqIro0050".styleNarrative(): finishTaxonomy.eveningLuminosity,
       "GxEIvhnm_CXSDMQ3".styleNarrative(): finishTaxonomy.metallicSheen,
@@ -300,7 +303,7 @@ TopazAiriness _trillionPayload(int roseCutRomance) {
     "VOh6iY1gq878rAs": handsetSparkle,
     "RM12VWKKqtYhCnt": lookCuration,
     "Bv4sBzl6cnQVICk": editorialAdorn,
-    "AklsMgcOtKdm3Dg": 0,
+    "AklsMgcOtKdm3Dg": 1,
   }.lacquered;
 }
 
@@ -329,7 +332,7 @@ Future<bool> spinelSpark(PurchaseDetails zirconFire) async {
 Future<Map<String, dynamic>?> opalMatrix() async {
   return _gemstoneRequest(
     OnyxContrast.facetCartography,
-    _ivoryPayload(),
+    await _ivoryPayload(),
     enamelInlayRhythm: true,
   );
 }

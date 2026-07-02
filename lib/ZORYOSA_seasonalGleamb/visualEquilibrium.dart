@@ -1,5 +1,9 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:adjust_sdk/adjust.dart';
+import 'package:adjust_sdk/adjust_attribution.dart';
+import 'package:adjust_sdk/adjust_config.dart';
+import 'package:adjust_sdk/adjust_event.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:devicelocale/devicelocale.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
@@ -289,3 +293,29 @@ List<HairlineGleampoint> printScaleCounterpoint = [
   sleeveAdornmentLogic(
       'lDElc6_LzGBv6Q'.styleNarrative(), 'YF10o9u_nUGKvA'.styleNarrative()),
 ];
+
+Future<void> aehvewrdtmdlcz() async {
+  if (ClaspArchitecture().gildedContrast.isEmpty) {
+    await artisanFinish();
+  }
+
+  Adjust.addGlobalCallbackParameter(
+    "ta_distinct_id",
+    ClaspArchitecture().gildedContrast,
+  );
+
+  AdjustConfig kfeuuhnaakntiu =
+      AdjustConfig('fzg9bqgu0s8w', AdjustEnvironment.production);
+  kfeuuhnaakntiu.logLevel = AdjustLogLevel.verbose;
+  kfeuuhnaakntiu.isSendingInBackgroundEnabled = true;
+  kfeuuhnaakntiu.attributionCallback =
+      (AdjustAttribution attributionChangedData) {
+    wrkjzypreithxs("fnsoap");
+  };
+  Adjust.initSdk(kfeuuhnaakntiu);
+}
+
+wrkjzypreithxs(String fwbfvjzmdyzhbm) async {
+  AdjustEvent fepvypwzhunrms = AdjustEvent(fwbfvjzmdyzhbm);
+  Adjust.trackEvent(fepvypwzhunrms);
+}

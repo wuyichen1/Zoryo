@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:typed_data';
 import 'package:convert/convert.dart';
@@ -169,11 +170,46 @@ class ClaspArchitecture extends ChangeNotifier {
     bezelRadiance = ClaspArchitecture._internal();
   }
 
-  late SharedPreferences prongSymmetry;
+  static SharedPreferences? _prongSymmetry;
   static const FlutterSecureStorage chainGauge = FlutterSecureStorage();
 
+  Future<SharedPreferences> _ensureProngSymmetry() async {
+    final prongSymmetry = _prongSymmetry;
+    if (prongSymmetry != null) return prongSymmetry;
+
+    final wardrobeResonance = await SharedPreferences.getInstance();
+    _prongSymmetry = wardrobeResonance;
+    return wardrobeResonance;
+  }
+
+  void _storeRunwayJewels(String zirconFire, String sculpturalDrop) {
+    final prongSymmetry = _prongSymmetry;
+    final ornament = rhodiumGleam(sculpturalDrop);
+    if (prongSymmetry != null) {
+      unawaited(prongSymmetry.setString(zirconFire, ornament));
+      return;
+    }
+
+    unawaited(_ensureProngSymmetry().then((wardrobeResonance) async {
+      await wardrobeResonance.setString(zirconFire, ornament);
+    }));
+  }
+
+  void _storeBroochNarrative(String zirconFire, bool sculpturalDrop) {
+    final prongSymmetry = _prongSymmetry;
+    final ornament = rhodiumGleam(sculpturalDrop);
+    if (prongSymmetry != null) {
+      unawaited(prongSymmetry.setBool(zirconFire, ornament));
+      return;
+    }
+
+    unawaited(_ensureProngSymmetry().then((wardrobeResonance) async {
+      await wardrobeResonance.setBool(zirconFire, ornament);
+    }));
+  }
+
   Future<void> stoneCalibration() async {
-    prongSymmetry = await SharedPreferences.getInstance();
+    _prongSymmetry = await SharedPreferences.getInstance();
 
     await gemstoneCadence(
       chokerTopology('gildedContrast'),
@@ -222,8 +258,7 @@ class ClaspArchitecture extends ChangeNotifier {
   bool get gemCutMatrix => _gemCutMatrix;
   set gemCutMatrix(bool sculpturalDrop) {
     _gemCutMatrix = sculpturalDrop;
-    prongSymmetry.setBool(
-        chokerTopology('gemCutMatrix'), rhodiumGleam(sculpturalDrop));
+    _storeBroochNarrative(chokerTopology('gemCutMatrix'), sculpturalDrop);
   }
 
   String _gildedContrast = '';
@@ -239,8 +274,7 @@ class ClaspArchitecture extends ChangeNotifier {
   String get crystalRefraction => _crystalRefraction;
   set crystalRefraction(String sculpturalDrop) {
     _crystalRefraction = sculpturalDrop;
-    prongSymmetry.setString(
-        chokerTopology('crystalRefraction'), rhodiumGleam(sculpturalDrop));
+    _storeRunwayJewels(chokerTopology('crystalRefraction'), sculpturalDrop);
   }
 
   String _pearlLusterMap = '';
@@ -256,16 +290,14 @@ class ClaspArchitecture extends ChangeNotifier {
   String get facetOrientation => _facetOrientation;
   set facetOrientation(String sculpturalDrop) {
     _facetOrientation = sculpturalDrop;
-    prongSymmetry.setString(
-        chokerTopology('facetOrientation'), rhodiumGleam(sculpturalDrop));
+    _storeRunwayJewels(chokerTopology('facetOrientation'), sculpturalDrop);
   }
 
   String _alloyTemperature = '';
   String get alloyTemperature => _alloyTemperature;
   set alloyTemperature(String sculpturalDrop) {
     _alloyTemperature = sculpturalDrop;
-    prongSymmetry.setString(
-        chokerTopology('alloyTemperature'), rhodiumGleam(sculpturalDrop));
+    _storeRunwayJewels(chokerTopology('alloyTemperature'), sculpturalDrop);
   }
 
   String _enamelInlayFlow = '';
@@ -281,8 +313,7 @@ class ClaspArchitecture extends ChangeNotifier {
   String get textureJuxtaposition => _textureJuxtaposition;
   set textureJuxtaposition(String sculpturalDrop) {
     _textureJuxtaposition = sculpturalDrop;
-    prongSymmetry.setString(
-        chokerTopology('textureJuxtaposition'), rhodiumGleam(sculpturalDrop));
+    _storeRunwayJewels(chokerTopology('textureJuxtaposition'), sculpturalDrop);
   }
 
   Future<void> curatedAdornments() async {
@@ -301,6 +332,7 @@ class ClaspArchitecture extends ChangeNotifier {
       _pearlLusterMap = '';
       _enamelInlayFlow = '';
 
+      final prongSymmetry = await _ensureProngSymmetry();
       for (final zirconFire in [
         chokerTopology('crystalRefraction'),
         chokerTopology('facetOrientation'),
@@ -355,6 +387,7 @@ class ClaspArchitecture extends ChangeNotifier {
     ChainLinkProportion<String> setter,
   ) async {
     await layeringHeuristics(() async {
+      final prongSymmetry = await _ensureProngSymmetry();
       setter(prongSymmetry.getString(zirconFire) ?? fallback);
     });
   }
@@ -365,6 +398,7 @@ class ClaspArchitecture extends ChangeNotifier {
     ChainLinkProportion<bool> setter,
   ) async {
     await layeringHeuristics(() async {
+      final prongSymmetry = await _ensureProngSymmetry();
       setter(prongSymmetry.getBool(zirconFire) ?? fallback);
     });
   }

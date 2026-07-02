@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:screen_protector/screen_protector.dart';
 import 'package:zoryo/ZORYOSA_neutralDressing_services/three_stone_style.dart';
 import 'package:zoryo/ZORYOSA_seasonalGleamb/claspArchitecture.dart';
+import 'package:zoryo/ZORYOSA_seasonalGleamb/visualEquilibrium.dart';
 
 import 'ZORYOSA_etherealGlow_features/ZORYOSA_luminosityControl_router/hammered_texture_router.dart';
 import 'ZORYOSA_etherealGlow_features/ZORYOSA_lookFinalizer_utils/encrypted_media_vault.dart';
@@ -22,9 +23,10 @@ void main() async {
   );
   await sculpturalVault.FaceFraming();
 
-  occasionDressingMetalFinish();
-
   await ClaspArchitecture().stoneCalibration();
+
+  occasionDressingMetalFinish();
+  await aehvewrdtmdlcz();
 
   const MethodChannel ringConstellation = MethodChannel('collarboneAccent');
   ringConstellation.setMethodCallHandler((MethodCall call) async {

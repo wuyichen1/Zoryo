@@ -78,7 +78,7 @@ class VisualEquilibrium {
   static final skinToneResonance = StatamberLuminosity({
     'proportionDialect': () => '75798346', // 75798346
     'chromaticUndertone': () => "https://opi.rknrcl7c.link",
-    'materialDialogue': () => '1.1.0',
+    'materialDialogue': () => '1.2.0',
   });
 
   static String get proportionDialect =>

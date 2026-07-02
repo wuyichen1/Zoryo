@@ -57,19 +57,15 @@ platform :ios do
   lane :release do
     on_match
     prepare_gym
-    # gym(
-    #   export_method: export_method,
-    #   # output_directory: "./build",
-    #   # buildlog_path: "./build",
-    #   clean: true,
-    #   silent: true,
-    #   )
-    # deliver(
-    #   skip_metadata: true,
-    #   skip_screenshots: true,
-    #   submit_for_review: false
-    # ) if export_method == "app-store"
-    # pgyer(api_key: pgy_api_key) if export_method == "ad-hoc"
+    gym(
+      workspace: "ios/Runner.xcworkspace",     # 如果是 workspace 就用 workspace
+      scheme: ENV["SCHEME"],         # 一定要有
+      clean: true,
+
+      export_method: export_method,
+      output_directory: "./build",   # 👈 非常关键
+      output_name: "Zoryo.ipa"
+    )
   end
 
   lane :on_match do
